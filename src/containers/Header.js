@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
-class Login extends Component {
+class Header extends Component {
 
   render() {
 
     return (
       <div>
-        Login
+        Header
       </div>
     );
   }
 }
 
-export default Login;
+export default Header;
