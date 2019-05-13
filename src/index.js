@@ -12,7 +12,7 @@ ReactDOM.render(
     
     <BrowserRouter>
         <div>
-            <Route path='/app' component={App}/>
+            <Route exact path='/' component={App}/>
             <Route path='/home/test' component={Home}/>
             <Route path='/register/:username' component={Register}/>
         </div>
