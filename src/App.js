@@ -16,9 +16,8 @@ class App extends Component {
         <Header />
         <Home />
         <Video />
-        <Gallery />
-        <br/>
-        <GalleryGrid />
+        {/* <Gallery />        
+        <GalleryGrid /> */}
         <Memo />
         
       </div>
