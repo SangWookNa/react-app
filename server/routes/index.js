@@ -1,5 +1,5 @@
 import express from 'express';
-import os from 'os';
+import memo from './memo';
 
 const router = express.Router();
 
@@ -9,10 +9,7 @@ router.use('/*', (req, res, next) => {
     next();
 });
 
-// if you need api routes add them here
-router.get("/getUsername", function(req, res, next){
-    res.send({ username: os.userInfo().username });
-});
+router.use('/memo',memo);
 
 
 

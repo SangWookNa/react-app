@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
@@ -35,17 +34,47 @@ const styles = theme => ({
 });
 
 class Write extends React.Component {
+    // constructor(props) {
+    //     super(props);
 
-    constructor(props) {
-        super(props);
+    //     this.handleChange = this.handleChange.bind(this);
+      
+    // }
+    state = {
+            contents: '',
+            username: '',
+            password: '',
+        }
 
-        this.state = {
-            name: 'Cat in the Hat',
-            age: '',
-            multiline: 'Controlled',
-            currency: 'EUR',
-        };
+    handleChange = (e) => {
+        let nextState = {};
+        nextState[e.target.name] = e.target.value;
+        console.log(nextState);
+        //console.log(...this.state);
+        this.setState({
+            nextState
+        });
     }
+
+    handlePost() {
+        let contents = this.state.contents;
+        let username = this.state.username;
+        let password = this.state.password;
+
+        alert(contents);
+        alert(username);
+        alert(password);
+
+        // this.props.onPost(contents).then(
+        //     () => {
+        //         this.setState({
+        //             contents: ""
+        //         });
+        //     }
+        // )
+    }
+
+    
 
     render() {
         const { classes } = this.props;
@@ -54,17 +83,20 @@ class Write extends React.Component {
                 <Grid container spacing={8}>
                     <Grid item xs={6}>
                         <TextField
-                            id="outlined-name"
+                            id="username"
+                            name="username"
                             label="name"
                             fullWidth
                             InputProps={{ classes: { input: classes.input1 } }}
                             margin="normal"
                             variant="outlined"
+                            onChange={this.handleChange}
                         />
                     </Grid>
                     <Grid item xs={6}>
                         <TextField
-                            id="outlined-password-input"
+                            id="password"
+                            name="password"
                             label="password"
                             type="password"
                             fullWidth
@@ -72,21 +104,26 @@ class Write extends React.Component {
                             autoComplete="current-password"
                             margin="normal"
                             variant="outlined"
+                            onChange={this.handleChange}
                         />
                     </Grid>
                     <Grid item xs={9}>
                         <TextField
-                            id="standard-multiline-flexible"
+                            id="contents"
+                            name="contents"
                             label={<Typography color="inherit" className={classes.font}>축하 메세지를 남겨주세요!</Typography>}
                             rowsMax="4"
                             multiline
-                            fullWidth
-                            margin="dense"
+                            fullWidth 
+                            margin="dense"                           
                             className={classNames(classes.dense, classes.font)}
+                            onChange={this.handleChange}
                         />
                     </Grid>
-                    <Grid style={{backgroundColor : 'Yellow'}} alignItems="flex-end"  item xs={3}>
-                    <Button variant="contained" size="small" color="primary" className={classes.button}>
+                    {/* style={{backgroundColor : 'Yellow'}} */}
+                    <Grid container alignItems="flex-end"  item xs={3}>
+                    <Button variant="contained" size="small" color="primary" className={classes.button}
+                            onClick={this.handlePost}>
                         등록
                     </Button>
                     </Grid>
@@ -96,8 +133,8 @@ class Write extends React.Component {
     }
 }
 
-Write.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
+Write.defaultProps = {
+    onPost: (contents) => { console.error('post function not defined'); }
+}
 
 export default withStyles(styles)(Write);

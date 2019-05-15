@@ -2,10 +2,13 @@ import express from 'express';
 import path from 'path';
 import morgan from 'morgan'; // HTTP REQUEST LOGGER
 import bodyParser from 'body-parser'; // PARSE HTML BODY
-import os from 'os';
+import mongoose from 'mongoose';
 
 const app = express();
 const PORT = process.env.PORT || 4000;
+
+app.use(morgan('dev'));
+app.use(bodyParser.json());
 
 /** setup routers & static directory */
 import api from './routes';
@@ -24,9 +27,12 @@ if (process.env.NODE_ENV == 'development') {
     //   });
 }
 
-app.use(morgan('dev'));
-app.use(bodyParser.json());
-
+/** mongodb connection */
+const db = mongoose.connection;
+db.on('error', console.error);
+db.once('open', () => { console.log('Connected to mongodb server'); });
+// mongoose.connect('mongodb://username:password@host:port/database=');
+mongoose.connect('mongodb://localhost:27017/invitation');
 
 /** handle error */
 app.use(function (err, req, res, next) {
