@@ -19,7 +19,7 @@ const styles = theme => ({
     },
     button: {
         margin: theme.spacing.unit,
-      },
+    },
     textField: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
@@ -34,47 +34,42 @@ const styles = theme => ({
 });
 
 class Write extends React.Component {
-    // constructor(props) {
-    //     super(props);
-
-    //     this.handleChange = this.handleChange.bind(this);
-      
-    // }
     state = {
-            contents: '',
-            username: '',
-            password: '',
-        }
+        contents: '',
+        username: '',
+        password: '',
+    }
 
     handleChange = (e) => {
         let nextState = {};
         nextState[e.target.name] = e.target.value;
         console.log(nextState);
-        //console.log(...this.state);
-        this.setState({
+
+        this.setState(
             nextState
-        });
+        );
+        console.log(this.state);
     }
 
-    handlePost() {
+    handlePost = () => {
+
         let contents = this.state.contents;
         let username = this.state.username;
         let password = this.state.password;
 
-        alert(contents);
-        alert(username);
-        alert(password);
-
-        // this.props.onPost(contents).then(
+        this.props.onPost(username, password, contents)
+        // .then(
         //     () => {
         //         this.setState({
+        //             username: "",
+        //             password: "",
         //             contents: ""
         //         });
         //     }
         // )
     }
 
-    
+
 
     render() {
         const { classes } = this.props;
@@ -114,17 +109,16 @@ class Write extends React.Component {
                             label={<Typography color="inherit" className={classes.font}>축하 메세지를 남겨주세요!</Typography>}
                             rowsMax="4"
                             multiline
-                            fullWidth 
-                            margin="dense"                           
+                            fullWidth
+                            margin="dense"
                             className={classNames(classes.dense, classes.font)}
                             onChange={this.handleChange}
                         />
                     </Grid>
-                    {/* style={{backgroundColor : 'Yellow'}} */}
-                    <Grid container alignItems="flex-end"  item xs={3}>
-                    <Button variant="contained" size="small" color="primary" className={classes.button}
+                    <Grid container alignItems="flex-end" item xs={3}>
+                        <Button variant="contained" size="small" color="primary" className={classes.button}
                             onClick={this.handlePost}>
-                        등록
+                            등록
                     </Button>
                     </Grid>
                 </Grid>
