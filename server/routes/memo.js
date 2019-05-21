@@ -13,6 +13,8 @@ const router = express.Router();
  *      3: BAD PASSWORD
  */
 router.post('/', (req, res) => {
+
+    console.log(req.body);
     
     // CHECK USERNAME FORMAT
     let usernameRegex = /^[a-z0-9]+$/;
@@ -160,14 +162,6 @@ router.delete('/:id', (req, res) => {
         });
     }
 
-    //CHECK LOGIN STATUS
-    if (typeof req.session.loginInfo === 'undefined') {
-        return res.status(403).json({
-            error: "NOT LOGGED IN",
-            code: 2
-        });
-    }
-
     //FIND MEMO AND CHECK FOR WRITER
     Memo.findById(req.params.id, (err, memo) => {
         if (err) throw err;
@@ -177,13 +171,7 @@ router.delete('/:id', (req, res) => {
                 error: "NO RESOURCE",
                 code: 3
             });
-        }
-        if (memo.writer != req.session.loginInfo.username) {
-            return res.status(403).json({
-                error: "PERMISSION FAILURE",
-                code: 4
-            });
-        }
+        }        
 
         //REMOVE THE MEMO
         Memo.remove({ _id: req.params.id }, err => {
@@ -191,7 +179,6 @@ router.delete('/:id', (req, res) => {
             res.json({ success: true });
         });
     });
-
 });
 
 /**
@@ -200,7 +187,7 @@ router.delete('/:id', (req, res) => {
 router.get('/', (req, res) => {
     Memo.find()
         .sort({ "_id": -1 })
-        .limit(6)
+        //.limit(6)
         .exec((err, memos) => {
             if (err) throw err;
             res.json(memos);

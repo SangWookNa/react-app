@@ -1,96 +1,41 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
+import Memo from './Memo';
 
-const styles = {
-    card: {
-        minWidth: 275,
-    },
-    title: {
-        fontSize: 20,
-    },
-    pos: {
-        marginBottom: 5,
-    },
-};
 
 class MemoList extends React.Component {
 
-    constructor(props) {
-        super(props);
+    shouldComponentUpdate(nextProps, nextState) {
+        let update = JSON.stringify(this.props) !== JSON.stringify(nextProps);
+        return update;
     }
-
     render() {
-        const { classes } = this.props;
+        console.log('MemoList render method executed');
+        const mapToComponents = (data) => {
+            return data.map((memo, i) => {
+                return (<Memo
+                    data={memo}                   
+                    key={memo._id}
+                    onRemove={this.props.onRemove}
+                    index={i}                   
+                />);
+            });
+        };
 
         return (
             <Grid container spacing={8}>
-                <Grid item xs={12}>
-                    <Card className={classes.card}>
-                        <CardContent>
-                            <Typography className={classes.title} >
-                                나상욱
-                            </Typography>
-                            <Typography className={classes.pos} color="textSecondary">
-                                adjective
-                            </Typography>
-                            <Typography component="p">
-                                well meaning and kindly.
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <Button size="small" color="primary">
-                                EDIT
-                            </Button>
-                            <Button size="small" color="primary">
-                                DELETE
-                            </Button>
-                        </CardActions>
-                    </Card>
-                </Grid>
-                <Grid item xs={12}>
-                    <Card className={classes.card}>
-                        <CardContent>
-                            <Typography className={classes.title} >
-                                나상욱
-                            </Typography>
-                            <Typography className={classes.pos} color="textSecondary">
-                                adjective
-                            </Typography>
-                            <Typography component="p">
-                                well meaning and kindly.
-                                well meaning and kindly.
-                                well meaning and kindly.
-                                well meaning and kindly.
-                                well meaning and kindly.
-                                well meaning and kindly.
-                                well meaning and kindly.
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <Button size="small" color="primary">
-                                EDIT
-                            </Button>
-                            <Button size="small" color="primary">
-                                DELETE
-                            </Button>
-                        </CardActions>
-                    </Card>
-                </Grid>
+                {mapToComponents(this.props.data)}
             </Grid>
 
         );
     }
 }
 
-MemoList.propTypes = {
-    classes: PropTypes.object.isRequired,
+MemoList.defaultProps = {
+    data: [],
+    onRemove: (id, index) => {
+        console.error('remove function not defined');
+    },
 };
 
-export default withStyles(styles)(MemoList);
+export default MemoList;

@@ -58,15 +58,18 @@ class Write extends React.Component {
         let password = this.state.password;
 
         this.props.onPost(username, password, contents)
-        // .then(
-        //     () => {
-        //         this.setState({
-        //             username: "",
-        //             password: "",
-        //             contents: ""
-        //         });
-        //     }
-        // )
+            .then(
+                (result) => {
+                    console.log(result);
+                    if (result.status === "SUCCESS") {
+                        this.setState({
+                            username: "",
+                            password: "", 
+                            contents: ""
+                        });
+                    }
+                }
+            )
     }
 
 
@@ -84,6 +87,7 @@ class Write extends React.Component {
                             fullWidth
                             InputProps={{ classes: { input: classes.input1 } }}
                             margin="normal"
+                            value={this.state.username}
                             variant="outlined"
                             onChange={this.handleChange}
                         />
@@ -98,6 +102,7 @@ class Write extends React.Component {
                             InputProps={{ classes: { input: classes.input1 } }}
                             autoComplete="current-password"
                             margin="normal"
+                            value={this.state.password}
                             variant="outlined"
                             onChange={this.handleChange}
                         />
@@ -111,6 +116,7 @@ class Write extends React.Component {
                             multiline
                             fullWidth
                             margin="dense"
+                            value={this.state.contents}
                             className={classNames(classes.dense, classes.font)}
                             onChange={this.handleChange}
                         />

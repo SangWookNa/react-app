@@ -1,9 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
 
 class ToastBar extends React.Component {
   state = {
@@ -23,7 +20,6 @@ class ToastBar extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
     return (
       <div>        
         <Snackbar
