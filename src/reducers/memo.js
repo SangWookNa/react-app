@@ -15,6 +15,10 @@ const initialState = {
         status: 'INIT',
         error: -1
     },
+    check: {
+        status: 'INIT',
+        error: -1
+    },
 };
 
 export default function memo(state, action) {
@@ -101,6 +105,26 @@ export default function memo(state, action) {
         case types.MEMO_REMOVE_FAILURE:
             return update(state, {
                 remove: {
+                    status: { $set: 'FAILURE' },
+                    error: { $set: action.error }
+                }
+            });
+        case types.PASSWORD_CHECK:
+            return update(state, {
+                check: {
+                    status: { $set: 'WAITING' },
+                    error: { $set: -1 }
+                }
+            });
+        case types.PASSWORD_CHECK_SUCCESS:
+            return update(state, {
+                check: {
+                    status: { $set: 'SUCCESS' }
+                }
+            });
+        case types.PASSWORD_CHECK_FAILURE:
+            return update(state, {
+                check: {
                     status: { $set: 'FAILURE' },
                     error: { $set: action.error }
                 }

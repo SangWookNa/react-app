@@ -67,12 +67,22 @@ class Memo extends React.Component {
     handleClickDialogOpen = () => {
         this.setState({
             open: true,
+            anchorEl: null
         });
     };
 
     handleDialogClose = value => {
         this.setState({ selectedValue: value, open: false });
       };
+
+    handleCheck = () => {
+        console.log('');
+        // console.log(writer);
+        // console.log(password);
+        // console.log(_id);
+
+        //this.props.onCheck();
+    };
 
 
     render() {
@@ -113,7 +123,9 @@ class Memo extends React.Component {
                     selectedValue={this.state.selectedValue}
                     open={this.state.open}
                     onClose={this.handleDialogClose}
+                    onCheck={this.handleCheck}
                     writer={this.props.data.writer}
+                    _id={this.props.data._id}
                 />
             </Grid>
 

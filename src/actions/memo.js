@@ -7,7 +7,10 @@ import {
     MEMO_LIST_FAILURE,
     MEMO_REMOVE,
     MEMO_REMOVE_SUCCESS,
-    MEMO_REMOVE_FAILURE
+    MEMO_REMOVE_FAILURE,
+    PASSWORD_CHECK,
+    PASSWORD_CHECK_SUCCESS,
+    PASSWORD_CHECK_FAILURE
 } from './ActionTypes';
 import axios from 'axios';
 
@@ -130,6 +133,42 @@ export function memoRemoveSuccess(index) {
 export function memoRemoveFailure(error) {
     return {
         type: MEMO_REMOVE_FAILURE,
+        error
+    };
+}
+
+export function passwordCheckRequest(id, username, password) {
+    return (dispatch) => {
+        dispatch(passwordCheck());
+
+        let url = '/api/memo';
+       
+        url = `${url}/${id}/${username}/${password}`;        
+
+        return axios.get(url)
+        .then((response) => {
+            dispatch(passwordCheckSuccess());
+        }).catch((error) => {
+            dispatch(passwordCheckFailure(error.response.data.code));
+        });
+
+    };
+}
+export function passwordCheck() {
+    return {
+        type: PASSWORD_CHECK
+    };
+}
+
+export function passwordCheckSuccess() {
+    return {
+        type: PASSWORD_CHECK_SUCCESS
+    };
+}
+
+export function passwordCheckFailure(error) {
+    return {
+        type: PASSWORD_CHECK_FAILURE,
         error
     };
 }
