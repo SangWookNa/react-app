@@ -10,17 +10,20 @@ import {
     MEMO_REMOVE_FAILURE,
     PASSWORD_CHECK,
     PASSWORD_CHECK_SUCCESS,
-    PASSWORD_CHECK_FAILURE
+    PASSWORD_CHECK_FAILURE,
+    MEMO_EDIT,
+    MEMO_EDIT_SUCCESS,
+    MEMO_EDIT_FAILURE,
 } from './ActionTypes';
 import axios from 'axios';
 
 /* MEMO POST */
-export function memoPostRequest(username,password,contents) {
+export function memoPostRequest(username, password, contents) {
     return (dispatch) => {
         //inform MEMO POST API is starting
         dispatch(memoPost());
 
-        return axios.post('/api/memo/', { username,password,contents })
+        return axios.post('/api/memo/', { username, password, contents })
             .then((response) => {
                 dispatch(memoPostSuccess());
             }).catch((error) => {
@@ -139,14 +142,14 @@ export function memoRemoveFailure(error) {
 
 export function passwordCheckRequest(id, password) {
     return (dispatch) => {
-        dispatch(passwordCheck()); 
+        dispatch(passwordCheck());
 
         return axios.post('/api/memo/check/', { id, password })
-        .then((response) => {
-            dispatch(passwordCheckSuccess());
-        }).catch((error) => {
-            dispatch(passwordCheckFailure(error.response.data.code));
-        });
+            .then((response) => {
+                dispatch(passwordCheckSuccess());
+            }).catch((error) => {
+                dispatch(passwordCheckFailure(error.response.data.code));
+            });
 
     };
 }
@@ -165,6 +168,41 @@ export function passwordCheckSuccess() {
 export function passwordCheckFailure(error) {
     return {
         type: PASSWORD_CHECK_FAILURE,
+        error
+    };
+}
+
+/* MEMO EDIT */
+export function memoEditRequest(id, contents, index) {
+    return (dispatch) => {
+        dispatch(memoEdit());
+
+        return axios.put('/api/memo/' + id, { contents })
+            .then((response) => {
+                dispatch(memoEditSuccess(index, response.data.memo));
+            }).catch((error) => {
+                dispatch(memoEditFailure(error.response.data.code));
+            });
+    };
+}
+
+export function memoEdit() {
+    return {
+        type: MEMO_EDIT
+    };
+}
+
+export function memoEditSuccess(index, memo) {
+    return {
+        type: MEMO_EDIT_SUCCESS,
+        index,
+        memo
+    };
+}
+
+export function memoEditFailure(error) {
+    return {
+        type: MEMO_EDIT_FAILURE,
         error
     };
 }

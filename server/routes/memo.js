@@ -94,14 +94,7 @@ router.put('/:id', (req, res) => {
             code: 2
         });
     }
-
-    //CHECK LOGIN STATUS
-    if (typeof req.session.loginInfo === "undefined") {
-        return res.status(403).json({
-            error: "NOT LOGGED IN",
-            code: 3
-        });
-    }
+   
 
     //FIND MEMO
     Memo.findById(req.params.id, (err, memo) => {
@@ -112,14 +105,6 @@ router.put('/:id', (req, res) => {
             return res.status(404).json({
                 error: "NO RESOURCE",
                 code: 4
-            });
-        }
-
-        //IF EXISTS, CHECK WRITER
-        if (memo.writer != req.session.loginInfo.username) {
-            return res.status(403).json({
-                error: "PERMISSION FAILURE",
-                code: 5
             });
         }
 

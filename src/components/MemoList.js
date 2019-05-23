@@ -10,15 +10,16 @@ class MemoList extends React.Component {
         return update;
     }
     render() {
-        console.log('MemoList render method executed');
+
         const mapToComponents = (data) => {
             return data.map((memo, i) => {
                 return (<Memo
-                    data={memo}                   
+                    data={memo}
                     key={memo._id}
                     onRemove={this.props.onRemove}
-                    onCheck={this.props.onCheck}
-                    index={i}                   
+                    onEdit={this.props.onEdit}
+                    onCheck={this.props.onCheck}                    
+                    index={i}
                 />);
             });
         };
@@ -37,8 +38,11 @@ MemoList.defaultProps = {
     onRemove: (id, index) => {
         console.error('remove function not defined');
     },
-    onCheck: (id, index) => {
+    onCheck: (password, _id, selectedValue) => {
         console.error('password check function not defined');
+    },
+    onEdit: (_id, contents) => {
+        console.error('onEdit check function not defined');
     },
 };
 

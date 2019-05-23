@@ -7,7 +7,8 @@ import {
   memoPostRequest,
   memoListRequest,
   memoRemoveRequest,
-  passwordCheckRequest
+  passwordCheckRequest,
+  memoEditRequest
 } from '../actions/memo';
 
 
@@ -90,7 +91,7 @@ class Memo extends Component {
   }
 
   handleRemove = (id, index) => {
-    
+
     this.setState({
       message: '',
       success: false
@@ -130,34 +131,66 @@ class Memo extends Component {
       success: false
     });
 
-    this.props.passwordCheckRequest(_id, password).then(() => {
-      console.log(this.props.checkStatus);
-      console.log(selectedValue);
-      if (this.props.checkStatus.status === "SUCCESS") {
-        if(selectedValue === "edit"){
-          alert("Edit Action");
-        }else if(selectedValue === "delete"){
-          this.handleRemove(_id , '');
+    return this.props.passwordCheckRequest(_id, password).then(
+      () => {
+
+        if (this.props.checkStatus.status === "SUCCESS") {
+          if (selectedValue === "edit") {
+            return this.props.checkStatus.status;
+          } else if (selectedValue === "delete") {
+            this.handleRemove(_id, '');
+          }
+
+        } else {
+          //ERROR
+          let errorMessage = [
+            'INVALID ID',
+            '비밀번호를 입력해주세요!',
+            'USER FIND FAILED',
+            '비밀번호가 틀렸습니다'
+          ];
+          this.setState({
+            message: errorMessage[this.props.checkStatus.error - 1],
+            success: true
+          });
         }
-
-      } else {
-        //ERROR
-        let errorMessage = [
-          'INVALID ID',
-          '비밀번호를 입력해주세요!',
-          'USER FIND FAILED',
-          '비밀번호가 틀렸습니다'
-        ];
-        this.setState({
-          message: errorMessage[this.props.checkStatus.error - 1],
-          success: true
-        });
       }
-
-    }
     );
+  }
 
-    console.log('check');
+  handleEdit = (id, contents, index) => {
+    
+    return this.props.memoEditRequest(id, contents, index).then(
+      () => {
+        if (this.props.editStatus.status === 'SUCCESS') {
+          //Materialize.toast('Success!', 2000);
+        } else {
+          /*
+                 ERROR CODES
+                     1: INVALID ID,
+                     2: EMPTY CONTENTS
+                     3: NOT LOGGED IN
+                     4: NO RESOURCE
+                     5: PERMISSION FAILURE
+          */
+          // let errorMessage = [
+          //         'Something broke',
+          //         'Please write soemthing',
+          //         'You are not logged in',
+          //         'That memo does not exist anymore',
+          //         'You do not have permission'
+          //     ];
+
+          // let error = this.props.editStatus.error;
+
+          // // NOTIFY ERROR
+          // let $toastContent = $('<span style="color: #FFB4BA">' + errorMessage[error - 1] + '</span>');
+          // Materialize.toast($toastContent, 2000);
+
+
+
+        }
+      });
   }
 
   render() {
@@ -169,6 +202,7 @@ class Memo extends Component {
         <MemoList data={this.props.memoData}
           onRemove={this.handleRemove}
           onCheck={this.handleCheck}
+          onEdit={this.handleEdit}
         />
         {this.state.success === true ? write : undefined}
       </div>
@@ -181,7 +215,8 @@ const mapStateToProps = (state) => {
     postStatus: state.memo.post,
     memoData: state.memo.list.data,
     removeStatus: state.memo.remove,
-    checkStatus: state.memo.check
+    checkStatus: state.memo.check,
+    editStatus: state.memo.edit
   };
 };
 
@@ -199,7 +234,9 @@ const mapDispatchToProps = (dispatch) => {
     passwordCheckRequest: (id, password) => {
       return dispatch(passwordCheckRequest(id, password));
     },
-
+    memoEditRequest: (id, contents, index) => {
+      return dispatch(memoEditRequest(id, contents, index));
+    },
   };
 };
 

@@ -14,6 +14,8 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import blue from '@material-ui/core/colors/blue';
 import SimpleDialog from './SimpleDialog';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 const styles = {
     root: {
@@ -44,7 +46,9 @@ class Memo extends React.Component {
     state = {
         anchorEl: null,
         selectedValue: '',
+        contents: this.props.data.contents,
         open: false,
+        editMode: false
     };
 
     handleClick = event => {
@@ -74,17 +78,49 @@ class Memo extends React.Component {
         this.setState({ open: false });
     };
 
-    handleCheck = (password, _id, selectedValue) => {       
+    handleCheck = (password, _id, selectedValue) => {
 
-        this.props.onCheck(password, _id, selectedValue);
+        this.props.onCheck(password, _id, selectedValue)
+            .then((result) => {
+                if (result === 'SUCCESS') {
+                    this.setState({
+                        editMode: !this.state.editMode,
+                        open: false
+                    })
+                }
+            });
     };
+
+    handleEditMode = () => {
+
+        this.setState({
+            editMode: !this.state.editMode            
+        });
+    };
+
+    handleEdit = () => {
+        let _id = this.props.data._id;
+        let contents = this.state.contents;
+
+        console.log(_id);
+        console.log(contents);
+        this.props.onEdit(_id, contents);
+    }
+
+    handleChange = (e) => {
+
+        this.setState({
+            contents: e.target.value
+        });
+    }
 
     render() {
         const { classes } = this.props;
         const { anchorEl } = this.state;
         const formatter = buildFormatter(koreaStrings)
-        return (
-            <Grid item xs={12}>
+
+        const memoView = (
+            <div className={classes.root}>
                 <Card className={classes.card}>
                     <CardHeader className={classes.header}
                         action={
@@ -100,7 +136,7 @@ class Memo extends React.Component {
                         subheader={<TimeAgo date={this.props.data.date.created} formatter={formatter} />}
                     />
                     <CardContent><Typography variant="body1">
-                        {this.props.data.contents}
+                        {this.state.contents}
                     </Typography>
                     </CardContent>
                 </Card>
@@ -121,6 +157,46 @@ class Memo extends React.Component {
                     writer={this.props.data.writer}
                     _id={this.props.data._id}
                 />
+            </div>
+        );
+
+        const editView = (
+            <div className={classes.root}>
+                <Card className={classes.card}>
+                    <CardHeader className={classes.header}
+                        action={
+                            <div>
+                                <Button onClick={this.handleEdit} color="primary">
+                                    수정
+                                </Button>
+                                <Button onClick={this.handleEditMode} color="primary">
+                                    취소
+                                </Button>
+                            </div>
+                        }
+                        title={this.props.data.writer}
+                        component="h6"
+                        subheader={<TimeAgo date={this.props.data.date.created} formatter={formatter} />}
+                    />
+                    <CardContent>
+                        <TextField
+                            id="outlined-multiline-flexible"
+                            className={classes.pos}
+                            multiline
+                            fullWidth
+                            autoFocus={true}
+                            value={this.state.contents}
+                            onChange={this.handleChange}
+                            margin="normal"
+                            variant="outlined"
+                        />
+                    </CardContent>
+                </Card>
+            </div>
+        );
+        return (
+            <Grid item xs={12}>
+                {this.state.editMode ? editView : memoView}
             </Grid>
 
         );
@@ -147,6 +223,9 @@ Memo.defaultProps = {
     },
     onCheck: (password, _id, selectedValue) => {
         console.error('onCheck function not defined');
+    },
+    onEdit: (_id, contents) => {
+        console.error('onEdit function not defined');
     },
 
 }

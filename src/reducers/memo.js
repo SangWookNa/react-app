@@ -19,6 +19,10 @@ const initialState = {
         status: 'INIT',
         error: -1
     },
+    edit: {
+        status: 'INIT',
+        error: -1
+    },
 };
 
 export default function memo(state, action) {
@@ -125,6 +129,32 @@ export default function memo(state, action) {
         case types.PASSWORD_CHECK_FAILURE:
             return update(state, {
                 check: {
+                    status: { $set: 'FAILURE' },
+                    error: { $set: action.error }
+                }
+            });
+        case types.MEMO_EDIT:
+            return update(state, {
+                edit: {
+                    status: { $set: 'WAITING ' },
+                    error: { $set: -1 },
+                    memo: { $set: undefined }
+                }
+            });
+        case types.MEMO_EDIT_SUCCESS:
+            return update(state, {
+                edit: {
+                    status: { $set: 'SUCCESS' }
+                },
+                list: {
+                    data: {
+                        [action.index]: { $set: action.memo }
+                    }
+                }
+            });
+        case types.MEMO_EDIT_FAILURE:
+            return update(state, {
+                edit: {
                     status: { $set: 'FAILURE' },
                     error: { $set: action.error }
                 }
