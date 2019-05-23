@@ -13,33 +13,33 @@ class SimpleDialog extends React.Component {
     }
 
     handleClose = () => {
-        this.props.onClose(this.props.selectedValue);
+        this.setState({
+            password: ''
+        });
+        this.props.onClose();
     };
 
     handleCheck = () => {
-        let writer = this.props.writer;
+
         let password = this.state.password;
         let _id = this.props._id;
+        let selectedValue = this.props.selectedValue;
 
-        this.props.onCheck(writer, password, _id);
+        this.props.onCheck(password, _id, selectedValue);
     };
-    
+
     handleChange = (e) => {
         this.setState({
-            password : e.target.value
+            password: e.target.value
         });
     }
-
-    handleListItemClick = value => {
-        this.props.onClose(value);
-    };
 
     render() {
         const { classes, onClose, selectedValue, ...other } = this.props;
 
         return (
             <Dialog onClose={this.handleClose} aria-labelledby="simple-dialog-title" {...other}>
-                <DialogTitle id="form-dialog-title">Password Ckeck</DialogTitle>
+                <DialogTitle id="form-dialog-title">{selectedValue}</DialogTitle>
                 <DialogContent>
                     <TextField
                         disabled
@@ -66,6 +66,9 @@ class SimpleDialog extends React.Component {
                     <Button onClick={this.handleCheck} color="primary">
                         확인
                     </Button>
+                    <Button onClick={this.handleClose} color="primary">
+                        취소
+                    </Button>
                 </DialogActions>
             </Dialog>
         );
@@ -75,16 +78,12 @@ class SimpleDialog extends React.Component {
 SimpleDialog.propTypes = {
     classes: PropTypes.object.isRequired,
     onClose: PropTypes.func,
-    onCheck: PropTypes.func,
     selectedValue: PropTypes.string,
 };
 
 SimpleDialog.defaultProps = {
 
-    onCheck: (writer, password, _id) => {
-        console.error('onCheck function not defined');
-    },
-    
+
 }
 
 export default SimpleDialog;

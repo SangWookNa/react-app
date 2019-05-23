@@ -17,6 +17,7 @@ class MemoList extends React.Component {
                     data={memo}                   
                     key={memo._id}
                     onRemove={this.props.onRemove}
+                    onCheck={this.props.onCheck}
                     index={i}                   
                 />);
             });
@@ -35,6 +36,9 @@ MemoList.defaultProps = {
     data: [],
     onRemove: (id, index) => {
         console.error('remove function not defined');
+    },
+    onCheck: (id, index) => {
+        console.error('password check function not defined');
     },
 };
 

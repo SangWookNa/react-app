@@ -137,15 +137,11 @@ export function memoRemoveFailure(error) {
     };
 }
 
-export function passwordCheckRequest(id, username, password) {
+export function passwordCheckRequest(id, password) {
     return (dispatch) => {
-        dispatch(passwordCheck());
+        dispatch(passwordCheck()); 
 
-        let url = '/api/memo';
-       
-        url = `${url}/${id}/${username}/${password}`;        
-
-        return axios.get(url)
+        return axios.post('/api/memo/check/', { id, password })
         .then((response) => {
             dispatch(passwordCheckSuccess());
         }).catch((error) => {

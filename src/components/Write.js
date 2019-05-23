@@ -43,12 +43,10 @@ class Write extends React.Component {
     handleChange = (e) => {
         let nextState = {};
         nextState[e.target.name] = e.target.value;
-        console.log(nextState);
 
         this.setState(
             nextState
         );
-        console.log(this.state);
     }
 
     handlePost = () => {

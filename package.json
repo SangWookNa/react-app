@@ -31,7 +31,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "server": "set NODE_ENV=development&&nodemon --exec babel-node ./server/main.js --watch server",
+    "server": "set NODE_ENV=development&&nodemon --exec babel-node ./server/main.js --watch server --ignore client",
     "deploy": "set NODE_ENV=production&&nodemon --exec babel-node ./server/main.js --watch server",
     "build": "react-scripts build",
     "test": "react-scripts test",

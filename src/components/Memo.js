@@ -15,8 +15,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import blue from '@material-ui/core/colors/blue';
 import SimpleDialog from './SimpleDialog';
 
-
-
 const styles = {
     root: {
         flexGrow: 1,
@@ -45,11 +43,11 @@ const SimpleDialogWrapped = withStyles(styles)(SimpleDialog);
 class Memo extends React.Component {
     state = {
         anchorEl: null,
+        selectedValue: '',
         open: false,
     };
 
     handleClick = event => {
-        console.log(event.currentTarget);
         this.setState({ anchorEl: event.currentTarget });
     };
 
@@ -64,26 +62,22 @@ class Memo extends React.Component {
         this.setState({ anchorEl: null });
     };
 
-    handleClickDialogOpen = () => {
+    handleClickDialogOpen = (e) => {
         this.setState({
             open: true,
+            selectedValue: e.target.id,
             anchorEl: null
         });
     };
 
-    handleDialogClose = value => {
-        this.setState({ selectedValue: value, open: false });
-      };
-
-    handleCheck = () => {
-        console.log('');
-        // console.log(writer);
-        // console.log(password);
-        // console.log(_id);
-
-        //this.props.onCheck();
+    handleDialogClose = () => {
+        this.setState({ open: false });
     };
 
+    handleCheck = (password, _id, selectedValue) => {       
+
+        this.props.onCheck(password, _id, selectedValue);
+    };
 
     render() {
         const { classes } = this.props;
@@ -116,14 +110,14 @@ class Memo extends React.Component {
                     open={Boolean(anchorEl)}
                     onClose={this.handleClose}
                 >
-                    <MenuItem onClick={this.handleClickDialogOpen}>Edit</MenuItem>
-                    <MenuItem onClick={this.handleRemove}>Delete</MenuItem>
+                    <MenuItem id="edit" onClick={this.handleClickDialogOpen}>Edit</MenuItem>
+                    <MenuItem id="delete" onClick={this.handleClickDialogOpen}>Delete</MenuItem>
                 </Menu>
                 <SimpleDialogWrapped
                     selectedValue={this.state.selectedValue}
                     open={this.state.open}
-                    onClose={this.handleDialogClose}
                     onCheck={this.handleCheck}
+                    onClose={this.handleDialogClose}
                     writer={this.props.data.writer}
                     _id={this.props.data._id}
                 />
@@ -150,6 +144,9 @@ Memo.defaultProps = {
     currentUser: '',
     onRemove: (id, index) => {
         console.error('onRemove function not defined');
+    },
+    onCheck: (password, _id, selectedValue) => {
+        console.error('onCheck function not defined');
     },
 
 }

@@ -12,12 +12,7 @@ const router = express.Router();
  *      2: EMPTY CONTENTS
  *      3: BAD PASSWORD
  */
-router.post('/', (req, res) => {
-
-    console.log(req.body);
-    
-    // CHECK USERNAME FORMAT
-    let usernameRegex = /^[a-z0-9]+$/;
+router.post('/', (req, res) => {  
 
     if (typeof req.body.username !== 'string' || req.body.username === "") {
         return res.status(400).json({
@@ -42,7 +37,7 @@ router.post('/', (req, res) => {
     }
 
     // CHECK PASS LENGTH
-    if (req.body.password.length < 4 || typeof req.body.password !== "string") {
+    if (typeof req.body.password !== "string" || req.body.password === "") {
         return res.status(400).json({
             error: "BAD PASSWORD",
             code: 3
@@ -239,6 +234,63 @@ router.get('/:listType/:id', (req, res) => {
             });
     }
 
+});
+
+/**
+ * CHECK PASSWORD: GET /api/memo/check/:id/:username/:password
+ *      1: INVALID ID
+ *      2: PASSWORD EMPTY
+ *      3: USER FIND FAILED
+ *      4: PASSWORD DISAGREEMENT
+ */
+router.post('/check', (req, res) => {
+    
+    let password = req.body.password;
+    let id = req.body.id;
+
+    console.log(password);
+    console.log(id);
+
+    //CHECK MEMO ID VALIDITY
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(400).json({
+            error: "INVALID ID",
+            code: 1
+        });
+    }
+
+    if (typeof password !== "string" || password == "" ) {
+        return res.status(401).json({
+            error: "PASSWORD EMPTY",
+            code: 2
+        });
+    }
+
+    // FIND THE USER BY USERNAME
+    //FIND MEMO
+    Memo.findById(id, (err, memo) => {
+        if (err) throw err;
+
+        // CHECK ACCOUNT EXISTANCY
+        if (!memo) {
+            return res.status(401).json({
+                error: "USER FIND FAILED",
+                code: 3
+            });
+        }
+
+        // CHECK WHETHER THE PASSWORD IS VALID
+        if (!memo.validateHash(password)) {
+            return res.status(401).json({
+                error: "PASSWORD DISAGREEMENT",
+                code: 4
+            });
+        }      
+        //RETURN SUCCESS
+        return res.json({
+            success: true
+        });
+    });
 });
 
 /**
