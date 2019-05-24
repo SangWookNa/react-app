@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 // Router
 //import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Header from './containers/Header';
-import Home from './containers/Home';
-import Video from './containers/Video';
-import Gallery from './containers/Gallery';
-import Memo from './containers/Memo';
-import GalleryGrid from './containers/GalleryGrid';
+import {
+        Header,
+        // Home,
+        // Video,
+        // Gallery,
+        // Memo,
+        // GalleryGrid,
+        ReactFileUpload
+      } from './containers';
+
 
 class App extends Component {
 
@@ -14,11 +18,13 @@ class App extends Component {
     return (
       <div style ={{flexGrow: 1}}>
         <Header />
-        <Home />
+        <ReactFileUpload/>
+        {/* <Home />
         <Video />
-        {/* <Gallery />        
-        <GalleryGrid /> */}
-        <Memo />
+        <Gallery />        
+        <GalleryGrid />
+        <Memo /> */}
+        
         
       </div>
       // <Router>

@@ -1,7 +1,14 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
+import { withStyles } from '@material-ui/core/styles';
 import Memo from './Memo';
 
+const styles = {
+    root: {
+        flexGrow: 1,
+        backgroundColor: '#F0F8FF'
+    }
+};
 
 class MemoList extends React.Component {
 
@@ -10,6 +17,7 @@ class MemoList extends React.Component {
         return update;
     }
     render() {
+        const { classes } = this.props
 
         const mapToComponents = (data) => {
             return data.map((memo, i) => {
@@ -25,7 +33,7 @@ class MemoList extends React.Component {
         };
 
         return (
-            <Grid container spacing={8}>
+            <Grid className={classes.root} container spacing={8}>
                 {mapToComponents(this.props.data)}
             </Grid>
 
@@ -46,4 +54,4 @@ MemoList.defaultProps = {
     },
 };
 
-export default MemoList;
+export default withStyles(styles)(MemoList);

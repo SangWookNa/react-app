@@ -20,6 +20,8 @@
     "react-dom": "^16.8.6",
     "react-grid-gallery": "^0.5.4",
     "react-image-gallery": "^0.8.16",
+    "react-image-upload": "^0.0.1",
+    "react-images-upload": "^1.2.6",
     "react-redux": "^7.0.3",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",

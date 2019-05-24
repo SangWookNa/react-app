@@ -13,7 +13,7 @@ import buildFormatter from 'react-timeago/lib/formatters/buildFormatter';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import blue from '@material-ui/core/colors/blue';
-import SimpleDialog from './SimpleDialog';
+import {SimpleDialog} from '../common';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
@@ -25,7 +25,10 @@ const styles = {
         minWidth: 275,
     },
     title: {
-        fontSize: 18,
+        fontSize: 20,
+    },
+    subheader: {
+        fontSize: 13,
     },
     pos: {
         marginBottom: 5,
@@ -44,11 +47,11 @@ const styles = {
 const SimpleDialogWrapped = withStyles(styles)(SimpleDialog);
 class Memo extends React.Component {
     state = {
-        anchorEl: null,
-        selectedValue: '',
-        contents: this.props.data.contents,
-        open: false,
-        editMode: false
+        //anchorEl: '',                     //드롭메뉴 활성화
+        selectedValue: '',                  //메모수정, 삭제 구분 값
+        contents: this.props.data.contents, //메모내용
+        open: false,                        //다이얼로그 팝업 오픈여부
+        editMode: false                     // 수정폼 오픈여부
     };
 
     handleClick = event => {
@@ -104,7 +107,13 @@ class Memo extends React.Component {
 
         console.log(_id);
         console.log(contents);
-        this.props.onEdit(_id, contents);
+        this.props.onEdit(_id, contents).then((result) => {            
+            if(result === 'SUCCESS'){
+                this.setState({
+                    editMode : false
+                })
+            }
+        });
     }
 
     handleChange = (e) => {
@@ -115,6 +124,7 @@ class Memo extends React.Component {
     }
 
     render() {
+        console.log('memo render');
         const { classes } = this.props;
         const { anchorEl } = this.state;
         const formatter = buildFormatter(koreaStrings)
@@ -122,7 +132,7 @@ class Memo extends React.Component {
         const memoView = (
             <div className={classes.root}>
                 <Card className={classes.card}>
-                    <CardHeader className={classes.header}
+                    <CardHeader className={classes.header} classes={{ title :classes.title , subheader: classes.subheader}}
                         action={
                             <IconButton aria-owns={anchorEl ? 'simple-menu' : undefined}
                                 aria-haspopup="true"
@@ -163,7 +173,7 @@ class Memo extends React.Component {
         const editView = (
             <div className={classes.root}>
                 <Card className={classes.card}>
-                    <CardHeader className={classes.header}
+                <CardHeader className={classes.header} classes={{ title :classes.title , subheader: classes.subheader}}
                         action={
                             <div>
                                 <Button onClick={this.handleEdit} color="primary">

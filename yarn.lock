@@ -9553,6 +9553,11 @@ react-image-gallery@^0.8.16:
     react-swipeable "^4.3.2"
     resize-observer-polyfill "^1.5.0"
 
+react-image-upload@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/react-image-upload/-/react-image-upload-0.0.1.tgz#691040bee33a865a06f379c9da79ea617209e9d0"
+  integrity sha1-aRBAvuM6hloG83nJ2nnqYXIJ6dA=
+
 react-images@^0.5.16:
   version "0.5.19"
   resolved "https://registry.yarnpkg.com/react-images/-/react-images-0.5.19.tgz#9339570029e065f9f28a19f03fdb5d9d5aa109d3"

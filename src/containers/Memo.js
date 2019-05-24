@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Write from '../components/Write';
-import MemoList from '../components/MemoList';
-import ToastBar from '../components/ToastBar';
+import Write from '../components/memo/Write';
+import { MemoList } from '../components/memo';
+import { ToastBar } from '../components/common';
 import { connect } from 'react-redux';
 import {
   memoPostRequest,
@@ -29,8 +29,6 @@ class Memo extends Component {
         })
       }
     );
-
-
   }
 
   handlePost = (username, password, contents) => {
@@ -159,36 +157,37 @@ class Memo extends Component {
   }
 
   handleEdit = (id, contents, index) => {
-    
+    this.setState({
+      message: '',
+      success: false
+    });
+
     return this.props.memoEditRequest(id, contents, index).then(
       () => {
         if (this.props.editStatus.status === 'SUCCESS') {
-          //Materialize.toast('Success!', 2000);
+          this.setState({
+            message: '글 수정이 완료되었습니다.',
+            success: true
+          });
+
+          return this.props.editStatus.status;
         } else {
           /*
                  ERROR CODES
                      1: INVALID ID,
                      2: EMPTY CONTENTS
-                     3: NOT LOGGED IN
-                     4: NO RESOURCE
-                     5: PERMISSION FAILURE
+                     3: NO RESOURCE
           */
-          // let errorMessage = [
-          //         'Something broke',
-          //         'Please write soemthing',
-          //         'You are not logged in',
-          //         'That memo does not exist anymore',
-          //         'You do not have permission'
-          //     ];
+            let errorMessage = [
+              'Something broke',
+              '글을 입력해주세요~',
+              '메모가 존재하지않습니다.',              
+            ];
 
-          // let error = this.props.editStatus.error;
-
-          // // NOTIFY ERROR
-          // let $toastContent = $('<span style="color: #FFB4BA">' + errorMessage[error - 1] + '</span>');
-          // Materialize.toast($toastContent, 2000);
-
-
-
+          this.setState({
+            message: errorMessage[this.props.editStatus.error - 1],
+            success: true
+          });
         }
       });
   }

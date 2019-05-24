@@ -1,5 +1,6 @@
 import express from 'express';
 import memo from './memo';
+import image from './image';
 
 const router = express.Router();
 
@@ -10,6 +11,7 @@ router.use('/*', (req, res, next) => {
 });
 
 router.use('/memo',memo);
+router.use('/image',image);
 
 
 
