@@ -3,7 +3,8 @@ import {
   Video,
   Gallery,
   Memo,
-  GalleryGrid,
+  ImageGridList
+  //GalleryGrid,
 } from './';
 
 class Home extends Component {
@@ -14,9 +15,11 @@ class Home extends Component {
       <div style ={{flexGrow: 1}}>        
         <Video/>
         <Gallery/>
-        <GalleryGrid/>
-        <Memo/>
+        <ImageGridList/>
+        {/* <GalleryGrid/> */}
+        <Memo/> 
       </div>
+      
     );
   }
 }

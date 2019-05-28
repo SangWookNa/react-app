@@ -5,6 +5,7 @@ import Video from './Video';
 import Gallery from './Gallery';
 import GalleryGrid from './GalleryGrid';
 import ReactFileUpload from './ReactFileUpload';
+import ImageGridList from './ImageGridList';
 
 
-export { Header, Home, Memo, Video, Gallery,GalleryGrid, ReactFileUpload };
+export { Header, Home, Memo, Video, Gallery,GalleryGrid, ReactFileUpload, ImageGridList };
