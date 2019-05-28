@@ -5,7 +5,11 @@ const initialState = {
     upload: {
         status: 'INIT',
         error: -1
-    },    
+    },
+    list: {
+        status: 'INIT',
+        data: [],
+    },
 };
 
 export default function image(state, action) {
@@ -33,7 +37,26 @@ export default function image(state, action) {
                     status: { $set: 'FAILURE' },
                     error: { $set: action.error }
                 }
-            });        
+            });
+        case types.IMAGE_LIST:
+            return update(state, {
+                list: {
+                    status: { $set: 'WAITING' },
+                }
+            });
+        case types.IMAGE_LIST_SUCCESS:
+            return update(state, {
+                list: {
+                    status: { $set: 'SUCCESS' },
+                    data: { $set: action.data },
+                }
+            })
+        case types.IMAGE_LIST_FAILURE:
+            return update(state, {
+                list: {
+                    status: { $set: 'FAILURE' }
+                }
+            });
         default:
             return state;
 

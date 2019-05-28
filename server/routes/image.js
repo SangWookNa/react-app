@@ -3,20 +3,21 @@ import express from 'express';
 import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
+import crypto from 'crypto';
 
 const router = express.Router();
 
 const upload = multer({
     storage: multer.diskStorage({
         destination: function (req, file, cb) {
-            const dir = 'uploads/' + req.body.test + '/';
+            const dir = 'public/uploads/' + req.body.test + '/';
             if (!fs.existsSync(dir)) {
                 fs.mkdir(dir, err => cb(err, dir))
             }
-            cb(null, 'uploads/' + req.body.test + '/');
+            cb(null, 'public/uploads/' + req.body.test + '/');
         },
         filename: function (req, file, cb) {
-            cb(null, new Date().valueOf() + path.extname(file.originalname));
+            cb(null, crypto.randomBytes(18).toString('hex') + path.extname(file.originalname));
         }
     }),
     limits: { fileSize: 5 * 1024 * 1024 }
@@ -40,6 +41,7 @@ router.post('/', (req, res, next) => {
 
     upload(req, res, function (err) {
         if (err) {
+            console.error(err);
             return res.status(500).json({
                 error: err
             });
@@ -69,18 +71,13 @@ router.post('/', (req, res, next) => {
 /**
  * READ ADDITIONAL (OLD/NEW) MEMO: GET /api/memo/:listType/:id
  */
-router.get('/:username/:id', (req, res) => {
-    //let username = req.params.username;
-    let username = 'test';
-
-    let objId = new mongoose.Types.ObjectId(req.params.id);
-
-
+router.get('/:username', (req, res) => {
+    let username = req.params.username;    
+    
     // GET IMAGE LIST
-    //Image.find({ username:   username  })
-    Image.find()
-        .sort({ _id: -1 })
-        .limit(6)
+    Image.find({ username:   username  })
+        .sort({ 'originalname': 1 })
+        //.limit(6)
         .exec((err, image) => {
             if (err) throw err;
             return res.json(image);
@@ -89,6 +86,3 @@ router.get('/:username/:id', (req, res) => {
 });
 
 export default router;
-
-
-

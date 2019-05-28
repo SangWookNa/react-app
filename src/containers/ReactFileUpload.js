@@ -17,18 +17,18 @@ class ReactFileUpload extends React.Component {
     }
     
     onDrop(picture) {
-        console.log(picture);
+        
         this.setState({
             pictures: picture
         });
     }
 
     handleUpload = () => {
-        const url = 'http://192.168.0.6:3000/api/image';
+        const url = '/api/image/';
         const formData = new FormData();
 
         let file = this.state.pictures;
-
+        console.log(file);
         formData.append('test', 'test');
         for(let i=0; i < file.length; i++ ){
             formData.append('file', file[i]);
@@ -38,7 +38,6 @@ class ReactFileUpload extends React.Component {
                 'content-type': 'multipart/form-data'
             },
             onUploadProgress: progressEvent => {
-                //alert('test: '+Math.round( (progressEvent.loaded * 100) / progressEvent.total ));
                 this.setState({
                     loadingFlag: true,
                     loadingValue: Math.round( (progressEvent.loaded * 100) / progressEvent.total )
@@ -48,15 +47,10 @@ class ReactFileUpload extends React.Component {
         return post(url, formData, config).then((result) => {
             
             if(result.data.success === true){
-                 this.setState({
-                     pictures : [],
-                     loadingFlag: false,
-                     loadingValue:0
-                 });
-                 formData.delete('file');
-                
+                alert('사진 등록이 완료되었습니다.');
+                this.props.history.push('/');
             }else{
-                alert(result.data.error);
+                alert('사진 등록을 실패하였습니다.');
             }
         }).catch((error)=>{
         // handle error

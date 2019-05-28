@@ -193,7 +193,7 @@ class Memo extends Component {
   }
 
   render() {
-    const write = (<ToastBar message={this.state.message} />);
+    const toastBar = (<ToastBar message={this.state.message} />);
 
     return (
       <div>
@@ -203,7 +203,7 @@ class Memo extends Component {
           onCheck={this.handleCheck}
           onEdit={this.handleEdit}
         />
-        {this.state.success === true ? write : undefined}
+        {this.state.success === true ? toastBar : undefined}
       </div>
 
     );

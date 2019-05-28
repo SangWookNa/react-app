@@ -1,25 +1,31 @@
 import ImageGallery from 'react-image-gallery';
 import React from 'react';
 import "react-image-gallery/styles/css/image-gallery.css";
+import { connect } from 'react-redux';
+import {
+  imageListRequest,
+} from '../actions/image';
 
 class Gallery extends React.Component {
 
+  componentDidMount() {
+
+    this.props.imageListRequest('test').then(
+      () => {
+        
+      }
+    );
+  }
+
   render() {
 
-    const images = [
-      {
-        original: 'http://lorempixel.com/1000/600/nature/1/',
-        thumbnail: 'http://lorempixel.com/250/150/nature/1/',
-      },
-      {
-        original: 'http://lorempixel.com/1000/600/nature/2/',
-        thumbnail: 'http://lorempixel.com/250/150/nature/2/'
-      },
-      {
-        original: 'http://lorempixel.com/1000/600/nature/3/',
-        thumbnail: 'http://lorempixel.com/250/150/nature/3/'
-      }
-    ]
+    const images = this.props.imageData.map((data) => {
+      let obj = {};
+      obj.original = data.path;
+      obj.thumbnail = data.path;
+
+      return obj;
+    });    
 
     return (
       <div style={{
@@ -35,4 +41,19 @@ class Gallery extends React.Component {
   }
 
 }
-export default Gallery;
+
+const mapStateToProps = (state) => {
+  return {
+    imageData: state.image.list.data,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    imageListRequest: (username) => {
+      return dispatch(imageListRequest(username))
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Gallery);
