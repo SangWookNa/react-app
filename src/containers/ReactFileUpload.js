@@ -8,29 +8,32 @@ class ReactFileUpload extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { pictures: [],
-                        loadingFlag: false,
-                        loadingValue: 0
-         
+        this.state = {
+            pictures: [],
+            loadingFlag: false,
+            loadingValue: 0
+
         };
         this.onDrop = this.onDrop.bind(this);
+        //this.handleUpload = this.handleUpload.bind(this);
     }
-    
+
     onDrop(picture) {
-        
+
         this.setState({
             pictures: picture
         });
     }
 
-    handleUpload = () => {
+    handleUpload = (e) => {
         const url = '/api/image/';
         const formData = new FormData();
 
         let file = this.state.pictures;
-        console.log(file);
-        formData.append('test', 'test');
-        for(let i=0; i < file.length; i++ ){
+        
+        formData.append('username', 'test');
+        formData.append('uploadFlag', e.target.id);
+        for (let i = 0; i < file.length; i++) {
             formData.append('file', file[i]);
         }
         const config = {
@@ -40,27 +43,27 @@ class ReactFileUpload extends React.Component {
             onUploadProgress: progressEvent => {
                 this.setState({
                     loadingFlag: true,
-                    loadingValue: Math.round( (progressEvent.loaded * 100) / progressEvent.total )
+                    loadingValue: Math.round((progressEvent.loaded * 100) / progressEvent.total)
                 })
             }
         }
         return post(url, formData, config).then((result) => {
-            
-            if(result.data.success === true){
+
+            if (result.data.success === true) {
                 alert('사진 등록이 완료되었습니다.');
                 this.props.history.push('/');
-            }else{
+            } else {
                 alert('사진 등록을 실패하였습니다.');
             }
-        }).catch((error)=>{
-        // handle error
-        alert(error.response.data.error.message);
-        
+        }).catch((error) => {
+            // handle error
+            alert(error.response.data.error.message);
+
         })
     }
 
     render() {
-        
+
         const loading = (<CircularProgress variant="static" value={this.state.loadingValue} />);
         return (
             <div>
@@ -71,12 +74,13 @@ class ReactFileUpload extends React.Component {
                     onChange={this.onDrop}
                     imgExtension={['.jpg', '.gif', '.png', '.gif', '.jpeg']}
                     maxFileSize={5242880}
-                    withPreview = {true}
+                    withPreview={true}
                 />
-                <Button onClick={this.handleUpload}>Upload</Button>
+                <Button  onClick={this.handleUpload} ><p id='gallery'>Upload(Gallery)</p></Button>
+                <Button  onClick={this.handleUpload} ><p id='grid'>Upload(Grid)</p></Button>
                 {this.state.loadingFlag === true ? loading : undefined}
             </div>
-            
+
         );
     }
 }

@@ -5,7 +5,9 @@ const Schema = mongoose.Schema;
 const Image = new Schema({
     filename: String,
     path: String,
+    thumbnailpath: String,
     originalname: String,
+    uploadflag: String,
     size : Number,
     date: {
         created: { type: Date, default: Date.now },

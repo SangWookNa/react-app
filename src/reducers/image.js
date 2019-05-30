@@ -6,7 +6,11 @@ const initialState = {
         status: 'INIT',
         error: -1
     },
-    list: {
+    galleryList: {
+        status: 'INIT',
+        data: [],
+    },
+    gridList: {
         status: 'INIT',
         data: [],
     },
@@ -38,22 +42,41 @@ export default function image(state, action) {
                     error: { $set: action.error }
                 }
             });
-        case types.IMAGE_LIST:
+        case types.IMAGE_GALLERY_LIST:
             return update(state, {
-                list: {
+                galleryList: {
                     status: { $set: 'WAITING' },
                 }
             });
-        case types.IMAGE_LIST_SUCCESS:
+        case types.IMAGE_GALLERY_LIST_SUCCESS:
             return update(state, {
-                list: {
+                galleryList: {
                     status: { $set: 'SUCCESS' },
                     data: { $set: action.data },
                 }
             })
-        case types.IMAGE_LIST_FAILURE:
+        case types.IMAGE_GALLERY_LIST_FAILURE:
             return update(state, {
-                list: {
+                galleryList: {
+                    status: { $set: 'FAILURE' }
+                }
+            });
+        case types.IMAGE_GRID_LIST:
+            return update(state, {
+                gridList: {
+                    status: { $set: 'WAITING' },
+                }
+            });
+        case types.IMAGE_GRID_LIST_SUCCESS:
+            return update(state, {
+                gridList: {
+                    status: { $set: 'SUCCESS' },
+                    data: { $set: action.data },
+                }
+            })
+        case types.IMAGE_GRID_LIST_FAILURE:
+            return update(state, {
+                gridList: {
                     status: { $set: 'FAILURE' }
                 }
             });

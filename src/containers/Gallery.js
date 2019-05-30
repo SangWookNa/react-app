@@ -3,14 +3,14 @@ import React from 'react';
 import "react-image-gallery/styles/css/image-gallery.css";
 import { connect } from 'react-redux';
 import {
-  imageListRequest,
+  imageGalleryListRequest,
 } from '../actions/image';
 
 class Gallery extends React.Component {
 
   componentDidMount() {
 
-    this.props.imageListRequest('test').then(
+    this.props.imageGalleryListRequest('test','gallery').then(
       () => {
         
       }
@@ -22,7 +22,7 @@ class Gallery extends React.Component {
     const images = this.props.imageData.map((data) => {
       let obj = {};
       obj.original = data.path;
-      obj.thumbnail = data.path;
+      obj.thumbnail = data.thumbnailpath;
 
       return obj;
     });    
@@ -44,14 +44,14 @@ class Gallery extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    imageData: state.image.list.data,
+    imageData: state.image.galleryList.data,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    imageListRequest: (username) => {
-      return dispatch(imageListRequest(username))
+    imageGalleryListRequest: (username,uploadFlag) => {
+      return dispatch(imageGalleryListRequest(username,uploadFlag))
     }
   };
 };
