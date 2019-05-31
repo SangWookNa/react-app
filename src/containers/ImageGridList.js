@@ -6,26 +6,6 @@ import {
   imageGridListRequest,
 } from '../actions/image';
 
-/* popout the browser and maximize to see more columns! -> */
-const photos = [
-  { src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599", width: 4, height: 3 },
-  { src: "https://source.unsplash.com/Dm-qxdynoEc/800x799", width: 1, height: 1 },
-  { src: "https://source.unsplash.com/qDkso9nvCg0/600x799", width: 3, height: 4 },
-  { src: "https://source.unsplash.com/iecJiKe_RNg/600x799", width: 3, height: 4 },
-  { src: "https://source.unsplash.com/epcsn8Ed8kY/600x799", width: 3, height: 4 },
-  { src: "https://source.unsplash.com/NQSWvyVRIJk/800x599", width: 4, height: 3 },
-  { src: "https://source.unsplash.com/zh7GEuORbUw/600x799", width: 3, height: 4 },
-  { src: "https://source.unsplash.com/PpOHJezOalU/800x599", width: 4, height: 3 },
-  { src: "https://source.unsplash.com/I1ASdgphUH4/800x599", width: 4, height: 3 },
-  { src: "https://source.unsplash.com/XiDA78wAZVw/600x799", width: 3, height: 4 },
-  { src: "https://source.unsplash.com/x8xJpClTvR0/800x599", width: 4, height: 3 },
-  { src: "https://source.unsplash.com/qGQNmBE7mYw/800x599", width: 4, height: 3 },
-  { src: "https://source.unsplash.com/NuO6iTBkHxE/800x599", width: 4, height: 3 },
-  { src: "https://source.unsplash.com/pF1ug8ysTtY/600x400", width: 4, height: 3 },
-  { src: "https://source.unsplash.com/A-fubu9QJxE/800x533", width: 4, height: 3 },
-  { src: "https://source.unsplash.com/5P91SF0zNsI/740x494", width: 4, height: 3 }
-];
-
 function columns(containerWidth) {
   let columns = 1;
   if (containerWidth >= 300) columns = 2;
@@ -37,7 +17,11 @@ function columns(containerWidth) {
 class ImageGridList extends React.Component {
   constructor() {
     super();
-    this.state = { currentImage: 0 };
+    this.state = {
+      currentImage: 0,
+      images: [{ src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599", width: 1, height: 1 }],
+      thumbnailImages: [{ src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599", width: 1, height: 1 }],
+    };
     this.closeLightbox = this.closeLightbox.bind(this);
     this.openLightbox = this.openLightbox.bind(this);
     this.gotoNext = this.gotoNext.bind(this);
@@ -48,6 +32,28 @@ class ImageGridList extends React.Component {
 
     this.props.imageGridListRequest('test', 'grid').then(
       () => {
+        const images = this.props.imageData.map((data) => {
+          let obj = {};
+          obj.src = data.path;
+          obj.width = 1;
+          obj.height = 1;
+          return obj;
+        });
+
+        const thumbnailImages = this.props.imageData.map((data) => {
+          let obj = {};
+          obj.src = data.thumbnailpath;
+          obj.width = 4;
+          obj.height = 4;
+          return obj;
+        });
+
+        if (images.length > 0) {
+          this.setState({
+            images: images,
+            thumbnailImages: thumbnailImages,
+          });
+        }
       }
     );
   }
@@ -74,24 +80,25 @@ class ImageGridList extends React.Component {
       currentImage: this.state.currentImage + 1,
     });
   }
+
   render() {
 
-    const images = this.props.imageData.map((data) => {
-      let obj = {};
-      obj.src = data.path;
-      obj.width = 4;
-      obj.height = 3;
-      console.log(obj);
-      return obj;
-    });
+    // const images = this.props.imageData.map((data) => {
+    //   let obj = {};
+    //   obj.src = data.path;
+    //   obj.width = 4;
+    //   obj.height = 3;
+    //   console.log(obj);
+    //   return obj;
+    // });
     // const images = [
     //   { src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599", width: 4, height: 3 },      
     // ];
-    
+
     return (
       <div>
-        <Gallery photos={images} onClick={this.openLightbox} margin={10} direction={"column"} columns={columns} />
-        <Lightbox images={photos}
+        <Gallery photos={this.state.thumbnailImages} onClick={this.openLightbox} margin={10} direction={"column"} columns={columns} />
+        <Lightbox images={this.state.images}
           onClose={this.closeLightbox}
           onClickPrev={this.gotoPrevious}
           onClickNext={this.gotoNext}

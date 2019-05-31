@@ -3,11 +3,14 @@ import path from 'path';
 import morgan from 'morgan'; // HTTP REQUEST LOGGER
 import bodyParser from 'body-parser'; // PARSE HTML BODY
 import mongoose from 'mongoose';
+//import winston from './config/winston'
+import winston from './config/winston'
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 app.use(morgan('dev'));
+app.use(morgan('combined', { stream: winston.stream }));
 app.use(bodyParser.json());
 
 /** setup routers & static directory */

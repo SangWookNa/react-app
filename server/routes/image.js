@@ -54,16 +54,16 @@ router.post('/', (req, res, next) => {
             let width = 0;
             let height = 0;
             if (req.body.uploadFlag === 'gallery') {
-                width = 200;
-                height = 200;
+                width = 300;
+                height = 300;
             } else if (req.body.uploadFlag === 'grid') {
-                width = 200;
-                height = 350;
+                width = 400;
+                height = 400;
             }
 
             //섬네일 생성
             gm(value.path)
-                .thumb(width, height, `${value.destination}/${path.basename(value.filename, path.extname(value.filename))}_thumb${path.extname(value.filename)}`, function (err) {
+                .thumb(width, height, `${value.destination}/${path.basename(value.filename, path.extname(value.filename))}_thumb${path.extname(value.filename)}`, (err) => {
                     if (err) {
                         console.error(err);
                         return res.status(500).json({
@@ -100,7 +100,6 @@ router.post('/', (req, res, next) => {
 router.get('/:username/:uploadFlag', (req, res) => {
     let username = req.params.username;
     let uploadFlag = req.params.uploadFlag;
-
     // GET IMAGE LIST
     Image.find({ username: username, uploadflag: uploadFlag })
         .sort({ 'originalname': 1 })
