@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 5
+    },
+    "auditLog": "D:\\workplace\\react-app\\server\\logs\\.688b6c5219539290e6784aa601ff82be34deb3ce-audit.json",
+    "files": [
+        {
+            "date": 1559546618506,
+            "name": "D:\\workplace\\react-app\\server\\logs\\app-2019-06-03.log",
+            "hash": "f89cafc26d092882416953fd29b65be2"
+        }
+    ]
+}

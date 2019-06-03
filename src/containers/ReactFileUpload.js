@@ -2,7 +2,7 @@ import React from 'react';
 import ImageUploader from 'react-images-upload';
 import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { post } from 'axios';
+import axios from 'axios';
 
 class ReactFileUpload extends React.Component {
 
@@ -47,19 +47,28 @@ class ReactFileUpload extends React.Component {
                 })
             }
         }
-        return post(url, formData, config).then((result) => {
 
-            if (result.data.success === true) {
-                alert('사진 등록이 완료되었습니다.');
-                this.props.history.push('/');
-            } else {
-                alert('사진 등록을 실패하였습니다.');
-            }
+        return axios.delete('/api/image/', formData, config).then((result) => {
+            
+            return axios.post(url, formData, config).then((result) => {
+
+                if (result.data.success === true) {
+                    alert('사진 등록이 완료되었습니다.');
+                    this.props.history.push('/');
+                } else {
+                    alert('사진 등록을 실패하였습니다.');
+                }
+            }).catch((error) => {
+                // handle error
+                alert(error.response.data.error.message);
+    
+            })
         }).catch((error) => {
             // handle error
             alert(error.response.data.error.message);
 
         })
+        
     }
 
     render() {

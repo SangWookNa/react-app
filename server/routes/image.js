@@ -5,6 +5,7 @@ import path from 'path';
 import fs from 'fs';
 import crypto from 'crypto';
 import gm from 'gm';
+import winston from '../config/winston'
 
 const router = express.Router();
 
@@ -42,12 +43,12 @@ router.post('/', (req, res, next) => {
 
     upload(req, res, function (err) {
         if (err) {
-            console.error(err);
+            winston.error(err);
             return res.status(500).json({
                 error: err
             });
         }
-        console.log(req.files);
+        winston.log('info', JSON.stringify(req.files));
 
         //섬네일 크기세팅
         for (let value of req.files) {
@@ -65,12 +66,11 @@ router.post('/', (req, res, next) => {
             gm(value.path)
                 .thumb(width, height, `${value.destination}/${path.basename(value.filename, path.extname(value.filename))}_thumb${path.extname(value.filename)}`, (err) => {
                     if (err) {
-                        console.error(err);
+                        winston.error(err);
                         return res.status(500).json({
                             error: err
                         });
                     }
-
                 });
 
             // CREATE NEW MEMO
@@ -109,6 +109,40 @@ router.get('/:username/:uploadFlag', (req, res) => {
             return res.json(image);
         });
 
+});
+
+/**
+ * DELETE IMAGE : DELETE /api/image/
+ * ERROR CODE
+ */
+router.delete('/', (req, res) => {
+    console.log('#################################');
+    // CHECK MEMO ID VALIDITY
+    // if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+    //     return res.status(400).json({
+    //         error: "INVALID ID",
+    //         code: 1
+    //     });
+    // }
+
+    // //FIND MEMO AND CHECK FOR WRITER
+    // Memo.findById(req.params.id, (err, memo) => {
+    //     if (err) throw err;
+
+    //     if (!memo) {
+    //         return res.status(404).json({
+    //             error: "NO RESOURCE",
+    //             code: 3
+    //         });
+    //     }        
+
+    //     //REMOVE THE MEMO
+    //     Memo.remove({ _id: req.params.id }, err => {
+    //         if (err) throw err;
+    //         res.json({ success: true });
+    //     });
+    // });
+    res.json({ success: true });
 });
 
 export default router;
