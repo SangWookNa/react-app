@@ -83,18 +83,6 @@ class ImageGridList extends React.Component {
 
   render() {
 
-    // const images = this.props.imageData.map((data) => {
-    //   let obj = {};
-    //   obj.src = data.path;
-    //   obj.width = 4;
-    //   obj.height = 3;
-    //   console.log(obj);
-    //   return obj;
-    // });
-    // const images = [
-    //   { src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599", width: 4, height: 3 },      
-    // ];
-
     return (
       <div>
         <Gallery photos={this.state.thumbnailImages} onClick={this.openLightbox} margin={10} direction={"column"} columns={columns} />

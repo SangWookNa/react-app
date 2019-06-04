@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {  
-  Video,
+  VideoPlayer,
   Gallery,
   Memo,
   ImageGridList
-  //GalleryGrid,
 } from './';
 
 class Home extends Component {
@@ -13,10 +12,9 @@ class Home extends Component {
 
     return (
       <div style ={{flexGrow: 1}}>        
-        <Video/>
+        <VideoPlayer/>
         <Gallery/>
         <ImageGridList/>
-        {/* <GalleryGrid/> */}
         <Memo/> 
       </div>
       

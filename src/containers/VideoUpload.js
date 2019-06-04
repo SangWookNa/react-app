@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import axios from 'axios';
 
-class ReactFileUpload extends React.Component {
+class VideoUpload extends React.Component {
 
     constructor(props) {
         super(props);
@@ -48,7 +48,7 @@ class ReactFileUpload extends React.Component {
             }
         }
 
-        return axios.delete('/api/image/', formData, config).then((result) => {
+        return axios.delete(`/api/image/${'test'}/${e.target.id}`, formData, config).then((result) => {
             
             return axios.post(url, formData, config).then((result) => {
 
@@ -60,12 +60,13 @@ class ReactFileUpload extends React.Component {
                 }
             }).catch((error) => {
                 // handle error
-                alert(error.response.data.error.message);
+                alert(error);
     
             })
+
         }).catch((error) => {
             // handle error
-            alert(error.response.data.error.message);
+            alert(error);
 
         })
         
@@ -76,15 +77,7 @@ class ReactFileUpload extends React.Component {
         const loading = (<CircularProgress variant="static" value={this.state.loadingValue} />);
         return (
             <div>
-                <ImageUploader
-                    label=''
-                    withIcon={false}
-                    buttonText='upload'
-                    onChange={this.onDrop}
-                    imgExtension={['.jpg', '.gif', '.png', '.gif', '.jpeg']}
-                    maxFileSize={5242880}
-                    withPreview={true}
-                />
+                <input type="file" class="form-control" />
                 <Button  onClick={this.handleUpload} ><p id='gallery'>Upload(Gallery)</p></Button>
                 <Button  onClick={this.handleUpload} ><p id='grid'>Upload(Grid)</p></Button>
                 {this.state.loadingFlag === true ? loading : undefined}
@@ -94,4 +87,4 @@ class ReactFileUpload extends React.Component {
     }
 }
 
-export default ReactFileUpload;
+export default VideoUpload;

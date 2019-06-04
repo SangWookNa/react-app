@@ -39,9 +39,11 @@ class Header extends Component {
             <Typography variant="h6" color="inherit" className={classes.grow}>
               <NavLink to="/" className={classes.item}>News</NavLink>
           </Typography>
-            <Button color="inherit" >Login</Button>
+            <Button color="inherit" >
+              <NavLink to="/VideoUpload" className={classes.item}>Video</NavLink>
+              </Button>
             <Button color="inherit">
-              <NavLink to="/ImageUpload" className={classes.item}>Upload</NavLink>
+              <NavLink to="/ImageUpload" className={classes.item}>Image</NavLink>
             </Button>
           </Toolbar>
         </AppBar>

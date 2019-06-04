@@ -115,33 +115,33 @@ router.get('/:username/:uploadFlag', (req, res) => {
  * DELETE IMAGE : DELETE /api/image/
  * ERROR CODE
  */
-router.delete('/', (req, res) => {
-    console.log('#################################');
-    // CHECK MEMO ID VALIDITY
-    // if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-    //     return res.status(400).json({
-    //         error: "INVALID ID",
-    //         code: 1
-    //     });
-    // }
+router.delete('/:username/:uploadFlag', (req, res) => {
+    let username = req.params.username;
+    let uploadFlag = req.params.uploadFlag;
+    
+    Image.find({ username: username, uploadflag: uploadFlag })
+        .sort({ _id: -1 })
+        .exec((err, memos) => {
+            if (err) throw err;
+           
+           //REMOVE THE IMAGE
+           Image.remove({ username: username, uploadflag: uploadFlag })
+           .exec((err) => {
+            if (err) throw err;
 
-    // //FIND MEMO AND CHECK FOR WRITER
-    // Memo.findById(req.params.id, (err, memo) => {
-    //     if (err) throw err;
-
-    //     if (!memo) {
-    //         return res.status(404).json({
-    //             error: "NO RESOURCE",
-    //             code: 3
-    //         });
-    //     }        
-
-    //     //REMOVE THE MEMO
-    //     Memo.remove({ _id: req.params.id }, err => {
-    //         if (err) throw err;
-    //         res.json({ success: true });
-    //     });
-    // });
+            for (let value of memos) {
+                fs.unlink(value.path, (err) => {
+                   if (err) throw err;
+                   winston.log('info',`${value.path} was deleted`);
+                });
+                fs.unlink(value.thumbnailpath, (err) => {
+                    if (err) throw err;
+                    winston.log('info',`${value.thumbnailpath} was deleted`);
+                 });
+                
+               }
+           })
+        });
     res.json({ success: true });
 });
 

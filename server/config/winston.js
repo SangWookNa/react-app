@@ -6,7 +6,7 @@ import 'winston-daily-rotate-file';
 const options = {
   file: {
     level: 'debug',
-    filename: `${appRoot}/server/logs/app-%DATE%.log`,
+    filename: `${appRoot}/logs/app-%DATE%.log`,
     handleExceptions: true,
     json: false,
     maxsize: 5242880, // 5MB

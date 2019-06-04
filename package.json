@@ -29,6 +29,7 @@
     "react-image-upload": "^0.0.1",
     "react-images-upload": "^1.2.6",
     "react-photo-gallery": "^7.0.2",
+    "react-player": "^1.11.0",
     "react-redux": "^7.0.3",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
