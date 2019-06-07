@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {  
-  VideoPlayer,
+  Video,
   Gallery,
   Memo,
   ImageGridList
@@ -12,7 +12,7 @@ class Home extends Component {
 
     return (
       <div style ={{flexGrow: 1}}>        
-        <VideoPlayer/>
+        <Video/>
         <Gallery/>
         <ImageGridList/>
         <Memo/> 

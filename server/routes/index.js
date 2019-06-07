@@ -1,6 +1,7 @@
 import express from 'express';
 import memo from './memo';
 import image from './image';
+import video from './video';
 import winston from '../config/winston'
 
 const router = express.Router();
@@ -16,6 +17,7 @@ router.use('/*', (req, res, next) => {
 
 router.use('/memo', memo);
 router.use('/image', image);
+router.use('/video', video);
 
 
 

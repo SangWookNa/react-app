@@ -9,4 +9,4 @@ import ImageGridList from './ImageGridList';
 import VideoPlayer from './VideoPlayer';
 
 
-export { Header, Home, Memo, Video, Gallery, ImageUpload, VideoUpload, ImageGridList, VideoPlayer };
+export { Header, Home, Memo, Video, Gallery, ImageUpload, VideoUpload, ImageGridList };
