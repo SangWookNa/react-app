@@ -6,7 +6,7 @@ import 'winston-mongodb';
 // define the custom settings for each transport (file, console)
 const options = {
   file: {
-    level: 'debug',
+    level: 'info',
     filename: `${appRoot}/server/logs/app.log`,
     handleExceptions: true,
     json: true,
