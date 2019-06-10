@@ -17,6 +17,7 @@ class App extends Component {
         <div>
           <Header />
           <Route exact path="/" component={Home} />
+          <Route exact path="/:username/:invitee" component={Home} />
           <Route path="/VideoUpload" component={VideoUpload} />
           <Route path="/ImageUpload" component={ImageUpload} />
         </div>

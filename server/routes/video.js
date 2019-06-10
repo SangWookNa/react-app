@@ -40,7 +40,7 @@ const upload = multer({
  *      3: BAD PASSWORD
  */
 // router.post('/', (req, res, next) => {
-    
+
 //     upload(req, res, function (err) {
 //         if (err) {
 //             winston.error(err);
@@ -73,7 +73,7 @@ const upload = multer({
 //     })
 // });
 router.post('/', (req, res, next) => {
-    
+
     upload(req, res, function (err) {
         if (err) {
             winston.error(err);
@@ -83,13 +83,8 @@ router.post('/', (req, res, next) => {
         }
         console.log(req.files);
         winston.log('info', JSON.stringify(req.files));
-        
-        let filePath ='';
-        for (let value of req.files) {
-            filePath = value.path;
 
-        }
-        return res.json({ filePath : filePath });
+        return res.json({ files: req.files });
     })
 });
 
@@ -111,7 +106,7 @@ router.get('/:username/:uploadFlag', (req, res) => {
 });
 
 /**
- * DELETE Video : DELETE /api/image/
+ * DELETE Video : DELETE /api/image/delete
  * ERROR CODE
  */
 router.post('/delete', (req, res) => {
@@ -138,6 +133,43 @@ router.post('/delete', (req, res) => {
                     }
                 })
         });
+    res.json({ success: true });
+});
+
+/**
+ * SAVE Video : SAVE /api/image/save
+ * ERROR CODE
+ */
+router.post('/save', (req, res) => {
+
+    let username = req.body.username;
+    let invitee = req.body.invitee;
+    let files = req.body.files;
+
+    console.log(req.body);
+
+    fs.rename(files[0].path, `public/uploads/video/${req.body.username}/${files[0].filename}`, function (err) {
+        if (err) throw err;
+
+        winston.log('info', `FILE MOVE : ${files[0].path} --> public/uploads/video/${req.body.username}/${files[0].filename}`);
+    });
+
+    // CREATE NEW MEMO
+    let video = new Video({
+        filename: files[0].filename,
+        path: files[0].path,
+        originalname: files[0].originalname,
+        size: files[0].size,
+        username: username,
+        enterid: username,
+        invitee: invitee
+    });
+
+    // SAVE IN DATABASE
+    video.save(err => {
+        if (err) throw err;
+    });
+
     res.json({ success: true });
 });
 

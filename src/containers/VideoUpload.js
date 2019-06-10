@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
+import VideoPlayer from '../components/video/VideoPlayer';
 import axios from 'axios';
 
 const styles = theme => ({
@@ -24,7 +25,8 @@ class VideoUpload extends React.Component {
             loadingValue: 0,
             videoFiles: [{ name: "영상을 업로드 해주세요" }],
             invitee: '',
-            filePath : ''
+            files: [],
+            filePath: ''
         };
     }
 
@@ -83,13 +85,7 @@ class VideoUpload extends React.Component {
     //     })
 
     // }
-
-    handleUpload = (e) => {
-        
-
-    }
-
-    onDrop = (selectorFiles) => {       
+    onDrop = (selectorFiles) => {
 
         const url = '/api/video/';
         const formData = new FormData();
@@ -115,9 +111,10 @@ class VideoUpload extends React.Component {
         }
 
         return axios.post(url, formData, config).then((result) => {
-            alert(result.data.filePath);
+            console.log(result.data.files);
             this.setState({
-                filePath : result.data.filePath,
+                files: result.data.files,
+                filePath: result.data.files[0].path,
                 loadingFlag: false,
             })
 
@@ -128,10 +125,49 @@ class VideoUpload extends React.Component {
         })
     }
 
+    handleUpload = (e) => {
+        const url = '/api/video/save';
+
+        let invitee = this.state.invitee;
+        let username = 'test';
+        let files = this.state.files;
+
+        if (invitee === '' || invitee === null || invitee === undefined) {
+            alert("초대받는분의 이름을 입력해주세요~");
+            return;
+        }
+        if (files.length === 0) {
+            alert("영상을 등록해주세요~");
+            return;
+        }
+
+        return axios.post(url, { username, invitee, files }).then((result) => {
+
+            if (result.data.success === true) {
+                alert('영상 등록이 완료되었습니다.');
+                this.props.history.push('/');
+            } else {
+                alert('영상 등록을 실패하였습니다.');
+            }
+
+        }).catch((error) => {
+            // handle error
+            alert(error);
+
+        })
+
+    }
+
+
+
     render() {
 
         const loading = (<CircularProgress variant="static" value={this.state.loadingValue} />);
         const { classes } = this.props;
+
+        const videoPlayer = (
+            <VideoPlayer url={this.state.filePath} />
+        );
         return (
             <div>
                 <input
@@ -149,6 +185,8 @@ class VideoUpload extends React.Component {
                         Upload
                     </Button>
                 </label>
+
+                {this.state.files.length > 0 ? videoPlayer : undefined}
                 <TextField
                     id="invitee"
                     name="invitee"

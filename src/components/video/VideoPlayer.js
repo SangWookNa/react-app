@@ -28,6 +28,7 @@ class VideoPlayer extends Component {
             className = {classes.reactPlayer}
             url={this.props.url}
             playing
+            controls
             width='100%'
             height='90%' />
         </div>
