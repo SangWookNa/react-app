@@ -1,0 +1,370 @@
+2019-06-19 10:44:18 info: Check out the app at http://localhost:4000
+2019-06-19 10:44:19 info: Connected to mongodb server
+2019-06-19 10:45:23 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 10:45:23 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 10:45:23 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 10:45:23 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:45:23 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:45:56 info: PARAM {"0":"video/"} | BODY {}
+2019-06-19 10:45:56 info: [{"fieldname":"file","originalname":"IMG_1500.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"public/uploads/video/temp/","filename":"448ae929eb86180ae28adf11093b9caaef7f.MOV","path":"public\\uploads\\video\\temp\\448ae929eb86180ae28adf11093b9caaef7f.MOV","size":1964841}]
+2019-06-19 10:45:56 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:45:56 +0000] "POST /api/video/ HTTP/1.1" 200 301 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:45:56 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:45:56 +0000] "GET /public/uploads/video/temp/448ae929eb86180ae28adf11093b9caaef7f.MOV HTTP/1.1" 206 1964841 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:46:02 info: PARAM {"0":"video/save"} | BODY {"username":"test","invitee":"12345","files":[{"fieldname":"file","originalname":"IMG_1500.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"public/uploads/video/temp/","filename":"448ae929eb86180ae28adf11093b9caaef7f.MOV","path":"public\\uploads\\video\\temp\\448ae929eb86180ae28adf11093b9caaef7f.MOV","size":1964841}]}
+2019-06-19 10:46:02 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:46:02 +0000] "POST /api/video/save HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:46:02 info: FILE MOVE : public\uploads\video\temp\448ae929eb86180ae28adf11093b9caaef7f.MOV --> public/uploads/video/test/448ae929eb86180ae28adf11093b9caaef7f.MOV
+2019-06-19 10:46:04 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 10:46:04 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 10:46:04 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 10:46:04 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:46:04 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:47:34 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:47:34 +0000] "GET /public/uploads/test/78a5063d982ccb48d91b1a44ad4e7e9c83f3.jpg HTTP/1.1" 200 73872 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:47:34 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:47:34 +0000] "GET /public/uploads/test/f8fbe50788a4d533540b43122504cfd301c6.jpg HTTP/1.1" 200 176581 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:47:34 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:47:34 +0000] "GET /public/uploads/test/73c97a3bc6a1abac6d760395001d93cfd38e.jpg HTTP/1.1" 200 137083 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:47:35 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:47:35 +0000] "GET /public/uploads/test/f966ee05e8c86090f59779e9d1348ab0f1f9.jpg HTTP/1.1" 200 142139 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:49:33 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 10:49:33 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 10:49:33 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 10:49:33 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:49:33 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:49:38 info: PARAM {"0":"video/"} | BODY {}
+2019-06-19 10:49:38 info: [{"fieldname":"file","originalname":"IMG_1500.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"public/uploads/video/temp/","filename":"33555ef8c55d66138562596bd3fa683b5721.MOV","path":"public\\uploads\\video\\temp\\33555ef8c55d66138562596bd3fa683b5721.MOV","size":1964841}]
+2019-06-19 10:49:38 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:49:38 +0000] "POST /api/video/ HTTP/1.1" 200 301 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:49:38 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:49:38 +0000] "GET /public/uploads/video/temp/33555ef8c55d66138562596bd3fa683b5721.MOV HTTP/1.1" 206 1964841 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:49:43 info: PARAM {"0":"video/save"} | BODY {"username":"test","invitee":"1234","files":[{"fieldname":"file","originalname":"IMG_1500.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"public/uploads/video/temp/","filename":"33555ef8c55d66138562596bd3fa683b5721.MOV","path":"public\\uploads\\video\\temp\\33555ef8c55d66138562596bd3fa683b5721.MOV","size":1964841}]}
+2019-06-19 10:49:43 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:49:43 +0000] "POST /api/video/save HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:49:43 info: FILE MOVE : public\uploads\video\temp\33555ef8c55d66138562596bd3fa683b5721.MOV --> public/uploads/video/test/33555ef8c55d66138562596bd3fa683b5721.MOV
+2019-06-19 10:50:25 info: PARAM {"0":"video/"} | BODY {}
+2019-06-19 10:50:25 info: [{"fieldname":"file","originalname":"IMG_1500.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"public/uploads/video/temp/","filename":"4f611a923e22d77df7cdf71f4a0917b01a97.MOV","path":"public\\uploads\\video\\temp\\4f611a923e22d77df7cdf71f4a0917b01a97.MOV","size":1964841}]
+2019-06-19 10:50:25 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:25 +0000] "POST /api/video/ HTTP/1.1" 200 301 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:25 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:25 +0000] "GET /public/uploads/video/temp/4f611a923e22d77df7cdf71f4a0917b01a97.MOV HTTP/1.1" 206 1964841 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:29 info: PARAM {"0":"video/save"} | BODY {"username":"test","invitee":"1234","files":[{"fieldname":"file","originalname":"IMG_1500.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"public/uploads/video/temp/","filename":"4f611a923e22d77df7cdf71f4a0917b01a97.MOV","path":"public\\uploads\\video\\temp\\4f611a923e22d77df7cdf71f4a0917b01a97.MOV","size":1964841}]}
+2019-06-19 10:50:29 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:29 +0000] "POST /api/video/save HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:29 info: FILE MOVE : public\uploads\video\temp\4f611a923e22d77df7cdf71f4a0917b01a97.MOV --> public/uploads/video/test/4f611a923e22d77df7cdf71f4a0917b01a97.MOV
+2019-06-19 10:50:31 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 10:50:31 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 10:50:31 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 10:50:31 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:31 +0000] "GET /test/1/2/public/video/react_video-fast.mp4 HTTP/1.1" 404 181 "http://localhost:3000/test/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:31 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:31 +0000] "GET /test/1/2/public/uploads/test/f966ee05e8c86090f59779e9d1348ab0f1f9_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/test/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:31 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:31 +0000] "GET /test/1/2/public/uploads/test/680b3ac8470a55d37993488e6d243e44b60b_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/test/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:31 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:31 +0000] "GET /test/1/2/public/uploads/test/78a5063d982ccb48d91b1a44ad4e7e9c83f3_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/test/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:31 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:31 +0000] "GET /test/1/2/public/uploads/test/73c97a3bc6a1abac6d760395001d93cfd38e_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/test/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:31 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:31 +0000] "GET /test/1/2/public/uploads/test/f8fbe50788a4d533540b43122504cfd301c6_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/test/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:31 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:31 +0000] "GET /test/1/2/public/uploads/test/3bcd418eb0ef1d0cb26a9870a6936b4bef6c_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/test/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:32 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:32 +0000] "GET /test/1/2/public/uploads/test/b90fcb754c65d470c99d0d35e999964c3bb4_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/test/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:32 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:32 +0000] "GET /test/1/2/public/uploads/test/e7eac8efbbadf324f07c4efa2434a0427639_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/test/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:32 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:32 +0000] "GET /test/1/2/public/uploads/test/2af3dfe16f80bed09fd98e585aa06aa9cf4e_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/test/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:32 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:32 +0000] "GET /test/1/2/public/uploads/test/8bdcdc2124b840ea97b86aac8b1e21245f1f_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/test/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:32 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:32 +0000] "GET /test/1/2/public/uploads/test/5c5a0693bc99bd80f8615f618bfce4518e0e_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/test/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:32 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:32 +0000] "GET /test/1/2/public/uploads/test/114622c88f4fc185b14bbc1f617730d28992_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/test/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:32 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:32 +0000] "GET /test/1/2/public/uploads/test/592927866673534b5b7499911d7eadf03cba_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/test/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:32 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:32 +0000] "GET /test/1/2/public/uploads/test/cea77a534dbba36132f21343b2cfcdd5fb25_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/test/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:32 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:32 +0000] "GET /test/1/2/public/uploads/test/699ea39d85a4fbb8e430e89c5eccc681079e_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/test/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:50:32 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:50:32 +0000] "GET /test/1/2/public/uploads/test/7809db99d1a146b791509bd56654f05015a9_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/test/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:58:37 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 10:58:37 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 10:58:37 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 10:58:37 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:58:37 +0000] "GET /Wall/1/2/public/video/react_video-fast.mp4 HTTP/1.1" 404 181 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:58:37 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:58:37 +0000] "GET /Wall/1/2/public/uploads/test/f966ee05e8c86090f59779e9d1348ab0f1f9_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:58:37 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:58:37 +0000] "GET /Wall/1/2/public/uploads/test/680b3ac8470a55d37993488e6d243e44b60b_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:58:38 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:58:38 +0000] "GET /Wall/1/2/public/uploads/test/78a5063d982ccb48d91b1a44ad4e7e9c83f3_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:58:38 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:58:38 +0000] "GET /Wall/1/2/public/uploads/test/73c97a3bc6a1abac6d760395001d93cfd38e_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:58:38 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:58:38 +0000] "GET /Wall/1/2/public/uploads/test/f8fbe50788a4d533540b43122504cfd301c6_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:58:38 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:58:38 +0000] "GET /Wall/1/2/public/uploads/test/3bcd418eb0ef1d0cb26a9870a6936b4bef6c_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:58:38 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:58:38 +0000] "GET /Wall/1/2/public/uploads/test/b90fcb754c65d470c99d0d35e999964c3bb4_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:58:38 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:58:38 +0000] "GET /Wall/1/2/public/uploads/test/e7eac8efbbadf324f07c4efa2434a0427639_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:58:38 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:58:38 +0000] "GET /Wall/1/2/public/uploads/test/2af3dfe16f80bed09fd98e585aa06aa9cf4e_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:58:38 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:58:38 +0000] "GET /Wall/1/2/public/uploads/test/5c5a0693bc99bd80f8615f618bfce4518e0e_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:58:38 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:58:38 +0000] "GET /Wall/1/2/public/uploads/test/114622c88f4fc185b14bbc1f617730d28992_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:58:38 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:58:38 +0000] "GET /Wall/1/2/public/uploads/test/592927866673534b5b7499911d7eadf03cba_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:58:38 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:58:38 +0000] "GET /Wall/1/2/public/uploads/test/8bdcdc2124b840ea97b86aac8b1e21245f1f_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:58:38 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:58:38 +0000] "GET /Wall/1/2/public/uploads/test/cea77a534dbba36132f21343b2cfcdd5fb25_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:58:38 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:58:38 +0000] "GET /Wall/1/2/public/uploads/test/699ea39d85a4fbb8e430e89c5eccc681079e_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 10:58:38 info: ::ffff:127.0.0.1 - - [19/Jun/2019:01:58:38 +0000] "GET /Wall/1/2/public/uploads/test/7809db99d1a146b791509bd56654f05015a9_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 11:24:11 info: Check out the app at http://localhost:4000
+2019-06-19 11:24:12 info: Connected to mongodb server
+2019-06-19 13:25:29 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:25:29 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:25:29 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:25:29 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:25:29 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:25:34 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:25:34 +0000] "GET /public/uploads/test/680b3ac8470a55d37993488e6d243e44b60b.jpg HTTP/1.1" - - "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:25:34 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:25:34 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:25:34 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:25:34 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:25:34 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:26:57 info: Check out the app at http://localhost:4000
+2019-06-19 13:26:58 info: Connected to mongodb server
+2019-06-19 13:27:11 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:27:11 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:27:11 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:27:11 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:27:11 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:28:31 info: Check out the app at http://localhost:4000
+2019-06-19 13:28:32 info: Connected to mongodb server
+2019-06-19 13:28:48 info: Check out the app at http://localhost:4000
+2019-06-19 13:28:49 info: Connected to mongodb server
+2019-06-19 13:29:18 info: Check out the app at http://localhost:4000
+2019-06-19 13:29:19 info: Connected to mongodb server
+2019-06-19 13:29:45 info: Check out the app at http://localhost:4000
+2019-06-19 13:29:46 info: Connected to mongodb server
+2019-06-19 13:32:31 info: Check out the app at http://localhost:4000
+2019-06-19 13:32:32 info: Connected to mongodb server
+2019-06-19 13:34:31 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:34:31 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:34:31 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:34:31 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:34:31 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:34:36 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:34:36 +0000] "GET /public/uploads/test/680b3ac8470a55d37993488e6d243e44b60b.jpg HTTP/1.1" 200 98271 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:34:44 info: PARAM {"0":"video/"} | BODY {}
+2019-06-19 13:34:44 info: [{"fieldname":"file","originalname":"IMG_1500.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"public/uploads/video/temp/","filename":"db46415431f4c2fd3dd599df119cf122a204.MOV","path":"public\\uploads\\video\\temp\\db46415431f4c2fd3dd599df119cf122a204.MOV","size":1964841}]
+2019-06-19 13:34:44 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:34:44 +0000] "POST /api/video/ HTTP/1.1" 200 301 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:34:44 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:34:44 +0000] "GET /public/uploads/video/temp/db46415431f4c2fd3dd599df119cf122a204.MOV HTTP/1.1" 206 1964841 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:34:47 info: PARAM {"0":"video/save"} | BODY {"username":"test","invitee":"12345","files":[{"fieldname":"file","originalname":"IMG_1500.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"public/uploads/video/temp/","filename":"db46415431f4c2fd3dd599df119cf122a204.MOV","path":"public\\uploads\\video\\temp\\db46415431f4c2fd3dd599df119cf122a204.MOV","size":1964841}]}
+2019-06-19 13:34:47 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:34:47 +0000] "POST /api/video/save HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:34:47 info: FILE MOVE : public\uploads\video\temp\db46415431f4c2fd3dd599df119cf122a204.MOV --> public/uploads/video/test/db46415431f4c2fd3dd599df119cf122a204.MOV
+2019-06-19 13:35:30 info: PARAM {"0":"video/"} | BODY {}
+2019-06-19 13:35:30 info: [{"fieldname":"file","originalname":"IMG_1500.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"public/uploads/video/temp/","filename":"db6da8e5893a00255938fcd5bbbd29d81df5.MOV","path":"public\\uploads\\video\\temp\\db6da8e5893a00255938fcd5bbbd29d81df5.MOV","size":1964841}]
+2019-06-19 13:35:30 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:35:30 +0000] "POST /api/video/ HTTP/1.1" 200 301 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:35:30 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:35:30 +0000] "GET /public/uploads/video/temp/db6da8e5893a00255938fcd5bbbd29d81df5.MOV HTTP/1.1" 206 1964841 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:35:36 info: PARAM {"0":"video/save"} | BODY {"username":"test","invitee":"12345","files":[{"fieldname":"file","originalname":"IMG_1500.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"public/uploads/video/temp/","filename":"db6da8e5893a00255938fcd5bbbd29d81df5.MOV","path":"public\\uploads\\video\\temp\\db6da8e5893a00255938fcd5bbbd29d81df5.MOV","size":1964841}]}
+2019-06-19 13:35:36 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:35:36 +0000] "POST /api/video/save HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:35:36 info: FILE MOVE : public\uploads\video\temp\db6da8e5893a00255938fcd5bbbd29d81df5.MOV --> public/uploads/video/test/db6da8e5893a00255938fcd5bbbd29d81df5.MOV
+2019-06-19 13:35:59 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:35:59 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:35:59 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:35:59 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:35:59 +0000] "GET /Wall/1/2/public/video/react_video-fast.mp4 HTTP/1.1" 404 181 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:35:59 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:35:59 +0000] "GET /Wall/1/2/public/uploads/test/f966ee05e8c86090f59779e9d1348ab0f1f9_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:35:59 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:35:59 +0000] "GET /Wall/1/2/public/uploads/test/680b3ac8470a55d37993488e6d243e44b60b_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:35:59 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:35:59 +0000] "GET /Wall/1/2/public/uploads/test/78a5063d982ccb48d91b1a44ad4e7e9c83f3_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:35:59 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:35:59 +0000] "GET /Wall/1/2/public/uploads/test/73c97a3bc6a1abac6d760395001d93cfd38e_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:35:59 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:35:59 +0000] "GET /Wall/1/2/public/uploads/test/f8fbe50788a4d533540b43122504cfd301c6_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:35:59 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:35:59 +0000] "GET /Wall/1/2/public/uploads/test/3bcd418eb0ef1d0cb26a9870a6936b4bef6c_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:35:59 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:35:59 +0000] "GET /Wall/1/2/public/uploads/test/b90fcb754c65d470c99d0d35e999964c3bb4_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:35:59 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:35:59 +0000] "GET /Wall/1/2/public/uploads/test/e7eac8efbbadf324f07c4efa2434a0427639_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:35:59 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:35:59 +0000] "GET /Wall/1/2/public/uploads/test/2af3dfe16f80bed09fd98e585aa06aa9cf4e_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:35:59 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:35:59 +0000] "GET /Wall/1/2/public/uploads/test/5c5a0693bc99bd80f8615f618bfce4518e0e_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:35:59 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:35:59 +0000] "GET /Wall/1/2/public/uploads/test/114622c88f4fc185b14bbc1f617730d28992_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:00 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:00 +0000] "GET /Wall/1/2/public/uploads/test/8bdcdc2124b840ea97b86aac8b1e21245f1f_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:00 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:00 +0000] "GET /Wall/1/2/public/uploads/test/592927866673534b5b7499911d7eadf03cba_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:00 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:00 +0000] "GET /Wall/1/2/public/uploads/test/cea77a534dbba36132f21343b2cfcdd5fb25_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:00 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:00 +0000] "GET /Wall/1/2/public/uploads/test/699ea39d85a4fbb8e430e89c5eccc681079e_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:00 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:00 +0000] "GET /Wall/1/2/public/uploads/test/7809db99d1a146b791509bd56654f05015a9_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:04 info: PARAM {"0":"video/"} | BODY {}
+2019-06-19 13:36:04 info: [{"fieldname":"file","originalname":"IMG_1500.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"public/uploads/video/temp/","filename":"18db4e5140e14cb99e97831c611fc71df388.MOV","path":"public\\uploads\\video\\temp\\18db4e5140e14cb99e97831c611fc71df388.MOV","size":1964841}]
+2019-06-19 13:36:04 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:04 +0000] "POST /api/video/ HTTP/1.1" 200 301 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:05 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:05 +0000] "GET /public/uploads/video/temp/18db4e5140e14cb99e97831c611fc71df388.MOV HTTP/1.1" 206 1964841 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:13 info: PARAM {"0":"video/save"} | BODY {"username":"test","invitee":"12345","files":[{"fieldname":"file","originalname":"IMG_1500.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"public/uploads/video/temp/","filename":"18db4e5140e14cb99e97831c611fc71df388.MOV","path":"public\\uploads\\video\\temp\\18db4e5140e14cb99e97831c611fc71df388.MOV","size":1964841}]}
+2019-06-19 13:36:13 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:13 +0000] "POST /api/video/save HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:13 info: FILE MOVE : public\uploads\video\temp\18db4e5140e14cb99e97831c611fc71df388.MOV --> public/uploads/video/test/18db4e5140e14cb99e97831c611fc71df388.MOV
+2019-06-19 13:36:14 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:36:14 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:36:14 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:36:14 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:14 +0000] "GET /Wall/1/2/public/video/react_video-fast.mp4 HTTP/1.1" 404 181 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:14 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:14 +0000] "GET /Wall/1/2/public/uploads/test/f966ee05e8c86090f59779e9d1348ab0f1f9_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:14 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:14 +0000] "GET /Wall/1/2/public/uploads/test/680b3ac8470a55d37993488e6d243e44b60b_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:14 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:14 +0000] "GET /Wall/1/2/public/uploads/test/78a5063d982ccb48d91b1a44ad4e7e9c83f3_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:14 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:14 +0000] "GET /Wall/1/2/public/uploads/test/73c97a3bc6a1abac6d760395001d93cfd38e_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:14 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:14 +0000] "GET /Wall/1/2/public/uploads/test/f8fbe50788a4d533540b43122504cfd301c6_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:14 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:14 +0000] "GET /Wall/1/2/public/uploads/test/3bcd418eb0ef1d0cb26a9870a6936b4bef6c_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:14 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:14 +0000] "GET /Wall/1/2/public/uploads/test/b90fcb754c65d470c99d0d35e999964c3bb4_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:15 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:15 +0000] "GET /Wall/1/2/public/uploads/test/e7eac8efbbadf324f07c4efa2434a0427639_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:15 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:15 +0000] "GET /Wall/1/2/public/uploads/test/2af3dfe16f80bed09fd98e585aa06aa9cf4e_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:15 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:15 +0000] "GET /Wall/1/2/public/uploads/test/5c5a0693bc99bd80f8615f618bfce4518e0e_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:15 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:15 +0000] "GET /Wall/1/2/public/uploads/test/114622c88f4fc185b14bbc1f617730d28992_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:15 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:15 +0000] "GET /Wall/1/2/public/uploads/test/8bdcdc2124b840ea97b86aac8b1e21245f1f_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:15 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:15 +0000] "GET /Wall/1/2/public/uploads/test/592927866673534b5b7499911d7eadf03cba_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:15 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:15 +0000] "GET /Wall/1/2/public/uploads/test/cea77a534dbba36132f21343b2cfcdd5fb25_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:15 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:15 +0000] "GET /Wall/1/2/public/uploads/test/699ea39d85a4fbb8e430e89c5eccc681079e_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:15 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:15 +0000] "GET /Wall/1/2/public/uploads/test/7809db99d1a146b791509bd56654f05015a9_thumb.jpg HTTP/1.1" 404 214 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:48 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:36:48 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:36:48 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:36:48 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:48 +0000] "GET /Wall/1/2/public/video/react_video-fast.mp4 HTTP/1.1" 404 181 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:36:58 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:36:58 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:36:58 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:36:58 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:36:58 +0000] "GET /Wall/1/2/public/video/react_video-fast.mp4 HTTP/1.1" 404 181 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:37:04 info: PARAM {"0":"video/"} | BODY {}
+2019-06-19 13:37:04 info: [{"fieldname":"file","originalname":"IMG_1500.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"public/uploads/video/temp/","filename":"57bdf494bb8d2b7ba3029433bd39f1485b54.MOV","path":"public\\uploads\\video\\temp\\57bdf494bb8d2b7ba3029433bd39f1485b54.MOV","size":1964841}]
+2019-06-19 13:37:04 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:37:04 +0000] "POST /api/video/ HTTP/1.1" 200 301 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:37:04 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:37:04 +0000] "GET /public/uploads/video/temp/57bdf494bb8d2b7ba3029433bd39f1485b54.MOV HTTP/1.1" 206 1964841 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:37:06 info: PARAM {"0":"video/save"} | BODY {"username":"test","invitee":"12345","files":[{"fieldname":"file","originalname":"IMG_1500.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"public/uploads/video/temp/","filename":"57bdf494bb8d2b7ba3029433bd39f1485b54.MOV","path":"public\\uploads\\video\\temp\\57bdf494bb8d2b7ba3029433bd39f1485b54.MOV","size":1964841}]}
+2019-06-19 13:37:06 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:37:06 +0000] "POST /api/video/save HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:37:06 info: FILE MOVE : public\uploads\video\temp\57bdf494bb8d2b7ba3029433bd39f1485b54.MOV --> public/uploads/video/test/57bdf494bb8d2b7ba3029433bd39f1485b54.MOV
+2019-06-19 13:37:07 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:37:08 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:37:08 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:37:08 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:37:08 +0000] "GET /Wall/1/2/public/video/react_video-fast.mp4 HTTP/1.1" 404 181 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:39:31 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:39:31 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:39:31 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:39:31 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:39:31 +0000] "GET /Wall/1/2/public/video/react_video-fast.mp4 HTTP/1.1" 404 181 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:39:39 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:39:39 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:39:39 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:39:39 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:39:39 +0000] "GET /Wall/1/2/public/video/react_video-fast.mp4 HTTP/1.1" 404 181 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:40:09 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:40:09 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:40:09 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:40:09 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:40:09 +0000] "GET /Wall/1/2/public/video/react_video-fast.mp4 HTTP/1.1" 404 181 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:43:16 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:43:16 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:43:16 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:43:16 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:43:16 +0000] "GET /Wall/1/2/public/video/react_video-fast.mp4 HTTP/1.1" 404 181 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:43:22 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:43:22 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:43:22 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:43:22 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:43:22 +0000] "GET /Wall/1/2/public/video/react_video-fast.mp4 HTTP/1.1" 404 181 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:43:44 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:43:44 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:43:44 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:43:44 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:43:44 +0000] "GET /Wall/1/2/public/video/react_video-fast.mp4 HTTP/1.1" 404 181 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:44:35 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:44:35 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:44:35 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:44:35 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:44:35 +0000] "GET /Wall/1/2/public/video/react_video-fast.mp4 HTTP/1.1" 404 181 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:44:41 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:44:41 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:44:41 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:44:41 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:44:41 +0000] "GET /Wall/1/2/public/video/react_video-fast.mp4 HTTP/1.1" 404 181 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:44:44 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:44:44 +0000] "GET /public/uploads/test/680b3ac8470a55d37993488e6d243e44b60b.jpg HTTP/1.1" 200 98271 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:46:58 info: PARAM {"0":"video/"} | BODY {}
+2019-06-19 13:46:58 info: [{"fieldname":"file","originalname":"IMG_1500.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"public/uploads/video/temp/","filename":"99ad1023981591a45323ed84bacafa3d017b.MOV","path":"public\\uploads\\video\\temp\\99ad1023981591a45323ed84bacafa3d017b.MOV","size":1964841}]
+2019-06-19 13:46:58 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:46:58 +0000] "POST /api/video/ HTTP/1.1" 200 301 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:46:58 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:46:58 +0000] "GET /public/uploads/video/temp/99ad1023981591a45323ed84bacafa3d017b.MOV HTTP/1.1" 206 1964841 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:47:17 info: PARAM {"0":"video/save"} | BODY {"username":"test","invitee":"12345","files":[{"fieldname":"file","originalname":"IMG_1500.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"public/uploads/video/temp/","filename":"99ad1023981591a45323ed84bacafa3d017b.MOV","path":"public\\uploads\\video\\temp\\99ad1023981591a45323ed84bacafa3d017b.MOV","size":1964841}]}
+2019-06-19 13:47:17 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:47:17 +0000] "POST /api/video/save HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:47:17 info: FILE MOVE : public\uploads\video\temp\99ad1023981591a45323ed84bacafa3d017b.MOV --> public/uploads/video/test/99ad1023981591a45323ed84bacafa3d017b.MOV
+2019-06-19 13:47:18 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:47:19 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:47:19 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:47:19 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:47:19 +0000] "GET /Wall/1/2/public/video/react_video-fast.mp4 HTTP/1.1" 404 181 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:47:37 info: PARAM {"0":"video/"} | BODY {}
+2019-06-19 13:47:37 info: [{"fieldname":"file","originalname":"IMG_1500.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"public/uploads/video/temp/","filename":"9919a4d76ca4680c74b34ae37baf75a30f94.MOV","path":"public\\uploads\\video\\temp\\9919a4d76ca4680c74b34ae37baf75a30f94.MOV","size":1964841}]
+2019-06-19 13:47:37 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:47:37 +0000] "POST /api/video/ HTTP/1.1" 200 301 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:47:38 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:47:38 +0000] "GET /public/uploads/video/temp/9919a4d76ca4680c74b34ae37baf75a30f94.MOV HTTP/1.1" 206 1964841 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:47:40 info: PARAM {"0":"video/save"} | BODY {"username":"test","invitee":"44444","files":[{"fieldname":"file","originalname":"IMG_1500.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"public/uploads/video/temp/","filename":"9919a4d76ca4680c74b34ae37baf75a30f94.MOV","path":"public\\uploads\\video\\temp\\9919a4d76ca4680c74b34ae37baf75a30f94.MOV","size":1964841}]}
+2019-06-19 13:47:40 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:47:40 +0000] "POST /api/video/save HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 13:47:40 info: FILE MOVE : public\uploads\video\temp\9919a4d76ca4680c74b34ae37baf75a30f94.MOV --> public/uploads/video/test/9919a4d76ca4680c74b34ae37baf75a30f94.MOV
+2019-06-19 13:47:41 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-19 13:47:41 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-19 13:47:41 info: PARAM {"0":"memo"} | BODY {}
+2019-06-19 13:47:41 info: ::ffff:127.0.0.1 - - [19/Jun/2019:04:47:41 +0000] "GET /Wall/1/2/public/video/react_video-fast.mp4 HTTP/1.1" 404 181 "http://localhost:3000/Wall/1/2/3" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-19 18:15:41 info: Check out the app at http://localhost:4000
+2019-06-19 18:15:42 info: Connected to mongodb server

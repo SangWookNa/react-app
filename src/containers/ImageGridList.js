@@ -29,12 +29,12 @@ class ImageGridList extends React.Component {
   }
 
   componentDidMount() {
-
+    let origin   = window.location.origin;
     this.props.imageGridListRequest('test', 'grid').then(
       () => {
         const images = this.props.imageData.map((data) => {
           let obj = {};
-          obj.src = data.path;
+          obj.src = `${origin}/${data.path}`;
           obj.width = 1;
           obj.height = 1;
           return obj;
@@ -42,7 +42,7 @@ class ImageGridList extends React.Component {
 
         const thumbnailImages = this.props.imageData.map((data) => {
           let obj = {};
-          obj.src = data.thumbnailpath;
+          obj.src = `${origin}/${data.thumbnailpath}`;
           obj.width = 4;
           obj.height = 4;
           return obj;

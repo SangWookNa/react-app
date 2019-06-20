@@ -36,55 +36,6 @@ class VideoUpload extends React.Component {
         });
     }
 
-    // handleUpload = (e) => {
-    //     const url = '/api/video/';
-    //     const formData = new FormData();
-    //     let file = this.state.videoFiles;
-
-    //     formData.append('username', 'test');
-    //     formData.append('invitee', this.state.invitee);
-    //     for (let i = 0; i < file.length; i++) {
-    //         console.log(file[i]);
-    //         formData.append('file', file[i]);
-    //     }
-
-    //     const config = {
-    //         headers: {
-    //             'content-type': 'multipart/form-data'
-    //         },
-    //         onUploadProgress: progressEvent => {
-    //             this.setState({
-    //                 loadingFlag: true,
-    //                 loadingValue: Math.round((progressEvent.loaded * 100) / progressEvent.total)
-    //             })
-    //         }
-    //     }
-    //     let username = 'test';
-    //     let invitee = this.state.invitee;
-
-    //     return axios.post(`${url}delete`, { username, invitee }).then((result) => {
-
-    //         return axios.post(url, formData, config).then((result) => {
-
-    //             if (result.data.success === true) {
-    //                 alert('영상 등록이 완료되었습니다.');
-    //                 this.props.history.push('/');
-    //             } else {
-    //                 alert('영상 등록을 실패하였습니다.');
-    //             }
-    //         }).catch((error) => {
-    //             // handle error
-    //             alert(error);
-
-    //         })
-
-    //     }).catch((error) => {
-    //         // handle error
-    //         alert(error);
-
-    //     })
-
-    // }
     onDrop = (selectorFiles) => {
 
         const url = '/api/video/';
@@ -94,7 +45,6 @@ class VideoUpload extends React.Component {
         formData.append('username', 'test');
         formData.append('invitee', this.state.invitee);
         for (let i = 0; i < file.length; i++) {
-            console.log(file[i]);
             formData.append('file', file[i]);
         }
 
@@ -111,7 +61,7 @@ class VideoUpload extends React.Component {
         }
 
         return axios.post(url, formData, config).then((result) => {
-            console.log(result.data.files);
+            
             this.setState({
                 files: result.data.files,
                 filePath: result.data.files[0].path,
@@ -121,7 +71,6 @@ class VideoUpload extends React.Component {
         }).catch((error) => {
             // handle error
             alert(error);
-
         })
     }
 
@@ -132,23 +81,29 @@ class VideoUpload extends React.Component {
         let username = 'test';
         let files = this.state.files;
 
-        if (invitee === '' || invitee === null || invitee === undefined) {
-            alert("초대받는분의 이름을 입력해주세요~");
-            return;
-        }
+        // if (invitee === '' || invitee === null || invitee === undefined) {
+        //     alert("초대받는분의 이름을 입력해주세요~");
+        //     return;
+        // }
         if (files.length === 0) {
             alert("영상을 등록해주세요~");
             return;
         }
 
         return axios.post(url, { username, invitee, files }).then((result) => {
-
-            if (result.data.success === true) {
-                alert('영상 등록이 완료되었습니다.');
-                this.props.history.push('/');
-            } else {
-                alert('영상 등록을 실패하였습니다.');
+            
+            alert('영상 등록이 완료되었습니다.');
+            let username = result.data.result.username;
+            let invitee = result.data.result.invitee;
+            let seq = result.data.result._id;
+            
+            if(invitee === '' || invitee === null || invitee === undefined || invitee === 'undefined') {
+                this.props.history.push(`/${username}/${seq}`);
+            }else{
+                this.props.history.push(`/${username}/${invitee}/${seq}`);
             }
+            
+                           
 
         }).catch((error) => {
             // handle error
