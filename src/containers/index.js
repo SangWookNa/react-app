@@ -7,5 +7,6 @@ import ImageUpload from './ImageUpload';
 import VideoUpload from './VideoUpload';
 import ImageGridList from './ImageGridList';
 import Test from './Test';
+import Test2 from './Test2';
 
-export { Header, Home, Memo, Video, Gallery, ImageUpload, VideoUpload, ImageGridList, Test };
+export { Header, Home, Memo, Video, Gallery, ImageUpload, VideoUpload, ImageGridList, Test, Test2 };

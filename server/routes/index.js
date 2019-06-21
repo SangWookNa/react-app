@@ -2,8 +2,8 @@ import express from 'express';
 import memo from './memo';
 import image from './image';
 import video from './video';
+import kakao from './kakao';
 import winston from '../config/winston';
-import url from 'url';
 
 const router = express.Router();
 
@@ -19,7 +19,7 @@ router.use('/*', (req, res, next) => {
 router.use('/memo', memo);
 router.use('/image', image);
 router.use('/video', video);
-
+router.use('/kakao', kakao);
 
 
 export default router;

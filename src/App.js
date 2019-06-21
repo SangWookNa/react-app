@@ -6,6 +6,8 @@ import {
         Home,        
         ImageUpload,
         VideoUpload,
+        Test,
+        Test2,
       } from './containers';
 
 
@@ -17,6 +19,7 @@ class App extends Component {
         <div>
           <Header />
           <Route exact path="/" component={Home} />
+          <Route exact path="/oauth" component={Test2} />
           <Route exact path="/:username/:seq" component={Home} />
           <Route exact path="/:username/:invitee/:seq" component={Home} />
           <Route path="/VideoUpload" component={VideoUpload} />

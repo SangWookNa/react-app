@@ -1,0 +1,51 @@
+2019-06-21 14:30:00 info: Check out the app at http://localhost:4000
+2019-06-21 14:30:01 info: Connected to mongodb server
+2019-06-21 15:50:22 info: ::ffff:127.0.0.1 - - [21/Jun/2019:06:50:22 +0000] "GET /0b84abe4448ad4777243.hot-update.json HTTP/1.1" 404 175 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-21 16:07:28 info: Check out the app at http://localhost:4000
+2019-06-21 16:07:29 info: Connected to mongodb server
+2019-06-21 16:07:59 info: Check out the app at http://localhost:4000
+2019-06-21 16:08:00 info: Connected to mongodb server
+2019-06-21 16:08:55 info: Check out the app at http://localhost:4000
+2019-06-21 16:08:56 info: Connected to mongodb server
+2019-06-21 16:09:27 info: Check out the app at http://localhost:4000
+2019-06-21 16:09:28 info: Connected to mongodb server
+2019-06-21 16:18:54 info: Check out the app at http://localhost:4000
+2019-06-21 16:18:55 info: Connected to mongodb server
+2019-06-21 16:19:30 info: Check out the app at http://localhost:4000
+2019-06-21 16:19:31 info: Connected to mongodb server
+2019-06-21 16:19:35 info: Check out the app at http://localhost:4000
+2019-06-21 16:19:38 info: Check out the app at http://localhost:4000
+2019-06-21 16:19:39 info: Connected to mongodb server
+2019-06-21 16:20:32 info: Check out the app at http://localhost:4000
+2019-06-21 16:20:33 info: Connected to mongodb server
+2019-06-21 16:20:51 info: Check out the app at http://localhost:4000
+2019-06-21 16:20:52 info: Connected to mongodb server
+2019-06-21 16:21:00 info: Check out the app at http://localhost:4000
+2019-06-21 16:21:01 info: Connected to mongodb server
+2019-06-21 17:09:24 error: uncaughtException: router is not defined
+ReferenceError: router is not defined
+    at Object.<anonymous> (D:/workplace/react-app/server/main.js:38:1)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at loader (D:\workplace\react-app\node_modules\babel-register\lib\node.js:144:5)
+    at Object.require.extensions.(anonymous function) [as .js] (D:\workplace\react-app\node_modules\babel-register\lib\node.js:154:7)
+    at Module.load (internal/modules/cjs/loader.js:600:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:754:12)
+    at Object.<anonymous> (D:\workplace\react-app\node_modules\babel-cli\lib\_babel-node.js:154:22)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:754:12)
+    at startup (internal/bootstrap/node.js:283:19)
+2019-06-21 17:09:38 info: Check out the app at http://localhost:4000
+2019-06-21 17:09:39 info: Connected to mongodb server
+2019-06-21 17:09:48 info: ::1 - - [21/Jun/2019:08:09:48 +0000] "GET /12345 HTTP/1.1" 200 23 "-" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-21 17:09:48 info: ::1 - - [21/Jun/2019:08:09:48 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:4000/12345" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-21 17:10:38 info: Check out the app at http://localhost:4000
+2019-06-21 17:10:39 info: Connected to mongodb server
