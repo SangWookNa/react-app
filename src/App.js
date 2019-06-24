@@ -6,7 +6,7 @@ import {
         Home,        
         ImageUpload,
         VideoUpload,
-        Test,
+        Main,
         Test2,
       } from './containers';
 
@@ -18,8 +18,8 @@ class App extends Component {
       <Router>
         <div>
           <Header />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/oauth" component={Test2} />
+          <Route exact path="/" component={Main} />
+          <Route exact path="/oauth" component={Main} />
           <Route exact path="/:username/:seq" component={Home} />
           <Route exact path="/:username/:invitee/:seq" component={Home} />
           <Route path="/VideoUpload" component={VideoUpload} />

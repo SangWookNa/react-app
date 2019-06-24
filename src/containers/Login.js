@@ -34,7 +34,7 @@ class Login extends React.Component {
             direction='row'
             justify='center'
           >
-            <img src={logo} alt="Logo" onClick={this.handleUpload} />
+            <a><img src={logo} alt="Logo" onClick={this.handleUpload}/></a>
           </Grid>
         </Grid>
       </Grid>

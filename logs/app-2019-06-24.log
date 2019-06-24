@@ -228,3 +228,49 @@
 2019-06-24 18:05:51 info: PARAM {"0":"kakao/test"} | BODY {"token":"Xmon75vPLQMuT8R0JWhdUqp0BFLLX6PbPmHD1worDKgAAAFriLvtQw"}
 2019-06-24 18:05:54 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:05:54 +0000] "POST /api/kakao/test HTTP/1.1" - - "http://localhost:3000/oauth?code=HV-35JEdv_TIVZDTJAaKH21TDwZHcAG_7OysRmJZm4C4wrXOe3DeJtHzec5kwZmiMuZo7gorDNIAAAFriLvr1A" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
 
+2019-06-24 18:28:23 info: Check out the app at http://localhost:4000
+2019-06-24 18:28:24 info: Connected to mongodb server
+2019-06-24 18:38:50 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-24 18:38:50 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-24 18:38:50 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:50 +0000] "GET /api/image/test/gallery HTTP/1.1" 200 2 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:38:50 info: PARAM {"0":"memo"} | BODY {}
+2019-06-24 18:38:51 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:51 +0000] "GET /api/image/test/grid HTTP/1.1" 200 7661 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:38:51 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:51 +0000] "GET /api/memo HTTP/1.1" 200 1016 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:38:51 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:51 +0000] "GET /public/uploads/test/f966ee05e8c86090f59779e9d1348ab0f1f9_thumb.jpg HTTP/1.1" 200 22088 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:38:51 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:51 +0000] "GET /public/uploads/test/680b3ac8470a55d37993488e6d243e44b60b_thumb.jpg HTTP/1.1" 200 14659 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:38:51 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:51 +0000] "GET /public/uploads/test/78a5063d982ccb48d91b1a44ad4e7e9c83f3_thumb.jpg HTTP/1.1" 200 14475 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:38:52 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:52 +0000] "GET /public/uploads/test/73c97a3bc6a1abac6d760395001d93cfd38e_thumb.jpg HTTP/1.1" 200 20338 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:38:52 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:52 +0000] "GET /public/uploads/test/f8fbe50788a4d533540b43122504cfd301c6_thumb.jpg HTTP/1.1" 200 27156 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:38:52 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:52 +0000] "GET /public/uploads/test/3bcd418eb0ef1d0cb26a9870a6936b4bef6c_thumb.jpg HTTP/1.1" 200 36765 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:38:52 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:52 +0000] "GET /public/uploads/test/b90fcb754c65d470c99d0d35e999964c3bb4_thumb.jpg HTTP/1.1" 200 41365 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:38:52 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:52 +0000] "GET /public/uploads/test/e7eac8efbbadf324f07c4efa2434a0427639_thumb.jpg HTTP/1.1" 200 26895 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:38:52 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:52 +0000] "GET /public/uploads/test/2af3dfe16f80bed09fd98e585aa06aa9cf4e_thumb.jpg HTTP/1.1" 200 17881 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:38:52 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:52 +0000] "GET /public/uploads/test/5c5a0693bc99bd80f8615f618bfce4518e0e_thumb.jpg HTTP/1.1" 200 17524 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:38:52 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:52 +0000] "GET /public/uploads/test/114622c88f4fc185b14bbc1f617730d28992_thumb.jpg HTTP/1.1" 200 30256 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:38:52 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:52 +0000] "GET /public/uploads/test/8bdcdc2124b840ea97b86aac8b1e21245f1f_thumb.jpg HTTP/1.1" 200 25084 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:38:52 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:52 +0000] "GET /public/uploads/test/cea77a534dbba36132f21343b2cfcdd5fb25_thumb.jpg HTTP/1.1" 200 21646 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:38:52 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:52 +0000] "GET /public/uploads/test/592927866673534b5b7499911d7eadf03cba_thumb.jpg HTTP/1.1" 200 24701 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:38:52 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:52 +0000] "GET /public/uploads/test/699ea39d85a4fbb8e430e89c5eccc681079e_thumb.jpg HTTP/1.1" 200 21386 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:38:52 info: ::ffff:127.0.0.1 - - [24/Jun/2019:09:38:52 +0000] "GET /public/uploads/test/7809db99d1a146b791509bd56654f05015a9_thumb.jpg HTTP/1.1" 200 26359 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-24 18:39:17 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-24 18:39:17 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-24 18:39:17 info: PARAM {"0":"memo"} | BODY {}

@@ -14,11 +14,10 @@ class Home extends Component {
 
     return (
       <div style ={{flexGrow: 1}}>  
-       <Login/>  
-       {/* {this.props.match.url !== '/' ? video : undefined}  
-        <Gallery/>
-        <ImageGridList/>
-        <Memo/>  */}
+      {this.props.match.url !== '/' ? video : undefined}  
+      <Gallery/>
+      <ImageGridList/>
+      <Memo/>
       </div>
       
     );
