@@ -4,7 +4,7 @@ import {
   Gallery,
   Memo,
   ImageGridList,
-  Test
+  Login
 } from './';
 
 class Home extends Component {
@@ -14,7 +14,7 @@ class Home extends Component {
 
     return (
       <div style ={{flexGrow: 1}}>  
-       <Test/>  
+       <Login/>  
        {/* {this.props.match.url !== '/' ? video : undefined}  
         <Gallery/>
         <ImageGridList/>
