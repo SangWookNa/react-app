@@ -1,9 +1,10 @@
 import memo from './memo';
 import image from './image';
 import video from './video';
+import kakao from './kakao';
 
 import { combineReducers } from 'redux';
 
 export default combineReducers({
-    memo, image, video
+    memo, image, video, kakao
 });
