@@ -239,3 +239,25 @@ SyntaxError: D:/workplace/react-app/server/routes/kakao.js: Unexpected token, ex
 2019-06-26 16:26:03 info: PARAM {"0":"kakao/test"} | BODY {"token":"VabSUINSy5BP32Z5xVn7-2_tGeoMlEPcNxCYiQo9dZwAAAFrkq1XCw"}
 2019-06-26 16:26:03 info: ::ffff:127.0.0.1 - - [26/Jun/2019:07:26:03 +0000] "POST /api/kakao/test HTTP/1.1" 200 17 "http://localhost:3000/oauth?code=CMBOa9TAHFs5Da7CiedBPLd8qEg6U-XXKmOULiV1Uq1ysOGLteOh4ww0lQyYGb0Q4bVj7wopyV8AAAFrkq1Vtg" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
 
+2019-06-26 18:05:43 info: Check out the app at http://localhost:4000
+2019-06-26 18:05:44 info: Connected to mongodb server
+2019-06-26 18:06:04 info: PARAM {"0":"kakao/"} | BODY {"code":"CaEEc434O0vRxOP1q452EoRbLCDgPwm-IPWv7EKoSgZxhK_OL9igrGZp-blXCWkppnvSaAo9dJkAAAFrkwjsXA"}
+2019-06-26 18:06:04 info: ::ffff:127.0.0.1 - - [26/Jun/2019:09:06:04 +0000] "POST /api/kakao/ HTTP/1.1" 200 240 "http://localhost:3000/oauth?code=CaEEc434O0vRxOP1q452EoRbLCDgPwm-IPWv7EKoSgZxhK_OL9igrGZp-blXCWkppnvSaAo9dJkAAAFrkwjsXA" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
+
+2019-06-26 18:06:10 info: PARAM {"0":"kakao/test"} | BODY {"token":"brlInE7GBcl0DPEx0aOh_sB_qsKhJseSbhp_OAo9dRsAAAFrkwjt4w"}
+2019-06-26 18:06:10 info: ::ffff:127.0.0.1 - - [26/Jun/2019:09:06:10 +0000] "POST /api/kakao/test HTTP/1.1" 200 17 "http://localhost:3000/oauth?code=CaEEc434O0vRxOP1q452EoRbLCDgPwm-IPWv7EKoSgZxhK_OL9igrGZp-blXCWkppnvSaAo9dJkAAAFrkwjsXA" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
+
+2019-06-26 18:06:23 info: PARAM {"0":"kakao/"} | BODY {"code":"4QPQoWQe0te65_GFpr5AOii2B6I4uMm4b_2TgXl3oZI57x3WgPvBPVfnOxdH8oPAaK7u0Ao9dJkAAAFrkwk1hA"}
+2019-06-26 18:06:23 info: ::ffff:127.0.0.1 - - [26/Jun/2019:09:06:23 +0000] "POST /api/kakao/ HTTP/1.1" 200 240 "http://localhost:3000/oauth?code=4QPQoWQe0te65_GFpr5AOii2B6I4uMm4b_2TgXl3oZI57x3WgPvBPVfnOxdH8oPAaK7u0Ao9dJkAAAFrkwk1hA" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
+
+2019-06-26 18:06:32 info: PARAM {"0":"kakao/"} | BODY {"code":"TWad_dfJpmUMYZsJpHuZNvGjLxWVx-Hu7wp0MM2ZF4swjdxBKQtDLsIGxM6khCp_xwTfugo9dJkAAAFrkwlbFA"}
+2019-06-26 18:06:32 info: ::ffff:127.0.0.1 - - [26/Jun/2019:09:06:32 +0000] "POST /api/kakao/ HTTP/1.1" 200 240 "http://localhost:3000/oauth?code=TWad_dfJpmUMYZsJpHuZNvGjLxWVx-Hu7wp0MM2ZF4swjdxBKQtDLsIGxM6khCp_xwTfugo9dJkAAAFrkwlbFA" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
+
+2019-06-26 18:06:38 info: PARAM {"0":"kakao/"} | BODY {"code":"Vxde8WnI96cp_vNL5lLt7HAWW8zU3RWMj2fqcBgcTLuMbWcRC9ej61orDXpZTRMs9UYzHgo9dJkAAAFrkwlwMw"}
+2019-06-26 18:06:38 info: ::ffff:127.0.0.1 - - [26/Jun/2019:09:06:38 +0000] "POST /api/kakao/ HTTP/1.1" 200 240 "http://localhost:3000/oauth?code=Vxde8WnI96cp_vNL5lLt7HAWW8zU3RWMj2fqcBgcTLuMbWcRC9ej61orDXpZTRMs9UYzHgo9dJkAAAFrkwlwMw" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
+
+2019-06-26 18:06:50 info: PARAM {"0":"kakao/test"} | BODY {"token":"9p2hKMzzEn-0jXsjWpDyJaD6prOi60uXNUIqMgorDR4AAAFrkwlxog"}
+2019-06-26 18:06:50 info: ::ffff:127.0.0.1 - - [26/Jun/2019:09:06:50 +0000] "POST /api/kakao/test HTTP/1.1" 200 17 "http://localhost:3000/oauth?code=Vxde8WnI96cp_vNL5lLt7HAWW8zU3RWMj2fqcBgcTLuMbWcRC9ej61orDXpZTRMs9UYzHgo9dJkAAAFrkwlwMw" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
+
+2019-06-26 18:07:53 info: Check out the app at http://localhost:4000
+2019-06-26 18:07:54 info: Connected to mongodb server

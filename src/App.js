@@ -7,7 +7,6 @@ import {
         ImageUpload,
         VideoUpload,
         Main,
-        Test2,
       } from './containers';
 
 

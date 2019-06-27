@@ -32,9 +32,41 @@ router.post('/', (req, res) => {
 });
 
 /**
- * READ ADDITIONAL VIDEO: GET /api/video/:username/:invitee/:seq
+ * 
  */
-router.post('/test', (req, res) => {
+router.post('/me', (req, res) => {
+  console.log(req.body.token);
+  const url = 'https://kapi.kakao.com/v1/user/me';
+
+  axios.defaults.headers.common['Authorization'] = `Bearer ${req.body.token}`
+  axios.get(url).then((result) => {
+    console.log('SUCCESS');
+    console.log(result.data);
+   
+    // ALTER SESSION
+    let session = req.session;
+    
+    session.loginInfo = {
+        _id: result.data.id,
+        email: result.data.kaccount_email,
+        nickname: result.data.properties.nickname,
+        access_token: req.body.token
+    };
+
+    return res.json(session.loginInfo);
+
+  }).catch((error) => {
+    // handle error
+    console.log('ERROR');
+    if (error) throw error;
+  })
+
+});
+
+/**
+ * 
+ */
+router.post('/logout', (req, res) => {
   console.log(req.body.token);
 
   const url = 'https://kapi.kakao.com/v1/user/logout';
@@ -47,6 +79,51 @@ router.post('/test', (req, res) => {
   }).catch((error) => {
     // handle error
     console.log('ERROR');
+    if (error) throw error;
+  })
+
+});
+
+/**
+ * 
+ */
+router.post('/tokeninfo', (req, res) => {
+  console.log(req.body.token);
+
+  const url = 'https://kapi.kakao.com/v1/user/access_token_info';
+
+  axios.defaults.headers.common['Authorization'] = `Bearer ${req.body.token}`
+  axios.get(url).then((result) => {
+    console.log('SUCCESS');
+    return res.json(result.data);
+
+  }).catch((error) => {
+    // handle error
+    console.log('ERROR');
+    if (error) throw error;
+  })
+
+});
+
+/**
+ * 
+ */
+router.post('/unlink', (req, res) => {
+  console.log(req.body.token);
+
+  const url = 'https://kapi.kakao.com/v1/user/unlink';
+
+
+  axios.defaults.headers.common['Authorization'] = `Bearer ${req.body.token}`
+  axios.post(url).then((result) => {
+    console.log('SUCCESS');
+    console.log(result);
+    return res.json(result.data);
+
+  }).catch((error) => {
+    // handle error
+    console.log('ERROR');
+    console.log(error);
     if (error) throw error;
   })
 

@@ -3,8 +3,8 @@ import path from 'path';
 import morgan from 'morgan'; // HTTP REQUEST LOGGER
 import bodyParser from 'body-parser'; // PARSE HTML BODY
 import mongoose from 'mongoose';
-//import winston from './config/winston'
 import winston from './config/winston'
+import session from 'express-session';
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -16,6 +16,13 @@ app.use(morgan('combined', {
     skip: function (req, res) { return res.statusCode === 304 }
 }));
 app.use(bodyParser.json());
+
+/* use session */
+app.use(session({
+    secret: 'sktkddnr1004',
+    resave: false,
+    saveUninitialized: true
+}));
 
 /** setup routers & static directory */
 import api from './routes';

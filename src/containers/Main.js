@@ -20,7 +20,17 @@ class Main extends Component {
 
       return this.props.kakaoLoginRequest(code).then(
         () => {
-          console.log(this.props.loginStatus);
+          const url = '/api/kakao/me';
+
+          axios.post(url, { token: this.props.loginStatus.data.access_token }).then((result) => {
+      
+            console.log(result.data);
+            this.props.history.push('/');
+      
+          }).catch((error) => {
+            // handle error
+            alert(error);
+          })
         }
       )
     }
@@ -28,9 +38,9 @@ class Main extends Component {
 
   handleLogout = (e) => {
 
-    const url = '/api/kakao/test';    
-   
-    axios.post(url, {token : this.props.loginStatus.data.access_token}).then((result) => {
+    const url = '/api/kakao/logout';
+
+    axios.post(url, { token: this.props.loginStatus.data.access_token }).then((result) => {
 
       console.log(result);
       this.props.history.push('/');
@@ -40,19 +50,55 @@ class Main extends Component {
       alert(error);
     })
   }
+  handleTokenInfo = (e) => {
+
+    const url = '/api/kakao/tokeninfo';
+
+    axios.post(url, { token: this.props.loginStatus.data.access_token }).then((result) => {
+
+      console.log(result.data);
+      this.props.history.push('/');
+
+    }).catch((error) => {
+      // handle error
+      alert(error);
+    })
+  }
+  handleUnlink = (e) => {
+
+    const url = '/api/kakao/unlink ';
+
+    axios.post(url, { token: this.props.loginStatus.data.access_token }).then((result) => {
+
+      console.log(result.data);
+      this.props.history.push('/');
+
+    }).catch((error) => {
+      // handle error
+      alert(error);
+    })
+  }
+
+  // handleSend = (e) => {
+  //   const url = "https://kauth.kakao.com/oauth/authorize?client_id=9e7171f1d9599641378cd3e36174adbc&redirect_uri=http://localhost:3000/oauth&response_type=code&scope=account_email";
+
+  //   window.location.href = url;
+  // }
 
   render() {
     return (
       <div style={{ flexGrow: 1 }}>
         <Login />
         <Button onClick={this.handleLogout} >Logout</Button>
+        <Button onClick={this.handleTokenInfo} >TokenInfo</Button>
+        <Button onClick={this.handleUnlink} >Unlink</Button>
       </div>
-      
+
 
     );
   }
 }
-  
+
 const mapStateToProps = (state) => {
   return {
     loginStatus: state.kakao.login,
