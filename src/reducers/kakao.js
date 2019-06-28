@@ -4,9 +4,14 @@ import update from 'react-addons-update';
 const initialState = {
     login: {
         status: 'INIT',
-        data : {},
+        data: {},
         error: -1
     },
+    status: {
+        valid: false,
+        isLoggedIn: false,
+        info: {},
+    }
 };
 
 export default function kakao(state, action) {
@@ -33,6 +38,26 @@ export default function kakao(state, action) {
             return update(state, {
                 login: {
                     status: { $set: 'FAILURE' },
+                }
+            });
+        case types.AUTH_GET_STATUS:
+            return update(state, {
+                status: {
+                    isLoggedIn: { $set: true }
+                }
+            });
+        case types.AUTH_GET_STATUS_SUCCESS:
+            return update(state, {
+                status: {
+                    valid: { $set: true },
+                    info: { $set: action.info }
+                }
+            });
+        case types.AUTH_GET_STATUS_FAILURE:
+            return update(state, {
+                status: {
+                    valid: { $set: false },
+                    isLoggedIn: { $set: false }
                 }
             });
         default:

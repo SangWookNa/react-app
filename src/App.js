@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 // Router
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import {
-        Header,
         Home,        
         ImageUpload,
         VideoUpload,
@@ -16,7 +15,6 @@ class App extends Component {
     return (   
       <Router>
         <div>
-          <Header />
           <Route exact path="/" component={Main} />
           <Route exact path="/oauth" component={Main} />
           <Route exact path="/:username/:seq" component={Home} />

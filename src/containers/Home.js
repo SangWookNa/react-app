@@ -4,7 +4,6 @@ import {
   Gallery,
   Memo,
   ImageGridList,
-  Login
 } from './';
 
 class Home extends Component {

@@ -1,6 +1,7 @@
 import express from 'express';
 import axios from 'axios';
 import qs from 'query-string';
+import winston from '../config/winston'
 
 const router = express.Router();
 
@@ -35,30 +36,51 @@ router.post('/', (req, res) => {
  * 
  */
 router.post('/me', (req, res) => {
-  console.log(req.body.token);
   const url = 'https://kapi.kakao.com/v1/user/me';
 
   axios.defaults.headers.common['Authorization'] = `Bearer ${req.body.token}`
   axios.get(url).then((result) => {
-    console.log('SUCCESS');
-    console.log(result.data);
-   
+
     // ALTER SESSION
     let session = req.session;
-    
+
     session.loginInfo = {
-        _id: result.data.id,
-        email: result.data.kaccount_email,
-        nickname: result.data.properties.nickname,
-        access_token: req.body.token
+      _id: result.data.id,
+      email: result.data.kaccount_email,
+      nickname: result.data.properties.nickname,
+      access_token: req.body.token
     };
 
     return res.json(session.loginInfo);
 
   }).catch((error) => {
     // handle error
-    console.log('ERROR');
+    winston.log('error', JSON.stringify(error.data));
     if (error) throw error;
+  })
+
+});
+/**
+ * GET CURRENT USER INFO GET /api/kakao/getInfo
+ */
+router.post('/getinfo', (req, res) => {
+  if (typeof req.session.loginInfo === "undefined") {
+    return res.status(401).json({
+      error: 1
+    });
+  }
+  const url = 'https://kapi.kakao.com/v1/user/access_token_info';
+  
+  axios.defaults.headers.common['Authorization'] = `Bearer ${req.session.loginInfo.access_token}`
+  axios.get(url).then((result) => {
+    return res.json({ info: req.session.loginInfo });
+
+  }).catch((error) => {
+    // handle error
+    winston.log('error', JSON.stringify(error.data));
+    return res.status(401).json({
+      error: 1
+    });
   })
 
 });
@@ -67,18 +89,16 @@ router.post('/me', (req, res) => {
  * 
  */
 router.post('/logout', (req, res) => {
-  console.log(req.body.token);
 
   const url = 'https://kapi.kakao.com/v1/user/logout';
 
   axios.defaults.headers.common['Authorization'] = `Bearer ${req.body.token}`
   axios.post(url).then((result) => {
-    console.log('SUCCESS');
     return res.json(result.data);
 
   }).catch((error) => {
     // handle error
-    console.log('ERROR');
+    winston.log('error', JSON.stringify(error.data));
     if (error) throw error;
   })
 
