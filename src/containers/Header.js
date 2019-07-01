@@ -4,7 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import List from '@material-ui/core/List';
@@ -17,6 +16,7 @@ import PowerSettingsNew from '@material-ui/icons/PowerSettingsNew';
 import Image from '@material-ui/icons/Image';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import { BrowserRouter as Link, NavLink } from "react-router-dom";
+import axios from 'axios';
 
 const styles = {
   root: {
@@ -46,14 +46,45 @@ class Header extends Component {
     left: false,
   };
 
+  componentWillMount() {
+    console.log(this.props.userInfo);
+  }
+
   toggleDrawer = (side, open) => () => {
     this.setState({
       [side]: open,
     });
   };
 
+  handleLogout = (e) => {
+
+    const url = '/api/kakao/logout';
+
+    axios.post(url, { token: this.props.userInfo.info.access_token }).then((result) => {
+
+      //logout the session
+      let loginData = {
+        isLoggedIn: false,
+        username: '',
+      };
+      document.cookie = 'key=' + btoa(JSON.stringify(loginData));
+
+      window.location.reload();
+
+    }).catch((error) => {
+      // handle error
+      alert(error);
+    })
+  }
+
   render() {
     const { classes } = this.props;
+    const logout = (<List>
+                      <ListItem button key='Logout' onClick={this.handleLogout}>
+                        <ListItemIcon><PowerSettingsNew /></ListItemIcon>
+                        <ListItemText primary='Logout' />
+                      </ListItem>
+                    </List>);
 
     const sideList = (
       <div className={classes.list}>
@@ -70,12 +101,7 @@ class Header extends Component {
           </ListItem>
         </List>
         <Divider />
-        <List>
-          <ListItem button key='Logout'>
-            <ListItemIcon><PowerSettingsNew /></ListItemIcon>
-            <ListItemText primary='Logout' />
-          </ListItem>
-        </List>
+        {this.props.userInfo.isLoggedIn === true ? logout : undefined}
       </div>
     );
 
@@ -85,24 +111,24 @@ class Header extends Component {
           <Toolbar>
             <IconButton className={classes.menuButton} onClick={this.toggleDrawer('left', true)} color="inherit" aria-label="Menu">
               <MenuIcon />
-              <SwipeableDrawer
-                open={this.state.left}
-                onClose={this.toggleDrawer('left', false)}
-                onOpen={this.toggleDrawer('left', true)}
-              >
-                <div
-                  tabIndex={0}
-                  role="button"
-                  onClick={this.toggleDrawer('left', false)}
-                  onKeyDown={this.toggleDrawer('left', false)}
-                >
-                  {sideList}
-                </div>
-              </SwipeableDrawer>
             </IconButton>
+            <SwipeableDrawer
+              open={this.state.left}
+              onClose={this.toggleDrawer('left', false)}
+              onOpen={this.toggleDrawer('left', true)}
+            >
+              <div
+                tabIndex={0}
+                role="button"
+                onClick={this.toggleDrawer('left', false)}
+                onKeyDown={this.toggleDrawer('left', false)}
+              >
+                {sideList}
+              </div>
+            </SwipeableDrawer>
             <Typography variant="h6" color="inherit" className={classes.grow}>
               <NavLink to="/" className={classes.item}>test</NavLink>
-            </Typography>            
+            </Typography>
           </Toolbar>
         </AppBar>
       </div>

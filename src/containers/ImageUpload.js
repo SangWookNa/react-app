@@ -79,7 +79,7 @@ class ImageUpload extends React.Component {
         return (
             <div>
                 <ImageUploader
-                    label=''
+                    label='사진을 업로드 해주세요'
                     withIcon={false}
                     buttonText='upload'
                     onChange={this.onDrop}

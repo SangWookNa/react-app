@@ -8,6 +8,10 @@ import VideoPlayer from '../components/video/VideoPlayer';
 import axios from 'axios';
 
 const styles = theme => ({
+    root: {
+        flexGrow: 1,
+        marginTop: 20
+      },
     button: {
         margin: theme.spacing.unit,
     },
@@ -124,7 +128,7 @@ class VideoUpload extends React.Component {
             <VideoPlayer url={this.state.filePath} />
         );
         return (
-            <div>
+            <div className={classes.root}>
                 <input
                     accept="video/*"
                     id="contained-button-file"
@@ -132,26 +136,26 @@ class VideoUpload extends React.Component {
                     onChange={(e) => this.onDrop(e.target.files)}
                     type="file"
                 />
-                <Typography variant="h6">
-                    {this.state.videoFiles[0].name}
-                </Typography>
-                <label htmlFor="contained-button-file">
-                    <Button variant="contained" component="span" className={classes.button}>
-                        Upload
-                    </Button>
-                </label>
+                {this.state.files.length > 0 ? videoPlayer : <Typography variant="h6">{this.state.videoFiles[0].name}<label htmlFor="contained-button-file">
+                    <Button variant="contained" component="span" className={classes.button}>Upload</Button>
+                </label></Typography>}
 
-                {this.state.files.length > 0 ? videoPlayer : undefined}
+
+                {this.state.files.length > 0 ? 
+                <label htmlFor="contained-button-file">
+                    <Button variant="contained" size="small" component="span" className={classes.button}>Re-upload</Button>
+                </label> : undefined }               
                 <TextField
                     id="invitee"
                     name="invitee"
-                    label="name"
+                    label="초대받는분 이름"
                     fullWidth
                     margin="normal"
                     value={this.state.invitee}
                     variant="outlined"
                     onChange={this.handleInputChange}
                 />
+                
                 <br />
                 <Button onClick={this.handleUpload} ><p id='gallery'>Upload(video)</p></Button>
                 {this.state.loadingFlag === true ? loading : undefined}

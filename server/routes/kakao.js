@@ -92,8 +92,11 @@ router.post('/logout', (req, res) => {
 
   const url = 'https://kapi.kakao.com/v1/user/logout';
 
+  req.session.destroy(err => { if (err) throw err; });
+
   axios.defaults.headers.common['Authorization'] = `Bearer ${req.body.token}`
   axios.post(url).then((result) => {
+    
     return res.json(result.data);
 
   }).catch((error) => {

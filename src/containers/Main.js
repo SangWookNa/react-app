@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import qs from 'query-string';
+import { withStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import { BrowserRouter as Link, NavLink } from "react-router-dom";
 import {
   Login,
   ImageUpload,
   VideoUpload,
   Header,
+  Gallery,
+  ImageGridList
 } from './';
 import axios from 'axios';
 import { connect } from 'react-redux';
@@ -12,6 +18,12 @@ import {
   kakaoLoginRequest,
   getStatusRequest
 } from '../actions/kakao';
+
+const styles = theme => ({
+  button: {
+    margin: theme.spacing.unit,
+  },
+});
 
 class Main extends Component {
 
@@ -65,12 +77,12 @@ class Main extends Component {
     //if not logged in, do nothing
     //console.log(loginData);
     if (!loginData.isLoggedIn) return;
-    
+
     if (this.props.loginStatus.data.access_token !== '') {
       //page refreshed & has a session in cookie,
       //check whether this cookie is valid or not
       this.props.getStatusRequest().then(
-        () => {    
+        () => {
           console.log(this.props.status);
           //if session is not valid
           if (!this.props.status.valid) {
@@ -143,14 +155,25 @@ class Main extends Component {
   // }
 
   render() {
-    const imageUplaod = (<ImageUpload id={this.props.status.info._id}/>);
-    const videoUpload = (<VideoUpload id={this.props.status.info._id}/>);
+    const { classes } = this.props;
+
+    const imageUplaod = (<ImageUpload id={this.props.status.info._id} />);
+    const videoUpload = (<VideoUpload id={this.props.status.info._id} />);
     return (
       <div style={{ flexGrow: 1 }}>
-        <Header userInfo = {this.props.status} />
+        <Header userInfo={this.props.status} />
         {this.props.status.isLoggedIn === true ? undefined : <Login />}
-        {this.props.status.isLoggedIn === true ? imageUplaod : undefined}
         {this.props.status.isLoggedIn === true ? videoUpload : undefined}
+        {this.props.status.isLoggedIn === true ?
+        <Typography variant="h6">사진을 등록 해주세요
+        <NavLink to="/ImageUpload" >
+            <Button variant="contained" component="span" className={classes.button}>Upload</Button>
+        </NavLink>
+        </Typography>
+        : undefined}
+         {this.props.status.isLoggedIn === true ? <Gallery /> : undefined}
+         {this.props.status.isLoggedIn === true ? <ImageGridList /> : undefined}
+        
         {/* <Button onClick={this.handleLogout} >Logout</Button>
         <Button onClick={this.handleTokenInfo} >TokenInfo</Button>
         <Button onClick={this.handleUnlink} >Unlink</Button> */}
@@ -177,4 +200,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Main));

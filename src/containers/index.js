@@ -9,6 +9,6 @@ import ImageGridList from './ImageGridList';
 import Login from './Login';
 import Main from './Main';
 import Test2 from './Test2';
-import SwipeableTemporaryDrawer from './SwipeableTemporaryDrawer';
+import TemporaryDrawer from './TemporaryDrawer';
 
-export { Header, Home, Memo, Video, Gallery, ImageUpload, VideoUpload, ImageGridList, Login, Main, Test2, SwipeableTemporaryDrawer };
+export { Header, Home, Memo, Video, Gallery, ImageUpload, VideoUpload, ImageGridList, Login, Main, Test2, TemporaryDrawer };
