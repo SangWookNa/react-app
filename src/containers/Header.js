@@ -46,10 +46,6 @@ class Header extends Component {
     left: false,
   };
 
-  componentWillMount() {
-    console.log(this.props.userInfo);
-  }
-
   toggleDrawer = (side, open) => () => {
     this.setState({
       [side]: open,
@@ -59,6 +55,8 @@ class Header extends Component {
   handleLogout = (e) => {
 
     const url = '/api/kakao/logout';
+
+    console.log(this.props.userInfo);
 
     axios.post(url, { token: this.props.userInfo.info.access_token }).then((result) => {
 

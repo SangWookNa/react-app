@@ -9,7 +9,7 @@ import {
 class Gallery extends React.Component {
 
   componentDidMount() {
-
+    console.log(this.props.userInfo);
     this.props.imageGalleryListRequest('test','gallery').then(
       () => {
         
@@ -41,6 +41,11 @@ class Gallery extends React.Component {
   }
 
 }
+
+Gallery.defaultProps = {
+  isLoggedIn: false,
+  userInfo: ''
+};
 
 const mapStateToProps = (state) => {
   return {

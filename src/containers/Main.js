@@ -6,7 +6,6 @@ import Button from '@material-ui/core/Button';
 import { BrowserRouter as Link, NavLink } from "react-router-dom";
 import {
   Login,
-  ImageUpload,
   VideoUpload,
   Header,
   Gallery,
@@ -22,13 +21,18 @@ import {
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
+    float: 'right'
   },
+  item: {
+    color: 'inherit',
+    textDecoration: 'none',
+  }
 });
 
 class Main extends Component {
 
-  componentWillMount() {
-
+  componentDidMount() {
+    
     //카카오 로그인 리다이렉트
     if (this.props.location.pathname !== '/') {
 
@@ -39,8 +43,6 @@ class Main extends Component {
           const url = '/api/kakao/me';
           //카카오 사용자정보 가져오기
           axios.post(url, { token: this.props.loginStatus.data.access_token }).then((result) => {
-
-            console.log(result.data);
 
             // 쿠키 데이터 생성
             let loginData = {
@@ -83,7 +85,6 @@ class Main extends Component {
       //check whether this cookie is valid or not
       this.props.getStatusRequest().then(
         () => {
-          console.log(this.props.status);
           //if session is not valid
           if (!this.props.status.valid) {
             //logout the session
@@ -101,6 +102,10 @@ class Main extends Component {
         }
       );
     }
+
+
+    console.log(this.props.status.info._id);
+    
   }
 
   handleLogout = (e) => {
@@ -109,7 +114,6 @@ class Main extends Component {
 
     axios.post(url, { token: this.props.loginStatus.data.access_token }).then((result) => {
 
-      console.log(result);
       this.props.history.push('/');
 
     }).catch((error) => {
@@ -157,22 +161,22 @@ class Main extends Component {
   render() {
     const { classes } = this.props;
 
-    const imageUplaod = (<ImageUpload id={this.props.status.info._id} />);
+    const imageUplaod = (<Typography variant="h6">사진을 등록 해주세요
+                          <NavLink to="/ImageUpload" className={classes.item} >
+                              <Button variant="contained" color="primary" component="span" className={classes.button}>Upload</Button>
+                          </NavLink>
+                        </Typography>);
     const videoUpload = (<VideoUpload id={this.props.status.info._id} />);
+    
     return (
       <div style={{ flexGrow: 1 }}>
         <Header userInfo={this.props.status} />
+        <div>{this.props.status.info._id}</div>
         {this.props.status.isLoggedIn === true ? undefined : <Login />}
         {this.props.status.isLoggedIn === true ? videoUpload : undefined}
-        {this.props.status.isLoggedIn === true ?
-        <Typography variant="h6">사진을 등록 해주세요
-        <NavLink to="/ImageUpload" >
-            <Button variant="contained" component="span" className={classes.button}>Upload</Button>
-        </NavLink>
-        </Typography>
-        : undefined}
-         {this.props.status.isLoggedIn === true ? <Gallery /> : undefined}
-         {this.props.status.isLoggedIn === true ? <ImageGridList /> : undefined}
+        {this.props.status.isLoggedIn === true ? imageUplaod : undefined}
+        {this.props.status.isLoggedIn === true ? <Gallery userInfo = {this.props.status.info._id} /> : undefined}
+        {this.props.status.isLoggedIn === true ? <ImageGridList userInfo = {this.props.status} /> : undefined}
         
         {/* <Button onClick={this.handleLogout} >Logout</Button>
         <Button onClick={this.handleTokenInfo} >TokenInfo</Button>

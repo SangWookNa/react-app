@@ -14,6 +14,7 @@ const styles = theme => ({
       },
     button: {
         margin: theme.spacing.unit,
+        float: 'right'
     },
     input: {
         display: 'none',
@@ -137,7 +138,7 @@ class VideoUpload extends React.Component {
                     type="file"
                 />
                 {this.state.files.length > 0 ? videoPlayer : <Typography variant="h6">{this.state.videoFiles[0].name}<label htmlFor="contained-button-file">
-                    <Button variant="contained" component="span" className={classes.button}>Upload</Button>
+                    <Button variant="contained" color="primary" component="span" className={classes.button}>Upload</Button>
                 </label></Typography>}
 
 
