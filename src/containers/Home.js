@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {  
   Video,
-  Gallery,
+  //Gallery,
   Memo,
   ImageGridList,
 } from './';
@@ -14,7 +14,7 @@ class Home extends Component {
     return (
       <div style ={{flexGrow: 1}}>  
       {this.props.match.url !== '/' ? video : undefined}  
-      <Gallery/>
+      {/* <Gallery/> */}
       <ImageGridList/>
       <Memo/>
       </div>

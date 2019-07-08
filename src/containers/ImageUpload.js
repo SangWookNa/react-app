@@ -3,6 +3,7 @@ import ImageUploader from 'react-images-upload';
 import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 class ImageUpload extends React.Component {
 
@@ -30,8 +31,9 @@ class ImageUpload extends React.Component {
         const formData = new FormData();
 
         let file = this.state.pictures;
+        let id = this.props.status.info._id;
         
-        formData.append('username', 'test');
+        formData.append('username', id);
         formData.append('uploadFlag', e.target.id);
         console.log(formData);
         for (let i = 0; i < file.length; i++) {
@@ -49,7 +51,7 @@ class ImageUpload extends React.Component {
             }
         }
 
-        return axios.delete(`/api/image/${'test'}/${e.target.id}`, formData, config).then((result) => {
+        return axios.delete(`/api/image/${id}/${e.target.id}`, formData, config).then((result) => {
             
             return axios.post(url, formData, config).then((result) => {
 
@@ -96,4 +98,10 @@ class ImageUpload extends React.Component {
     }
 }
 
-export default ImageUpload;
+const mapStateToProps = (state) => {
+    return {
+      status: state.kakao.status,
+    };
+  };
+    
+  export default connect(mapStateToProps)(ImageUpload);
