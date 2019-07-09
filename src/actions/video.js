@@ -11,12 +11,12 @@ import axios from 'axios';
         - username:  OPTIONAL; find image of following user
 */
 
-export function videoListRequest(username, invitee, seq) {
+export function videoListRequest(enterid, invitee, seq) {
     return (dispatch) => {
         // inform memo list API is starting
         dispatch(videoList());
 
-        let url = `/api/video/${username}/${invitee}/${seq}`;
+        let url = `/api/video/${enterid}/${invitee}/${seq}`;
 
         return axios.get(url)
             .then((response) => {

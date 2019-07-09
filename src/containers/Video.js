@@ -12,12 +12,13 @@ class Video extends Component {
 
   componentDidMount() {
 
-    let username = this.props.data.username;
+    let enterid = this.props.data.enterid;
     let invitee = this.props.data.invitee;
     let seq = this.props.data.seq;
+    console.log(`${enterid}|${invitee}|${seq}`)
 
     let origin   = window.location.origin;
-    this.props.videoListRequest(username, invitee, seq).then(
+    this.props.videoListRequest(enterid, invitee, seq).then(
       () => {       
 
         this.setState({

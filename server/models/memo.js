@@ -4,6 +4,7 @@ import bcrypt from 'bcryptjs';
 const Schema = mongoose.Schema;
 
 const Memo = new Schema({
+    enterid: String,
     writer: String,
     password: String,
     contents: String,

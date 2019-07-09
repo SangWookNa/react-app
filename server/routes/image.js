@@ -12,14 +12,14 @@ const router = express.Router();
 const upload = multer({
     storage: multer.diskStorage({
         destination: function (req, file, cb) {
-            const dir = 'public/uploads/image/' + req.body.username + '/';
+            const dir = 'public/uploads/image/' + req.body.enterid + '/';
             if (!fs.existsSync(dir)) {
                 fs.mkdir(dir, err => {
                     if (err) throw err;
-                    cb(null, 'public/uploads/image/' + req.body.username + '/');        
+                    cb(null, dir);        
                 })
             }else{
-                cb(null, 'public/uploads/image/' + req.body.username + '/');
+                cb(null, dir);
             }
         },
         filename: function (req, file, cb) {
@@ -85,7 +85,7 @@ router.post('/', (req, res, next) => {
                 originalname: value.originalname,
                 size: value.size,
                 username: req.body.username,
-                enterid: req.body.username,
+                enterid: req.body.enterid,
                 uploadflag: req.body.uploadFlag
             });
 
@@ -101,11 +101,11 @@ router.post('/', (req, res, next) => {
 /**
  * READ ADDITIONAL (OLD/NEW) MEMO: GET /api/memo/:listType/:id
  */
-router.get('/:username/:uploadFlag', (req, res) => {
-    let username = req.params.username;
+router.get('/:enterid/:uploadFlag', (req, res) => {
+    let enterid = req.params.enterid;
     let uploadFlag = req.params.uploadFlag;
     // GET IMAGE LIST
-    Image.find({ username: username, uploadflag: uploadFlag })
+    Image.find({ enterid: enterid, uploadflag: uploadFlag })
         .sort({ 'originalname': 1 })
         //.limit(6)
         .exec((err, image) => {
@@ -119,17 +119,17 @@ router.get('/:username/:uploadFlag', (req, res) => {
  * DELETE IMAGE : DELETE /api/image/
  * ERROR CODE
  */
-router.delete('/:username/:uploadFlag', (req, res) => {
-    let username = req.params.username;
+router.delete('/:enterid/:uploadFlag', (req, res) => {
+    let enterid = req.params.enterid;
     let uploadFlag = req.params.uploadFlag;
     
-    Image.find({ username: username, uploadflag: uploadFlag })
+    Image.find({ enterid: enterid, uploadflag: uploadFlag })
         .sort({ _id: -1 })
         .exec((err, memos) => {
             if (err) throw err;
            
            //REMOVE THE IMAGE
-           Image.remove({ username: username, uploadflag: uploadFlag })
+           Image.remove({ enterid: enterid, uploadflag: uploadFlag })
            .exec((err) => {
             if (err) throw err;
 

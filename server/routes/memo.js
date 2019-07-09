@@ -48,7 +48,8 @@ router.post('/', (req, res) => {
     let memo = new Memo({
         writer: req.body.username,
         password: req.body.password,
-        contents: req.body.contents
+        contents: req.body.contents,
+        enterid : req.body.enterid,
     });
 
     memo.password = memo.generateHash(memo.password);
@@ -338,10 +339,10 @@ router.post('/star/:id', (req, res) => {
 })
 
 /** READ MEMO OF A USER: GET /api/memo/:username */
-router.get('/:username', (req, res) => {
-    Memo.find({ writer: req.params.username })
+router.get('/:id', (req, res) => {
+    Memo.find({ enterid: req.params.id })
         .sort({ "_id": -1 })
-        .limit(6)
+        //.limit(6)
         .exec((err, memos) => {
             if (err) throw err;
             res.json(memos);

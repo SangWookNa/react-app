@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { BrowserRouter as Link, NavLink } from "react-router-dom";
-import { Login, VideoUpload } from './';
+import { Login, VideoUpload, Memo } from './';
 import { Header } from '../components/common/';
 import { Gallery, ImageGridList } from '../components/image/';
 import axios from 'axios';
@@ -17,6 +17,9 @@ import {
   imageGalleryListRequest,
   imageGridListRequest,
 } from '../actions/image';
+import {
+  memoListRequest,
+} from '../actions/memo';
 
 const styles = theme => ({
   button: {
@@ -32,13 +35,13 @@ const styles = theme => ({
 class Main extends Component {
   state = {
     currentImage: 0,
-    imagesGalleryData : [],
+    imagesGalleryData: [],
     imagesGridData: [{ src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599", width: 1, height: 1 }],
     thumbnailImages: [{ src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599", width: 1, height: 1 }],
   };
 
   componentDidMount() {
-    
+
     //카카오 로그인 리다이렉트
     if (this.props.location.pathname !== '/') {
       //사용자 정보 셋팅
@@ -70,19 +73,19 @@ class Main extends Component {
       //check whether this cookie is valid or not
       this.props.getStatusRequest().then(
         () => {
-         
+
           if (this.props.status.valid) {
             console.log(this.props.status);
 
             //데이터 셋팅
-            this.dataSetting();           
-            
-          //if session is not valid
-          }else{
+            this.dataSetting();
+
+            //if session is not valid
+          } else {
             //logout the session
             loginData = {
               isLoggedIn: false,
-              username: '',
+              userid: '',
             };
 
             document.cookie = 'key=' + btoa(JSON.stringify(loginData));
@@ -91,13 +94,13 @@ class Main extends Component {
           }
         }
       );
-    }    
+    }
   }
 
   //카카오 로그인 토큰 생성
   userSetting = () => {
     let code = qs.parse(this.props.location.search, { ignoreQueryPrefix: true }).code;
-      
+
     return this.props.kakaoLoginRequest(code).then(
       () => {
         const url = '/api/kakao/me';
@@ -107,7 +110,7 @@ class Main extends Component {
           // 쿠키 데이터 생성
           let loginData = {
             isLoggedIn: true,
-            username: result.data._id
+            userid: result.data._id
           };
 
           document.cookie = 'key=' + btoa(JSON.stringify(loginData));
@@ -125,16 +128,16 @@ class Main extends Component {
   dataSetting = () => {
     let id = this.props.status.info._id;
 
-     //사진불러오기(갤러리)
-     this.props.imageGalleryListRequest(id, 'gallery').then(
+    //사진불러오기(갤러리)
+    this.props.imageGalleryListRequest(id, 'gallery').then(
       () => {
         const images = this.props.imageGalleryData.map((data) => {
           let obj = {};
           obj.original = data.path;
           obj.thumbnail = data.thumbnailpath;
-    
+
           return obj;
-        });    
+        });
 
         this.setState({
           imagesGalleryData: images,
@@ -145,7 +148,7 @@ class Main extends Component {
     //사진불러오기(그리드)
     this.props.imageGridListRequest(id, 'grid').then(
       () => {
-        let origin   = window.location.origin;    
+        let origin = window.location.origin;
         const images = this.props.imageGridData.map((data) => {
           let obj = {};
           obj.src = `${origin}/${data.path}`;
@@ -170,28 +173,42 @@ class Main extends Component {
         }
       }
     );
+
+    //방명록 불러오기
+    this.props.memoListRequest(true, undefined, undefined, id).then();
   }
-  
+
+  //방명록 불러오기
+  handleMemoList = () => {
+    let id = this.props.status.info._id;
+
+    return this.props.memoListRequest(true, undefined, undefined, id).then();
+  }
+
   render() {
     const { classes } = this.props;
 
+    const videoUpload = (<VideoUpload id={this.props.status.info._id} />);
     const imageUplaod = (<Typography variant="h6">사진을 등록 해주세요
                           <NavLink to="/ImageUpload" className={classes.item} >
-                              <Button variant="contained" color="primary" size="small" component="span" className={classes.button}>Upload</Button>
-                          </NavLink>
-                        </Typography>);
-    const videoUpload = (<VideoUpload id={this.props.status.info._id} />);
-    
+        <Button variant="contained" color="primary" size="small" component="span" className={classes.button}>Upload</Button>
+      </NavLink>
+    </Typography>);
+
     return (
       <div style={{ flexGrow: 1 }}>
         <Header userInfo={this.props.status} />
         {this.props.status.isLoggedIn === true ? undefined : <Login />}
         {this.props.status.isLoggedIn === true ? videoUpload : undefined}
         {this.props.status.isLoggedIn === true ? imageUplaod : undefined}
-        {this.props.status.isLoggedIn === true ? <Gallery images = {this.state.imagesGalleryData}/> : undefined}
-        {this.props.status.isLoggedIn === true ? <ImageGridList 
-                                                  images = {this.state.imagesGridData} 
-                                                  thumbnailImages = {this.state.thumbnailImages}/> : undefined}
+        {this.props.status.isLoggedIn === true ? <Gallery images={this.state.imagesGalleryData} /> : undefined}
+        {this.props.status.isLoggedIn === true ? <ImageGridList
+                                                    images={this.state.imagesGridData}
+                                                    thumbnailImages={this.state.thumbnailImages} /> : undefined}
+        {this.props.status.isLoggedIn === true ? <Memo 
+                                                    enterid={this.props.status.info._id} 
+                                                    memoData={this.props.memoData}
+                                                    onList={this.handleMemoList}  /> : undefined}
       </div>
     );
   }
@@ -203,6 +220,7 @@ const mapStateToProps = (state) => {
     status: state.kakao.status,
     imageGridData: state.image.gridList.data,
     imageGalleryData: state.image.galleryList.data,
+    memoData: state.memo.list.data,
   };
 };
 
@@ -214,11 +232,14 @@ const mapDispatchToProps = (dispatch) => {
     getStatusRequest: () => {
       return dispatch(getStatusRequest());
     },
-    imageGalleryListRequest: (username,uploadFlag) => {
-      return dispatch(imageGalleryListRequest(username,uploadFlag))
+    imageGalleryListRequest: (enterid, uploadFlag) => {
+      return dispatch(imageGalleryListRequest(enterid, uploadFlag))
     },
-    imageGridListRequest: (username, uploadFlag) => {
-      return dispatch(imageGridListRequest(username, uploadFlag))
+    imageGridListRequest: (enterid, uploadFlag) => {
+      return dispatch(imageGridListRequest(enterid, uploadFlag))
+    },
+    memoListRequest: (isInitial, listType, id, username) => {
+      return dispatch(memoListRequest(isInitial, listType, id, username))
     },
   };
 };

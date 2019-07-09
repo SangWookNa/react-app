@@ -3,7 +3,7 @@ import {
   Video,
   //Gallery,
   Memo,
-  ImageGridList,
+  //ImageGridList,
 } from './';
 
 class Home extends Component {
@@ -15,7 +15,7 @@ class Home extends Component {
       <div style ={{flexGrow: 1}}>  
       {this.props.match.url !== '/' ? video : undefined}  
       {/* <Gallery/> */}
-      <ImageGridList/>
+      {/* <ImageGridList/> */}
       <Memo/>
       </div>
       
@@ -25,7 +25,7 @@ class Home extends Component {
 
 Home.defaultProps = {
 
-  username: '홍길동',
+  enterid: '홍길동',
   invitee: '나상욱',
   seq: '1',
 

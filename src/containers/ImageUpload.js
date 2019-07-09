@@ -32,8 +32,10 @@ class ImageUpload extends React.Component {
 
         let file = this.state.pictures;
         let id = this.props.status.info._id;
-        
-        formData.append('username', id);
+        let username = this.props.status.info.nickname;
+
+        formData.append('enterid', id);
+        formData.append('username', username);
         formData.append('uploadFlag', e.target.id);
         console.log(formData);
         for (let i = 0; i < file.length; i++) {

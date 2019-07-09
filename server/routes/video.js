@@ -14,10 +14,13 @@ const upload = multer({
             //const dir = 'public/uploads/video/' + req.body.username + '/';
             const dir = 'public/uploads/video/temp/';
             if (!fs.existsSync(dir)) {
-                fs.mkdir(dir, err => cb(err, dir))
-            }
-            //cb(null, 'public/uploads/video/' + req.body.username + '/');
-            cb(null, 'public/uploads/video/temp/');
+                fs.mkdir(dir, err => {
+                    if (err) throw err;
+                    cb(null, dir);    
+                });
+            }else{
+                cb(null, dir);
+            }            
         },
         filename: function (req, file, cb) {
             cb(null, crypto.randomBytes(18).toString('hex') + path.extname(file.originalname));
@@ -48,25 +51,34 @@ router.post('/', (req, res, next) => {
 router.post('/save', (req, res) => {
 
     let username = req.body.username;
+    let enterid = req.body.enterid;
     let invitee = req.body.invitee;
     let files = req.body.files;
 
     console.log(req.body);
 
-    fs.rename(files[0].path, `public/uploads/video/${req.body.username}/${files[0].filename}`, function (err) {
+    const dir = `public/uploads/video/${enterid}/`;
+    if (!fs.existsSync(dir)) {
+          fs.mkdir(dir, (err) => {
+            if (err) throw err;
+          });
+
+    }
+
+    fs.rename(files[0].path, dir + files[0].filename, function (err) {
         if (err) throw err;
 
-        winston.log('info', `FILE MOVE : ${files[0].path} --> public/uploads/video/${req.body.username}/${files[0].filename}`);
+        winston.log('info', `FILE MOVE : ${files[0].path} --> ${dir}${files[0].filename}`);
     });
 
     // CREATE NEW MEMO
     let video = new Video({
         filename: files[0].filename,
-        path: `public/uploads/video/${req.body.username}/${files[0].filename}`,
+        path: dir,
         originalname: files[0].originalname,
         size: files[0].size,
         username: username,
-        enterid: username,
+        enterid: enterid,
         invitee: invitee,
         
     });
@@ -82,17 +94,18 @@ router.post('/save', (req, res) => {
 
 
 /**
- * READ ADDITIONAL VIDEO: GET /api/video/:username/:invitee/:seq
+ * READ ADDITIONAL VIDEO: GET /api/video/:enterid/:invitee/:seq
  */
-router.get('/:username/:invitee/:seq', (req, res) => {
+router.get('/:enterid/:invitee/:seq', (req, res) => {
 
-    let username = req.params.username;
+    let enterid = req.params.enterid;
     let invitee = req.params.invitee;
     let seq = req.params.seq;
+    console.log(`${enterid}|${invitee}|${seq}`);
 
     if( invitee === '' || invitee === null || invitee === undefined || invitee === 'undefined' ){
         // GET IMAGE LIST 
-        Video.find({ username: username, _id: seq })
+        Video.find({ enterid: enterid, _id: seq })
         //.limit(6)
         .exec((err, video) => {
             if (err) throw err;
@@ -100,7 +113,7 @@ router.get('/:username/:invitee/:seq', (req, res) => {
         });
     }else{
         // GET IMAGE LIST 
-        Video.find({ username: username, invitee: invitee, _id: seq })
+        Video.find({ enterid: enterid, invitee: invitee, _id: seq })
         //.limit(6)
         .exec((err, video) => {
             if (err) throw err;
@@ -114,18 +127,18 @@ router.get('/:username/:invitee/:seq', (req, res) => {
  * ERROR CODE
  */
 router.post('/delete', (req, res) => {
-    let username = req.body.username;
+    let enterid = req.body.enterid;
     let invitee = req.body.invitee;
 
     console.log(req.body);
 
-    Video.find({ username: username, invitee: invitee })
+    Video.find({ enterid: enterid, invitee: invitee })
         .sort({ _id: -1 })
         .exec((err, memos) => {
             if (err) throw err;
 
             //REMOVE THE Video
-            Video.remove({ username: username, invitee: invitee })
+            Video.remove({ enterid: enterid, invitee: invitee })
                 .exec((err) => {
                     if (err) throw err;
 

@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import VideoPlayer from '../components/video/VideoPlayer';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 const styles = theme => ({
     root: {
@@ -46,8 +47,11 @@ class VideoUpload extends React.Component {
         const url = '/api/video/';
         const formData = new FormData();
         let file = selectorFiles;
+        let id = this.props.status.info._id;
+        let username = this.props.status.info.nickname;
 
-        formData.append('username', 'test');
+        formData.append('enterid', id);
+        formData.append('username', username);
         formData.append('invitee', this.state.invitee);
         for (let i = 0; i < file.length; i++) {
             formData.append('file', file[i]);
@@ -83,42 +87,48 @@ class VideoUpload extends React.Component {
         const url = '/api/video/save';
 
         let invitee = this.state.invitee;
-        let username = 'test';
+        let username = this.props.status.info.nickname;
+        let enterid = this.props.status.info._id;
         let files = this.state.files;
 
         // if (invitee === '' || invitee === null || invitee === undefined) {
         //     alert("초대받는분의 이름을 입력해주세요~");
         //     return;
         // }
+
         if (files.length === 0) {
             alert("영상을 등록해주세요~");
             return;
         }
 
-        return axios.post(url, { username, invitee, files }).then((result) => {
+        return axios.post(url, { username, enterid, invitee, files }).then((result) => {
             
             alert('영상 등록이 완료되었습니다.');
             let username = result.data.result.username;
             let invitee = result.data.result.invitee;
             let seq = result.data.result._id;
+            let enterid = result.data.result.enterid;
+
+            console.log(`${username}|${invitee}|${seq}|${enterid}`)
             
             if(invitee === '' || invitee === null || invitee === undefined || invitee === 'undefined') {
-                this.props.history.push(`/${username}/${seq}`);
+                //this.props.history.push(`/${username}/${seq}`);
+                const url = window.location.origin;
+                alert(`${url}/${enterid}/${seq}`);
+                window.location.href = url;
             }else{
-                this.props.history.push(`/${username}/${invitee}/${seq}`);
+                //this.props.history.push(`/${username}/${invitee}/${seq}`);
+                const url = window.location.origin;
+                alert(`${url}/${enterid}/${invitee}/${seq}`);
+                window.location.href = url;
             }
             
-                           
-
         }).catch((error) => {
             // handle error
             alert(error);
 
         })
-
     }
-
-
 
     render() {
 
@@ -166,4 +176,10 @@ class VideoUpload extends React.Component {
     }
 }
 
-export default withStyles(styles)(VideoUpload);
+const mapStateToProps = (state) => {
+    return {
+      status: state.kakao.status,
+    };
+  };
+    
+export default connect(mapStateToProps)(withStyles(styles)(VideoUpload));
