@@ -12,7 +12,7 @@ const styles = theme => ({
     root: {
         flexGrow: 1,
         marginTop: 20
-      },
+    },
     button: {
         margin: theme.spacing.unit,
         float: 'right'
@@ -70,7 +70,7 @@ class VideoUpload extends React.Component {
         }
 
         return axios.post(url, formData, config).then((result) => {
-            
+
             this.setState({
                 files: result.data.files,
                 filePath: result.data.files[0].path,
@@ -102,27 +102,84 @@ class VideoUpload extends React.Component {
         }
 
         return axios.post(url, { username, enterid, invitee, files }).then((result) => {
-            
+
             alert('영상 등록이 완료되었습니다.');
-            let username = result.data.result.username;
             let invitee = result.data.result.invitee;
             let seq = result.data.result._id;
             let enterid = result.data.result.enterid;
 
-            console.log(`${username}|${invitee}|${seq}|${enterid}`)
-            
-            if(invitee === '' || invitee === null || invitee === undefined || invitee === 'undefined') {
+
+            if (invitee === '' || invitee === null || invitee === undefined || invitee === 'undefined') {
                 //this.props.history.push(`/${username}/${seq}`);
                 const url = window.location.origin;
                 alert(`${url}/${enterid}/${seq}`);
-                window.location.href = url;
-            }else{
+
+                const sendUrl = '/api/kakao/send';
+                const token = this.props.status.info.access_token;
+                const data = {
+                    "object_type": "feed",
+                    "content": {
+                        "title": "디저트 사진",
+                        "description": "아메리카노, 빵, 케익",
+                        "image_url": "http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg",
+                        "image_width": 640,
+                        "image_height": 640,
+                        "link": {
+                            "web_url": "http://www.daum.net",
+                            "mobile_web_url": "http://m.daum.net",
+                            "android_execution_params": "contentId=100",
+                            "ios_execution_params": "contentId=100"
+                        }
+                    },
+                    "social": {
+                        "like_count": 100,
+                        "comment_count": 200,
+                        "shared_count": 300,
+                        "view_count": 400,
+                        "subscriber_count": 500
+                    },
+                    "buttons": [
+                        {
+                            "title": "웹으로 이동",
+                            "link": {
+                                "web_url": "http://www.daum.net",
+                                "mobile_web_url": "http://m.daum.net"
+                            }
+                        },
+                        {
+                            "title": "앱으로 이동",
+                            "link": {
+                                "android_execution_params": "contentId=100",
+                                "ios_execution_params": "contentId=100"
+                            }
+                        }
+                    ]
+                };
+
+                return axios.post(sendUrl, { token, data }).then((result) => {
+                    console.log(result.data);
+                    //window.location.href = url;
+                    if (result.data.code === -402) {
+                        const required_scopes = result.data.required_scopes;
+                        const url = `https://kauth.kakao.com/oauth/authorize?client_id=9e7171f1d9599641378cd3e36174adbc&redirect_uri=http://localhost:3000/oauth&response_type=code&scope=${required_scopes.join(',')}`;
+                        window.location.href = url;
+                    } else {
+                        window.location.href = url;
+                    }
+
+                }).catch((error) => {
+                    // handle error
+                    alert(error);
+
+                })
+
+            } else {
                 //this.props.history.push(`/${username}/${invitee}/${seq}`);
                 const url = window.location.origin;
                 alert(`${url}/${enterid}/${invitee}/${seq}`);
                 window.location.href = url;
             }
-            
+
         }).catch((error) => {
             // handle error
             alert(error);
@@ -152,10 +209,10 @@ class VideoUpload extends React.Component {
                 </label></Typography>}
 
 
-                {this.state.files.length > 0 ? 
-                <label htmlFor="contained-button-file">
-                    <Button variant="contained" size="small" component="span" className={classes.button}>Re-upload</Button>
-                </label> : undefined }               
+                {this.state.files.length > 0 ?
+                    <label htmlFor="contained-button-file">
+                        <Button variant="contained" size="small" component="span" className={classes.button}>Re-upload</Button>
+                    </label> : undefined}
                 <TextField
                     id="invitee"
                     name="invitee"
@@ -166,7 +223,7 @@ class VideoUpload extends React.Component {
                     variant="outlined"
                     onChange={this.handleInputChange}
                 />
-                
+
                 <br />
                 <Button onClick={this.handleUpload} ><p id='gallery'>Upload(video)</p></Button>
                 {this.state.loadingFlag === true ? loading : undefined}
@@ -178,8 +235,8 @@ class VideoUpload extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-      status: state.kakao.status,
+        status: state.kakao.status,
     };
-  };
-    
+};
+
 export default connect(mapStateToProps)(withStyles(styles)(VideoUpload));

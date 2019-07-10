@@ -74,7 +74,7 @@ router.post('/save', (req, res) => {
     // CREATE NEW MEMO
     let video = new Video({
         filename: files[0].filename,
-        path: dir,
+        path: dir + files[0].filename,
         originalname: files[0].originalname,
         size: files[0].size,
         username: username,

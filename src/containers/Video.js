@@ -15,12 +15,10 @@ class Video extends Component {
     let enterid = this.props.data.enterid;
     let invitee = this.props.data.invitee;
     let seq = this.props.data.seq;
-    console.log(`${enterid}|${invitee}|${seq}`)
 
     let origin   = window.location.origin;
     this.props.videoListRequest(enterid, invitee, seq).then(
       () => {       
-
         this.setState({
           path : `${origin}/${this.props.videoData[0].path}`
         })

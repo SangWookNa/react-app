@@ -1,12 +1,14 @@
 import ImageGallery from 'react-image-gallery';
 import React from 'react';
 import "react-image-gallery/styles/css/image-gallery.css";
-import { connect } from 'react-redux';
 
 
-class Gallery extends React.Component { 
-
+class Gallery extends React.Component {
+  componentDidMount(){
+    console.log(this.props.images);
+  }
   render() {
+    
 
     return (
       <div style={{

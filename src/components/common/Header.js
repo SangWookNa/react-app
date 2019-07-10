@@ -75,12 +75,33 @@ class Header extends Component {
     })
   }
 
+  handleUnlink = (e) => {
+
+    const url = '/api/kakao/unlink ';
+
+    axios.post(url, { token: this.props.userInfo.info.access_token }).then((result) => {
+
+      console.log(result.data);
+      this.props.history.push('/');
+
+    }).catch((error) => {
+      // handle error
+      alert(error);
+    })
+  }
+
   render() {
     const { classes } = this.props;
     const logout = (<List>
                       <ListItem button key='Logout' onClick={this.handleLogout}>
                         <ListItemIcon><PowerSettingsNew /></ListItemIcon>
                         <ListItemText primary='Logout' />
+                      </ListItem>
+                    </List>);
+    const unlink = (<List>
+                      <ListItem button key='unlink' onClick={this.handleUnlink}>
+                        <ListItemIcon><PowerSettingsNew /></ListItemIcon>
+                        <ListItemText primary='unlink' />
                       </ListItem>
                     </List>);
 
@@ -100,6 +121,7 @@ class Header extends Component {
         </List>
         <Divider />
         {this.props.userInfo.isLoggedIn === true ? logout : undefined}
+        {this.props.userInfo.isLoggedIn === true ? unlink : undefined}
       </div>
     );
 

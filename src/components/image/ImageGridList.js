@@ -1,7 +1,6 @@
 import React from 'react';
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
-import { connect } from 'react-redux';
 
 function columns(containerWidth) {
   let columns = 1;

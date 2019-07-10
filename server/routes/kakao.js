@@ -28,6 +28,8 @@ router.post('/', (req, res) => {
     return res.json(result.data);
 
   }).catch((error) => {
+    // handle error
+    winston.log('error', JSON.stringify(error.response.data));
     if (error) throw error;
   })
 });
@@ -55,7 +57,7 @@ router.post('/me', (req, res) => {
 
   }).catch((error) => {
     // handle error
-    winston.log('error', JSON.stringify(error.data));
+    winston.log('error', JSON.stringify(error.response.data));
     if (error) throw error;
   })
 
@@ -77,7 +79,7 @@ router.post('/getinfo', (req, res) => {
 
   }).catch((error) => {
     // handle error
-    winston.log('error', JSON.stringify(error.data));
+    winston.log('error', JSON.stringify(error.response.data));
     return res.status(401).json({
       error: 1
     });
@@ -101,8 +103,39 @@ router.post('/logout', (req, res) => {
 
   }).catch((error) => {
     // handle error
-    winston.log('error', JSON.stringify(error.data));
+    winston.log('error', JSON.stringify(error.response.data));
     if (error) throw error;
+  })
+
+});
+
+/**
+ * 
+ */
+router.post('/send', (req, res) => {
+
+  const url = 'https://kapi.kakao.com/v2/api/talk/memo/scrap/send';
+
+  console.log(req.body);
+  console.log(req.body.data);
+
+  axios.defaults.headers.common['Authorization'] = `Bearer ${req.body.token}`
+
+  var data = qs.stringify({
+    'template_object': JSON.stringify(req.body.data),
+  });  
+  var request_url = qs.stringify({
+    'request_url': 'http://localhost:3000/1112482398/116',
+  });
+
+  axios.post(url, request_url ).then((result) => {
+    
+    return res.json(result.data);
+
+  }).catch((error) => {
+    // handle error
+    winston.log('error', JSON.stringify(error.response.data));
+    return res.json(error.response.data);
   })
 
 });
