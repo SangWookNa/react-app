@@ -7,6 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import VideoPlayer from '../components/video/VideoPlayer';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import * as value from './../globals';
 
 const styles = theme => ({
     root: {
@@ -44,7 +45,6 @@ class VideoUpload extends React.Component {
 
     onDrop = (selectorFiles) => {
 
-        const url = '/api/video/';
         const formData = new FormData();
         let file = selectorFiles;
         let id = this.props.status.info._id;
@@ -69,7 +69,7 @@ class VideoUpload extends React.Component {
             }
         }
 
-        return axios.post(url, formData, config).then((result) => {
+        return axios.post('/api/video/', formData, config).then((result) => {
 
             this.setState({
                 files: result.data.files,
@@ -84,106 +84,81 @@ class VideoUpload extends React.Component {
     }
 
     handleUpload = (e) => {
-        const url = '/api/video/save';
-
         let invitee = this.state.invitee;
         let username = this.props.status.info.nickname;
         let enterid = this.props.status.info._id;
         let files = this.state.files;
-
-        // if (invitee === '' || invitee === null || invitee === undefined) {
-        //     alert("초대받는분의 이름을 입력해주세요~");
-        //     return;
-        // }
 
         if (files.length === 0) {
             alert("영상을 등록해주세요~");
             return;
         }
 
-        return axios.post(url, { username, enterid, invitee, files }).then((result) => {
+        return axios.post('/api/video/save', { username, enterid, invitee, files }).then((result) => {
 
-            alert('영상 등록이 완료되었습니다.');
             let invitee = result.data.result.invitee;
             let seq = result.data.result._id;
             let enterid = result.data.result.enterid;
-
+            let celebrateUrl='';
+            let title ='';
+            let description = '';
 
             if (invitee === '' || invitee === null || invitee === undefined || invitee === 'undefined') {
-                //this.props.history.push(`/${username}/${seq}`);
-                const url = window.location.origin;
-                alert(`${url}/${enterid}/${seq}`);
-
-                const sendUrl = '/api/kakao/send';
-                const token = this.props.status.info.access_token;
-                const data = {
-                    "object_type": "feed",
-                    "content": {
-                        "title": "디저트 사진",
-                        "description": "아메리카노, 빵, 케익",
-                        "image_url": "http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg",
-                        "image_width": 640,
-                        "image_height": 640,
-                        "link": {
-                            "web_url": "http://www.daum.net",
-                            "mobile_web_url": "http://m.daum.net",
-                            "android_execution_params": "contentId=100",
-                            "ios_execution_params": "contentId=100"
-                        }
-                    },
-                    "social": {
-                        "like_count": 100,
-                        "comment_count": 200,
-                        "shared_count": 300,
-                        "view_count": 400,
-                        "subscriber_count": 500
-                    },
-                    "buttons": [
-                        {
-                            "title": "웹으로 이동",
-                            "link": {
-                                "web_url": "http://www.daum.net",
-                                "mobile_web_url": "http://m.daum.net"
-                            }
-                        },
-                        {
-                            "title": "앱으로 이동",
-                            "link": {
-                                "android_execution_params": "contentId=100",
-                                "ios_execution_params": "contentId=100"
-                            }
-                        }
-                    ]
-                };
-
-                return axios.post(sendUrl, { token, data }).then((result) => {
-                    console.log(result.data);
-                    //window.location.href = url;
-                    if (result.data.code === -402) {
-                        const required_scopes = result.data.required_scopes;
-                        const url = `https://kauth.kakao.com/oauth/authorize?client_id=9e7171f1d9599641378cd3e36174adbc&redirect_uri=http://localhost:3000/oauth&response_type=code&scope=${required_scopes.join(',')}`;
-                        window.location.href = url;
-                    } else {
-                        window.location.href = url;
-                    }
-
-                }).catch((error) => {
-                    // handle error
-                    alert(error);
-
-                })
+                celebrateUrl = `${window.location.origin}/${enterid}/${seq}`;
+                title = '결혼식에 초대합니다.';
 
             } else {
-                //this.props.history.push(`/${username}/${invitee}/${seq}`);
-                const url = window.location.origin;
-                alert(`${url}/${enterid}/${invitee}/${seq}`);
-                window.location.href = url;
+                celebrateUrl = `${window.location.origin}/${enterid}/${invitee}/${seq}`;
+                title = `To. ${invitee}`;
+                description = '결혼식에 초대합니다.';
             }
+            
+            const token = this.props.status.info.access_token;
+            const data = {
+                "object_type": "feed",
+                "content": {
+                    "title": title,
+                    "description": description,
+                    "image_url": "http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg",
+                    "image_width": 640,
+                    "image_height": 640,
+                    "link": {
+                        "web_url": celebrateUrl,
+                        "mobile_web_url": celebrateUrl,
+                        "android_execution_params": "contentId=100",
+                        "ios_execution_params": "contentId=100"
+                    }
+                },                    
+                "buttons": [
+                    {
+                        "title": "청첩장 열어보기",
+                        "link": {
+                            "web_url": celebrateUrl,
+                            "mobile_web_url": celebrateUrl
+                        }
+                    },
+                ]
+            };
 
+            return axios.post('/api/kakao/send', { token, data }).then((result) => {
+                console.log(result.data);
+                //window.location.href = url;
+                if (result.data.code === -402) {
+                    alert('카카오톡 메시지 전송여부에 동의하셔야합니다. 동의 후 청첩장을 다시 제작해주세요.');
+                    const required_scopes = result.data.required_scopes;
+                    const url = `${value.KAKAO_LOGIN_URL}?client_id=${value.KAKAO_CLIENT_ID}&redirect_uri=${value.KAKAO_REDIRECT_URL}&response_type=code&scope=${required_scopes.join(',')}`;
+                    window.location.href = url;
+                } else {
+                    alert('청첩장 제작이 완료되었습니다. 나만의 채팅방에서 제작된 청첩장을 확인하세요!');
+                    window.location.href = window.location.origin;
+                }
+            }).catch((error) => {
+                // handle error
+                alert(error);
+            })   
         }).catch((error) => {
             // handle error
             alert(error);
-
         })
     }
 

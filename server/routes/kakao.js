@@ -15,8 +15,6 @@ router.post('/', (req, res) => {
   let redirect_uri = 'http://localhost:3000/oauth';
   let code = req.body.code;
 
-  const url = 'https://kauth.kakao.com/oauth/token';
-
   var data = qs.stringify({
     'grant_type': grant_type,
     'client_id': client_id,
@@ -24,7 +22,7 @@ router.post('/', (req, res) => {
     'code': code
   });
 
-  return axios.post(url, data).then((result) => {
+  return axios.post('https://kauth.kakao.com/oauth/token', data).then((result) => {
     return res.json(result.data);
 
   }).catch((error) => {
@@ -38,10 +36,9 @@ router.post('/', (req, res) => {
  * 
  */
 router.post('/me', (req, res) => {
-  const url = 'https://kapi.kakao.com/v1/user/me';
 
   axios.defaults.headers.common['Authorization'] = `Bearer ${req.body.token}`
-  axios.get(url).then((result) => {
+  axios.get('https://kapi.kakao.com/v1/user/me').then((result) => {
 
     // ALTER SESSION
     let session = req.session;
@@ -71,10 +68,9 @@ router.post('/getinfo', (req, res) => {
       error: 1
     });
   }
-  const url = 'https://kapi.kakao.com/v1/user/access_token_info';
   
   axios.defaults.headers.common['Authorization'] = `Bearer ${req.session.loginInfo.access_token}`
-  axios.get(url).then((result) => {
+  axios.get('https://kapi.kakao.com/v1/user/access_token_info').then((result) => {
     return res.json({ info: req.session.loginInfo });
 
   }).catch((error) => {
@@ -92,12 +88,10 @@ router.post('/getinfo', (req, res) => {
  */
 router.post('/logout', (req, res) => {
 
-  const url = 'https://kapi.kakao.com/v1/user/logout';
-
   req.session.destroy(err => { if (err) throw err; });
 
   axios.defaults.headers.common['Authorization'] = `Bearer ${req.body.token}`
-  axios.post(url).then((result) => {
+  axios.post('https://kapi.kakao.com/v1/user/logout').then((result) => {
     
     return res.json(result.data);
 
@@ -114,22 +108,13 @@ router.post('/logout', (req, res) => {
  */
 router.post('/send', (req, res) => {
 
-  const url = 'https://kapi.kakao.com/v2/api/talk/memo/scrap/send';
-
-  console.log(req.body);
-  console.log(req.body.data);
-
   axios.defaults.headers.common['Authorization'] = `Bearer ${req.body.token}`
 
   var data = qs.stringify({
     'template_object': JSON.stringify(req.body.data),
   });  
-  var request_url = qs.stringify({
-    'request_url': 'http://localhost:3000/1112482398/116',
-  });
 
-  axios.post(url, request_url ).then((result) => {
-    
+  axios.post('https://kapi.kakao.com//v2/api/talk/memo/default/send', data ).then((result) => {
     return res.json(result.data);
 
   }).catch((error) => {
@@ -146,16 +131,14 @@ router.post('/send', (req, res) => {
 router.post('/tokeninfo', (req, res) => {
   console.log(req.body.token);
 
-  const url = 'https://kapi.kakao.com/v1/user/access_token_info';
-
   axios.defaults.headers.common['Authorization'] = `Bearer ${req.body.token}`
-  axios.get(url).then((result) => {
+  axios.get('https://kapi.kakao.com/v1/user/access_token_info').then((result) => {
     console.log('SUCCESS');
     return res.json(result.data);
 
   }).catch((error) => {
     // handle error
-    console.log('ERROR');
+    winston.log('error', JSON.stringify(error.response.data));
     if (error) throw error;
   })
 
@@ -165,21 +148,15 @@ router.post('/tokeninfo', (req, res) => {
  * 
  */
 router.post('/unlink', (req, res) => {
-  console.log(req.body.token);
-
-  const url = 'https://kapi.kakao.com/v1/user/unlink';
-
 
   axios.defaults.headers.common['Authorization'] = `Bearer ${req.body.token}`
-  axios.post(url).then((result) => {
+  axios.post('https://kapi.kakao.com/v1/user/unlink').then((result) => {
     console.log('SUCCESS');
-    console.log(result);
     return res.json(result.data);
 
   }).catch((error) => {
     // handle error
-    console.log('ERROR');
-    console.log(error);
+    winston.log('error', JSON.stringify(error.response.data));
     if (error) throw error;
   })
 

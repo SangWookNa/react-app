@@ -11,7 +11,7 @@ const styles = {
 };
 
 class MemoList extends React.Component {
-
+    
     shouldComponentUpdate(nextProps, nextState) {
         let update = JSON.stringify(this.props) !== JSON.stringify(nextProps);
         return update;

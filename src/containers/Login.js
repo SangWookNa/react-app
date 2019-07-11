@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import logo from './../image/kakao_account_login.png';
+import * as value from '../globals';
 
 const styles = theme => ({
   root: {
@@ -16,7 +17,7 @@ const styles = theme => ({
 class Login extends React.Component {
 
   handleUpload = (e) => {
-    const url = 'https://kauth.kakao.com/oauth/authorize?client_id=9e7171f1d9599641378cd3e36174adbc&redirect_uri=http://localhost:3000/oauth&response_type=code';
+    const url = `${value.KAKAO_LOGIN_URL}?client_id=${value.KAKAO_CLIENT_ID}&redirect_uri=${value.KAKAO_REDIRECT_URL}&response_type=code`;
 
     window.location.href = url;
   }

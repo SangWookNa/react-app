@@ -55,8 +55,6 @@ router.post('/save', (req, res) => {
     let invitee = req.body.invitee;
     let files = req.body.files;
 
-    console.log(req.body);
-
     const dir = `public/uploads/video/${enterid}/`;
     if (!fs.existsSync(dir)) {
           fs.mkdir(dir, (err) => {

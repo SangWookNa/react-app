@@ -54,11 +54,9 @@ class Header extends Component {
 
   handleLogout = (e) => {
 
-    const url = '/api/kakao/logout';
-
     console.log(this.props.userInfo);
 
-    axios.post(url, { token: this.props.userInfo.info.access_token }).then((result) => {
+    axios.post('/api/kakao/logout', { token: this.props.userInfo.info.access_token }).then((result) => {
 
       //logout the session
       let loginData = {
@@ -77,12 +75,10 @@ class Header extends Component {
 
   handleUnlink = (e) => {
 
-    const url = '/api/kakao/unlink ';
+    axios.post('/api/kakao/unlink', { token: this.props.userInfo.info.access_token }).then((result) => {
 
-    axios.post(url, { token: this.props.userInfo.info.access_token }).then((result) => {
-
-      console.log(result.data);
-      this.props.history.push('/');
+      alert('앱 연결이 해제되었습니다.');
+      window.location.href = window.location.origin;
 
     }).catch((error) => {
       // handle error

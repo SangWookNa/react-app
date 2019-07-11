@@ -16,6 +16,7 @@ import blue from '@material-ui/core/colors/blue';
 import {SimpleDialog} from '../common';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { connect } from 'react-redux';
 
 const styles = {
     root: {
@@ -70,6 +71,11 @@ class Memo extends React.Component {
     };
 
     handleClickDialogOpen = (e) => {
+
+        alert(e.target.id);
+        alert(this.props.status.info._id);
+        alert(this.props.data.enterid);
+        
         this.setState({
             open: true,
             selectedValue: e.target.id,
@@ -240,4 +246,10 @@ Memo.defaultProps = {
 
 }
 
-export default withStyles(styles)(Memo);
+const mapStateToProps = (state) => {
+    return {
+      status: state.kakao.status,
+    };
+  };
+  
+export default connect(mapStateToProps)(withStyles(styles)(Memo));

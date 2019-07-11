@@ -27,7 +27,6 @@ class ImageUpload extends React.Component {
     }
 
     handleUpload = (e) => {
-        const url = '/api/image/';
         const formData = new FormData();
 
         let file = this.state.pictures;
@@ -55,7 +54,7 @@ class ImageUpload extends React.Component {
 
         return axios.delete(`/api/image/${id}/${e.target.id}`, formData, config).then((result) => {
             
-            return axios.post(url, formData, config).then((result) => {
+            return axios.post('/api/image/', formData, config).then((result) => {
 
                 if (result.data.success === true) {
                     alert('사진 등록이 완료되었습니다.');

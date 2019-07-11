@@ -3,13 +3,8 @@ import {
   Video,
   Memo,
 } from './';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import { Gallery, ImageGridList } from '../components/image/';
-import {
-  kakaoLoginRequest,
-  getStatusRequest,
-} from '../actions/kakao';
 import {
   imageGalleryListRequest,
   imageGridListRequest,
@@ -17,17 +12,6 @@ import {
 import {
   memoListRequest,
 } from '../actions/memo';
-
-const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit,
-    float: 'right'
-  },
-  item: {
-    color: 'inherit',
-    textDecoration: 'none',
-  }
-});
 
 class Home extends Component {
   state = {

@@ -345,6 +345,7 @@ router.get('/:id', (req, res) => {
         //.limit(6)
         .exec((err, memos) => {
             if (err) throw err;
+            console.log(memos);
             res.json(memos);
         });
 });
