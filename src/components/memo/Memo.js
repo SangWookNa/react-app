@@ -72,10 +72,18 @@ class Memo extends React.Component {
 
     handleClickDialogOpen = (e) => {
 
-        alert(e.target.id);
-        alert(this.props.status.info._id);
-        alert(this.props.data.enterid);
+        let handleGubn = e.target.id;
+        let loginId = this.props.status.info.userid;
+        let enterId = this.props.data.enterid;
+
+        //세션의 userid와 청첩장 enterid가 같으면 방명록 삭제가 가능함
+        if(handleGubn === 'delete' && (loginId == enterId)){
+            if(window.confirm('이 메세지를 삭제하시겠어요?')){
+                this.handleRemove();
+            }
+        }
         
+        //그외에는 비밀번호 체크 다이얼로그 팝업 노출
         this.setState({
             open: true,
             selectedValue: e.target.id,
@@ -103,7 +111,8 @@ class Memo extends React.Component {
     handleEditMode = () => {
 
         this.setState({
-            editMode: !this.state.editMode            
+            editMode: !this.state.editMode,        
+            contents: this.props.data.contents
         });
     };
 
@@ -111,8 +120,6 @@ class Memo extends React.Component {
         let _id = this.props.data._id;
         let contents = this.state.contents;
 
-        console.log(_id);
-        console.log(contents);
         this.props.onEdit(_id, contents).then((result) => {            
             if(result === 'SUCCESS'){
                 this.setState({

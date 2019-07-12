@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { BrowserRouter as Link, NavLink } from "react-router-dom";
-import { Login, VideoUpload, Memo } from './';
+import { Login, VideoUpload, Memo, MapUpload } from './';
 import { Header } from '../components/common/';
 import { Gallery, ImageGridList } from '../components/image/';
 import axios from 'axios';
@@ -110,7 +110,7 @@ class Main extends Component {
           // 쿠키 데이터 생성
           let loginData = {
             isLoggedIn: true,
-            userid: result.data._id
+            userid: result.data.userid
           };
 
           document.cookie = 'key=' + btoa(JSON.stringify(loginData));
@@ -126,7 +126,7 @@ class Main extends Component {
 
   //데이터 불러오기
   dataSetting = () => {
-    let id = this.props.status.info._id;
+    let id = this.props.status.info.userid;
 
     //사진불러오기(갤러리)
     this.props.imageGalleryListRequest(id, 'gallery').then(
@@ -180,7 +180,7 @@ class Main extends Component {
 
   //방명록 불러오기
   handleMemoList = () => {
-    let id = this.props.status.info._id;
+    let id = this.props.status.info.userid;
 
     return this.props.memoListRequest(true, undefined, undefined, id).then();
   }
@@ -188,7 +188,7 @@ class Main extends Component {
   render() {
     const { classes } = this.props;
 
-    const videoUpload = (<VideoUpload id={this.props.status.info._id} />);
+    const videoUpload = (<VideoUpload id={this.props.status.info.userid} />);
     const imageUplaod = (<Typography variant="h6">사진을 등록 해주세요
                           <NavLink to="/ImageUpload" className={classes.item} >
         <Button variant="contained" color="primary" size="small" component="span" className={classes.button}>Upload</Button>
@@ -198,6 +198,7 @@ class Main extends Component {
     return (
       <div style={{ flexGrow: 1 }}>
         <Header userInfo={this.props.status} />
+        <MapUpload/>
         {this.props.status.isLoggedIn === true ? undefined : <Login />}
         {this.props.status.isLoggedIn === true ? videoUpload : undefined}
         {this.props.status.isLoggedIn === true ? imageUplaod : undefined}
@@ -206,7 +207,7 @@ class Main extends Component {
                                                     images={this.state.imagesGridData}
                                                     thumbnailImages={this.state.thumbnailImages} /> : undefined}
         {this.props.status.isLoggedIn === true ? <Memo 
-                                                    enterid={this.props.status.info._id} 
+                                                    enterid={this.props.status.info.userid} 
                                                     memoData={this.props.memoData}
                                                     onList={this.handleMemoList}  /> : undefined}
       </div>

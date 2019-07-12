@@ -324,7 +324,7 @@ router.post('/star/:id', (req, res) => {
             //ALREADY starred
             memo.starred.splice(index, 1);
         }
-        console.log(memo);
+        
         // SAVE THE MEMO
         memo.save((err, memo) => {
             if (err) throw err;
@@ -345,7 +345,6 @@ router.get('/:id', (req, res) => {
         //.limit(6)
         .exec((err, memos) => {
             if (err) throw err;
-            console.log(memos);
             res.json(memos);
         });
 });

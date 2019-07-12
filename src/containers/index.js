@@ -5,5 +5,6 @@ import ImageUpload from './ImageUpload';
 import VideoUpload from './VideoUpload';
 import Login from './Login';
 import Main from './Main';
+import MapUpload from './MapUpload';
 
-export { Home, Memo, Video, ImageUpload, VideoUpload, Login, Main };
+export { Home, Memo, Video, ImageUpload, VideoUpload, Login, Main, MapUpload };

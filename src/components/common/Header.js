@@ -143,7 +143,7 @@ class Header extends Component {
               </div>
             </SwipeableDrawer>
             <Typography variant="h6" color="inherit" className={classes.grow}>
-              <NavLink to="/" className={classes.item}>test</NavLink>
+              <NavLink to="/" className={classes.item}>{this.props.userInfo.info.nickname}</NavLink>
             </Typography>
           </Toolbar>
         </AppBar>

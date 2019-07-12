@@ -47,7 +47,7 @@ class VideoUpload extends React.Component {
 
         const formData = new FormData();
         let file = selectorFiles;
-        let id = this.props.status.info._id;
+        let id = this.props.status.info.userid;
         let username = this.props.status.info.nickname;
 
         formData.append('enterid', id);
@@ -86,7 +86,7 @@ class VideoUpload extends React.Component {
     handleUpload = (e) => {
         let invitee = this.state.invitee;
         let username = this.props.status.info.nickname;
-        let enterid = this.props.status.info._id;
+        let enterid = this.props.status.info.userid;
         let files = this.state.files;
 
         if (files.length === 0) {
@@ -149,7 +149,7 @@ class VideoUpload extends React.Component {
                     const url = `${value.KAKAO_LOGIN_URL}?client_id=${value.KAKAO_CLIENT_ID}&redirect_uri=${value.KAKAO_REDIRECT_URL}&response_type=code&scope=${required_scopes.join(',')}`;
                     window.location.href = url;
                 } else {
-                    alert('청첩장 제작이 완료되었습니다. 나만의 채팅방에서 제작된 청첩장을 확인하세요!');
+                    alert('청첩장 제작이 완료되었습니다. 카카오톡 > 나만의 채팅방에서 제작된 청첩장을 확인하세요!');
                     window.location.href = window.location.origin;
                 }
             }).catch((error) => {

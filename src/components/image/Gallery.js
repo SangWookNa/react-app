@@ -4,9 +4,6 @@ import "react-image-gallery/styles/css/image-gallery.css";
 
 
 class Gallery extends React.Component {
-  componentDidMount(){
-    console.log(this.props.images);
-  }
   render() {
     
 

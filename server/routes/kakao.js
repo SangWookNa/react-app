@@ -44,7 +44,7 @@ router.post('/me', (req, res) => {
     let session = req.session;
 
     session.loginInfo = {
-      _id: result.data.id,
+      userid: result.data.id,
       email: result.data.kaccount_email,
       nickname: result.data.properties.nickname,
       access_token: req.body.token

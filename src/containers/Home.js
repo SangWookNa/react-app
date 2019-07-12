@@ -44,7 +44,7 @@ class Home extends Component {
 
           return obj;
         });
-        console.log(images);
+        
         this.setState({
           imagesGalleryData: images,
         });
@@ -86,7 +86,6 @@ class Home extends Component {
 
   //방명록 불러오기
   handleMemoList = () => {
-    //let id = this.props.status.info._id;
     let id = this.props.match.params.enterid;
 
     return this.props.memoListRequest(true, undefined, undefined, id).then();
