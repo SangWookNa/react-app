@@ -77,7 +77,7 @@ class Memo extends React.Component {
         let enterId = this.props.data.enterid;
 
         //세션의 userid와 청첩장 enterid가 같으면 방명록 삭제가 가능함
-        if(handleGubn === 'delete' && (loginId == enterId)){
+        if(handleGubn === 'delete' && (loginId === enterId)){
             if(window.confirm('이 메세지를 삭제하시겠어요?')){
                 this.handleRemove();
             }

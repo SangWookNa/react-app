@@ -12,6 +12,7 @@ import {
         ImageUpload,
         VideoUpload,
         Main,
+        MapUpload,
       } from './containers';
 
 
@@ -27,6 +28,7 @@ ReactDOM.render(
           <Route exact path="/:enterid/:invitee/:seq" component={Home} /> {/*  청첩장 메인 (초대자 명시) */}
           <Route path="/VideoUpload" component={VideoUpload} /> {/* 동영상 업로드 */}
           <Route path="/ImageUpload" component={ImageUpload} /> {/* 이미지 업로드 */}
+          <Route path="/MapUpload" component={MapUpload} /> {/* 예식정보 업로드 */}
         </div>
       </Router>
     </Provider>

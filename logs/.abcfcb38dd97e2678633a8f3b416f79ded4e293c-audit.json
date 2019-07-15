@@ -6,11 +6,6 @@
     "auditLog": "D:\\workplace\\react-app\\logs\\.abcfcb38dd97e2678633a8f3b416f79ded4e293c-audit.json",
     "files": [
         {
-            "date": 1562549492133,
-            "name": "D:\\workplace\\react-app\\logs\\app-2019-07-08.log",
-            "hash": "23b8e21476da018d92dbfb57ed23573b"
-        },
-        {
             "date": 1562631216097,
             "name": "D:\\workplace\\react-app\\logs\\app-2019-07-09.log",
             "hash": "a40d05448d3279dd904f03487ca3cd87"
@@ -29,6 +24,11 @@
             "date": 1562890102854,
             "name": "D:\\workplace\\react-app\\logs\\app-2019-07-12.log",
             "hash": "7e4bdd8b92fdeaf309f29ec0f46ffe25"
+        },
+        {
+            "date": 1563151072933,
+            "name": "D:\\workplace\\react-app\\logs\\app-2019-07-15.log",
+            "hash": "00041028007091d1fe7c0830ca48e008"
         }
     ]
 }

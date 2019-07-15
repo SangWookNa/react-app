@@ -23,7 +23,7 @@ import {
 
 const styles = theme => ({
   button: {
-    margin: theme.spacing.unit,
+    margin: '0px',
     float: 'right'
   },
   item: {
@@ -189,27 +189,33 @@ class Main extends Component {
     const { classes } = this.props;
 
     const videoUpload = (<VideoUpload id={this.props.status.info.userid} />);
-    const imageUplaod = (<Typography variant="h6">사진을 등록 해주세요
+    const mapUplaod = (<Typography variant="h6">1.예식 정보 관리
+    <NavLink to="/MapUpload" className={classes.item} >
+        <Button variant="contained" color="primary" size="small" component="span" className={classes.button}>Upload</Button>
+      </NavLink>
+    </Typography>);
+    const imageUplaod = (<Typography variant="h6">2.웨딩 사진 관리
                           <NavLink to="/ImageUpload" className={classes.item} >
         <Button variant="contained" color="primary" size="small" component="span" className={classes.button}>Upload</Button>
       </NavLink>
     </Typography>);
 
+
     return (
       <div style={{ flexGrow: 1 }}>
         <Header userInfo={this.props.status} />
-        <MapUpload/>
         {this.props.status.isLoggedIn === true ? undefined : <Login />}
-        {this.props.status.isLoggedIn === true ? videoUpload : undefined}
+        {this.props.status.isLoggedIn === true ? mapUplaod : undefined}
         {this.props.status.isLoggedIn === true ? imageUplaod : undefined}
-        {this.props.status.isLoggedIn === true ? <Gallery images={this.state.imagesGalleryData} /> : undefined}
+        {/* {this.props.status.isLoggedIn === true ? <Gallery images={this.state.imagesGalleryData} /> : undefined}
         {this.props.status.isLoggedIn === true ? <ImageGridList
-                                                    images={this.state.imagesGridData}
-                                                    thumbnailImages={this.state.thumbnailImages} /> : undefined}
-        {this.props.status.isLoggedIn === true ? <Memo 
-                                                    enterid={this.props.status.info.userid} 
-                                                    memoData={this.props.memoData}
-                                                    onList={this.handleMemoList}  /> : undefined}
+          images={this.state.imagesGridData}
+          thumbnailImages={this.state.thumbnailImages} /> : undefined}
+        {this.props.status.isLoggedIn === true ? <Memo
+          enterid={this.props.status.info.userid}
+          memoData={this.props.memoData}
+          onList={this.handleMemoList} /> : undefined} */}
+        {this.props.status.isLoggedIn === true ? videoUpload : undefined}
       </div>
     );
   }
