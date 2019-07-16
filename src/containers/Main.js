@@ -42,6 +42,7 @@ class Main extends Component {
 
   componentDidMount() {
 
+    console.log(this.props.location.pathname);
     //카카오 로그인 리다이렉트
     if (this.props.location.pathname !== '/') {
       //사용자 정보 셋팅
@@ -112,9 +113,10 @@ class Main extends Component {
             isLoggedIn: true,
             userid: result.data.userid
           };
-
+          console.log(JSON.stringify(loginData));
           document.cookie = 'key=' + btoa(JSON.stringify(loginData));
-          this.props.history.push('/');
+          //this.props.history.push('/');
+          window.location.href = window.location.origin;
 
         }).catch((error) => {
           // handle error
@@ -203,7 +205,6 @@ class Main extends Component {
 
     return (
       <div style={{ flexGrow: 1 }}>
-        <Header userInfo={this.props.status} />
         {this.props.status.isLoggedIn === true ? undefined : <Login />}
         {this.props.status.isLoggedIn === true ? mapUplaod : undefined}
         {this.props.status.isLoggedIn === true ? imageUplaod : undefined}

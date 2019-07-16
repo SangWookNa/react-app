@@ -17,6 +17,7 @@ import Image from '@material-ui/icons/Image';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import { BrowserRouter as Link, NavLink } from "react-router-dom";
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 const styles = {
   root: {
@@ -54,9 +55,9 @@ class Header extends Component {
 
   handleLogout = (e) => {
 
-    console.log(this.props.userInfo);
+    console.log(this.props.status);
 
-    axios.post('/api/kakao/logout', { token: this.props.userInfo.info.access_token }).then((result) => {
+    axios.post('/api/kakao/logout', { token: this.props.status.info.access_token }).then((result) => {
 
       //logout the session
       let loginData = {
@@ -65,7 +66,8 @@ class Header extends Component {
       };
       document.cookie = 'key=' + btoa(JSON.stringify(loginData));
 
-      window.location.reload();
+      //window.location.reload();
+      window.location.href = window.location.origin;
 
     }).catch((error) => {
       // handle error
@@ -75,7 +77,7 @@ class Header extends Component {
 
   handleUnlink = (e) => {
 
-    axios.post('/api/kakao/unlink', { token: this.props.userInfo.info.access_token }).then((result) => {
+    axios.post('/api/kakao/unlink', { token: this.props.status.info.access_token }).then((result) => {
 
       alert('앱 연결이 해제되었습니다.');
       window.location.href = window.location.origin;
@@ -116,8 +118,8 @@ class Header extends Component {
           </ListItem>
         </List>
         <Divider />
-        {this.props.userInfo.isLoggedIn === true ? logout : undefined}
-        {this.props.userInfo.isLoggedIn === true ? unlink : undefined}
+        {this.props.status.isLoggedIn === true ? logout : undefined}
+        {this.props.status.isLoggedIn === true ? unlink : undefined}
       </div>
     );
 
@@ -143,7 +145,7 @@ class Header extends Component {
               </div>
             </SwipeableDrawer>
             <Typography variant="h6" color="inherit" className={classes.grow}>
-              <NavLink to="/" className={classes.item}>{this.props.userInfo.info.nickname}</NavLink>
+              <NavLink to="/" className={classes.item}>{this.props.status.info.nickname}</NavLink>
             </Typography>
           </Toolbar>
         </AppBar>
@@ -156,8 +158,10 @@ Header.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-Header.defaultProps = {
-  userInfo: {},
-}
+const mapStateToProps = (state) => {
+  return {
+    status: state.kakao.status,
+  };
+};
 
-export default withStyles(styles)(Header);
+export default connect(mapStateToProps)(withStyles(styles)(Header));

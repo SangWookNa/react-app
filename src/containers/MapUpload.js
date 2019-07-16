@@ -8,6 +8,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import blue from '@material-ui/core/colors/blue';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import { connect } from 'react-redux';
 
 const styles = theme => ({
     root: {
@@ -60,7 +61,7 @@ const styles = theme => ({
 
 
 
-class VideoUpload extends React.Component {
+class MapUpload extends React.Component {
     constructor(props) {
         super(props);
         this.groomInput = React.createRef();
@@ -85,6 +86,9 @@ class VideoUpload extends React.Component {
     }
 
     componentDidMount(){
+
+        console.log(this.props.status);
+
         window.mapContainer = document.getElementById('map'); // 지도를 표시할 div 
         window.mapOption = {
           center: new window.kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
@@ -384,4 +388,11 @@ class VideoUpload extends React.Component {
     }
 }
 
-export default withStyles(styles)(VideoUpload);
+const mapStateToProps = (state) => {
+    return {
+      status: state.kakao.status,
+    };
+  };  
+  
+  export default connect(mapStateToProps)(withStyles(styles)(MapUpload));
+  
