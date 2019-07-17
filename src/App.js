@@ -1,42 +1,88 @@
 import React, { Component } from 'react';
 // Router
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import {
-  Home,
-  ImageUpload,
-  VideoUpload,
-  Main,
-  MapUpload,
-} from './containers';
 import { Header } from './components/common/';
+import { connect } from 'react-redux';
+import {
+  getStatusRequest,
+} from '../src/actions/kakao';
 
 
 class App extends Component {
 
   componentDidMount() {
 
-    console.log(this.props);
+    //쿠키 가져오기
+    function getCookie(name) {
+      var value = "; " + document.cookie;
+      var parts = value.split("; " + name + "=");
+      if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+
+    //get loginData from cookie
+    let loginData = getCookie('key');
+
+    //if loginData is undefined, do nothing
+    if (typeof loginData === "undefined"){
+      return;
+    } 
+
+    //decode base64 & parse json
+    loginData = JSON.parse(atob(loginData));
+
+    //if not logged in, do nothing
+    //console.log(loginData);
+    if (!loginData.isLoggedIn){
+      return;
+    } 
+
+    if (loginData.isLoggedIn && this.props.location.pathname ==='/'){
+      window.location.href = window.location.origin+'/Main';
+      return;
+    } 
     
+    //세션가져오기
+    //page refreshed & has a session in cookie,
+    //check whether this cookie is valid or not
+    this.props.getStatusRequest().then(
+      () => {
+
+        if (this.props.status.valid) {
+          console.log(this.props.status);
+          //if session is not valid
+        } else {
+          //logout the session
+          let loginData = {
+            isLoggedIn: false,
+            userid: '',
+          };
+          document.cookie = 'key=' + btoa(JSON.stringify(loginData));
+        }
+      }
+    );
   }
 
   render() {
     return (
-      <Router>
-        <div>
-          <Header/>
-          <Switch>
-            <Route exact path="/" component={Main} /> {/*  로그인 메인 */}
-            <Route exact path="/oauth" component={Main} /> {/*  카카오로그인 후 리다이렉션 */}
-            <Route exact path="/:enterid/:seq" component={Home} /> {/*  청첩장 메인 (공통) */}
-            <Route exact path="/:enterid/:invitee/:seq" component={Home} /> {/*  청첩장 메인 (초대자 명시) */}
-            <Route path="/VideoUpload" component={VideoUpload} /> {/* 동영상 업로드 */}
-            <Route path="/ImageUpload" component={ImageUpload} /> {/* 이미지 업로드 */}
-            <Route path="/MapUpload" component={MapUpload} /> {/* 예식정보 업로드 */}
-          </Switch>
-        </div>
-      </Router>
+      <div>
+        <Header status = {this.props.status} />
+        {this.props.children}
+      </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    status: state.kakao.status,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getStatusRequest: () => {
+      return dispatch(getStatusRequest());
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

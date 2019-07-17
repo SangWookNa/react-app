@@ -8,7 +8,6 @@ import CardHeader from '@material-ui/core/CardHeader';
 import blue from '@material-ui/core/colors/blue';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import { connect } from 'react-redux';
 
 const styles = theme => ({
     root: {
@@ -85,14 +84,41 @@ class MapUpload extends React.Component {
         groom: '',
     }
 
-    componentDidMount(){
+    componentDidMount() {
 
-        console.log(this.props.status);
+        //쿠키 가져오기
+        function getCookie(name) {
+            var value = "; " + document.cookie;
+            var parts = value.split("; " + name + "=");
+            if (parts.length === 2) return parts.pop().split(";").shift();
+        }
 
+        //get loginData from cookie
+        let loginData = getCookie('key');
+
+        //if loginData is undefined, do nothing
+        if (typeof loginData === "undefined") {
+            alert("세션정보가 없습니다. 로그인페이지로 이동합니다.");
+            window.location.href = window.location.origin;
+            return;
+        }
+
+        //decode base64 & parse json
+        loginData = JSON.parse(atob(loginData));
+
+        //if not logged in, do nothing
+        //console.log(loginData);
+        if (!loginData.isLoggedIn) {
+            alert("세션정보가 없습니다. 로그인페이지로 이동합니다.");
+            window.location.href = window.location.origin;
+            return;
+        }
+
+        //지도표시
         window.mapContainer = document.getElementById('map'); // 지도를 표시할 div 
         window.mapOption = {
-          center: new window.kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-          level: 3 // 지도의 확대 레벨
+            center: new window.kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
         };
         window.map = new window.kakao.maps.Map(window.mapContainer, window.mapOption); //지도 생성 및 객체 리턴
         // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
@@ -252,7 +278,7 @@ class MapUpload extends React.Component {
     }
 
     handleCancel = (e) => {
-        this.props.history.push('/');
+        this.props.history.push('/Main');
     }
 
 
@@ -388,11 +414,4 @@ class MapUpload extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-      status: state.kakao.status,
-    };
-  };  
-  
-  export default connect(mapStateToProps)(withStyles(styles)(MapUpload));
-  
+export default withStyles(styles)(MapUpload);

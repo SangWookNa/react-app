@@ -17,7 +17,6 @@ import Image from '@material-ui/icons/Image';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import { BrowserRouter as Link, NavLink } from "react-router-dom";
 import axios from 'axios';
-import { connect } from 'react-redux';
 
 const styles = {
   root: {
@@ -46,7 +45,7 @@ class Header extends Component {
   state = {
     left: false,
   };
-
+  
   toggleDrawer = (side, open) => () => {
     this.setState({
       [side]: open,
@@ -79,6 +78,13 @@ class Header extends Component {
 
     axios.post('/api/kakao/unlink', { token: this.props.status.info.access_token }).then((result) => {
 
+      //logout the session
+      let loginData = {
+        isLoggedIn: false,
+        username: '',
+      };
+      document.cookie = 'key=' + btoa(JSON.stringify(loginData));
+      
       alert('앱 연결이 해제되었습니다.');
       window.location.href = window.location.origin;
 
@@ -91,17 +97,17 @@ class Header extends Component {
   render() {
     const { classes } = this.props;
     const logout = (<List>
-                      <ListItem button key='Logout' onClick={this.handleLogout}>
-                        <ListItemIcon><PowerSettingsNew /></ListItemIcon>
-                        <ListItemText primary='Logout' />
-                      </ListItem>
-                    </List>);
+      <ListItem button key='Logout' onClick={this.handleLogout}>
+        <ListItemIcon><PowerSettingsNew /></ListItemIcon>
+        <ListItemText primary='Logout' />
+      </ListItem>
+    </List>);
     const unlink = (<List>
-                      <ListItem button key='unlink' onClick={this.handleUnlink}>
-                        <ListItemIcon><PowerSettingsNew /></ListItemIcon>
-                        <ListItemText primary='unlink' />
-                      </ListItem>
-                    </List>);
+      <ListItem button key='unlink' onClick={this.handleUnlink}>
+        <ListItemIcon><PowerSettingsNew /></ListItemIcon>
+        <ListItemText primary='unlink' />
+      </ListItem>
+    </List>);
 
     const sideList = (
       <div className={classes.list}>
@@ -145,11 +151,13 @@ class Header extends Component {
               </div>
             </SwipeableDrawer>
             <Typography variant="h6" color="inherit" className={classes.grow}>
-              <NavLink to="/" className={classes.item}>{this.props.status.info.nickname}</NavLink>
+              <NavLink to="/Main" className={classes.item}>{this.props.status.info.nickname}</NavLink>
             </Typography>
           </Toolbar>
         </AppBar>
+        {this.props.children}
       </div>
+      
     );
   }
 }
@@ -158,10 +166,4 @@ Header.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => {
-  return {
-    status: state.kakao.status,
-  };
-};
-
-export default connect(mapStateToProps)(withStyles(styles)(Header));
+export default withStyles(styles)(Header);
