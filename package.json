@@ -16,6 +16,7 @@
     "express-fileupload": "^1.1.4",
     "express-winston": "^3.1.0",
     "gm": "^1.23.1",
+    "moment": "^2.24.0",
     "mongoose": "^5.5.8",
     "morgan": "^1.9.1",
     "multer": "^1.4.1",
@@ -28,6 +29,7 @@
     "react-image-upload": "^0.0.1",
     "react-images-upload": "^1.2.6",
     "react-photo-gallery": "^7.0.2",
+    "react-player": "^1.11.0",
     "react-redux": "^7.0.3",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
@@ -38,6 +40,7 @@
     "redux-thunk": "^2.3.0",
     "shuffle-array": "^1.0.1",
     "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^3.9.0",
     "winston-mongodb": "^5.0.0"
   },
   "scripts": {

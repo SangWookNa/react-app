@@ -1,0 +1,617 @@
+2019-06-07 13:13:18 info: Check out the app at http://localhost:4000
+2019-06-07 13:13:19 info: Connected to mongodb server
+2019-06-07 13:13:44 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 13:13:44 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 13:13:44 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 13:14:17 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 13:14:17 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 13:14:17 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 13:14:34 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 13:14:34 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 13:14:34 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 13:14:37 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 13:14:37 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 13:14:37 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 13:14:47 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 13:14:47 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 13:14:47 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 13:14:49 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 13:14:49 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 13:14:49 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 13:31:25 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 13:31:25 info: ::ffff:127.0.0.1 - - [07/Jun/2019:04:31:25 +0000] "DELETE /api/image/test/gallery HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 13:31:25 info: PARAM {"0":"image/"} | BODY {}
+2019-06-07 13:31:25 info: []
+2019-06-07 13:31:25 info: ::ffff:127.0.0.1 - - [07/Jun/2019:04:31:25 +0000] "POST /api/image/ HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 13:31:26 info: public/uploads/test//fb30e7f6a1db0bc4abb26e9adf8d84543ab7_thumb.jpg was deleted
+2019-06-07 13:31:26 info: public\uploads\test\fb30e7f6a1db0bc4abb26e9adf8d84543ab7.jpg was deleted
+2019-06-07 13:31:28 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 13:31:28 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 13:31:28 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 13:31:28 info: ::ffff:127.0.0.1 - - [07/Jun/2019:04:31:28 +0000] "GET /api/image/test/gallery HTTP/1.1" 200 2 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 13:31:47 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 13:31:47 info: ::ffff:127.0.0.1 - - [07/Jun/2019:04:31:47 +0000] "DELETE /api/image/test/gallery HTTP/1.1" 200 16 "http://localhost:3000/ImageUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 13:31:48 info: PARAM {"0":"image/"} | BODY {}
+2019-06-07 13:31:48 info: [{"fieldname":"file","originalname":"7781cca6c85b50bcdf8439d5f335c30eeb56_thumb.jpg","encoding":"7bit","mimetype":"image/jpeg","destination":"public/uploads/test/","filename":"6bc298f770a86f2d0ad361020180597a83c0.jpg","path":"public\\uploads\\test\\6bc298f770a86f2d0ad361020180597a83c0.jpg","size":14475}]
+2019-06-07 13:31:48 info: ::ffff:127.0.0.1 - - [07/Jun/2019:04:31:48 +0000] "POST /api/image/ HTTP/1.1" 200 16 "http://localhost:3000/ImageUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 13:31:49 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 13:31:49 info: ::ffff:127.0.0.1 - - [07/Jun/2019:04:31:49 +0000] "GET /api/image/test/gallery HTTP/1.1" 200 492 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 13:31:49 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 13:31:49 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 13:31:49 info: ::ffff:127.0.0.1 - - [07/Jun/2019:04:31:49 +0000] "GET /public/uploads/test/6bc298f770a86f2d0ad361020180597a83c0.jpg HTTP/1.1" 200 14475 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 13:31:49 info: ::ffff:127.0.0.1 - - [07/Jun/2019:04:31:49 +0000] "GET /public/uploads/test/6bc298f770a86f2d0ad361020180597a83c0_thumb.jpg HTTP/1.1" 200 9391 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 13:31:57 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 13:31:57 info: ::ffff:127.0.0.1 - - [07/Jun/2019:04:31:57 +0000] "DELETE /api/image/test/gallery HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 13:31:57 info: public/uploads/test//6bc298f770a86f2d0ad361020180597a83c0_thumb.jpg was deleted
+2019-06-07 13:31:57 info: public\uploads\test\6bc298f770a86f2d0ad361020180597a83c0.jpg was deleted
+2019-06-07 13:31:57 info: PARAM {"0":"image/"} | BODY {}
+2019-06-07 13:31:57 info: []
+2019-06-07 13:31:57 info: ::ffff:127.0.0.1 - - [07/Jun/2019:04:31:57 +0000] "POST /api/image/ HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 13:31:58 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 13:31:58 info: ::ffff:127.0.0.1 - - [07/Jun/2019:04:31:58 +0000] "GET /api/image/test/gallery HTTP/1.1" 200 2 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 13:31:58 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 13:31:58 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 13:32:01 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 13:32:01 info: ::ffff:127.0.0.1 - - [07/Jun/2019:04:32:01 +0000] "DELETE /api/image/test/grid HTTP/1.1" 200 16 "http://localhost:3000/ImageUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 13:32:01 info: public/uploads/test//f4886c71658d0746a31499c3f75b8f276cb1_thumb.jpg was deleted
+2019-06-07 13:32:01 info: public\uploads\test\589254b2c952bcb7d41ffa448f2a4485ff93.jpg was deleted
+2019-06-07 13:32:01 info: public\uploads\test\f4886c71658d0746a31499c3f75b8f276cb1.jpg was deleted
+2019-06-07 13:32:01 info: public/uploads/test//589254b2c952bcb7d41ffa448f2a4485ff93_thumb.jpg was deleted
+2019-06-07 13:32:01 info: public\uploads\test\3d735ccd026a916b80e925e4257129418479.jpg was deleted
+2019-06-07 13:32:01 info: public/uploads/test//3d735ccd026a916b80e925e4257129418479_thumb.jpg was deleted
+2019-06-07 13:32:01 info: public\uploads\test\2e0756d53058257e782503b566ff7d9a56a5.jpg was deleted
+2019-06-07 13:32:01 info: public\uploads\test\210a0f7be3a0f8c9f82333a77c3c83534d41.jpg was deleted
+2019-06-07 13:32:01 info: public/uploads/test//210a0f7be3a0f8c9f82333a77c3c83534d41_thumb.jpg was deleted
+2019-06-07 13:32:01 info: public/uploads/test//2e0756d53058257e782503b566ff7d9a56a5_thumb.jpg was deleted
+2019-06-07 13:32:01 info: public\uploads\test\bbe5a0c6ac8768a3bd199d0b509a93d23040.jpg was deleted
+2019-06-07 13:32:01 info: public/uploads/test//bbe5a0c6ac8768a3bd199d0b509a93d23040_thumb.jpg was deleted
+2019-06-07 13:32:01 info: public\uploads\test\5a6896b264eb3ee132ece2cf8591235bc20e.jpg was deleted
+2019-06-07 13:32:01 info: public/uploads/test//5a6896b264eb3ee132ece2cf8591235bc20e_thumb.jpg was deleted
+2019-06-07 13:32:01 info: public\uploads\test\c389d9a844541dfa722ca4af8927af0663d0.jpg was deleted
+2019-06-07 13:32:01 info: public/uploads/test//c389d9a844541dfa722ca4af8927af0663d0_thumb.jpg was deleted
+2019-06-07 13:32:01 info: public\uploads\test\7781cca6c85b50bcdf8439d5f335c30eeb56.jpg was deleted
+2019-06-07 13:32:01 info: public/uploads/test//7781cca6c85b50bcdf8439d5f335c30eeb56_thumb.jpg was deleted
+2019-06-07 13:32:01 info: PARAM {"0":"image/"} | BODY {}
+2019-06-07 13:32:01 info: []
+2019-06-07 13:32:01 info: ::ffff:127.0.0.1 - - [07/Jun/2019:04:32:01 +0000] "POST /api/image/ HTTP/1.1" 200 16 "http://localhost:3000/ImageUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 13:32:02 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 13:32:03 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 13:32:03 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 13:32:03 info: ::ffff:127.0.0.1 - - [07/Jun/2019:04:32:03 +0000] "GET /api/image/test/grid HTTP/1.1" 200 2 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 14:42:33 info: PARAM {"0":"image/test/"} | BODY {}
+2019-06-07 14:42:33 info: ::ffff:127.0.0.1 - - [07/Jun/2019:05:42:33 +0000] "DELETE /api/image/test/ HTTP/1.1" 404 157 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 14:42:38 info: PARAM {"0":"image/test/"} | BODY {}
+2019-06-07 14:42:38 info: ::ffff:127.0.0.1 - - [07/Jun/2019:05:42:38 +0000] "DELETE /api/image/test/ HTTP/1.1" 404 157 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:12:36 info: PARAM {"0":"video/test/gallery"} | BODY {}
+2019-06-07 15:12:36 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:12:36 +0000] "DELETE /api/video/test/gallery HTTP/1.1" 404 164 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:24:34 info: Check out the app at http://localhost:4000
+2019-06-07 15:24:35 info: Connected to mongodb server
+2019-06-07 15:25:25 info: Check out the app at http://localhost:4000
+2019-06-07 15:25:26 info: Connected to mongodb server
+2019-06-07 15:26:07 info: Check out the app at http://localhost:4000
+2019-06-07 15:26:08 info: Connected to mongodb server
+2019-06-07 15:26:11 info: Check out the app at http://localhost:4000
+2019-06-07 15:26:12 info: Connected to mongodb server
+2019-06-07 15:27:16 info: Check out the app at http://localhost:4000
+2019-06-07 15:27:17 info: Connected to mongodb server
+2019-06-07 15:27:30 info: Check out the app at http://localhost:4000
+2019-06-07 15:27:31 info: Connected to mongodb server
+2019-06-07 15:28:07 info: Check out the app at http://localhost:4000
+2019-06-07 15:28:08 info: Connected to mongodb server
+2019-06-07 15:28:19 info: Check out the app at http://localhost:4000
+2019-06-07 15:28:20 info: Connected to mongodb server
+2019-06-07 15:28:39 info: Check out the app at http://localhost:4000
+2019-06-07 15:28:40 info: Connected to mongodb server
+2019-06-07 15:30:58 info: Check out the app at http://localhost:4000
+2019-06-07 15:30:59 info: Connected to mongodb server
+2019-06-07 15:31:49 info: Check out the app at http://localhost:4000
+2019-06-07 15:31:50 info: Connected to mongodb server
+2019-06-07 15:32:43 info: Check out the app at http://localhost:4000
+2019-06-07 15:32:44 info: Connected to mongodb server
+2019-06-07 15:33:15 info: Check out the app at http://localhost:4000
+2019-06-07 15:33:16 info: Connected to mongodb server
+2019-06-07 15:33:47 info: Check out the app at http://localhost:4000
+2019-06-07 15:33:48 info: Connected to mongodb server
+2019-06-07 15:33:51 info: Check out the app at http://localhost:4000
+2019-06-07 15:33:52 info: Connected to mongodb server
+2019-06-07 15:34:04 info: Check out the app at http://localhost:4000
+2019-06-07 15:34:06 info: Connected to mongodb server
+2019-06-07 15:34:29 info: Check out the app at http://localhost:4000
+2019-06-07 15:34:30 info: Connected to mongodb server
+2019-06-07 15:34:53 info: Check out the app at http://localhost:4000
+2019-06-07 15:34:54 info: Connected to mongodb server
+2019-06-07 15:35:08 info: Check out the app at http://localhost:4000
+2019-06-07 15:35:11 info: Check out the app at http://localhost:4000
+2019-06-07 15:35:12 info: Connected to mongodb server
+2019-06-07 15:35:18 info: Check out the app at http://localhost:4000
+2019-06-07 15:35:19 info: Connected to mongodb server
+2019-06-07 15:36:02 info: Check out the app at http://localhost:4000
+2019-06-07 15:36:03 info: Connected to mongodb server
+2019-06-07 15:36:31 info: PARAM {"0":"video/test/나상욱"} | BODY {}
+2019-06-07 15:36:31 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:36:31 +0000] "DELETE /api/video/test/%EB%82%98%EC%83%81%EC%9A%B1 HTTP/1.1" 404 184 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:37:11 info: Check out the app at http://localhost:4000
+2019-06-07 15:37:12 info: Connected to mongodb server
+2019-06-07 15:37:31 info: PARAM {"0":"video/test/나상욱"} | BODY {}
+2019-06-07 15:37:31 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:37:31 +0000] "DELETE /api/video/test/%EB%82%98%EC%83%81%EC%9A%B1 HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:37:31 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 15:37:31 error: undefined
+2019-06-07 15:37:31 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:37:31 +0000] "POST /api/video/ HTTP/1.1" 500 158 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:38:32 info: Check out the app at http://localhost:4000
+2019-06-07 15:38:33 info: Connected to mongodb server
+2019-06-07 15:38:38 info: PARAM {"0":"video/test/나상욱"} | BODY {}
+2019-06-07 15:38:38 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:38:38 +0000] "DELETE /api/video/test/%EB%82%98%EC%83%81%EC%9A%B1 HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:38:38 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 15:38:38 error: undefined
+2019-06-07 15:38:38 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:38:38 +0000] "POST /api/video/ HTTP/1.1" 500 158 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:38:42 info: PARAM {"0":"video/test/나상욱"} | BODY {}
+2019-06-07 15:38:42 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:38:42 +0000] "DELETE /api/video/test/%EB%82%98%EC%83%81%EC%9A%B1 HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:38:42 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 15:38:42 error: undefined
+2019-06-07 15:38:42 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:38:42 +0000] "POST /api/video/ HTTP/1.1" 500 158 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:39:27 info: PARAM {"0":"video/test/ㅅㅅ"} | BODY {}
+2019-06-07 15:39:27 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:39:27 +0000] "DELETE /api/video/test/%E3%85%85%E3%85%85 HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:39:27 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 15:39:27 error: undefined
+2019-06-07 15:39:27 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:39:27 +0000] "POST /api/video/ HTTP/1.1" 500 158 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:40:12 info: PARAM {"0":"video/test/"} | BODY {}
+2019-06-07 15:40:12 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:40:12 +0000] "DELETE /api/video/test/ HTTP/1.1" 404 157 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:40:47 info: PARAM {"0":"video/test/"} | BODY {}
+2019-06-07 15:40:47 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:40:47 +0000] "DELETE /api/video/test/ HTTP/1.1" 404 157 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:42:41 info: PARAM {"0":"video/test/"} | BODY {}
+2019-06-07 15:42:41 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:42:41 +0000] "DELETE /api/video/test/ HTTP/1.1" 404 157 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:44:13 info: PARAM {"0":"video/test/ㅂㅈㄷ"} | BODY {}
+2019-06-07 15:44:13 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:44:13 +0000] "DELETE /api/video/test/%E3%85%82%E3%85%88%E3%84%B7 HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:44:13 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 15:44:13 info: []
+2019-06-07 15:44:13 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:44:13 +0000] "POST /api/video/ HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:44:22 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 15:44:22 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 15:44:22 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 15:44:22 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:44:22 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:44:29 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 15:44:29 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 15:44:29 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 15:44:29 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:44:29 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:45:08 info: PARAM {"0":"video/test/"} | BODY {}
+2019-06-07 15:45:08 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:45:08 +0000] "DELETE /api/video/test/ HTTP/1.1" 404 157 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:45:19 info: PARAM {"0":"video/test/ㅈㄷㄱ"} | BODY {}
+2019-06-07 15:45:19 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:45:19 +0000] "DELETE /api/video/test/%E3%85%88%E3%84%B7%E3%84%B1 HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:45:19 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 15:45:19 info: []
+2019-06-07 15:45:19 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:45:19 +0000] "POST /api/video/ HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:45:22 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 15:45:22 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 15:45:22 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 15:45:22 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:45:22 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:45:25 info: PARAM {"0":"video/test/"} | BODY {}
+2019-06-07 15:45:25 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:45:25 +0000] "DELETE /api/video/test/ HTTP/1.1" 404 157 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:47:13 info: PARAM {"0":"video/test/"} | BODY {}
+2019-06-07 15:47:13 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:47:13 +0000] "DELETE /api/video/test/ HTTP/1.1" 404 157 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:47:19 info: PARAM {"0":"video/test/rtjjrtj"} | BODY {}
+2019-06-07 15:47:19 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:47:19 +0000] "DELETE /api/video/test/rtjjrtj HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:47:20 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 15:47:20 info: []
+2019-06-07 15:47:20 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:47:20 +0000] "POST /api/video/ HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:47:21 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 15:47:21 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 15:47:21 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 15:47:21 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:47:21 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:48:50 info: PARAM {"0":"video/test/"} | BODY {}
+2019-06-07 15:48:50 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:48:50 +0000] "DELETE /api/video/test/ HTTP/1.1" 404 157 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:49:37 info: PARAM {"0":"video/test/"} | BODY {}
+2019-06-07 15:49:37 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:49:37 +0000] "DELETE /api/video/test/ HTTP/1.1" 404 157 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:50:18 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 15:50:18 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:50:18 +0000] "DELETE /api/image/test/grid HTTP/1.1" 200 16 "http://localhost:3000/ImageUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:50:18 info: PARAM {"0":"image/"} | BODY {}
+2019-06-07 15:50:18 error: undefined
+2019-06-07 15:50:18 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:50:18 +0000] "POST /api/image/ HTTP/1.1" 500 158 "http://localhost:3000/ImageUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:50:54 info: Check out the app at http://localhost:4000
+2019-06-07 15:50:56 info: Connected to mongodb server
+2019-06-07 15:51:00 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 15:51:00 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:51:00 +0000] "DELETE /api/image/test/grid HTTP/1.1" 200 16 "http://localhost:3000/ImageUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:51:00 info: PARAM {"0":"image/"} | BODY {}
+2019-06-07 15:51:00 info: [{"fieldname":"file","originalname":"111.jpg","encoding":"7bit","mimetype":"image/jpeg","destination":"public/uploads/test/","filename":"b4a3c0fd530104d90cb3d68cbb08142e2caf.jpg","path":"public\\uploads\\test\\b4a3c0fd530104d90cb3d68cbb08142e2caf.jpg","size":41020}]
+2019-06-07 15:51:00 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:51:00 +0000] "POST /api/image/ HTTP/1.1" 200 16 "http://localhost:3000/ImageUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:51:04 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 15:51:04 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 15:51:04 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:51:04 +0000] "GET /api/image/test/grid HTTP/1.1" 200 450 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:51:04 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 15:51:04 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:51:04 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:51:04 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:51:04 +0000] "GET /public/uploads/test/b4a3c0fd530104d90cb3d68cbb08142e2caf_thumb.jpg HTTP/1.1" 200 10374 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:52:31 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 15:52:31 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 15:52:31 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 15:52:31 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:52:31 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:52:58 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 15:52:58 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 15:52:58 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 15:52:58 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:52:58 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:53:28 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 15:53:28 info: [{"fieldname":"file","originalname":"video1111.mp4","encoding":"7bit","mimetype":"video/mp4","destination":"public/uploads/video/test/","filename":"a3f09f574ee025622efdef181233c220cc0e.mp4","path":"public\\uploads\\video\\test\\a3f09f574ee025622efdef181233c220cc0e.mp4","size":2776478}]
+2019-06-07 15:53:28 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:53:28 +0000] "POST /api/video/ HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:53:42 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 15:53:42 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 15:53:42 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 15:53:42 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:53:42 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:59:54 info: PARAM {"0":"video/test/테스트"} | BODY {}
+2019-06-07 15:59:54 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:59:54 +0000] "DELETE /api/video/test/%ED%85%8C%EC%8A%A4%ED%8A%B8 HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 15:59:55 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 15:59:55 info: [{"fieldname":"file","originalname":"video2222.mp4","encoding":"7bit","mimetype":"video/mp4","destination":"public/uploads/video/test/","filename":"93ea05f3b4cc3cea17455113972ae454f74a.mp4","path":"public\\uploads\\video\\test\\93ea05f3b4cc3cea17455113972ae454f74a.mp4","size":2776478}]
+2019-06-07 15:59:55 info: ::ffff:127.0.0.1 - - [07/Jun/2019:06:59:55 +0000] "POST /api/video/ HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:00:02 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 16:00:02 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 16:00:02 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 16:00:02 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:00:02 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:00:38 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 16:00:38 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 16:00:38 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 16:00:38 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:00:38 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:00:50 info: PARAM {"0":"video/test/테스트"} | BODY {}
+2019-06-07 16:00:50 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:00:50 +0000] "DELETE /api/video/test/%ED%85%8C%EC%8A%A4%ED%8A%B8 HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:00:50 info: public\uploads\video\test\93ea05f3b4cc3cea17455113972ae454f74a.mp4 was deleted
+2019-06-07 16:00:51 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 16:00:51 info: [{"fieldname":"file","originalname":"video1111.mp4","encoding":"7bit","mimetype":"video/mp4","destination":"public/uploads/video/test/","filename":"ffe0350a40419bdab2b4761ceef60c5bd61a.mp4","path":"public\\uploads\\video\\test\\ffe0350a40419bdab2b4761ceef60c5bd61a.mp4","size":2776478}]
+2019-06-07 16:00:51 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:00:51 +0000] "POST /api/video/ HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:01:03 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 16:01:03 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 16:01:03 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 16:01:03 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:01:03 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:01:23 info: PARAM {"0":"video/test/테스트22"} | BODY {}
+2019-06-07 16:01:23 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:01:23 +0000] "DELETE /api/video/test/%ED%85%8C%EC%8A%A4%ED%8A%B822 HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:01:23 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 16:01:23 info: [{"fieldname":"file","originalname":"video1111.mp4","encoding":"7bit","mimetype":"video/mp4","destination":"public/uploads/video/test/","filename":"e3d72bafd0a653a7d2ff537b1d26d8affb11.mp4","path":"public\\uploads\\video\\test\\e3d72bafd0a653a7d2ff537b1d26d8affb11.mp4","size":2776478}]
+2019-06-07 16:01:23 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:01:23 +0000] "POST /api/video/ HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:01:24 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 16:01:24 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 16:01:24 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 16:01:24 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:01:24 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:05:11 info: PARAM {"0":"video/test/"} | BODY {}
+2019-06-07 16:05:11 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:05:11 +0000] "DELETE /api/video/test/ HTTP/1.1" 404 157 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:08:49 info: PARAM {"0":"video/test/"} | BODY {}
+2019-06-07 16:08:49 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:08:49 +0000] "DELETE /api/video/test/ HTTP/1.1" 404 157 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:08:55 info: PARAM {"0":"video/test/ㅗㅗㅗ"} | BODY {}
+2019-06-07 16:08:55 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:08:55 +0000] "DELETE /api/video/test/%E3%85%97%E3%85%97%E3%85%97 HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:08:55 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 16:08:55 info: [{"fieldname":"file","originalname":"a3f09f574ee025622efdef181233c220cc0e.mp4","encoding":"7bit","mimetype":"video/mp4","destination":"public/uploads/video/test/","filename":"f599bf8f936f2ad47024250f818e0eabc127.mp4","path":"public\\uploads\\video\\test\\f599bf8f936f2ad47024250f818e0eabc127.mp4","size":2776478}]
+2019-06-07 16:08:55 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:08:55 +0000] "POST /api/video/ HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:08:57 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 16:08:58 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 16:08:58 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 16:08:58 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:08:58 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:10:19 info: PARAM {"0":"video/test/"} | BODY {}
+2019-06-07 16:10:19 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:10:19 +0000] "DELETE /api/video/test/ HTTP/1.1" 404 157 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:10:24 info: PARAM {"0":"video/test/"} | BODY {}
+2019-06-07 16:10:24 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:10:24 +0000] "DELETE /api/video/test/ HTTP/1.1" 404 157 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:13:30 info: Check out the app at http://localhost:4000
+2019-06-07 16:13:31 info: Connected to mongodb server
+2019-06-07 16:13:39 info: PARAM {"0":"video/test/"} | BODY {}
+2019-06-07 16:13:39 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:13:39 +0000] "DELETE /api/video/test/ HTTP/1.1" 404 157 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:13:42 info: PARAM {"0":"video/test/ㅈ"} | BODY {}
+2019-06-07 16:13:42 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:13:42 +0000] "DELETE /api/video/test/%E3%85%88 HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:13:43 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 16:13:43 info: [{"fieldname":"file","originalname":"e3d72bafd0a653a7d2ff537b1d26d8affb11.mp4","encoding":"7bit","mimetype":"video/mp4","destination":"public/uploads/video/test/","filename":"453aa10ed9724b0e5196ad87bd586e26469c.mp4","path":"public\\uploads\\video\\test\\453aa10ed9724b0e5196ad87bd586e26469c.mp4","size":2776478}]
+2019-06-07 16:13:43 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:13:43 +0000] "POST /api/video/ HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:13:47 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 16:13:47 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 16:13:47 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 16:13:47 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:13:47 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:13:54 info: PARAM {"0":"video/test/ㅂㅂㅂ"} | BODY {}
+2019-06-07 16:13:54 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:13:54 +0000] "DELETE /api/video/test/%E3%85%82%E3%85%82%E3%85%82 HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:13:54 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 16:13:54 info: [{"fieldname":"file","originalname":"ffe0350a40419bdab2b4761ceef60c5bd61a.mp4","encoding":"7bit","mimetype":"video/mp4","destination":"public/uploads/video/test/","filename":"9c1427d524963eb00879c8f668aef000de6a.mp4","path":"public\\uploads\\video\\test\\9c1427d524963eb00879c8f668aef000de6a.mp4","size":2776478}]
+2019-06-07 16:13:54 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:13:54 +0000] "POST /api/video/ HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:13:56 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 16:13:56 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 16:13:56 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 16:13:56 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:13:56 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:18:03 info: Check out the app at http://localhost:4000
+2019-06-07 16:18:04 info: Connected to mongodb server
+2019-06-07 16:18:13 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:18:13 +0000] "DELETE / HTTP/1.1" 404 142 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:18:54 info: Check out the app at http://localhost:4000
+2019-06-07 16:18:55 info: Connected to mongodb server
+2019-06-07 16:19:04 info: Check out the app at http://localhost:4000
+2019-06-07 16:19:05 info: Connected to mongodb server
+2019-06-07 16:19:11 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:19:11 +0000] "POST /delete HTTP/1.1" 404 146 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:20:23 info: PARAM {"0":"video/delete"} | BODY {}
+2019-06-07 16:20:23 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:20:23 +0000] "POST /api/video/delete HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:20:23 info: PARAM {"0":"video/delete"} | BODY {}
+2019-06-07 16:20:23 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:20:23 +0000] "POST /api/video/delete HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:20:23 info: PARAM {"0":"video/delete"} | BODY {}
+2019-06-07 16:20:23 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:20:23 +0000] "POST /api/video/delete HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:20:23 info: PARAM {"0":"video/delete"} | BODY {}
+2019-06-07 16:20:23 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:20:23 +0000] "POST /api/video/delete HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:20:23 info: PARAM {"0":"video/delete"} | BODY {}
+2019-06-07 16:20:23 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:20:23 +0000] "POST /api/video/delete HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:20:23 info: PARAM {"0":"video/delete"} | BODY {}
+2019-06-07 16:20:23 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:20:23 +0000] "POST /api/video/delete HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:20:46 info: PARAM {"0":"video/delete"} | BODY {}
+2019-06-07 16:20:46 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:20:46 +0000] "POST /api/video/delete HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:20:46 info: PARAM {"0":"video/delete"} | BODY {}
+2019-06-07 16:20:46 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:20:46 +0000] "POST /api/video/delete HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:22:05 info: Check out the app at http://localhost:4000
+2019-06-07 16:22:06 info: Connected to mongodb server
+2019-06-07 16:22:14 info: PARAM {"0":"video/delete"} | BODY {}
+2019-06-07 16:22:14 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:22:14 +0000] "POST /api/video/delete HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:22:14 info: PARAM {"0":"video/delete"} | BODY {}
+2019-06-07 16:22:14 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:22:14 +0000] "POST /api/video/delete HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:22:14 info: PARAM {"0":"video/delete"} | BODY {}
+2019-06-07 16:22:14 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:22:14 +0000] "POST /api/video/delete HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:22:26 info: Check out the app at http://localhost:4000
+2019-06-07 16:22:28 info: Connected to mongodb server
+2019-06-07 16:23:30 info: Check out the app at http://localhost:4000
+2019-06-07 16:23:31 info: Connected to mongodb server
+2019-06-07 16:23:39 info: PARAM {"0":"video/delete"} | BODY {}
+2019-06-07 16:23:39 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:23:39 +0000] "POST /api/video/delete HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:23:39 info: PARAM {"0":"video/delete"} | BODY {}
+2019-06-07 16:23:39 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:23:39 +0000] "POST /api/video/delete HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:23:40 info: PARAM {"0":"video/delete"} | BODY {}
+2019-06-07 16:23:40 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:23:40 +0000] "POST /api/video/delete HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:26:25 info: PARAM {"0":"video/delete"} | BODY {"username":"test","invitee":"eㄱㅈㄷㄱㅈㄱㄷ"}
+2019-06-07 16:26:25 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:26:25 +0000] "POST /api/video/delete HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:26:25 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 16:26:25 info: [{"fieldname":"file","originalname":"453aa10ed9724b0e5196ad87bd586e26469c.mp4","encoding":"7bit","mimetype":"video/mp4","destination":"public/uploads/video/test/","filename":"4f034f435a6be7a765fc614bf29cf01b8bd2.mp4","path":"public\\uploads\\video\\test\\4f034f435a6be7a765fc614bf29cf01b8bd2.mp4","size":2776478}]
+2019-06-07 16:26:25 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:26:25 +0000] "POST /api/video/ HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:26:35 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 16:26:35 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 16:26:35 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 16:26:35 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:26:35 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:26:42 info: PARAM {"0":"video/delete"} | BODY {"username":"test","invitee":""}
+2019-06-07 16:26:42 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:26:42 +0000] "POST /api/video/delete HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:26:42 info: public\uploads\video\test\a3f09f574ee025622efdef181233c220cc0e.mp4 was deleted
+2019-06-07 16:26:43 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 16:26:43 info: [{"fieldname":"file","originalname":"4f034f435a6be7a765fc614bf29cf01b8bd2.mp4","encoding":"7bit","mimetype":"video/mp4","destination":"public/uploads/video/test/","filename":"164ce5c80c3d358b5c11cc9321e1733ef56c.mp4","path":"public\\uploads\\video\\test\\164ce5c80c3d358b5c11cc9321e1733ef56c.mp4","size":2776478}]
+2019-06-07 16:26:43 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:26:43 +0000] "POST /api/video/ HTTP/1.1" 200 16 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:26:44 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 16:26:44 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 16:26:44 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 16:26:44 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:26:44 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 16:29:37 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 16:29:37 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 16:29:37 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 16:29:37 info: ::ffff:127.0.0.1 - - [07/Jun/2019:07:29:37 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 17:25:25 info: Check out the app at http://localhost:4000
+2019-06-07 17:25:26 info: Connected to mongodb server
+2019-06-07 17:27:37 info: Check out the app at http://localhost:4000
+2019-06-07 17:27:38 info: Connected to mongodb server
+2019-06-07 17:28:36 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 17:28:36 error: undefined
+2019-06-07 17:28:36 info: ::ffff:127.0.0.1 - - [07/Jun/2019:08:28:36 +0000] "POST /api/video/ HTTP/1.1" 500 199 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-07 17:29:10 info: Check out the app at http://localhost:4000
+2019-06-07 17:29:11 info: Connected to mongodb server
+2019-06-07 17:29:12 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 17:29:12 info: [{"originalname":"4f034f435a6be7a765fc614bf29cf01b8bd2.mp4","encoding":"7bit","mimetype":"video/mp4","destination":"public/uploads/video/temp/","filename":"c954b17ddc20796c2ba3602396a6d7e5e978.mp4","path":"public\\uploads\\video\\temp\\c954b17ddc20796c2ba3602396a6d7e5e978.mp4","size":2776478,"fieldname":"file"}]
+2019-06-07 17:29:12 info: ::ffff:127.0.0.1 - - [07/Jun/2019:08:29:12 +0000] "POST /api/video/ HTTP/1.1" 200 55 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-07 17:29:30 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 17:29:30 info: [{"fieldname":"file","originalname":"9c1427d524963eb00879c8f668aef000de6a.mp4","encoding":"7bit","mimetype":"video/mp4","destination":"public/uploads/video/temp/","filename":"1c91a0d0f789d850226d27dee50cdc23bda7.mp4","path":"public\\uploads\\video\\temp\\1c91a0d0f789d850226d27dee50cdc23bda7.mp4","size":2776478}]
+2019-06-07 17:29:30 info: ::ffff:127.0.0.1 - - [07/Jun/2019:08:29:30 +0000] "POST /api/video/ HTTP/1.1" 200 55 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-07 17:33:53 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 17:33:53 info: [{"fieldname":"file","originalname":"4f034f435a6be7a765fc614bf29cf01b8bd2.mp4","encoding":"7bit","mimetype":"video/mp4","destination":"public/uploads/video/temp/","filename":"1e53b9ee4e99db0fad56cb9925b2ef417f31.mp4","path":"public\\uploads\\video\\temp\\1e53b9ee4e99db0fad56cb9925b2ef417f31.mp4","size":2776478}]
+2019-06-07 17:33:53 info: ::ffff:127.0.0.1 - - [07/Jun/2019:08:33:53 +0000] "POST /api/video/ HTTP/1.1" 200 55 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-07 17:34:09 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 17:34:09 info: [{"fieldname":"file","originalname":"164ce5c80c3d358b5c11cc9321e1733ef56c.mp4","encoding":"7bit","mimetype":"video/mp4","destination":"public/uploads/video/temp/","filename":"dfa9106436bcfd48282798495212f7c6758b.mp4","path":"public\\uploads\\video\\temp\\dfa9106436bcfd48282798495212f7c6758b.mp4","size":2776478}]
+2019-06-07 17:34:09 info: ::ffff:127.0.0.1 - - [07/Jun/2019:08:34:09 +0000] "POST /api/video/ HTTP/1.1" 200 55 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-07 17:34:26 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 17:34:26 info: [{"fieldname":"file","originalname":"164ce5c80c3d358b5c11cc9321e1733ef56c.mp4","encoding":"7bit","mimetype":"video/mp4","destination":"public/uploads/video/temp/","filename":"9fd6f7150f18a8ea07e5aae9832d9f694eb9.mp4","path":"public\\uploads\\video\\temp\\9fd6f7150f18a8ea07e5aae9832d9f694eb9.mp4","size":2776478}]
+2019-06-07 17:34:26 info: ::ffff:127.0.0.1 - - [07/Jun/2019:08:34:26 +0000] "POST /api/video/ HTTP/1.1" 200 55 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-07 17:50:26 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 17:50:26 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 17:50:26 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 17:50:26 info: ::ffff:127.0.0.1 - - [07/Jun/2019:08:50:26 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+2019-06-07 17:52:11 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 17:52:11 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 17:52:11 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 17:52:11 info: ::ffff:127.0.0.1 - - [07/Jun/2019:08:52:11 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 17:52:12 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 17:52:12 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 17:52:12 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 17:52:12 info: ::ffff:127.0.0.1 - - [07/Jun/2019:08:52:12 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 17:52:21 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 17:52:21 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 17:52:21 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 17:52:21 info: ::ffff:127.0.0.1 - - [07/Jun/2019:08:52:21 +0000] "GET /public/video/ssssssssssssss-fast.mp4 HTTP/1.1" 404 175 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 17:52:24 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 17:52:24 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 17:52:24 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 17:52:24 info: ::ffff:127.0.0.1 - - [07/Jun/2019:08:52:24 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 17:55:34 error: uncaughtException: D:/workplace/react-app/server/routes/video.js: Unexpected token, expected , (109:12)
+SyntaxError: D:/workplace/react-app/server/routes/video.js: Unexpected token, expected , (109:12)
+[0m [90m 107 | [39m        }
+ [90m 108 | [39m        [36mreturn[39m res[33m.[39mjson({ filename[33m:[39m videoFileName
+[31m[1m>[22m[39m[90m 109 | [39m            filePath [33m:[39m filePath })[33m;[39m
+ [90m     | [39m            [31m[1m^[22m[39m
+ [90m 110 | [39m    })
+ [90m 111 | [39m})[33m;[39m
+ [90m 112 | [39m[0m
+    at Parser.pp$5.raise (D:\workplace\react-app\node_modules\babylon\lib\index.js:4454:13)
+    at Parser.pp.unexpected (D:\workplace\react-app\node_modules\babylon\lib\index.js:1761:8)
+    at Parser.pp.expect (D:\workplace\react-app\node_modules\babylon\lib\index.js:1749:33)
+    at Parser.pp$3.parseObj (D:\workplace\react-app\node_modules\babylon\lib\index.js:3978:12)
+    at Parser.pp$3.parseExprAtom (D:\workplace\react-app\node_modules\babylon\lib\index.js:3719:19)
+    at Parser.pp$3.parseExprSubscripts (D:\workplace\react-app\node_modules\babylon\lib\index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (D:\workplace\react-app\node_modules\babylon\lib\index.js:3474:19)
+    at Parser.pp$3.parseExprOps (D:\workplace\react-app\node_modules\babylon\lib\index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (D:\workplace\react-app\node_modules\babylon\lib\index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (D:\workplace\react-app\node_modules\babylon\lib\index.js:3344:19)
+    at Parser.pp$3.parseExprListItem (D:\workplace\react-app\node_modules\babylon\lib\index.js:4312:16)
+    at Parser.pp$3.parseCallExpressionArguments (D:\workplace\react-app\node_modules\babylon\lib\index.js:3573:20)
+    at Parser.pp$3.parseSubscripts (D:\workplace\react-app\node_modules\babylon\lib\index.js:3533:31)
+    at Parser.pp$3.parseExprSubscripts (D:\workplace\react-app\node_modules\babylon\lib\index.js:3504:15)
+    at Parser.pp$3.parseMaybeUnary (D:\workplace\react-app\node_modules\babylon\lib\index.js:3474:19)
+    at Parser.pp$3.parseExprOps (D:\workplace\react-app\node_modules\babylon\lib\index.js:3404:19)
+2019-06-07 17:55:48 error: uncaughtException: D:/workplace/react-app/server/routes/video.js: Unexpected token, expected , (109:26)
+SyntaxError: D:/workplace/react-app/server/routes/video.js: Unexpected token, expected , (109:26)
+[0m [90m 107 | [39m        }
+ [90m 108 | [39m        [36mreturn[39m res[33m.[39mjson({ filename[33m:[39m videoFileName
+[31m[1m>[22m[39m[90m 109 | [39m                          filePath [33m:[39m filePath })[33m;[39m
+ [90m     | [39m                          [31m[1m^[22m[39m
+ [90m 110 | [39m    })
+ [90m 111 | [39m})[33m;[39m
+ [90m 112 | [39m[0m
+    at Parser.pp$5.raise (D:\workplace\react-app\node_modules\babylon\lib\index.js:4454:13)
+    at Parser.pp.unexpected (D:\workplace\react-app\node_modules\babylon\lib\index.js:1761:8)
+    at Parser.pp.expect (D:\workplace\react-app\node_modules\babylon\lib\index.js:1749:33)
+    at Parser.pp$3.parseObj (D:\workplace\react-app\node_modules\babylon\lib\index.js:3978:12)
+    at Parser.pp$3.parseExprAtom (D:\workplace\react-app\node_modules\babylon\lib\index.js:3719:19)
+    at Parser.pp$3.parseExprSubscripts (D:\workplace\react-app\node_modules\babylon\lib\index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (D:\workplace\react-app\node_modules\babylon\lib\index.js:3474:19)
+    at Parser.pp$3.parseExprOps (D:\workplace\react-app\node_modules\babylon\lib\index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (D:\workplace\react-app\node_modules\babylon\lib\index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (D:\workplace\react-app\node_modules\babylon\lib\index.js:3344:19)
+    at Parser.pp$3.parseExprListItem (D:\workplace\react-app\node_modules\babylon\lib\index.js:4312:16)
+    at Parser.pp$3.parseCallExpressionArguments (D:\workplace\react-app\node_modules\babylon\lib\index.js:3573:20)
+    at Parser.pp$3.parseSubscripts (D:\workplace\react-app\node_modules\babylon\lib\index.js:3533:31)
+    at Parser.pp$3.parseExprSubscripts (D:\workplace\react-app\node_modules\babylon\lib\index.js:3504:15)
+    at Parser.pp$3.parseMaybeUnary (D:\workplace\react-app\node_modules\babylon\lib\index.js:3474:19)
+    at Parser.pp$3.parseExprOps (D:\workplace\react-app\node_modules\babylon\lib\index.js:3404:19)
+2019-06-07 17:56:51 info: Check out the app at http://localhost:4000
+2019-06-07 17:56:52 info: Connected to mongodb server
+2019-06-07 17:57:10 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 17:57:10 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 17:57:10 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 17:57:10 info: ::ffff:127.0.0.1 - - [07/Jun/2019:08:57:10 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 17:57:15 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 17:57:15 info: [{"fieldname":"file","originalname":"9c1427d524963eb00879c8f668aef000de6a.mp4","encoding":"7bit","mimetype":"video/mp4","destination":"public/uploads/video/temp/","filename":"4446120a763e814e7d6e5d8e63eeac91ce14.mp4","path":"public\\uploads\\video\\temp\\4446120a763e814e7d6e5d8e63eeac91ce14.mp4","size":2776478}]
+2019-06-07 17:57:15 info: ::ffff:127.0.0.1 - - [07/Jun/2019:08:57:15 +0000] "POST /api/video/ HTTP/1.1" 200 85 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 17:57:34 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 17:57:34 info: [{"fieldname":"file","originalname":"9c1427d524963eb00879c8f668aef000de6a.mp4","encoding":"7bit","mimetype":"video/mp4","destination":"public/uploads/video/temp/","filename":"8e8c7ba7ac9ccea00dade56a7cc5c346ab42.mp4","path":"public\\uploads\\video\\temp\\8e8c7ba7ac9ccea00dade56a7cc5c346ab42.mp4","size":2776478}]
+2019-06-07 17:57:34 info: ::ffff:127.0.0.1 - - [07/Jun/2019:08:57:34 +0000] "POST /api/video/ HTTP/1.1" 200 85 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 17:58:05 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 17:58:05 info: [{"fieldname":"file","originalname":"453aa10ed9724b0e5196ad87bd586e26469c.mp4","encoding":"7bit","mimetype":"video/mp4","destination":"public/uploads/video/temp/","filename":"37d84dd8c82474dba7aa98fa4121ddff6d57.mp4","path":"public\\uploads\\video\\temp\\37d84dd8c82474dba7aa98fa4121ddff6d57.mp4","size":2776478}]
+2019-06-07 17:58:05 info: ::ffff:127.0.0.1 - - [07/Jun/2019:08:58:05 +0000] "POST /api/video/ HTTP/1.1" 200 85 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 17:59:00 info: Check out the app at http://localhost:4000
+2019-06-07 17:59:02 info: Check out the app at http://localhost:4000
+2019-06-07 17:59:03 info: Connected to mongodb server
+2019-06-07 17:59:11 info: Check out the app at http://localhost:4000
+2019-06-07 17:59:12 info: Connected to mongodb server
+2019-06-07 17:59:14 info: PARAM {"0":"video/"} | BODY {}
+2019-06-07 17:59:14 info: [{"fieldname":"file","originalname":"e3d72bafd0a653a7d2ff537b1d26d8affb11.mp4","encoding":"7bit","mimetype":"video/mp4","destination":"public/uploads/video/temp/","filename":"054abd3049e40894a1d9b4dd4cb1cd7e5c0b.mp4","path":"public\\uploads\\video\\temp\\054abd3049e40894a1d9b4dd4cb1cd7e5c0b.mp4","size":2776478}]
+2019-06-07 17:59:14 info: ::ffff:127.0.0.1 - - [07/Jun/2019:08:59:14 +0000] "POST /api/video/ HTTP/1.1" 200 85 "http://localhost:3000/VideoUpload" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Mobile Safari/537.36"
+
+2019-06-07 23:57:07 info: Check out the app at http://localhost:4000
+2019-06-07 23:57:08 info: Connected to mongodb server
+2019-06-07 23:57:36 info: Check out the app at http://localhost:4000
+2019-06-07 23:57:37 info: Connected to mongodb server
+2019-06-07 23:57:54 info: PARAM {"0":"image/test/gallery"} | BODY {}
+2019-06-07 23:57:55 info: PARAM {"0":"image/test/grid"} | BODY {}
+2019-06-07 23:57:55 info: PARAM {"0":"memo"} | BODY {}
+2019-06-07 23:57:55 info: ::ffff:127.0.0.1 - - [07/Jun/2019:14:57:55 +0000] "GET /public/video/react_video-fast.mp4 HTTP/1.1" 404 172 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36"
+
+2019-06-07 23:58:09 info: Check out the app at http://localhost:4000
+2019-06-07 23:58:10 info: Connected to mongodb server

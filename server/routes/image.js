@@ -5,6 +5,7 @@ import path from 'path';
 import fs from 'fs';
 import crypto from 'crypto';
 import gm from 'gm';
+import winston from '../config/winston'
 
 const router = express.Router();
 
@@ -42,12 +43,12 @@ router.post('/', (req, res, next) => {
 
     upload(req, res, function (err) {
         if (err) {
-            console.error(err);
+            winston.error(err);
             return res.status(500).json({
                 error: err
             });
         }
-        console.log(req.files);
+        winston.log('info', JSON.stringify(req.files));
 
         //섬네일 크기세팅
         for (let value of req.files) {
@@ -65,12 +66,11 @@ router.post('/', (req, res, next) => {
             gm(value.path)
                 .thumb(width, height, `${value.destination}/${path.basename(value.filename, path.extname(value.filename))}_thumb${path.extname(value.filename)}`, (err) => {
                     if (err) {
-                        console.error(err);
+                        winston.error(err);
                         return res.status(500).json({
                             error: err
                         });
                     }
-
                 });
 
             // CREATE NEW MEMO
@@ -109,6 +109,40 @@ router.get('/:username/:uploadFlag', (req, res) => {
             return res.json(image);
         });
 
+});
+
+/**
+ * DELETE IMAGE : DELETE /api/image/
+ * ERROR CODE
+ */
+router.delete('/:username/:uploadFlag', (req, res) => {
+    let username = req.params.username;
+    let uploadFlag = req.params.uploadFlag;
+    
+    Image.find({ username: username, uploadflag: uploadFlag })
+        .sort({ _id: -1 })
+        .exec((err, memos) => {
+            if (err) throw err;
+           
+           //REMOVE THE IMAGE
+           Image.remove({ username: username, uploadflag: uploadFlag })
+           .exec((err) => {
+            if (err) throw err;
+
+            for (let value of memos) {
+                fs.unlink(value.path, (err) => {
+                   if (err) throw err;
+                   winston.log('info',`${value.path} was deleted`);
+                });
+                fs.unlink(value.thumbnailpath, (err) => {
+                    if (err) throw err;
+                    winston.log('info',`${value.thumbnailpath} was deleted`);
+                 });
+                
+               }
+           })
+        });
+    res.json({ success: true });
 });
 
 export default router;

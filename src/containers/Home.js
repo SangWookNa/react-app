@@ -4,7 +4,6 @@ import {
   Gallery,
   Memo,
   ImageGridList
-  //GalleryGrid,
 } from './';
 
 class Home extends Component {
@@ -16,7 +15,6 @@ class Home extends Component {
         <Video/>
         <Gallery/>
         <ImageGridList/>
-        {/* <GalleryGrid/> */}
         <Memo/> 
       </div>
       

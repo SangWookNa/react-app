@@ -3,9 +3,10 @@ import Home from './Home';
 import Memo from './Memo';
 import Video from './Video';
 import Gallery from './Gallery';
-import GalleryGrid from './GalleryGrid';
-import ReactFileUpload from './ReactFileUpload';
+import ImageUpload from './ImageUpload';
+import VideoUpload from './VideoUpload';
 import ImageGridList from './ImageGridList';
+import VideoPlayer from './VideoPlayer';
 
 
-export { Header, Home, Memo, Video, Gallery,GalleryGrid, ReactFileUpload, ImageGridList };
+export { Header, Home, Memo, Video, Gallery, ImageUpload, VideoUpload, ImageGridList };

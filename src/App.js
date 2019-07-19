@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import {
         Header,
         Home,        
-        ReactFileUpload
+        ImageUpload,
+        VideoUpload,
       } from './containers';
 
 
@@ -16,7 +17,8 @@ class App extends Component {
         <div>
           <Header />
           <Route exact path="/" component={Home} />
-          <Route path="/ImageUpload" component={ReactFileUpload} />
+          <Route path="/VideoUpload" component={VideoUpload} />
+          <Route path="/ImageUpload" component={ImageUpload} />
         </div>
       </Router>
     );
