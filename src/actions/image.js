@@ -1,11 +1,11 @@
 import {
-    IMAGE_UPLOAD, 
+    IMAGE_UPLOAD,
     IMAGE_UPLOAD_SUCCESS,
     IMAGE_UPLOAD_FAILURE,
-    IMAGE_GALLERY_LIST, 
+    IMAGE_GALLERY_LIST,
     IMAGE_GALLERY_LIST_SUCCESS,
     IMAGE_GALLERY_LIST_FAILURE,
-    IMAGE_GRID_LIST, 
+    IMAGE_GRID_LIST,
     IMAGE_GRID_LIST_SUCCESS,
     IMAGE_GRID_LIST_FAILURE
 } from './ActionTypes';
@@ -51,12 +51,12 @@ export function imageUploadFailure(error) {
         - username:  OPTIONAL; find image of following user
 */
 
-export function imageGalleryListRequest(username, uploadFlag) {
+export function imageGalleryListRequest(enterid, uploadFlag) {
     return (dispatch) => {
         // inform memo list API is starting
         dispatch(imageGalleryList());
 
-        let url = `/api/image/${username}/${uploadFlag}`;
+        let url = `/api/image/${enterid}/${uploadFlag}`;
 
         return axios.get(url)
             .then((response) => {
@@ -92,12 +92,12 @@ export function imageGalleryListFailure() {
         - username:  OPTIONAL; find image of following user
 */
 
-export function imageGridListRequest(username, uploadFlag) {
+export function imageGridListRequest(enterid, uploadFlag) {
     return (dispatch) => {
         // inform memo list API is starting
         dispatch(imageGridList());
 
-        let url = `/api/image/${username}/${uploadFlag}`;
+        let url = `/api/image/${enterid}/${uploadFlag}`;
 
         return axios.get(url)
             .then((response) => {

@@ -18,12 +18,12 @@ import {
 import axios from 'axios';
 
 /* MEMO POST */
-export function memoPostRequest(username, password, contents) {
+export function memoPostRequest(username, password, contents, enterid) {
     return (dispatch) => {
         //inform MEMO POST API is starting
         dispatch(memoPost());
 
-        return axios.post('/api/memo/', { username, password, contents })
+        return axios.post('/api/memo/', { username, password, contents, enterid })
             .then((response) => {
                 dispatch(memoPostSuccess());
             }).catch((error) => {

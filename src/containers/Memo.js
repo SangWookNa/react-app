@@ -5,7 +5,6 @@ import { ToastBar } from '../components/common';
 import { connect } from 'react-redux';
 import {
   memoPostRequest,
-  memoListRequest,
   memoRemoveRequest,
   passwordCheckRequest,
   memoEditRequest
@@ -19,37 +18,25 @@ class Memo extends Component {
     initiallyLoaded: false
   }
 
-  componentDidMount() {
-
-    this.props.memoListRequest(true, undefined, undefined, this.props.username).then(
-      () => {
-
-        this.setState({
-          initiallyLoaded: true
-        })
-      }
-    );
-  }
-
   handlePost = (username, password, contents) => {
     this.setState({
       message: '',
       success: false
     });
 
-    return this.props.memoPostRequest(username, password, contents).then(
+    const enterid = this.props.enterid;
+
+    return this.props.memoPostRequest(username, password, contents, enterid).then(
       () => {
         if (this.props.postStatus.status === "SUCCESS") {
 
-          //TRIGGER LOAD memoListRequest
-          this.props.memoListRequest(true, undefined, undefined, this.props.username).then(
-            () => {
-              this.setState({
-                message: '축하 메세지가 등록되었습니다~',
-                success: true
-              });
-            }
-          );
+          //TRIGGER LOAD memoListRequest          
+          this.props.onList().then(() => {
+            this.setState({
+                    message: '축하 메세지가 등록되었습니다~',
+                    success: true
+                  });
+          })
 
           return this.props.postStatus;
         } else {
@@ -97,15 +84,14 @@ class Memo extends Component {
 
     this.props.memoRemoveRequest(id, index).then(() => {
       if (this.props.removeStatus.status === "SUCCESS") {
-        //TRIGGER LOAD memoListRequest
-        this.props.memoListRequest(true, undefined, undefined, this.props.username).then(
-          () => {
-            this.setState({
-              message: '메세지가 삭제되었습니다.',
-              success: true
-            });
-          }
-        );
+        //TRIGGER LOAD memoListRequest    
+        this.props.onList().then(() => {
+          this.setState({
+            message: '메세지가 삭제되었습니다.',
+            success: true
+          });
+        })
+
       } else {
         //ERROR
         let errorMessage = [
@@ -212,7 +198,6 @@ class Memo extends Component {
 const mapStateToProps = (state) => {
   return {
     postStatus: state.memo.post,
-    memoData: state.memo.list.data,
     removeStatus: state.memo.remove,
     checkStatus: state.memo.check,
     editStatus: state.memo.edit
@@ -221,11 +206,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    memoListRequest: (isInitial, listType, id, username) => {
-      return dispatch(memoListRequest(isInitial, listType, id, username))
-    },
-    memoPostRequest: (username, password, contents) => {
-      return dispatch(memoPostRequest(username, password, contents));
+    memoPostRequest: (username, password, contents, enterid) => {
+      return dispatch(memoPostRequest(username, password, contents, enterid));
     },
     memoRemoveRequest: (id, index) => {
       return dispatch(memoRemoveRequest(id, index));

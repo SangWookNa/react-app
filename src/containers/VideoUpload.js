@@ -4,11 +4,19 @@ import { withStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
+import VideoPlayer from '../components/video/VideoPlayer';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import * as value from './../globals';
 
 const styles = theme => ({
+    root: {
+        flexGrow: 1,
+        marginTop: 20
+    },
     button: {
         margin: theme.spacing.unit,
+        float: 'right'
     },
     input: {
         display: 'none',
@@ -24,7 +32,8 @@ class VideoUpload extends React.Component {
             loadingValue: 0,
             videoFiles: [{ name: "영상을 업로드 해주세요" }],
             invitee: '',
-            filePath : ''
+            files: [],
+            filePath: ''
         };
     }
 
@@ -34,71 +43,17 @@ class VideoUpload extends React.Component {
         });
     }
 
-    // handleUpload = (e) => {
-    //     const url = '/api/video/';
-    //     const formData = new FormData();
-    //     let file = this.state.videoFiles;
+    onDrop = (selectorFiles) => {
 
-    //     formData.append('username', 'test');
-    //     formData.append('invitee', this.state.invitee);
-    //     for (let i = 0; i < file.length; i++) {
-    //         console.log(file[i]);
-    //         formData.append('file', file[i]);
-    //     }
-
-    //     const config = {
-    //         headers: {
-    //             'content-type': 'multipart/form-data'
-    //         },
-    //         onUploadProgress: progressEvent => {
-    //             this.setState({
-    //                 loadingFlag: true,
-    //                 loadingValue: Math.round((progressEvent.loaded * 100) / progressEvent.total)
-    //             })
-    //         }
-    //     }
-    //     let username = 'test';
-    //     let invitee = this.state.invitee;
-
-    //     return axios.post(`${url}delete`, { username, invitee }).then((result) => {
-
-    //         return axios.post(url, formData, config).then((result) => {
-
-    //             if (result.data.success === true) {
-    //                 alert('영상 등록이 완료되었습니다.');
-    //                 this.props.history.push('/');
-    //             } else {
-    //                 alert('영상 등록을 실패하였습니다.');
-    //             }
-    //         }).catch((error) => {
-    //             // handle error
-    //             alert(error);
-
-    //         })
-
-    //     }).catch((error) => {
-    //         // handle error
-    //         alert(error);
-
-    //     })
-
-    // }
-
-    handleUpload = (e) => {
-        
-
-    }
-
-    onDrop = (selectorFiles) => {       
-
-        const url = '/api/video/';
         const formData = new FormData();
         let file = selectorFiles;
+        let id = this.props.status.info.userid;
+        let username = this.props.status.info.nickname;
 
-        formData.append('username', 'test');
+        formData.append('enterid', id);
+        formData.append('username', username);
         formData.append('invitee', this.state.invitee);
         for (let i = 0; i < file.length; i++) {
-            console.log(file[i]);
             formData.append('file', file[i]);
         }
 
@@ -114,17 +69,96 @@ class VideoUpload extends React.Component {
             }
         }
 
-        return axios.post(url, formData, config).then((result) => {
-            alert(result.data.filePath);
+        return axios.post('/api/video/', formData, config).then((result) => {
+
             this.setState({
-                filePath : result.data.filePath,
+                files: result.data.files,
+                filePath: result.data.files[0].path,
                 loadingFlag: false,
             })
 
         }).catch((error) => {
             // handle error
             alert(error);
+        })
+    }
 
+    handleUpload = (e) => {
+        let invitee = this.state.invitee;
+        let username = this.props.status.info.nickname;
+        let enterid = this.props.status.info.userid;
+        let files = this.state.files;
+
+        if (files.length === 0) {
+            alert("영상을 등록해주세요~");
+            return;
+        }
+
+        return axios.post('/api/video/save', { username, enterid, invitee, files }).then((result) => {
+
+            let invitee = result.data.result.invitee;
+            let seq = result.data.result._id;
+            let enterid = result.data.result.enterid;
+            let celebrateUrl='';
+            let title ='';
+            let description = '';
+
+            if (invitee === '' || invitee === null || invitee === undefined || invitee === 'undefined') {
+                celebrateUrl = `${window.location.origin}/${enterid}/${seq}`;
+                title = '결혼식에 초대합니다.';
+
+            } else {
+                celebrateUrl = `${window.location.origin}/${enterid}/${invitee}/${seq}`;
+                title = `To. ${invitee}`;
+                description = '결혼식에 초대합니다.';
+            }
+            
+            const token = this.props.status.info.access_token;
+            const data = {
+                "object_type": "feed",
+                "content": {
+                    "title": title,
+                    "description": description,
+                    "image_url": "http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg",
+                    "image_width": 640,
+                    "image_height": 640,
+                    "link": {
+                        "web_url": celebrateUrl,
+                        "mobile_web_url": celebrateUrl,
+                        "android_execution_params": "contentId=100",
+                        "ios_execution_params": "contentId=100"
+                    }
+                },                    
+                "buttons": [
+                    {
+                        "title": "청첩장 열어보기",
+                        "link": {
+                            "web_url": celebrateUrl,
+                            "mobile_web_url": celebrateUrl
+                        }
+                    },
+                ]
+            };
+
+            return axios.post('/api/kakao/send', { token, data }).then((result) => {
+                console.log(result.data);
+                //window.location.href = url;
+                if (result.data.code === -402) {
+                    alert('카카오톡 메시지 전송여부에 동의하셔야합니다. 동의 후 청첩장을 다시 제작해주세요.');
+                    const required_scopes = result.data.required_scopes;
+                    const url = `${value.KAKAO_LOGIN_URL}?client_id=${value.KAKAO_CLIENT_ID}&redirect_uri=${value.KAKAO_REDIRECT_URL}&response_type=code&scope=${required_scopes.join(',')}`;
+                    window.location.href = url;
+                } else {
+                    alert('청첩장 제작이 완료되었습니다. 카카오톡 > 나만의 채팅방에서 제작된 청첩장을 확인하세요!');
+                    window.location.href = window.location.origin;
+                }
+            }).catch((error) => {
+                // handle error
+                alert(error);
+            })   
+        }).catch((error) => {
+            // handle error
+            alert(error);
         })
     }
 
@@ -132,8 +166,12 @@ class VideoUpload extends React.Component {
 
         const loading = (<CircularProgress variant="static" value={this.state.loadingValue} />);
         const { classes } = this.props;
+
+        const videoPlayer = (
+            <VideoPlayer url={this.state.filePath} />
+        );
         return (
-            <div>
+            <div className={classes.root}>
                 <input
                     accept="video/*"
                     id="contained-button-file"
@@ -141,24 +179,26 @@ class VideoUpload extends React.Component {
                     onChange={(e) => this.onDrop(e.target.files)}
                     type="file"
                 />
-                <Typography variant="h6">
-                    {this.state.videoFiles[0].name}
-                </Typography>
-                <label htmlFor="contained-button-file">
-                    <Button variant="contained" component="span" className={classes.button}>
-                        Upload
-                    </Button>
-                </label>
+                {this.state.files.length > 0 ? videoPlayer : <Typography variant="h6">{this.state.videoFiles[0].name}<label htmlFor="contained-button-file">
+                    <Button variant="contained" color="primary" size="small" component="span" className={classes.button}>Upload</Button>
+                </label></Typography>}
+
+
+                {this.state.files.length > 0 ?
+                    <label htmlFor="contained-button-file">
+                        <Button variant="contained" size="small" component="span" className={classes.button}>Re-upload</Button>
+                    </label> : undefined}
                 <TextField
                     id="invitee"
                     name="invitee"
-                    label="name"
+                    label="초대받는분 이름"
                     fullWidth
                     margin="normal"
                     value={this.state.invitee}
                     variant="outlined"
                     onChange={this.handleInputChange}
                 />
+
                 <br />
                 <Button onClick={this.handleUpload} ><p id='gallery'>Upload(video)</p></Button>
                 {this.state.loadingFlag === true ? loading : undefined}
@@ -168,4 +208,10 @@ class VideoUpload extends React.Component {
     }
 }
 
-export default withStyles(styles)(VideoUpload);
+const mapStateToProps = (state) => {
+    return {
+        status: state.kakao.status,
+    };
+};
+
+export default connect(mapStateToProps)(withStyles(styles)(VideoUpload));

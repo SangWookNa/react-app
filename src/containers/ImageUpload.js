@@ -3,6 +3,7 @@ import ImageUploader from 'react-images-upload';
 import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 class ImageUpload extends React.Component {
 
@@ -26,12 +27,14 @@ class ImageUpload extends React.Component {
     }
 
     handleUpload = (e) => {
-        const url = '/api/image/';
         const formData = new FormData();
 
         let file = this.state.pictures;
-        
-        formData.append('username', 'test');
+        let id = this.props.status.info.userid;
+        let username = this.props.status.info.nickname;
+
+        formData.append('enterid', id);
+        formData.append('username', username);
         formData.append('uploadFlag', e.target.id);
         console.log(formData);
         for (let i = 0; i < file.length; i++) {
@@ -49,9 +52,9 @@ class ImageUpload extends React.Component {
             }
         }
 
-        return axios.delete(`/api/image/${'test'}/${e.target.id}`, formData, config).then((result) => {
+        return axios.delete(`/api/image/${id}/${e.target.id}`, formData, config).then((result) => {
             
-            return axios.post(url, formData, config).then((result) => {
+            return axios.post('/api/image/', formData, config).then((result) => {
 
                 if (result.data.success === true) {
                     alert('사진 등록이 완료되었습니다.');
@@ -79,7 +82,7 @@ class ImageUpload extends React.Component {
         return (
             <div>
                 <ImageUploader
-                    label=''
+                    label='사진을 업로드 해주세요'
                     withIcon={false}
                     buttonText='upload'
                     onChange={this.onDrop}
@@ -96,4 +99,10 @@ class ImageUpload extends React.Component {
     }
 }
 
-export default ImageUpload;
+const mapStateToProps = (state) => {
+    return {
+      status: state.kakao.status,
+    };
+  };
+    
+  export default connect(mapStateToProps)(ImageUpload);

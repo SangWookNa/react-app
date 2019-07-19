@@ -12,11 +12,15 @@ const router = express.Router();
 const upload = multer({
     storage: multer.diskStorage({
         destination: function (req, file, cb) {
-            const dir = 'public/uploads/' + req.body.username + '/';
+            const dir = 'public/uploads/image/' + req.body.enterid + '/';
             if (!fs.existsSync(dir)) {
-                fs.mkdir(dir, err => cb(err, dir))
+                fs.mkdir(dir, err => {
+                    if (err) throw err;
+                    cb(null, dir);        
+                })
+            }else{
+                cb(null, dir);
             }
-            cb(null, 'public/uploads/' + req.body.username + '/');
         },
         filename: function (req, file, cb) {
             cb(null, crypto.randomBytes(18).toString('hex') + path.extname(file.originalname));
@@ -39,8 +43,7 @@ const upload = multer({
  *      3: BAD PASSWORD
  */
 router.post('/', (req, res, next) => {
-    //console.log(req.files);
-
+    
     upload(req, res, function (err) {
         if (err) {
             winston.error(err);
@@ -52,6 +55,7 @@ router.post('/', (req, res, next) => {
 
         //섬네일 크기세팅
         for (let value of req.files) {
+            //console.log(value);
             let width = 0;
             let height = 0;
             if (req.body.uploadFlag === 'gallery') {
@@ -80,8 +84,8 @@ router.post('/', (req, res, next) => {
                 thumbnailpath: `${value.destination}/${path.basename(value.filename, path.extname(value.filename))}_thumb${path.extname(value.filename)}`,
                 originalname: value.originalname,
                 size: value.size,
-                username: 'test',
-                enterid: 'test',
+                username: req.body.username,
+                enterid: req.body.enterid,
                 uploadflag: req.body.uploadFlag
             });
 
@@ -97,11 +101,11 @@ router.post('/', (req, res, next) => {
 /**
  * READ ADDITIONAL (OLD/NEW) MEMO: GET /api/memo/:listType/:id
  */
-router.get('/:username/:uploadFlag', (req, res) => {
-    let username = req.params.username;
+router.get('/:enterid/:uploadFlag', (req, res) => {
+    let enterid = req.params.enterid;
     let uploadFlag = req.params.uploadFlag;
     // GET IMAGE LIST
-    Image.find({ username: username, uploadflag: uploadFlag })
+    Image.find({ enterid: enterid, uploadflag: uploadFlag })
         .sort({ 'originalname': 1 })
         //.limit(6)
         .exec((err, image) => {
@@ -115,17 +119,17 @@ router.get('/:username/:uploadFlag', (req, res) => {
  * DELETE IMAGE : DELETE /api/image/
  * ERROR CODE
  */
-router.delete('/:username/:uploadFlag', (req, res) => {
-    let username = req.params.username;
+router.delete('/:enterid/:uploadFlag', (req, res) => {
+    let enterid = req.params.enterid;
     let uploadFlag = req.params.uploadFlag;
     
-    Image.find({ username: username, uploadflag: uploadFlag })
+    Image.find({ enterid: enterid, uploadflag: uploadFlag })
         .sort({ _id: -1 })
         .exec((err, memos) => {
             if (err) throw err;
            
            //REMOVE THE IMAGE
-           Image.remove({ username: username, uploadflag: uploadFlag })
+           Image.remove({ enterid: enterid, uploadflag: uploadFlag })
            .exec((err) => {
             if (err) throw err;
 

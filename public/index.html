@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+  <script type="text/javascript"
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=69d4dafd7d9aab9775ab02ed17c19dcb&libraries=services"></script>
   <title>React App</title>
 </head>
 
@@ -14,7 +16,22 @@
   <div id="root"></div>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script>
-    $('#test');      
+    var mapContainer;
+    var map;
+    var infowindow;
+    // 마커를 담을 배열입니다
+    var markers = [];
+    // $(document).ready(function () {
+    //   mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    //     mapOption = {
+    //       center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+    //       level: 3 // 지도의 확대 레벨
+    //     };
+    //   map = new kakao.maps.Map(mapContainer, mapOption); //지도 생성 및 객체 리턴
+    //    // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
+    //   infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
+    // });
   </script>
 </body>
+
 </html>
