@@ -9,52 +9,33 @@ const router = express.Router();
  */
 router.post('/', (req, res) => {
 
-    // if (typeof req.body.username !== 'string' || req.body.username === "") {
-    //     return res.status(400).json({
-    //         error: "BAD USERNAME",
-    //         code: 1
-    //     });
-    // }
+    console.log(req.body);
+    console.log(typeof req.body.data.userid);
 
-    // // CHECK CONTENTS VALID
-    // if (typeof req.body.contents !== 'string') {
-    //     return res.status(400).json({
-    //         error: "EMPTY CONTENTS",
-    //         code: 2
-    //     });
-    // }
-
-    // if (req.body.contents === "") {
-    //     return res.status(400).json({
-    //         error: "EMPTY CONTENTS",
-    //         code: 2
-    //     });
-    // }
-
-    // // CHECK PASS LENGTH
-    // if (typeof req.body.password !== "string" || req.body.password === "") {
-    //     return res.status(400).json({
-    //         error: "BAD PASSWORD",
-    //         code: 3
-    //     });
-    // }
+    if (typeof req.body.data.userid !== 'number' || req.body.data.userid === "") {
+        return res.status(400).json({
+            error: "BAD USERID",
+            code: 1
+        });
+    }
 
     // CREATE NEW UserInfo
     let userinfo = new UserInfo({
 
-        enterid: req.body.enterid,
-        groom: req.body.groom,
-        bride: req.body.bride,
-        groom_phone: req.body.groom_phone,
-        bride_phone: req.body.bride_phone,
-        addressName: req.body.addressName,
-        road_address_name: req.body.road_address_name,
-        address_name2: req.body.address_name2,
-        place_name: req.body.place_name,
-        x : req.body.x,
-        y : req.body.y,
-        place_phone: req.body.place_phone,
-        etc : req.body.etc,
+        enterid: req.body.data.userid,
+        groom: req.body.data.groom,
+        bride: req.body.data.bride,
+        groom_phone: req.body.data.groomPhone,
+        bride_phone: req.body.data.bridePhone,
+        addressName: req.body.data.addressName,
+        road_address_name: req.body.data.roadAddressName,
+        address_name2: req.body.data.addressName2,
+        place_name: req.body.data.placeName,
+        x : req.body.data.x,
+        y : req.body.data.y,
+        place_phone: req.body.data.placePhone,
+        marry_date_time: req.body.data.marryDateTime,
+        etc : req.body.data.etc,
 
     });
 

@@ -40,6 +40,8 @@ class Main extends Component {
   };
 
   componentDidMount() {
+
+    console.log(this.props.status);
     
     //쿠키 가져오기
     function getCookie(name) {

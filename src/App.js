@@ -8,7 +8,7 @@ import {
 
 
 class App extends Component {
-
+  state = { foo: 'bar' }
   componentDidMount() {
 
     //쿠키 가져오기
@@ -22,24 +22,24 @@ class App extends Component {
     let loginData = getCookie('key');
 
     //if loginData is undefined, do nothing
-    if (typeof loginData === "undefined"){
+    if (typeof loginData === "undefined") {
       return;
-    } 
+    }
 
     //decode base64 & parse json
     loginData = JSON.parse(atob(loginData));
 
     //if not logged in, do nothing
     //console.log(loginData);
-    if (!loginData.isLoggedIn){
+    if (!loginData.isLoggedIn) {
       return;
-    } 
+    }
 
-    if (loginData.isLoggedIn && this.props.location.pathname ==='/'){
-      window.location.href = window.location.origin+'/Main';
+    if (loginData.isLoggedIn && this.props.location.pathname === '/') {
+      window.location.href = window.location.origin + '/Main';
       return;
-    } 
-    
+    }
+
     //세션가져오기
     //page refreshed & has a session in cookie,
     //check whether this cookie is valid or not
@@ -62,10 +62,22 @@ class App extends Component {
   }
 
   render() {
+    const childrenWithProps = React.Children.map(this.props.children, child => {
+
+      if (child.length !== 1) return React.cloneElement(child, { status : this.props.status })
+
+    }
+    );
+    console.log(this.props.status);
+    //console.log(childrenWithProps);
     return (
       <div>
-        <Header status = {this.props.status} />
-        {this.props.children}
+        <Header status={this.props.status} />
+        {/* {childrenWithProps} */}
+        {React.Children.map(this.props.children, child => {
+        if (child.length !== 1) return React.cloneElement(child, { status : this.props.status })
+        }
+        )}
       </div>
     );
   }

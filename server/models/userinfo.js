@@ -16,6 +16,7 @@ const UserInfo = new Schema({
     y : String,
     place_phone: String,
     etc : String,
+    marry_date_time : Date,
     date: {
         created: { type: Date, default: Date.now },
         edited: { type: Date, default: Date.now }

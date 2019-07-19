@@ -8,6 +8,10 @@ import CardHeader from '@material-ui/core/CardHeader';
 import blue from '@material-ui/core/colors/blue';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import { connect } from 'react-redux';
+import {
+    userinfoPostRequest,
+} from '../actions/userinfo';
 
 const styles = theme => ({
     root: {
@@ -82,6 +86,7 @@ class MapUpload extends React.Component {
         marryDateTime: '',
         bride: '',
         groom: '',
+        userid: '',
     }
 
     componentDidMount() {
@@ -113,6 +118,10 @@ class MapUpload extends React.Component {
             window.location.href = window.location.origin;
             return;
         }
+
+        this.setState({
+            userid : loginData.userid,
+        })
 
         //지도표시
         window.mapContainer = document.getElementById('map'); // 지도를 표시할 div 
@@ -244,37 +253,55 @@ class MapUpload extends React.Component {
 
     handlePost = (e) => {
         console.log(this.state);
-        let groom = this.state.groom;
-        let bride = this.state.bride;
-        let marryDateTime = this.state.marryDateTime;
-        let searchValue = this.state.searchValue;
-        let addressName2 = this.state.addressName2;
+        let groom = this.state.groom.trim();
+        let bride = this.state.bride.trim();
+        let marryDateTime = this.state.marryDateTime.trim();
+        let searchValue = this.state.searchValue.trim();
+        let addressName2 = this.state.addressName2.trim();
 
-        if (groom === '' || groom === null || groom === undefined || groom === 'undefined') {
+        if (groom === '') {
             this.groomInput.current.focus();
             alert('새신랑 이름을 입력하세요.');
             return;
         }
-        if (bride === '' || bride === null || bride === undefined || bride === 'undefined') {
+        if (bride === '') {
             this.brideInput.current.focus();
             alert('새신부 이름을 입력하세요.');
             return;
         }
-        if (marryDateTime === '' || marryDateTime === null || marryDateTime === undefined || marryDateTime === 'undefined') {
+        if (marryDateTime === '') {
             this.marryDateTimeInput.current.focus();
             alert('결혼식 일시를 입력하세요.');
             return;
         }
-        if (searchValue === '' || searchValue === null || searchValue === undefined || searchValue === 'undefined') {
+        if (searchValue === '') {
             alert('예식장 이름(주소)를 입력하세요.');
             this.searchValueInput.current.focus();
             return;
         }
-        if (addressName2 === '' || addressName2 === null || addressName2 === undefined || addressName2 === 'undefined') {
+        if (addressName2 === '') {
             alert('상세 주소를 입력하세요.');
             this.addressName2Input.current.focus();
             return;
         }
+
+        this.props.userinfoPostRequest(this.state).then(
+            () => {
+                if (this.props.postStatus.status === "SUCCESS") {
+                   alert('예식정보 등록에 성공하였습니다.');
+                   window.location.href = window.location.origin+'/Main';
+                } else {
+                    alert(this.props.postStatus.error);
+                    if(this.props.postStatus.error === 1){
+                        alert("계정정보가 없습니다. 로그인페이지로 이동합니다.");
+                        window.location.href = window.location.origin;
+                    }else{
+                        alert('실패');
+                    }
+                   
+                }
+            }
+        )
     }
 
     handleCancel = (e) => {
@@ -414,4 +441,19 @@ class MapUpload extends React.Component {
     }
 }
 
-export default withStyles(styles)(MapUpload);
+const mapStateToProps = (state) => {
+    return {
+        postStatus: state.userinfo.post,
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        userinfoPostRequest: (data) => {
+            return dispatch(userinfoPostRequest(data));
+        },
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(MapUpload));
+
