@@ -8,7 +8,7 @@ const UserInfo = new Schema({
     bride: String,
     groom_phone: String,
     bride_phone: String,
-    addressName: String,
+    address_name: String,
     road_address_name: String,
     address_name2: String,
     place_name: String,

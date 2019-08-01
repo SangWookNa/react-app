@@ -40,9 +40,8 @@ class Main extends Component {
   };
 
   componentDidMount() {
-
-    console.log(this.props.status);
     
+    //////////////세션체크//////////////
     //쿠키 가져오기
     function getCookie(name) {
       var value = "; " + document.cookie;
@@ -71,6 +70,7 @@ class Main extends Component {
       return;
     }
   }
+  ///////////////////////////////////
 
   //데이터 불러오기
   dataSetting = () => {

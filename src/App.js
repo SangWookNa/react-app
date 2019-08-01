@@ -62,22 +62,17 @@ class App extends Component {
   }
 
   render() {
+
+    //children 컴포넌트에 props를 전달하기위함
     const childrenWithProps = React.Children.map(this.props.children, child => {
-
-      if (child.length !== 1) return React.cloneElement(child, { status : this.props.status })
-
+      if (child.length !== 1) return React.cloneElement(child, { status: this.props.status })
     }
     );
-    console.log(this.props.status);
-    //console.log(childrenWithProps);
+    
     return (
       <div>
         <Header status={this.props.status} />
-        {/* {childrenWithProps} */}
-        {React.Children.map(this.props.children, child => {
-        if (child.length !== 1) return React.cloneElement(child, { status : this.props.status })
-        }
-        )}
+        {childrenWithProps}
       </div>
     );
   }

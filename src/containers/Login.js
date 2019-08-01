@@ -40,12 +40,12 @@ class Login extends React.Component {
               }
             );
 
-            // 쿠키 데이터 생성
+            // 쿠키 데이터 생성  
             let loginData = {
-              isLoggedIn: true,
+              isLoggedIn: true, 
               userid: result.data.userid
             };
-            console.log(JSON.stringify(loginData));
+            
             document.cookie = 'key=' + btoa(JSON.stringify(loginData));
 
           }).catch((error) => {

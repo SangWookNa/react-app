@@ -23,6 +23,11 @@ const initialState = {
         status: 'INIT',
         error: -1
     },
+    get: {
+        status: 'INIT',
+        data: {},
+        isLast: false
+    }
 };
 
 export default function userinfo(state, action) {
@@ -49,6 +54,25 @@ export default function userinfo(state, action) {
                 post: {
                     status: { $set: 'FAILURE' },
                     error: { $set: action.error }
+                }
+            });
+        case types.USERINFO_GET:
+            return update(state, {
+                get: {
+                    status: { $set: 'WAITING' },
+                }
+            });
+        case types.USERINFO_GET_SUCCESS:
+            return update(state, {
+                get: {
+                    status: { $set: 'SUCCESS' },
+                    data: { $set: action.data },
+                }
+            })
+        case types.USERINFO_GET_FAILURE:
+            return update(state, {
+                get: {
+                    status: { $set: 'FAILURE' }
                 }
             });
         default:

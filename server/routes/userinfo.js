@@ -31,11 +31,11 @@ router.post('/', (req, res) => {
         road_address_name: req.body.data.roadAddressName,
         address_name2: req.body.data.addressName2,
         place_name: req.body.data.placeName,
-        x : req.body.data.x,
-        y : req.body.data.y,
-        place_phone: req.body.data.placePhone,
+        x: req.body.data.x,
+        y: req.body.data.y,
+        place_phone: req.body.data.phone,
         marry_date_time: req.body.data.marryDateTime,
-        etc : req.body.data.etc,
+        etc: req.body.data.etc,
 
     });
 
@@ -44,7 +44,19 @@ router.post('/', (req, res) => {
         if (err) throw err;
         return res.json({ success: true });
     });
-    
+});
+
+
+/* */
+router.get('/:id', (req, res) => {
+    console.log(req.params.id);
+    UserInfo.findOne({ enterid: req.params.id })
+        .exec((err, userinfos) => {
+            if (err) throw err;
+
+            console.log(userinfos);
+            res.json(userinfos);
+        });
 });
 
 /**
@@ -125,7 +137,7 @@ router.delete('/:id', (req, res) => {
                 error: "NO RESOURCE",
                 code: 3
             });
-        }        
+        }
 
         //REMOVE THE MEMO
         Memo.remove({ _id: req.params.id }, err => {
@@ -193,19 +205,6 @@ router.get('/:listType/:id', (req, res) => {
             });
     }
 
-});
-
-
-
-/* */
-router.get('/:id', (req, res) => {
-    Memo.find({ enterid: req.params.id })
-        .sort({ "_id": -1 })
-        //.limit(6)
-        .exec((err, memos) => {
-            if (err) throw err;
-            res.json(memos);
-        });
 });
 
 export default router;

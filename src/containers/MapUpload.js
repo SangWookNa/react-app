@@ -11,6 +11,7 @@ import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
 import {
     userinfoPostRequest,
+    userinfoGetRequest,
 } from '../actions/userinfo';
 
 const styles = theme => ({
@@ -49,7 +50,7 @@ const styles = theme => ({
     },
     header: {
         height: 0,
-        paddingTop: '8.25%', // 16:9
+        paddingTop: '13.25%', // 16:9
     },
     avatar: {
         backgroundColor: blue[100],
@@ -61,8 +62,6 @@ const styles = theme => ({
         paddingRight: '10',
     },
 });
-
-
 
 class MapUpload extends React.Component {
     constructor(props) {
@@ -91,6 +90,7 @@ class MapUpload extends React.Component {
 
     componentDidMount() {
 
+        //////////////세션체크//////////////
         //쿠키 가져오기
         function getCookie(name) {
             var value = "; " + document.cookie;
@@ -118,10 +118,14 @@ class MapUpload extends React.Component {
             window.location.href = window.location.origin;
             return;
         }
+        ///////////////////////////////////
 
         this.setState({
-            userid : loginData.userid,
+            userid: loginData.userid,
         })
+
+        //데이터 셋팅
+        this.dataSetting(loginData.userid);
 
         //지도표시
         window.mapContainer = document.getElementById('map'); // 지도를 표시할 div 
@@ -132,6 +136,38 @@ class MapUpload extends React.Component {
         window.map = new window.kakao.maps.Map(window.mapContainer, window.mapOption); //지도 생성 및 객체 리턴
         // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
         window.infowindow = new window.kakao.maps.InfoWindow({ zIndex: 1 });
+    }
+
+    //데이터 불러오기
+    dataSetting = (userid) => {
+        let id = userid;
+
+        //유저정보 불러오기
+        this.props.userinfoGetRequest(id).then(() => {
+            console.log(this.props.userData);
+            if (this.props.userData.status === 'SUCCESS') {
+                if (this.props.userData.data !== null) {
+
+                    this.setState({
+                        searchValue: this.props.userData.data.place_name,
+                        addressName: this.props.userData.data.address_name,
+                        roadAddressName: this.props.userData.data.road_address_name,
+                        placeName: this.props.userData.data.place_name,
+                        phone: this.props.userData.data.place_phone,
+                        x: this.props.userData.data.x,
+                        y: this.props.userData.data.y,
+                        addressName2: this.props.userData.data.address_name2,
+                        marryDateTime: this.props.userData.data.marry_date_time.substring(0, 19),
+                        bride: this.props.userData.data.bride,
+                        groom: this.props.userData.data.groom,
+                    })
+                }
+
+
+            } else {
+                alert("사용자정보불러오기 실패");
+            }
+        });
     }
 
     handleInputChange = (e) => {
@@ -288,17 +324,17 @@ class MapUpload extends React.Component {
         this.props.userinfoPostRequest(this.state).then(
             () => {
                 if (this.props.postStatus.status === "SUCCESS") {
-                   alert('예식정보 등록에 성공하였습니다.');
-                   window.location.href = window.location.origin+'/Main';
+                    alert('예식정보 등록에 성공하였습니다.');
+                    window.location.href = window.location.origin + '/Main';
                 } else {
                     alert(this.props.postStatus.error);
-                    if(this.props.postStatus.error === 1){
+                    if (this.props.postStatus.error === 1) {
                         alert("계정정보가 없습니다. 로그인페이지로 이동합니다.");
                         window.location.href = window.location.origin;
-                    }else{
+                    } else {
                         alert('실패');
                     }
-                   
+
                 }
             }
         )
@@ -354,7 +390,7 @@ class MapUpload extends React.Component {
                             InputProps={{ classes: { input: classes.input1 } }}
                             margin="normal"
                             inputRef={this.groomInput}
-                            value={this.state.username}
+                            value={this.state.groom}
                             variant="outlined"
                             onChange={this.handleChange}
                         />
@@ -368,7 +404,7 @@ class MapUpload extends React.Component {
                             InputProps={{ classes: { input: classes.input1 } }}
                             margin="normal"
                             inputRef={this.brideInput}
-                            value={this.state.password}
+                            value={this.state.bride}
                             variant="outlined"
                             onChange={this.handleChange}
                         />
@@ -380,6 +416,7 @@ class MapUpload extends React.Component {
                             label="백년가약 맺는날"
                             type="datetime-local"
                             fullWidth
+                            value={this.state.marryDateTime}
                             inputRef={this.marryDateTimeInput}
                             onChange={this.handleChange}
                             InputLabelProps={{
@@ -444,6 +481,7 @@ class MapUpload extends React.Component {
 const mapStateToProps = (state) => {
     return {
         postStatus: state.userinfo.post,
+        userData: state.userinfo.get,
     };
 };
 
@@ -451,6 +489,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         userinfoPostRequest: (data) => {
             return dispatch(userinfoPostRequest(data));
+        },
+        userinfoGetRequest: (userid) => {
+            return dispatch(userinfoGetRequest(userid));
         },
     };
 };

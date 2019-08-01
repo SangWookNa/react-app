@@ -54,8 +54,6 @@ class Header extends Component {
 
   handleLogout = (e) => {
 
-    console.log(this.props.status);
-
     axios.post('/api/kakao/logout', { token: this.props.status.info.access_token }).then((result) => {
 
       //logout the session
