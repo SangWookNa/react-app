@@ -54,7 +54,7 @@ const styles = theme => ({
     },
     avatar: {
         backgroundColor: blue[100],
-        color: blue[600],
+        color: blue[600], 
     },
     text: {
         paddingTop: '10',
@@ -162,7 +162,6 @@ class MapUpload extends React.Component {
                         groom: this.props.userData.data.groom,
                     })
                 }
-
 
             } else {
                 alert("사용자정보불러오기 실패");
@@ -440,7 +439,7 @@ class MapUpload extends React.Component {
                                 search
                     </Button>
                         </div>
-                        <div id="map" style={{ width: '100%', height: '300px', margin: 'auto', backgroundColor: 'gray' }}></div>
+                        <div id="map" style={{ width: '88%', height: '230px', margin: 'auto', backgroundColor: 'gray' }}></div>
                         <div className={classes.root}>
 
                             <Card className={classes.card}>
