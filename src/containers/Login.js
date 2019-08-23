@@ -6,7 +6,8 @@ import logo from './../image/kakao_account_login.png';
 import qs from 'query-string';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import * as value from '../globals';import {
+import * as value from '../globals';
+import {
   kakaoLoginRequest,
   getStatusRequest,
 } from '../actions/kakao';
@@ -22,13 +23,15 @@ const styles = theme => ({
 
 class Login extends React.Component {
 
-  componentDidMount(){
+  componentDidMount() {
     //카카오 로그인 토큰 생성   
     let code = qs.parse(this.props.location.search, { ignoreQueryPrefix: true }).code;
+    let redirectUrl = value.KAKAO_REDIRECT_URL;
+    let kakaoClientId = value.KAKAO_CLIENT_ID;
     
     if (code !== '' && code !== undefined && code !== 'undefined') {
-      console.log(code);
-      return this.props.kakaoLoginRequest(code).then(
+      
+      return this.props.kakaoLoginRequest(code,redirectUrl,kakaoClientId).then(
         () => {
           const url = '/api/kakao/me';
           //카카오 사용자정보 가져오기
@@ -42,10 +45,10 @@ class Login extends React.Component {
 
             // 쿠키 데이터 생성  
             let loginData = {
-              isLoggedIn: true, 
+              isLoggedIn: true,
               userid: result.data.userid
             };
-            
+
             document.cookie = 'key=' + btoa(JSON.stringify(loginData));
 
           }).catch((error) => {
@@ -97,8 +100,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    kakaoLoginRequest: (code) => {
-      return dispatch(kakaoLoginRequest(code))
+    kakaoLoginRequest: (code,redirectUrl,kakaoClientId) => {
+      return dispatch(kakaoLoginRequest(code,redirectUrl,kakaoClientId))
     },
     getStatusRequest: () => {
       return dispatch(getStatusRequest());

@@ -1,0 +1,15 @@
+2019-08-19 09:29:55 info: Check out the app at http://localhost:4000
+2019-08-19 09:29:56 info: Connected to mongodb server
+2019-08-19 09:30:28 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-08-19 09:30:28 info: ::ffff:127.0.0.1 - - [19/Aug/2019:00:30:28 +0000] "POST /api/kakao/getinfo HTTP/1.1" 401 11 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36"
+
+2019-08-19 09:30:55 info: PARAM {"0":"kakao/"} | BODY {"code":"66-80kHPPKkdb7vDrZ3C6_O0Sf7CG4utloINnCjYBwHzBj2Y-2Xu2B5NXhAELkTkRkRftgo9dNoAAAFsp0ibdg"}
+2019-08-19 09:30:55 info: ::ffff:127.0.0.1 - - [19/Aug/2019:00:30:55 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=66-80kHPPKkdb7vDrZ3C6_O0Sf7CG4utloINnCjYBwHzBj2Y-2Xu2B5NXhAELkTkRkRftgo9dNoAAAFsp0ibdg" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Mobile Safari/537.36"
+
+2019-08-19 09:30:55 info: PARAM {"0":"kakao/me"} | BODY {"token":"u7vF8Z-XjKgYXCKTdS1VYauTrTOwa1m-a6b1pQo9dZoAAAFsp0idkw"}
+2019-08-19 09:30:55 info: ::ffff:127.0.0.1 - - [19/Aug/2019:00:30:55 +0000] "POST /api/kakao/me HTTP/1.1" 200 146 "http://localhost:3000/oauth?code=66-80kHPPKkdb7vDrZ3C6_O0Sf7CG4utloINnCjYBwHzBj2Y-2Xu2B5NXhAELkTkRkRftgo9dNoAAAFsp0ibdg" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Mobile Safari/537.36"
+
+2019-08-19 09:30:55 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-08-19 09:30:55 info: ::ffff:127.0.0.1 - - [19/Aug/2019:00:30:55 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/oauth?code=66-80kHPPKkdb7vDrZ3C6_O0Sf7CG4utloINnCjYBwHzBj2Y-2Xu2B5NXhAELkTkRkRftgo9dNoAAAFsp0ibdg" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Mobile Safari/537.36"
+
+2019-08-19 09:31:10 info: PARAM {"0":"userinfo/1112482398"} | BODY {}

@@ -54,7 +54,7 @@ const styles = theme => ({
     },
     avatar: {
         backgroundColor: blue[100],
-        color: blue[600], 
+        color: blue[600],
     },
     text: {
         paddingTop: '10',
@@ -134,8 +134,10 @@ class MapUpload extends React.Component {
             level: 3 // 지도의 확대 레벨
         };
         window.map = new window.kakao.maps.Map(window.mapContainer, window.mapOption); //지도 생성 및 객체 리턴
+        
         // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
         window.infowindow = new window.kakao.maps.InfoWindow({ zIndex: 1 });
+        
     }
 
     //데이터 불러오기
@@ -147,7 +149,7 @@ class MapUpload extends React.Component {
             console.log(this.props.userData);
             if (this.props.userData.status === 'SUCCESS') {
                 if (this.props.userData.data !== null) {
-
+                    //console.log(format(this.props.userData.data.marry_date_time,'yyyy-mm-dd'));
                     this.setState({
                         searchValue: this.props.userData.data.place_name,
                         addressName: this.props.userData.data.address_name,
@@ -157,21 +159,35 @@ class MapUpload extends React.Component {
                         x: this.props.userData.data.x,
                         y: this.props.userData.data.y,
                         addressName2: this.props.userData.data.address_name2,
-                        marryDateTime: this.props.userData.data.marry_date_time.substring(0, 19),
+                        marryDateTime: this.props.userData.data.marry_date_time,
                         bride: this.props.userData.data.bride,
                         groom: this.props.userData.data.groom,
                     })
+                    // 이동할 위도 경도 위치를 생성합니다 
+                    var moveLatLon = new window.kakao.maps.LatLng(this.props.userData.data.y, this.props.userData.data.x);
+                    
+                    // 지도 중심을 이동 시킵니다
+                    window.map.setCenter(moveLatLon);
+
+                    // 마커가 표시될 위치입니다 
+                    var markerPosition = new window.kakao.maps.LatLng(this.props.userData.data.y, this.props.userData.data.x);
+
+                    // 마커를 생성합니다
+                    var marker = new window.kakao.maps.Marker({
+                        position: markerPosition
+                    });
+
+                    // 마커가 지도 위에 표시되도록 설정합니다
+                    marker.setMap(window.map);
+
+
                 }
+
+               
 
             } else {
                 alert("사용자정보불러오기 실패");
             }
-        });
-    }
-
-    handleInputChange = (e) => {
-        this.setState({
-            searchValue: e.target.value,
         });
     }
 
@@ -248,6 +264,7 @@ class MapUpload extends React.Component {
 
     // 지도에 마커를 표시하는 함수입니다
     displayMarker = (place) => {
+        console.log(place);
 
         var marker = new window.kakao.maps.Marker();
 
@@ -278,6 +295,7 @@ class MapUpload extends React.Component {
     }
 
     handleChange = (e) => {
+
         let nextState = {};
         nextState[e.target.name] = e.target.value;
 
@@ -285,6 +303,13 @@ class MapUpload extends React.Component {
             nextState
         );
     }
+
+    handleKeyPress = (e) => {
+        if (e.charCode == 13) {
+            this.handleSearch();
+        }
+    }
+
 
     handlePost = (e) => {
         console.log(this.state);
@@ -316,7 +341,10 @@ class MapUpload extends React.Component {
         }
         if (addressName2 === '') {
             alert('상세 주소를 입력하세요.');
-            this.addressName2Input.current.focus();
+            console.log(this.addressName2Input.current);
+            if (this.addressName2Input.current !== null) {
+                this.addressName2Input.current.focus();
+            }
             return;
         }
 
@@ -434,6 +462,7 @@ class MapUpload extends React.Component {
                                 value={this.state.searchValue}
                                 variant="outlined"
                                 onChange={this.handleChange}
+                                onKeyPress={this.handleKeyPress}
                             />
                             <Button variant="contained" onClick={this.handleSearch} color="primary" className={classes.button} size="small" component="span" >
                                 search

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Write from '../components/memo/Write';
 import { MemoList } from '../components/memo';
 import { ToastBar } from '../components/common';
+import Typography from '@material-ui/core/Typography';
+import LibraryBooks from '@material-ui/icons/LibraryBooks';
 import { connect } from 'react-redux';
 import {
   memoPostRequest,
@@ -33,9 +35,9 @@ class Memo extends Component {
           //TRIGGER LOAD memoListRequest          
           this.props.onList().then(() => {
             this.setState({
-                    message: '축하 메세지가 등록되었습니다~',
-                    success: true
-                  });
+              message: '축하 메세지가 등록되었습니다~',
+              success: true
+            });
           })
 
           return this.props.postStatus;
@@ -164,11 +166,11 @@ class Memo extends Component {
                      2: EMPTY CONTENTS
                      3: NO RESOURCE
           */
-            let errorMessage = [
-              'Something broke',
-              '글을 입력해주세요~',
-              '메모가 존재하지않습니다.',              
-            ];
+          let errorMessage = [
+            'Something broke',
+            '글을 입력해주세요~',
+            '메모가 존재하지않습니다.',
+          ];
 
           this.setState({
             message: errorMessage[this.props.editStatus.error - 1],
@@ -182,7 +184,10 @@ class Memo extends Component {
     const toastBar = (<ToastBar message={this.state.message} />);
 
     return (
-      <div>
+      <div style={{ marginTop: 50, marginBottom: 50 }}>
+        <Typography component="h2" variant="display1" style={{ paddingLeft: '2%' }}>
+          <LibraryBooks /> guest book
+        </Typography>
         <Write onPost={this.handlePost} />
         <MemoList data={this.props.memoData}
           onRemove={this.handleRemove}

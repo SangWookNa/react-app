@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-  <script type="text/javascript"
-    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=69d4dafd7d9aab9775ab02ed17c19dcb&libraries=services"></script>
   <title>React App</title>
 </head>
 
@@ -15,7 +13,10 @@
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=69d4dafd7d9aab9775ab02ed17c19dcb&libraries=services"></script>
+  <script type="text/javascript" src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
   <script>
+    Kakao.init('69d4dafd7d9aab9775ab02ed17c19dcb');
     var mapContainer;
     var map;
     var infowindow;

@@ -6,5 +6,7 @@ import VideoUpload from './VideoUpload';
 import Login from './Login';
 import Main from './Main';
 import MapUpload from './MapUpload';
+import Map from './Map';
+import Weather from './Weather';
 
-export { Home, Memo, Video, ImageUpload, VideoUpload, Login, Main, MapUpload };
+export { Home, Memo, Video, ImageUpload, VideoUpload, Login, Main, MapUpload, Map, Weather };

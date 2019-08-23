@@ -1,8 +1,23 @@
 import express from 'express';
 import UserInfo from '../models/userinfo';
 import mongoose from 'mongoose';
+import dateFormat from 'dateFormat';
 
 const router = express.Router();
+
+dateFormat.i18n = {
+    dayNames: [
+        '월', '화', '수', '목', '금', '토', '일',
+        '월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'
+    ],
+    monthNames: [
+        '1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월',
+        '1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'
+    ],
+    timeNames: [
+        '오전', '오후', '오전', '오후', '오전', '오후', '오전', '오후'
+    ]
+};
 
 /**
  * 
@@ -27,7 +42,7 @@ router.post('/', (req, res) => {
         bride: req.body.data.bride,
         groom_phone: req.body.data.groomPhone,
         bride_phone: req.body.data.bridePhone,
-        addressName: req.body.data.addressName,
+        address_name: req.body.data.addressName,
         road_address_name: req.body.data.roadAddressName,
         address_name2: req.body.data.addressName2,
         place_name: req.body.data.placeName,
@@ -39,11 +54,18 @@ router.post('/', (req, res) => {
 
     });
 
-    // SAVE IN DATABASE
-    userinfo.save(err => {
-        if (err) throw err;
-        return res.json({ success: true });
-    });
+    //REMOVE IN DATABASE
+    UserInfo.remove({ enterid: req.body.data.userid })
+        .exec((err) => {
+            if (err) throw err;
+
+            //SAVE IN DATABASE
+            userinfo.save(err => {
+                if (err) throw err;
+                return res.json({ success: true });
+            });
+        })
+
 });
 
 
@@ -53,7 +75,10 @@ router.get('/:id', (req, res) => {
     UserInfo.findOne({ enterid: req.params.id })
         .exec((err, userinfos) => {
             if (err) throw err;
-
+            let marryDateTime = new Date(userinfos.marry_date_time);
+            console.log(marryDateTime);
+            userinfos.marry_date_time_view = dateFormat(userinfos.marry_date_time, "yyyy년 mmmm d일 dddd TT h시 MM분");
+            
             console.log(userinfos);
             res.json(userinfos);
         });
@@ -158,6 +183,14 @@ router.get('/', (req, res) => {
             if (err) throw err;
             res.json(memos);
         });
+});
+
+/**
+ * READ MEMO : GET /api/memo
+ */
+router.post('/weather', (req, res) => {
+   
+    console.log('test');
 });
 
 /**

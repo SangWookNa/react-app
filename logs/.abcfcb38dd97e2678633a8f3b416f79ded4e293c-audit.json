@@ -6,29 +6,29 @@
     "auditLog": "D:\\workplace\\react-app\\logs\\.abcfcb38dd97e2678633a8f3b416f79ded4e293c-audit.json",
     "files": [
         {
-            "date": 1563328948022,
-            "name": "D:\\workplace\\react-app\\logs\\app-2019-07-17.log",
-            "hash": "ff373941d07f26edfbe10a320ae8e790"
+            "date": 1566174595508,
+            "name": "D:\\workplace\\react-app\\logs\\app-2019-08-19.log",
+            "hash": "b92188398022e7c3aaa29d8b5ae8bdfe"
         },
         {
-            "date": 1563408991281,
-            "name": "D:\\workplace\\react-app\\logs\\app-2019-07-18.log",
-            "hash": "0d9bf652b618be9578026059e3b35ada"
+            "date": 1566265583313,
+            "name": "D:\\workplace\\react-app\\logs\\app-2019-08-20.log",
+            "hash": "f586b117f147c8c87a4f3d2dada7a5be"
         },
         {
-            "date": 1564376899307,
-            "name": "D:\\workplace\\react-app\\logs\\app-2019-07-29.log",
-            "hash": "ffce9c51a5d9865925425d1d09598db8"
+            "date": 1566350727684,
+            "name": "D:\\workplace\\react-app\\logs\\app-2019-08-21.log",
+            "hash": "f5b07b7ea9a844bfd0997f95cba6db57"
         },
         {
-            "date": 1564635377430,
-            "name": "D:\\workplace\\react-app\\logs\\app-2019-08-01.log",
-            "hash": "0f19c03617a1b28b4972a89d4f9d2ee0"
+            "date": 1566432811156,
+            "name": "D:\\workplace\\react-app\\logs\\app-2019-08-22.log",
+            "hash": "a964a797c8fd7682cc02380922e15a55"
         },
         {
-            "date": 1565943338756,
-            "name": "D:\\workplace\\react-app\\logs\\app-2019-08-16.log",
-            "hash": "262507776a7731ba7089e0c3165f3cb7"
+            "date": 1566519689581,
+            "name": "D:\\workplace\\react-app\\logs\\app-2019-08-23.log",
+            "hash": "1d82f32f788a950566ab61393898cb31"
         }
     ]
 }

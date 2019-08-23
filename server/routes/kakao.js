@@ -11,8 +11,8 @@ const router = express.Router();
 router.post('/', (req, res) => {
 
   let grant_type = 'authorization_code';
-  let client_id = '9e7171f1d9599641378cd3e36174adbc';
-  let redirect_uri = 'http://localhost:3000/oauth';
+  let client_id = req.body.kakaoClientId;
+  let redirect_uri = req.body.redirectUrl;
   let code = req.body.code;
 
   var data = qs.stringify({

@@ -31,7 +31,7 @@ class Video extends Component {
   render() {
 
     return (
-      <div>
+      <div style = {{marginTop:50,marginBottom:50}}>
         <VideoPlayer url= {this.state.path}/>
       </div>
     );

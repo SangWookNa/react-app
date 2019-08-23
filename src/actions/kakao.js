@@ -9,12 +9,12 @@ import {
 import axios from 'axios';
 
 /* IMAGE UPLOAD */
-export function kakaoLoginRequest(code) {
+export function kakaoLoginRequest(code,redirectUrl,kakaoClientId) {
     return (dispatch) => {
         //inform MEMO POST API is starting
         dispatch(kakaoLogin());
 
-        return axios.post('/api/kakao/', { code })
+        return axios.post('/api/kakao/', { code,redirectUrl,kakaoClientId })
             .then((response) => {
                 dispatch(kakaoLoginSuccess(response.data));
             }).catch((error) => {

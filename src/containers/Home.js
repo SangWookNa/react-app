@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   Video,
   Memo,
+  Map,
 } from './';
 import { connect } from 'react-redux';
 import { Gallery, ImageGridList } from '../components/image/';
@@ -12,6 +13,12 @@ import {
 import {
   memoListRequest,
 } from '../actions/memo';
+import {
+  userinfoGetRequest,
+} from '../actions/userinfo';
+import moment from 'moment';
+import axios from 'axios';
+import * as value from '../globals';
 
 class Home extends Component {
   state = {
@@ -44,7 +51,7 @@ class Home extends Component {
 
           return obj;
         });
-        
+
         this.setState({
           imagesGalleryData: images,
         });
@@ -54,7 +61,7 @@ class Home extends Component {
     //사진불러오기(그리드)
     this.props.imageGridListRequest(id, 'grid').then(
       () => {
-        
+
         const images = this.props.imageGridData.map((data) => {
           let obj = {};
           obj.src = `${origin}/${data.path}`;
@@ -80,11 +87,68 @@ class Home extends Component {
       }
     );
 
+    //유저정보 불러오기
+    this.props.userinfoGetRequest(id).then(
+      () => {
+
+        if (this.props.userData.status === 'SUCCESS') {
+          let y = this.props.userData.data.y;
+          let x = this.props.userData.data.x;
+
+          // 마커가 표시될 위치입니다 
+          var markerPosition = new window.kakao.maps.LatLng(y, x);
+          // 마커를 생성합니다
+          var marker = new window.kakao.maps.Marker({
+            position: markerPosition
+          });
+          var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = {
+              center: new window.kakao.maps.LatLng(y, x), // 지도의 중심좌표
+              level: 3, // 지도의 확대 레벨
+              marker: marker
+            };
+          var map = new window.kakao.maps.StaticMap(mapContainer, mapOption); // 지도를 생성합니다
+
+          const today = moment().format('YYYY-MM-DD');
+          const marryDate = moment(this.props.userData.data.marry_date_time).format('YYYY-MM-DD');
+
+          const dayDiff = moment(marryDate).diff(today, 'days');
+          console.log(today);
+          console.log(marryDate);
+          console.log(dayDiff);
+
+          if (dayDiff > 2 && dayDiff < 11) {
+            //날씨정보 불러오기
+            let weather_url = `${value.TMAP_NAVIGATION_URL}/weather/forecast/6days?appKey=${value.TMAP_APP_KEY}&version=1&lon=${this.props.userData.data.x}&lat=${this.props.userData.data.y}`
+            axios.get(weather_url).then((result) => {
+
+              console.log(result.data);
+
+            }).catch((error) => {
+              // handle error
+              alert(error);
+            })
+          }else if (dayDiff > 0 && dayDiff < 3){
+
+          }else if (dayDiff === 0){
+            
+          }
+
+
+        } else {
+          alert("사용자정보불러오기 실패");
+        }
+      });
+
     //방명록 불러오기
-    this.props.memoListRequest(true, undefined, undefined, id).then();
+    this.props.memoListRequest(true, undefined, undefined, id).then(
+      () => {
+
+      });
+
   }
 
-  //방명록 불러오기
+  //방명록등록수정삭제 후 불러오기
   handleMemoList = () => {
     let id = this.props.match.params.enterid;
 
@@ -101,6 +165,7 @@ class Home extends Component {
         <ImageGridList
           images={this.state.imagesGridData}
           thumbnailImages={this.state.thumbnailImages} />
+        <Map userData={this.props.userData} />
         <Memo
           enterid={this.props.match.params.enterid}
           memoData={this.props.memoData}
@@ -124,6 +189,7 @@ const mapStateToProps = (state) => {
     imageGridData: state.image.gridList.data,
     imageGalleryData: state.image.galleryList.data,
     memoData: state.memo.list.data,
+    userData: state.userinfo.get,
   };
 };
 
@@ -137,6 +203,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     memoListRequest: (isInitial, listType, id, username) => {
       return dispatch(memoListRequest(isInitial, listType, id, username))
+    },
+    userinfoGetRequest: (userid) => {
+      return dispatch(userinfoGetRequest(userid));
     },
   };
 };

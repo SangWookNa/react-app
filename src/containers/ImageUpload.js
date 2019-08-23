@@ -58,7 +58,7 @@ class ImageUpload extends React.Component {
 
                 if (result.data.success === true) {
                     alert('사진 등록이 완료되었습니다.');
-                    this.props.history.push('/');
+                    this.props.history.push('/Main');
                 } else {
                     alert('사진 등록을 실패하였습니다.');
                 }
