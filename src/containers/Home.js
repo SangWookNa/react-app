@@ -26,6 +26,9 @@ class Home extends Component {
     imagesGalleryData: [],
     imagesGridData: [{ src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599", width: 1, height: 1 }],
     thumbnailImages: [{ src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599", width: 1, height: 1 }],
+    weather : {},
+    gubn : '',
+    dayDiff : -1,
   };
 
   componentDidMount() {
@@ -107,33 +110,30 @@ class Home extends Component {
               level: 3, // 지도의 확대 레벨
               marker: marker
             };
-          var map = new window.kakao.maps.StaticMap(mapContainer, mapOption); // 지도를 생성합니다
+          new window.kakao.maps.StaticMap(mapContainer, mapOption); // 지도를 생성합니다
 
           const today = moment().format('YYYY-MM-DD');
           const marryDate = moment(this.props.userData.data.marry_date_time).format('YYYY-MM-DD');
 
           const dayDiff = moment(marryDate).diff(today, 'days');
-          console.log(today);
-          console.log(marryDate);
-          console.log(dayDiff);
 
-          if (dayDiff > 2 && dayDiff < 11) {
-            //날씨정보 불러오기
-            let weather_url = `${value.TMAP_NAVIGATION_URL}/weather/forecast/6days?appKey=${value.TMAP_APP_KEY}&version=1&lon=${this.props.userData.data.x}&lat=${this.props.userData.data.y}`
-            axios.get(weather_url).then((result) => {
+          // if (dayDiff === 0){
+          //   //날씨정보 불러오기(현재 날씨) 시간별
+          //   let weather_url = `${value.TMAP_NAVIGATION_URL}/weather/current/hourly?appKey=${value.TMAP_APP_KEY}&version=1&lon=${this.props.userData.data.x}&lat=${this.props.userData.data.y}`
+          //   axios.get(weather_url).then((result) => {
+          //     console.log('현재 날씨');
+          //     console.log(result.data);
+          //     this.setState({
+          //       weather : result.data,
+          //       gubn : 'today',
+          //       dayDiff : 0
+          //     });
 
-              console.log(result.data);
-
-            }).catch((error) => {
-              // handle error
-              alert(error);
-            })
-          }else if (dayDiff > 0 && dayDiff < 3){
-
-          }else if (dayDiff === 0){
-            
-          }
-
+          //   }).catch((error) => {
+          //     // handle error
+          //     alert(error);
+          //   })
+          // }
 
         } else {
           alert("사용자정보불러오기 실패");
@@ -165,7 +165,7 @@ class Home extends Component {
         <ImageGridList
           images={this.state.imagesGridData}
           thumbnailImages={this.state.thumbnailImages} />
-        <Map userData={this.props.userData} />
+        <Map userData={this.props.userData} weather={this.state.weather} dayDiff={this.state.dayDiff} />
         <Memo
           enterid={this.props.match.params.enterid}
           memoData={this.props.memoData}

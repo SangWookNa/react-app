@@ -20,7 +20,7 @@ class Video extends Component {
     this.props.videoListRequest(enterid, invitee, seq).then(
       () => {       
         this.setState({
-          path : `${origin}/${this.props.videoData[0].path}`
+          //path : `${origin}/${this.props.videoData[0].path}`
         })
       }
     );

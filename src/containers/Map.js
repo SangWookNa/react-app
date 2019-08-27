@@ -11,6 +11,9 @@ import tmapLogo from './../image/tmap_logo.jpg';
 import kakaoNaviLogo from './../image/kakaonavi_btn_medium.png';
 import Paper from '@material-ui/core/Paper';
 import * as value from '../globals';
+import {
+    Weather,
+} from './';
 const styles = theme => ({
     cont: {
         marginTop: 50,
@@ -66,7 +69,7 @@ class Map extends React.Component {
 
     componentDidMount() {
 
-
+        window.Kakao.init('69d4dafd7d9aab9775ab02ed17c19dcb');
 
 
     }
@@ -78,7 +81,6 @@ class Map extends React.Component {
             //window.open(url, "a");
             window.location.href = url;
         } else if (e.target.id === 'kakao') {
-
             window.Kakao.Navi.start({
                 name: this.props.userData.data.place_name,
                 x: this.props.userData.data.x,
@@ -94,7 +96,7 @@ class Map extends React.Component {
 
     render() {
         const { classes } = this.props;
-
+        // const weather = (<Weather weather={this.props.weather} />);
         return (
 
             <div className={classes.cont}>
@@ -104,6 +106,7 @@ class Map extends React.Component {
                 <Grid container spacing={8}>
                     <div className={classes.root}>
                         <Card className={classes.card}>
+                            {/* {this.props.dayDiff === 0 ? weather : undefined}   */}
                             <div id="map" style={{ width: '88%', height: '230px', margin: 'auto', marginTop: 20, backgroundColor: 'gray' }}></div>
                             <CardHeader className={classes.header} classes={{ title: classes.title, subheader: classes.subheader }}
                                 title={this.props.userData.data.place_name}

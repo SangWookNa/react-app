@@ -5,6 +5,9 @@
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.2",
+    "@mdi/font": "^4.1.95",
+    "@mdi/js": "^4.1.95",
+    "@mdi/react": "^1.2.1",
     "app-root-path": "^2.2.1",
     "axios": "^0.18.0",
     "babel": "^6.23.0",

@@ -30,24 +30,26 @@ import api from './routes';
 app.use('/api', api);
 
 if (process.env.NODE_ENV == 'development') {
+    console.log(1);
     app.use(express.static(path.join(__dirname, '..', '/')));
     // app.get('/*', function (req, res) {
     //     res.sendFile(path.join(__dirname, './../public', 'index.html'));
     //   });
 } else {
-    app.use(express.static(path.join(__dirname, '..', '/')));
-    // app.get('/*', function (req, res) {
-    //     res.sendFile(path.join(__dirname, './../build', 'index.html'));
-    //   });
+    console.log(2);
+    //app.use(express.static(path.join(__dirname, '..', '/')));
+    app.get('/*', function (req, res) {
+        res.sendFile(path.join(__dirname, './../build', 'index.html'));
+      });
 }
 
 /** mongodb connection */
 const db = mongoose.connection;
 db.once('open', () => { winston.log('info', 'Connected to mongodb server'); });
-// mongoose.connect('mongodb://username:password@host:port/database=');
-mongoose.connect('mongodb://localhost:27017/invitation', function (err) {
-    if (err) winston.error(err.stack);
-});
+mongoose.connect('mongodb://swna:sktkddnr1234@127.0.0.1:27017/invitation?authSource=admin')
+// mongoose.connect('mongodb://swna:sktkddnr1234@localhost:27017/invitation', function (err) {
+//     if (err) winston.error(err.stack);
+// });
 
 /** handle error */
 app.use((err, req, res, next) => {
