@@ -8,5 +8,6 @@ import Main from './Main';
 import MapUpload from './MapUpload';
 import Map from './Map';
 import Weather from './Weather';
+import Invitation from './Invitation';
 
-export { Home, Memo, Video, ImageUpload, VideoUpload, Login, Main, MapUpload, Map, Weather };
+export { Home, Memo, Video, ImageUpload, VideoUpload, Login, Main, MapUpload, Map, Weather, Invitation };

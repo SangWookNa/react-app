@@ -3,7 +3,7 @@ import autoIncrement from 'mongoose-auto-increment';
 
 const Schema = mongoose.Schema;
 
-var connection = mongoose.createConnection("mongodb://localhost:27017/invitation");
+var connection = mongoose.createConnection("mongodb://swna:sktkddnr1234@127.0.0.1:27017/invitation?authSource=admin");
  
 autoIncrement.initialize(connection);
 

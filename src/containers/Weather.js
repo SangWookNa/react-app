@@ -1,5 +1,5 @@
 import React from 'react';
-import { Today, DayAfterTommorow, Forecast6Days } from '../components/weather';
+import { Today } from '../components/weather';
 class Weather extends React.Component {
 
 

@@ -3,12 +3,14 @@ import {
   Video,
   Memo,
   Map,
+  Invitation,
 } from './';
 import { connect } from 'react-redux';
 import { Gallery, ImageGridList } from '../components/image/';
 import {
   imageGalleryListRequest,
   imageGridListRequest,
+  imageMainRequest,
 } from '../actions/image';
 import {
   memoListRequest,
@@ -16,19 +18,18 @@ import {
 import {
   userinfoGetRequest,
 } from '../actions/userinfo';
-import moment from 'moment';
-import axios from 'axios';
-import * as value from '../globals';
+//import moment from 'moment';
 
 class Home extends Component {
   state = {
     currentImage: 0,
+    imageMainData: [{ src: "http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg" }],
     imagesGalleryData: [],
     imagesGridData: [{ src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599", width: 1, height: 1 }],
     thumbnailImages: [{ src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599", width: 1, height: 1 }],
-    weather : {},
-    gubn : '',
-    dayDiff : -1,
+    weather: {},
+    gubn: '',
+    dayDiff: -1,
   };
 
   componentDidMount() {
@@ -43,6 +44,23 @@ class Home extends Component {
 
     const id = this.props.match.params.enterid;
     const origin = window.location.origin;
+
+    //사진불러오기(메인)
+    this.props.imageMainRequest(id, 'main').then(
+      () => {
+        const images = this.props.imageMainData.map((data) => {
+          let obj = {};
+          obj.src = `${origin}/${data.path}`;
+          return obj;
+        });
+
+        if (images.length > 0) {
+          this.setState({
+            imageMainData: images,
+          });
+        }
+      }
+    );
 
     //사진불러오기(갤러리)
     this.props.imageGalleryListRequest(id, 'gallery').then(
@@ -78,6 +96,7 @@ class Home extends Component {
           obj.src = `${origin}/${data.thumbnailpath}`;
           obj.width = 4;
           obj.height = 4;
+          obj.style = {borderRadius:'20px', margin:10,cursor: 'pointer'};
           return obj;
         });
 
@@ -112,10 +131,10 @@ class Home extends Component {
             };
           new window.kakao.maps.StaticMap(mapContainer, mapOption); // 지도를 생성합니다
 
-          const today = moment().format('YYYY-MM-DD');
-          const marryDate = moment(this.props.userData.data.marry_date_time).format('YYYY-MM-DD');
+          //const today = moment().format('YYYY-MM-DD');
+          //const marryDate = moment(this.props.userData.data.marry_date_time).format('YYYY-MM-DD');
 
-          const dayDiff = moment(marryDate).diff(today, 'days');
+          //const dayDiff = moment(marryDate).diff(today, 'days');
 
           // if (dayDiff === 0){
           //   //날씨정보 불러오기(현재 날씨) 시간별
@@ -160,6 +179,7 @@ class Home extends Component {
 
     return (
       <div style={{ flexGrow: 1 }}>
+        <Invitation userData={this.props.userData} images={this.state.imageMainData} />
         {this.props.match.url !== '/' ? video : undefined}
         <Gallery images={this.state.imagesGalleryData} />
         <ImageGridList
@@ -187,6 +207,7 @@ Home.defaultProps = {
 const mapStateToProps = (state) => {
   return {
     imageGridData: state.image.gridList.data,
+    imageMainData: state.image.mainList.data,
     imageGalleryData: state.image.galleryList.data,
     memoData: state.memo.list.data,
     userData: state.userinfo.get,
@@ -200,6 +221,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     imageGridListRequest: (enterid, uploadFlag) => {
       return dispatch(imageGridListRequest(enterid, uploadFlag))
+    },
+    imageMainRequest: (enterid, uploadFlag) => {
+      return dispatch(imageMainRequest(enterid, uploadFlag))
     },
     memoListRequest: (isInitial, listType, id, username) => {
       return dispatch(memoListRequest(isInitial, listType, id, username))

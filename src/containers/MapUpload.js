@@ -305,7 +305,7 @@ class MapUpload extends React.Component {
     }
 
     handleKeyPress = (e) => {
-        if (e.charCode == 13) {
+        if (e.charCode === 13) {
             this.handleSearch();
         }
     }
@@ -458,7 +458,7 @@ class MapUpload extends React.Component {
                                 name="searchValue"
                                 inputRef={this.searchValueInput}
                                 label="예식장 이름(주소)를 입력하세요"
-                                style={{ width: '75%' }}
+                                style={{ width: '73%' }}
                                 value={this.state.searchValue}
                                 variant="outlined"
                                 onChange={this.handleChange}

@@ -3,22 +3,11 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { BrowserRouter as Link, NavLink } from "react-router-dom";
-import { Login, VideoUpload, Memo, MapUpload } from './';
-import { Header } from '../components/common/';
-import { Gallery, ImageGridList } from '../components/image/';
-import axios from 'axios';
+import { VideoUpload } from './';
 import { connect } from 'react-redux';
 import {
-  kakaoLoginRequest,
-  getStatusRequest,
-} from '../actions/kakao';
-import {
-  imageGalleryListRequest,
-  imageGridListRequest,
+  imageMainRequest,
 } from '../actions/image';
-import {
-  memoListRequest,
-} from '../actions/memo';
 
 const styles = theme => ({
   button: {
@@ -33,14 +22,11 @@ const styles = theme => ({
 
 class Main extends Component {
   state = {
-    currentImage: 0,
-    imagesGalleryData: [],
-    imagesGridData: [{ src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599", width: 1, height: 1 }],
-    thumbnailImages: [{ src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599", width: 1, height: 1 }],
+    imageMainData: [{ src: "http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg" }],
   };
 
   componentDidMount() {
-    
+
     //////////////세션체크//////////////
     //쿠키 가져오기
     function getCookie(name) {
@@ -63,67 +49,40 @@ class Main extends Component {
     loginData = JSON.parse(atob(loginData));
 
     //if not logged in, do nothing
-    //console.log(loginData);
     if (!loginData.isLoggedIn) {
       alert("세션정보가 없습니다. 로그인페이지로 이동합니다.");
       window.location.href = window.location.origin;
       return;
     }
+
+    this.setState({
+      userid: loginData.userid,
+    })
+
+    //데이터 셋팅
+    this.dataSetting(loginData.userid);
   }
   ///////////////////////////////////
-
+  
   //데이터 불러오기
-  dataSetting = () => {
-    let id = this.props.status.info.userid;
-
-    //사진불러오기(갤러리)
-    this.props.imageGalleryListRequest(id, 'gallery').then(
+  dataSetting = (userid) => {
+    let id = userid;
+    //사진불러오기(메인)
+    this.props.imageMainRequest(id, 'main').then(
       () => {
-        const images = this.props.imageGalleryData.map((data) => {
-          let obj = {};
-          obj.original = data.path;
-          obj.thumbnail = data.thumbnailpath;
-
-          return obj;
-        });
-
-        this.setState({
-          imagesGalleryData: images,
-        });
-      }
-    );
-
-    //사진불러오기(그리드)
-    this.props.imageGridListRequest(id, 'grid').then(
-      () => {
-        let origin = window.location.origin;
-        const images = this.props.imageGridData.map((data) => {
+        const images = this.props.imageMainData.map((data) => {
           let obj = {};
           obj.src = `${origin}/${data.path}`;
-          obj.width = 1;
-          obj.height = 1;
-          return obj;
-        });
-
-        const thumbnailImages = this.props.imageGridData.map((data) => {
-          let obj = {};
-          obj.src = `${origin}/${data.thumbnailpath}`;
-          obj.width = 4;
-          obj.height = 4;
           return obj;
         });
 
         if (images.length > 0) {
           this.setState({
-            imagesGridData: images,
-            thumbnailImages: thumbnailImages,
+            imageMainData: images,
           });
         }
       }
     );
-
-    //방명록 불러오기
-    this.props.memoListRequest(true, undefined, undefined, id).then();
   }
 
   //방명록 불러오기
@@ -136,8 +95,9 @@ class Main extends Component {
   render() {
     const { classes } = this.props;
 
-    const videoUpload = (<VideoUpload id={this.props.status.info.userid} />);
+    const videoUpload = (<VideoUpload id={this.props.status.info.userid} images={this.state.imageMainData} />);
     const mapUplaod = (<Typography variant="h6">1.예식 정보 관리
+  
     <NavLink to="/MapUpload" className={classes.item} >
         <Button variant="contained" color="primary" size="small" component="span" className={classes.button}>Upload</Button>
       </NavLink>
@@ -155,14 +115,6 @@ class Main extends Component {
         {mapUplaod}
         {imageUplaod}
         {videoUpload}
-        {/* {this.props.status.isLoggedIn === true ? <Gallery images={this.state.imagesGalleryData} /> : undefined}
-        {this.props.status.isLoggedIn === true ? <ImageGridList
-          images={this.state.imagesGridData}
-          thumbnailImages={this.state.thumbnailImages} /> : undefined}
-        {this.props.status.isLoggedIn === true ? <Memo
-          enterid={this.props.status.info.userid}
-          memoData={this.props.memoData}
-          onList={this.handleMemoList} /> : undefined} */}
       </div>
     );
   }
@@ -170,30 +122,15 @@ class Main extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    loginStatus: state.kakao.login,
     status: state.kakao.status,
-    imageGridData: state.image.gridList.data,
-    imageGalleryData: state.image.galleryList.data,
-    memoData: state.memo.list.data,
+    imageMainData: state.image.mainList.data,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    kakaoLoginRequest: (code) => {
-      return dispatch(kakaoLoginRequest(code))
-    },
-    getStatusRequest: () => {
-      return dispatch(getStatusRequest());
-    },
-    imageGalleryListRequest: (enterid, uploadFlag) => {
-      return dispatch(imageGalleryListRequest(enterid, uploadFlag))
-    },
-    imageGridListRequest: (enterid, uploadFlag) => {
-      return dispatch(imageGridListRequest(enterid, uploadFlag))
-    },
-    memoListRequest: (isInitial, listType, id, username) => {
-      return dispatch(memoListRequest(isInitial, listType, id, username))
+    imageMainRequest: (enterid, uploadFlag) => {
+      return dispatch(imageMainRequest(enterid, uploadFlag))
     },
   };
 };

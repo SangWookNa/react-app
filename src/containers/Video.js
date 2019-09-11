@@ -16,11 +16,11 @@ class Video extends Component {
     let invitee = this.props.data.invitee;
     let seq = this.props.data.seq;
 
-    let origin   = window.location.origin;
+    let origin = window.location.origin;
     this.props.videoListRequest(enterid, invitee, seq).then(
-      () => {       
+      () => {
         this.setState({
-          //path : `${origin}/${this.props.videoData[0].path}`
+          path: `${origin}/${this.props.videoData[0].path}`
         })
       }
     );
@@ -31,8 +31,8 @@ class Video extends Component {
   render() {
 
     return (
-      <div style = {{marginTop:50,marginBottom:50}}>
-        <VideoPlayer url= {this.state.path}/>
+      <div style={{marginBottom: 50 }}>
+        <VideoPlayer url={this.state.path} />
       </div>
     );
   }

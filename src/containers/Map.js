@@ -11,9 +11,9 @@ import tmapLogo from './../image/tmap_logo.jpg';
 import kakaoNaviLogo from './../image/kakaonavi_btn_medium.png';
 import Paper from '@material-ui/core/Paper';
 import * as value from '../globals';
-import {
-    Weather,
-} from './';
+// import {
+//     Weather,
+// } from './';
 const styles = theme => ({
     cont: {
         marginTop: 50,
@@ -74,17 +74,23 @@ class Map extends React.Component {
 
     }
     handleClick_navigation = (e) => {
-        console.log(e.target.id);
 
         if (e.target.id === 'tmap') {
             const url = `${value.TMAP_NAVIGATION_URL}/tmap/app/routes?appKey=${value.TMAP_APP_KEY}&name=${this.props.userData.data.place_name}&lon=${this.props.userData.data.x}&lat=${this.props.userData.data.y}`;
             //window.open(url, "a");
             window.location.href = url;
         } else if (e.target.id === 'kakao') {
+
+            let x = this.props.userData.data.x;
+            let y = this.props.userData.data.y;
+
+            x = Number.parseFloat(x);
+            y = Number.parseFloat(y);
+
             window.Kakao.Navi.start({
                 name: this.props.userData.data.place_name,
-                x: this.props.userData.data.x,
-                y: this.props.userData.data.y,
+                x: x,
+                y: y,
                 coordType: 'wgs84'
             });
 

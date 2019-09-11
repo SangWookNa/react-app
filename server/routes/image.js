@@ -16,9 +16,9 @@ const upload = multer({
             if (!fs.existsSync(dir)) {
                 fs.mkdir(dir, err => {
                     if (err) throw err;
-                    cb(null, dir);        
+                    cb(null, dir);
                 })
-            }else{
+            } else {
                 cb(null, dir);
             }
         },
@@ -43,7 +43,7 @@ const upload = multer({
  *      3: BAD PASSWORD
  */
 router.post('/', (req, res, next) => {
-    
+
     upload(req, res, function (err) {
         if (err) {
             winston.error(err);
@@ -66,16 +66,18 @@ router.post('/', (req, res, next) => {
                 height = 400;
             }
 
-            //섬네일 생성
-            gm(value.path)
-                .thumb(width, height, `${value.destination}/${path.basename(value.filename, path.extname(value.filename))}_thumb${path.extname(value.filename)}`, (err) => {
-                    if (err) {
-                        winston.error(err);
-                        return res.status(500).json({
-                            error: err
-                        });
-                    }
-                });
+            if (req.body.uploadFlag !== 'main') {
+                //섬네일 생성
+                gm(value.path)
+                    .thumb(width, height, `${value.destination}/${path.basename(value.filename, path.extname(value.filename))}_thumb${path.extname(value.filename)}`, (err) => {
+                        if (err) {
+                            winston.error(err);
+                            return res.status(500).json({
+                                error: err
+                            });
+                        }
+                    });
+            }
 
             // CREATE NEW MEMO
             let image = new Image({
@@ -122,29 +124,29 @@ router.get('/:enterid/:uploadFlag', (req, res) => {
 router.delete('/:enterid/:uploadFlag', (req, res) => {
     let enterid = req.params.enterid;
     let uploadFlag = req.params.uploadFlag;
-    
+
     Image.find({ enterid: enterid, uploadflag: uploadFlag })
         .sort({ _id: -1 })
         .exec((err, memos) => {
             if (err) throw err;
-           
-           //REMOVE THE IMAGE
-           Image.remove({ enterid: enterid, uploadflag: uploadFlag })
-           .exec((err) => {
-            if (err) throw err;
 
-            for (let value of memos) {
-                fs.unlink(value.path, (err) => {
-                   if (err) throw err;
-                   winston.log('info',`${value.path} was deleted`);
-                });
-                fs.unlink(value.thumbnailpath, (err) => {
+            //REMOVE THE IMAGE
+            Image.remove({ enterid: enterid, uploadflag: uploadFlag })
+                .exec((err) => {
                     if (err) throw err;
-                    winston.log('info',`${value.thumbnailpath} was deleted`);
-                 });
-                
-               }
-           })
+
+                    for (let value of memos) {
+                        fs.unlink(value.path, (err) => {
+                            if (err) throw err;
+                            winston.log('info', `${value.path} was deleted`);
+                        });
+                        fs.unlink(value.thumbnailpath, (err) => {
+                            if (err) throw err;
+                            winston.log('info', `${value.thumbnailpath} was deleted`);
+                        });
+
+                    }
+                })
         });
     res.json({ success: true });
 });

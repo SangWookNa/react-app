@@ -7,7 +7,10 @@ import {
     IMAGE_GALLERY_LIST_FAILURE,
     IMAGE_GRID_LIST,
     IMAGE_GRID_LIST_SUCCESS,
-    IMAGE_GRID_LIST_FAILURE
+    IMAGE_GRID_LIST_FAILURE,
+    IMAGE_MAIN,
+    IMAGE_MAIN_SUCCESS,
+    IMAGE_MAIN_FAILURE
 } from './ActionTypes';
 import axios from 'axios';
 
@@ -124,5 +127,46 @@ export function imageGridListSuccess(data) {
 export function imageGridListFailure() {
     return {
         type: IMAGE_GRID_LIST_FAILURE
+    };
+}
+
+/** IMAGE MAIN DATA */
+/*
+    Parameter:        
+        - username:  OPTIONAL; find image of following user
+*/
+
+export function imageMainRequest(enterid, uploadFlag) {
+    return (dispatch) => {
+        // inform memo list API is starting
+        dispatch(imageMainList());
+
+        let url = `/api/image/${enterid}/${uploadFlag}`;
+        
+        return axios.get(url)
+            .then((response) => {
+                dispatch(imageMainListSuccess(response.data));
+            }).catch((error) => {
+                dispatch(imageMainListFailure());
+            });
+    };
+}
+
+export function imageMainList() {
+    return {
+        type: IMAGE_MAIN
+    };
+}
+
+export function imageMainListSuccess(data) {
+    return {
+        type: IMAGE_MAIN_SUCCESS,
+        data,
+    };
+}
+
+export function imageMainListFailure() {
+    return {
+        type: IMAGE_MAIN_FAILURE
     };
 }

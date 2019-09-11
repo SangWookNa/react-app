@@ -8,7 +8,7 @@ import {
 
 
 class App extends Component {
-  state = { foo: 'bar' }
+  
   componentDidMount() {
 
     //쿠키 가져오기
@@ -62,6 +62,7 @@ class App extends Component {
   }
 
   render() {
+    const header = (<Header status={this.props.status} />);
 
     //children 컴포넌트에 props를 전달하기위함
     const childrenWithProps = React.Children.map(this.props.children, child => {
@@ -71,7 +72,7 @@ class App extends Component {
     
     return (
       <div>
-        <Header status={this.props.status} />
+        {this.props.location.pathname.substring(1,5) !== 'Home' ? header : undefined}
         {childrenWithProps}
       </div>
     );
