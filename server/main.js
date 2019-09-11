@@ -46,10 +46,10 @@ if (process.env.NODE_ENV == 'development') {
 /** mongodb connection */
 const db = mongoose.connection;
 db.once('open', () => { winston.log('info', 'Connected to mongodb server'); });
-mongoose.connect('mongodb://swna:sktkddnr1234@127.0.0.1:27017/invitation?authSource=admin')
-// mongoose.connect('mongodb://swna:sktkddnr1234@localhost:27017/invitation', function (err) {
-//     if (err) winston.error(err.stack);
-// });
+//mongoose.connect('mongodb://127.0.0.1:27017/invitation')
+mongoose.connect('mongodb://swna:sktkddnr1234@localhost:27017/invitation', function (err) {
+    if (err) winston.error(err.stack);
+});
 
 /** handle error */
 app.use((err, req, res, next) => {
