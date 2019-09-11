@@ -14,6 +14,10 @@ const initialState = {
         status: 'INIT',
         data: [],
     },
+    mainList: {
+        status: 'INIT',
+        data: [],
+    },
 };
 
 export default function image(state, action) {
@@ -77,6 +81,25 @@ export default function image(state, action) {
         case types.IMAGE_GRID_LIST_FAILURE:
             return update(state, {
                 gridList: {
+                    status: { $set: 'FAILURE' }
+                }
+            });
+        case types.IMAGE_MAIN:
+            return update(state, {
+                mainList: {
+                    status: { $set: 'WAITING' },
+                }
+            });
+        case types.IMAGE_MAIN_SUCCESS:
+            return update(state, {
+                mainList: {
+                    status: { $set: 'SUCCESS' },
+                    data: { $set: action.data },
+                }
+            })
+        case types.IMAGE_MAIN_FAILURE:
+            return update(state, {
+                mainList: {
                     status: { $set: 'FAILURE' }
                 }
             });

@@ -37,6 +37,11 @@ class ImageUpload extends React.Component {
         formData.append('username', username);
         formData.append('uploadFlag', e.target.id);
         console.log(formData);
+
+        if(e.target.id ==='main' && file.length > 1){
+            alert('메인사진은 1장만 업로드가 가능합니다.');
+            return;
+        }
         for (let i = 0; i < file.length; i++) {
             formData.append('file', file[i]);
         }
@@ -92,6 +97,7 @@ class ImageUpload extends React.Component {
                 />
                 <Button  onClick={this.handleUpload} ><p id='gallery'>Upload(Gallery)</p></Button>
                 <Button  onClick={this.handleUpload} ><p id='grid'>Upload(Grid)</p></Button>
+                <Button  onClick={this.handleUpload} ><p id='main'>Upload(Main)</p></Button>
                 {this.state.loadingFlag === true ? loading : undefined}
             </div>
 

@@ -89,6 +89,9 @@ class VideoUpload extends React.Component {
         let enterid = this.props.status.info.userid;
         let files = this.state.files;
 
+        console.log(this.props.images[0].src);
+        //return;
+        
         if (files.length === 0) {
             alert("영상을 등록해주세요~");
             return;
@@ -104,11 +107,11 @@ class VideoUpload extends React.Component {
             let description = '';
 
             if (invitee === '' || invitee === null || invitee === undefined || invitee === 'undefined') {
-                celebrateUrl = `${window.location.origin}/${enterid}/${seq}`;
+                celebrateUrl = `${window.location.origin}/Home/${enterid}/${seq}`;
                 title = '결혼식에 초대합니다.';
 
             } else {
-                celebrateUrl = `${window.location.origin}/${enterid}/${invitee}/${seq}`;
+                celebrateUrl = `${window.location.origin}/Home/${enterid}/${invitee}/${seq}`;
                 title = `To. ${invitee}`;
                 description = '결혼식에 초대합니다.';
             }
@@ -119,7 +122,7 @@ class VideoUpload extends React.Component {
                 "content": {
                     "title": title,
                     "description": description,
-                    "image_url": "http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg",
+                    "image_url": this.props.images[0].src,
                     "image_width": 640,
                     "image_height": 640,
                     "link": {
