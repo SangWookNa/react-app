@@ -12,7 +12,7 @@ const router = express.Router();
 const upload = multer({
     storage: multer.diskStorage({
         destination: function (req, file, cb) {
-            const dir = 'public/uploads/image/' + req.body.enterid + '/';
+            const dir =  'uploads/image/' + req.body.enterid + '/';
             if (!fs.existsSync(dir)) {
                 fs.mkdir(dir, err => {
                     if (err) throw err;
@@ -69,7 +69,7 @@ router.post('/', (req, res, next) => {
             if (req.body.uploadFlag !== 'main') {
                 //섬네일 생성
                 gm(value.path)
-                    .thumb(width, height, `${value.destination}/${path.basename(value.filename, path.extname(value.filename))}_thumb${path.extname(value.filename)}`, (err) => {
+                    .thumb(width, height, `${value.destination}${path.basename(value.filename, path.extname(value.filename))}_thumb${path.extname(value.filename)}`, (err) => {
                         if (err) {
                             winston.error(err);
                             return res.status(500).json({
@@ -83,7 +83,7 @@ router.post('/', (req, res, next) => {
             let image = new Image({
                 filename: value.filename,
                 path: value.path,
-                thumbnailpath: `${value.destination}/${path.basename(value.filename, path.extname(value.filename))}_thumb${path.extname(value.filename)}`,
+                thumbnailpath: `${value.destination}${path.basename(value.filename, path.extname(value.filename))}_thumb${path.extname(value.filename)}`,
                 originalname: value.originalname,
                 size: value.size,
                 username: req.body.username,

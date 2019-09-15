@@ -30,26 +30,31 @@ import api from './routes';
 app.use('/api', api);
 
 if (process.env.NODE_ENV == 'development') {
-    console.log(1);
     app.use(express.static(path.join(__dirname, '..', '/')));
     // app.get('/*', function (req, res) {
     //     res.sendFile(path.join(__dirname, './../public', 'index.html'));
     //   });
 } else {
-    console.log(2);
-    // app.use(express.static(path.join(__dirname, '..', '/')));
     app.use(express.static(path.join(__dirname, './../build')));
+    
+    //파일요청
+    app.get('/uploads/:filepath/:id/:filename', function (req, res) {
+        const id = req.params.id;
+        const filename = req.params.filename;
+        const filepath = req.params.filepath;
+        res.sendFile(path.join(__dirname, `./../uploads/${filepath}/${id}`, `${filename}`));
+    });
+
     app.get('/*', function (req, res) {
         res.sendFile(path.join(__dirname, './../build', 'index.html'));
-      });
-    
+    });
+
 }
 
 /** mongodb connection */
 const db = mongoose.connection;
 db.once('open', () => { winston.log('info', 'Connected to mongodb server'); });
-//mongoose.connect('mongodb://127.0.0.1:27017/invitation')
-mongoose.connect('mongodb://swna:sktkddnr1234@localhost:27017/invitation', function (err) {
+mongoose.connect('mongodb://swna:sktkddnr1234@localhost:27017/invitation?authSource=admin', function (err) {
     if (err) winston.error(err.stack);
 });
 

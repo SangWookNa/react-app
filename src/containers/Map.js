@@ -16,8 +16,8 @@ import * as value from '../globals';
 // } from './';
 const styles = theme => ({
     cont: {
-        marginTop: 50,
-        marginBottom: 50,
+        marginTop: 100,
+        marginBottom: 100,
     },
     root: {
         flexGrow: 1,

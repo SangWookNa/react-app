@@ -6,7 +6,7 @@ import Memo from './Memo';
 const styles = {
     root: {
         flexGrow: 1,
-        backgroundColor: '#F0F8FF'
+        //backgroundColor: '#F0F8FF'
     }
 };
 
