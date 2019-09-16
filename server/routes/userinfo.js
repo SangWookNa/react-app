@@ -71,15 +71,11 @@ router.post('/', (req, res) => {
 
 /* */
 router.get('/:id', (req, res) => {
-    console.log(req.params.id);
     UserInfo.findOne({ enterid: req.params.id })
         .exec((err, userinfos) => {
             if (err) throw err;
             let marryDateTime = new Date(userinfos.marry_date_time);
-            console.log(marryDateTime);
             userinfos.marry_date_time_view = dateFormat(userinfos.marry_date_time, "yyyy년 mmmm d일 dddd TT h시 MM분");
-            
-            console.log(userinfos);
             res.json(userinfos);
         });
 });

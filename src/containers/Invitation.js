@@ -28,7 +28,7 @@ const styles = theme => ({
 class Invitation extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { width: 0, height: 0 };
+        this.state = { width: 0, height: 0, contHeight: 0 };
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
 
@@ -42,7 +42,7 @@ class Invitation extends React.Component {
     }
 
     updateWindowDimensions() {
-        this.setState({ width: window.innerWidth, height: window.innerHeight-150 });
+        this.setState({ width: window.innerWidth, height: window.innerHeight-200, contHeight: window.innerHeight });
     }
     shouldComponentUpdate(nextProps, nextState) {
         let update = JSON.stringify(this.props) !== JSON.stringify(nextProps);
@@ -53,7 +53,7 @@ class Invitation extends React.Component {
         const { classes } = this.props;
         console.log(this.props.images[0].src);
         return (
-            <div>
+            <div style={{ minHeight: this.state.contHeight+'px' }}>
                 <Paper className={classes.root} elevation={0} >
                     <Grid className={classes.cont}
                         container

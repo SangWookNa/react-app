@@ -63,6 +63,7 @@ router.post('/me', (req, res) => {
  * GET CURRENT USER INFO GET /api/kakao/getInfo
  */
 router.post('/getinfo', (req, res) => {
+  console.log(__dirname);
   if (typeof req.session.loginInfo === "undefined") {
     return res.status(401).json({
       error: 1

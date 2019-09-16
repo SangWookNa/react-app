@@ -12,7 +12,7 @@ const upload = multer({
     storage: multer.diskStorage({
         destination: function (req, file, cb) {
             //const dir = 'public/uploads/video/' + req.body.username + '/';
-            const dir = 'public/uploads/video/temp/';
+            const dir = 'uploads/video/temp/';
             if (!fs.existsSync(dir)) {
                 fs.mkdir(dir, err => {
                     if (err) throw err;
@@ -55,7 +55,7 @@ router.post('/save', (req, res) => {
     let invitee = req.body.invitee;
     let files = req.body.files;
 
-    const dir = `public/uploads/video/${enterid}/`;
+    const dir = `uploads/video/${enterid}/`;
     if (!fs.existsSync(dir)) {
           fs.mkdir(dir, (err) => {
             if (err) throw err;

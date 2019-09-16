@@ -8,7 +8,7 @@ import {
 
 
 class App extends Component {
-  
+
   componentDidMount() {
 
     //쿠키 가져오기
@@ -45,7 +45,7 @@ class App extends Component {
     //check whether this cookie is valid or not
     this.props.getStatusRequest().then(
       () => {
-
+        console.log('########  :'+this.props.location.pathname);
         if (this.props.status.valid) {
           console.log(this.props.status);
           //if session is not valid
@@ -56,6 +56,14 @@ class App extends Component {
             userid: '',
           };
           document.cookie = 'key=' + btoa(JSON.stringify(loginData));
+
+          //if loginData is undefined, do nothing
+          if (this.props.location.pathname.substring(1, 5) !== 'Home'
+            && this.props.location.pathname.substring(1, 5) !== '') {
+            alert("세션정보가 없습니다. 로그인페이지로 이동합니다.");
+            window.location.href = window.location.origin;
+            return;
+          }
         }
       }
     );
@@ -69,10 +77,10 @@ class App extends Component {
       if (child.length !== 1) return React.cloneElement(child, { status: this.props.status })
     }
     );
-    
+
     return (
       <div>
-        {this.props.location.pathname.substring(1,5) !== 'Home' ? header : undefined}
+        {this.props.location.pathname.substring(1, 5) !== 'Home' ? header : undefined}
         {childrenWithProps}
       </div>
     );

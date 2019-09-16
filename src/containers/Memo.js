@@ -184,7 +184,7 @@ class Memo extends Component {
     const toastBar = (<ToastBar message={this.state.message} />);
 
     return (
-      <div style={{ marginTop: 50, marginBottom: 50 }}>
+      <div style={{ marginTop: 100, marginBottom: 100 }}>
         <Typography component="h2" variant="display1" style={{ paddingLeft: '2%' }}>
           <LibraryBooks /> guest book
         </Typography>

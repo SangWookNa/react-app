@@ -7,13 +7,13 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
+//import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import VideoLibrary from '@material-ui/icons/VideoLibrary';
+//import VideoLibrary from '@material-ui/icons/VideoLibrary';
 import PowerSettingsNew from '@material-ui/icons/PowerSettingsNew';
-import Image from '@material-ui/icons/Image';
+//import Image from '@material-ui/icons/Image';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import { BrowserRouter as Link, NavLink } from "react-router-dom";
 import axios from 'axios';
@@ -109,7 +109,7 @@ class Header extends Component {
 
     const sideList = (
       <div className={classes.list}>
-        <List>
+        {/* <List>
           <NavLink to="/VideoUpload" className={classes.item}>
             <ListItem button key='ImageUpload' >
               <ListItemIcon><Image /></ListItemIcon>
@@ -121,7 +121,7 @@ class Header extends Component {
             <ListItemText primary='Video Upload' />
           </ListItem>
         </List>
-        <Divider />
+        <Divider /> */}
         {this.props.status.isLoggedIn === true ? logout : undefined}
         {this.props.status.isLoggedIn === true ? unlink : undefined}
       </div>

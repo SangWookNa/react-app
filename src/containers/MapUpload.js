@@ -97,27 +97,11 @@ class MapUpload extends React.Component {
             var parts = value.split("; " + name + "=");
             if (parts.length === 2) return parts.pop().split(";").shift();
         }
-
         //get loginData from cookie
         let loginData = getCookie('key');
 
-        //if loginData is undefined, do nothing
-        if (typeof loginData === "undefined") {
-            alert("세션정보가 없습니다. 로그인페이지로 이동합니다.");
-            window.location.href = window.location.origin;
-            return;
-        }
-
         //decode base64 & parse json
         loginData = JSON.parse(atob(loginData));
-
-        //if not logged in, do nothing
-        //console.log(loginData);
-        if (!loginData.isLoggedIn) {
-            alert("세션정보가 없습니다. 로그인페이지로 이동합니다.");
-            window.location.href = window.location.origin;
-            return;
-        }
         ///////////////////////////////////
 
         this.setState({

@@ -2,6 +2,20 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import classnames from 'classnames';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import Collapse from '@material-ui/core/Collapse';
+import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
+import red from '@material-ui/core/colors/red';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { BrowserRouter as Link, NavLink } from "react-router-dom";
 import { VideoUpload } from './';
 import { connect } from 'react-redux';
@@ -17,7 +31,31 @@ const styles = theme => ({
   item: {
     color: 'inherit',
     textDecoration: 'none',
-  }
+  },
+  card: {
+    maxWidth: 400,
+    margin : '10px',
+  },
+  media: {
+    height: 0,
+    paddingTop: '56.25%', // 16:9
+  },
+  actions: {
+    display: 'flex',
+  },
+  expand: {
+    transform: 'rotate(0deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  expandOpen: {
+    transform: 'rotate(180deg)',
+  },
+  avatar: {
+    //backgroundColor: red[500],
+  },
 });
 
 class Main extends Component {
@@ -34,36 +72,20 @@ class Main extends Component {
       var parts = value.split("; " + name + "=");
       if (parts.length === 2) return parts.pop().split(";").shift();
     }
-
     //get loginData from cookie
     let loginData = getCookie('key');
-
-    //if loginData is undefined, do nothing
-    if (typeof loginData === "undefined") {
-      alert("세션정보가 없습니다. 로그인페이지로 이동합니다.");
-      window.location.href = window.location.origin;
-      return;
-    }
 
     //decode base64 & parse json
     loginData = JSON.parse(atob(loginData));
 
-    //if not logged in, do nothing
-    if (!loginData.isLoggedIn) {
-      alert("세션정보가 없습니다. 로그인페이지로 이동합니다.");
-      window.location.href = window.location.origin;
-      return;
-    }
-
     this.setState({
       userid: loginData.userid,
     })
-
     //데이터 셋팅
     this.dataSetting(loginData.userid);
   }
   ///////////////////////////////////
-  
+
   //데이터 불러오기
   dataSetting = (userid) => {
     let id = userid;
@@ -97,7 +119,6 @@ class Main extends Component {
 
     const videoUpload = (<VideoUpload id={this.props.status.info.userid} images={this.state.imageMainData} />);
     const mapUplaod = (<Typography variant="h6">1.예식 정보 관리
-  
     <NavLink to="/MapUpload" className={classes.item} >
         <Button variant="contained" color="primary" size="small" component="span" className={classes.button}>Upload</Button>
       </NavLink>
@@ -112,6 +133,22 @@ class Main extends Component {
     return (
       <div style={{ flexGrow: 1 }}>
 
+        <Card className={classes.card}>
+          <CardHeader
+            avatar={
+              <Avatar aria-label="Recipe" className={classes.avatar}>
+                1
+            </Avatar>
+            }
+            action={
+              <NavLink to="/MapUpload" className={classes.item} >
+                <Button variant="contained" color="primary" size="small" component="span" className={classes.button}>등록</Button>
+              </NavLink>
+            }
+            title="NO1. 예식 정보 등록"
+            subheader="September 14, 2016"
+          />
+        </Card>
         {mapUplaod}
         {imageUplaod}
         {videoUpload}

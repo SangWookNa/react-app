@@ -16,8 +16,8 @@ import * as value from '../globals';
 // } from './';
 const styles = theme => ({
     cont: {
-        marginTop: 50,
-        marginBottom: 50,
+        marginTop: 100,
+        marginBottom: 100,
     },
     root: {
         flexGrow: 1,
@@ -70,8 +70,6 @@ class Map extends React.Component {
     componentDidMount() {
 
         window.Kakao.init('69d4dafd7d9aab9775ab02ed17c19dcb');
-
-
     }
     handleClick_navigation = (e) => {
 
