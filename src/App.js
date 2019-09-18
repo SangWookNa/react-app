@@ -45,7 +45,6 @@ class App extends Component {
     //check whether this cookie is valid or not
     this.props.getStatusRequest().then(
       () => {
-        console.log('########  :'+this.props.location.pathname);
         if (this.props.status.valid) {
           console.log(this.props.status);
           //if session is not valid
@@ -56,7 +55,7 @@ class App extends Component {
             userid: '',
           };
           document.cookie = 'key=' + btoa(JSON.stringify(loginData));
-
+          
           //if loginData is undefined, do nothing
           if (this.props.location.pathname.substring(1, 5) !== 'Home'
             && this.props.location.pathname.substring(1, 5) !== '') {
@@ -79,7 +78,7 @@ class App extends Component {
     );
 
     return (
-      <div>
+      <div style={{maxWidth : 700 }}>
         {this.props.location.pathname.substring(1, 5) !== 'Home' ? header : undefined}
         {childrenWithProps}
       </div>

@@ -21,7 +21,7 @@ const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(
     <Provider store={store}>        
-         <Router>          
+         <Router>  
           <Switch>
           <App>
             <Route exact path="/" component={Login} /> {/*  로그인 메인 */}

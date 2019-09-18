@@ -5,6 +5,12 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import VideoPlayer from '../components/video/VideoPlayer';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import Avatar from '@material-ui/core/Avatar';
+import CardContent from '@material-ui/core/CardContent';
+import Grid from '@material-ui/core/Grid';
+import CardActionArea from '@material-ui/core/CardActionArea';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import * as value from './../globals';
@@ -12,14 +18,16 @@ import * as value from './../globals';
 const styles = theme => ({
     root: {
         flexGrow: 1,
-        marginTop: 20
     },
     button: {
-        margin: theme.spacing.unit,
-        float: 'right'
+        margin: '10px',
     },
     input: {
         display: 'none',
+    },
+    card: {
+        maxWidth: 700,
+        margin: '10px',
     },
 });
 
@@ -91,7 +99,7 @@ class VideoUpload extends React.Component {
 
         console.log(this.props.images[0].src);
         //return;
-        
+
         if (files.length === 0) {
             alert("영상을 등록해주세요~");
             return;
@@ -102,8 +110,8 @@ class VideoUpload extends React.Component {
             let invitee = result.data.result.invitee;
             let seq = result.data.result._id;
             let enterid = result.data.result.enterid;
-            let celebrateUrl='';
-            let title ='';
+            let celebrateUrl = '';
+            let title = '';
             let description = '';
 
             if (invitee === '' || invitee === null || invitee === undefined || invitee === 'undefined') {
@@ -115,7 +123,7 @@ class VideoUpload extends React.Component {
                 title = `To. ${invitee}`;
                 description = '결혼식에 초대합니다.';
             }
-            
+
             const token = this.props.status.info.access_token;
             const data = {
                 "object_type": "feed",
@@ -131,7 +139,7 @@ class VideoUpload extends React.Component {
                         "android_execution_params": "contentId=100",
                         "ios_execution_params": "contentId=100"
                     }
-                },                    
+                },
                 "buttons": [
                     {
                         "title": "청첩장 열어보기",
@@ -158,7 +166,7 @@ class VideoUpload extends React.Component {
             }).catch((error) => {
                 // handle error
                 alert(error);
-            })   
+            })
         }).catch((error) => {
             // handle error
             alert(error);
@@ -171,8 +179,13 @@ class VideoUpload extends React.Component {
         const { classes } = this.props;
 
         const videoPlayer = (
-            <VideoPlayer url={this.state.filePath} />
+            <CardContent>
+                <Typography component="p">
+                    <VideoPlayer url={this.state.filePath} />
+                </Typography>
+            </CardContent>
         );
+
         return (
             <div className={classes.root}>
                 <input
@@ -182,30 +195,50 @@ class VideoUpload extends React.Component {
                     onChange={(e) => this.onDrop(e.target.files)}
                     type="file"
                 />
-                {this.state.files.length > 0 ? videoPlayer : <Typography variant="h6">{this.state.videoFiles[0].name}<label htmlFor="contained-button-file">
-                    <Button variant="contained" color="primary" size="small" component="span" className={classes.button}>Upload</Button>
-                </label></Typography>}
-
-
-                {this.state.files.length > 0 ?
+                <Card className={classes.card}>
                     <label htmlFor="contained-button-file">
-                        <Button variant="contained" size="small" component="span" className={classes.button}>Re-upload</Button>
-                    </label> : undefined}
-                <TextField
-                    id="invitee"
-                    name="invitee"
-                    label="초대받는분 이름"
-                    fullWidth
-                    margin="normal"
-                    value={this.state.invitee}
-                    variant="outlined"
-                    onChange={this.handleInputChange}
-                />
-
-                <br />
-                <Button onClick={this.handleUpload} ><p id='gallery'>Upload(video)</p></Button>
-                {this.state.loadingFlag === true ? loading : undefined}
+                        <CardActionArea variant="contained" component="span" >
+                            <CardHeader
+                                avatar={
+                                    <Avatar aria-label="Recipe" className={classes.avatar}>
+                                        3
+                                    </Avatar>
+                                }
+                                title="초대 영상 등록"
+                                subheader="September 14, 2016"
+                            />
+                            {this.state.files.length > 0 ? videoPlayer : undefined}
+                        </CardActionArea>
+                    </label>
+                </Card>
+                <div style ={{margin:'10px'}}>
+                    <Grid container spacing={8} >
+                        <Grid item xs={12}>
+                            <TextField
+                                id="invitee"
+                                name="invitee"
+                                label="초대받는분 이름"
+                                fullWidth
+                                value={this.state.invitee}
+                                variant="outlined"
+                                onChange={this.handleInputChange}
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Button variant="contained"
+                                onClick={this.handleUpload}
+                                color="primary"
+                                fullWidth
+                                size="large" >
+                                만들기
+                    </Button>
+                        </Grid>
+                    </Grid>
+                    {this.state.loadingFlag === true ? loading : undefined}
+                </div>
             </div>
+
+
 
         );
     }

@@ -1,0 +1,123 @@
+2019-09-17 09:09:16 info: Check out the app at http://localhost:4000
+2019-09-17 09:09:17 info: Connected to mongodb server
+2019-09-17 09:12:13 info: PARAM {"0":"kakao/"} | BODY {"code":"FZpXZqMl5xGBDNCwhrdKz0YTq_kf78hl7ddzJH2wZB8no2BDUALhlBMPa0KUnz1EXbCvewo9dZwAAAFtPI_4EA","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2019-09-17 09:12:13 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:12:13 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=FZpXZqMl5xGBDNCwhrdKz0YTq_kf78hl7ddzJH2wZB8no2BDUALhlBMPa0KUnz1EXbCvewo9dZwAAAFtPI_4EA" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:12:13 info: PARAM {"0":"kakao/me"} | BODY {"token":"LAc6Fh1WQYgSiyz2jB75Ml7dbX-xkxpe-RKK5Qo9dJkAAAFtPI_7Vw"}
+2019-09-17 09:12:13 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:12:13 +0000] "POST /api/kakao/me HTTP/1.1" 200 146 "http://localhost:3000/oauth?code=FZpXZqMl5xGBDNCwhrdKz0YTq_kf78hl7ddzJH2wZB8no2BDUALhlBMPa0KUnz1EXbCvewo9dZwAAAFtPI_4EA" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:12:13 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-17 09:12:13 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:12:13 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/oauth?code=FZpXZqMl5xGBDNCwhrdKz0YTq_kf78hl7ddzJH2wZB8no2BDUALhlBMPa0KUnz1EXbCvewo9dZwAAAFtPI_4EA" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:12:14 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:12:14 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:12:14 +0000] "GET /api/image/1112482398/main HTTP/1.1" 200 513 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:12:40 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:12:40 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-17 09:12:40 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:12:40 +0000] "GET /api/image/1112482398/main HTTP/1.1" 200 513 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:12:40 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:12:40 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:28:52 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:28:52 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-17 09:28:52 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:28:52 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:30:21 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:30:21 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-17 09:30:21 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:30:21 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Mobile Safari/537.36"
+
+2019-09-17 09:30:28 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:30:28 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-17 09:30:29 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:30:29 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Mobile Safari/537.36"
+
+2019-09-17 09:31:31 info: PARAM {"0":"kakao/"} | BODY {"code":"7oYGzazsGzfr4BP0CFqXdLtAjMZKkX6wct2x8pRMqS7s-Kgj3vD6dLVb9j8nCgu2JofWeworDR4AAAFtPKGkSA","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2019-09-17 09:31:31 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:31:31 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=7oYGzazsGzfr4BP0CFqXdLtAjMZKkX6wct2x8pRMqS7s-Kgj3vD6dLVb9j8nCgu2JofWeworDR4AAAFtPKGkSA" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:31:31 info: PARAM {"0":"kakao/me"} | BODY {"token":"hRyl-GieMGtLDrTR7OoTRUcnoSmzDN-kU1U8fQorDKcAAAFtPKGl2A"}
+2019-09-17 09:31:31 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:31:31 +0000] "POST /api/kakao/me HTTP/1.1" 200 146 "http://localhost:3000/oauth?code=7oYGzazsGzfr4BP0CFqXdLtAjMZKkX6wct2x8pRMqS7s-Kgj3vD6dLVb9j8nCgu2JofWeworDR4AAAFtPKGkSA" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:31:31 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-17 09:31:31 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:31:31 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/oauth?code=7oYGzazsGzfr4BP0CFqXdLtAjMZKkX6wct2x8pRMqS7s-Kgj3vD6dLVb9j8nCgu2JofWeworDR4AAAFtPKGkSA" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:31:31 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:31:41 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-17 09:31:41 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:31:41 +0000] "GET /api/userinfo/1112482398 HTTP/1.1" 200 568 "http://localhost:3000/MapUpload" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:31:44 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:31:55 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-17 09:32:12 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:32:38 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-17 09:32:39 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:32:39 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:32:39 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:32:40 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:32:40 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-17 09:32:40 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:32:40 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:33:46 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-17 09:33:47 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:34:14 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:34:14 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-17 09:34:15 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:34:14 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:34:32 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:34:32 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-17 09:34:32 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:34:32 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:36:04 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:36:04 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-17 09:36:04 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:36:04 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:36:08 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-17 09:36:08 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:36:08 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:36:08 +0000] "GET /api/image/1112482398/main HTTP/1.1" 200 513 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:36:08 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:36:08 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:37:39 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:37:39 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-17 09:37:39 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:37:39 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:40:30 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:40:30 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-17 09:40:30 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:40:30 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:41:48 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:41:48 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-17 09:41:48 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:41:48 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:41:51 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-17 09:41:51 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:41:51 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:41:51 +0000] "GET /api/image/1112482398/main HTTP/1.1" 200 513 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:41:51 info: ::ffff:127.0.0.1 - - [17/Sep/2019:00:41:51 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 09:41:52 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-17 09:41:54 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:41:54 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-17 09:41:54 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:41:55 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-17 09:41:56 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:41:56 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-17 09:41:58 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:41:59 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-17 09:42:10 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 09:42:13 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-17 09:42:15 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 10:12:40 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-17 10:12:40 info: ::ffff:127.0.0.1 - - [17/Sep/2019:01:12:40 +0000] "GET /api/userinfo/1112482398 HTTP/1.1" - - "http://localhost:3000/MapUpload" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 10:12:41 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-17 10:12:41 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-17 10:12:41 info: ::ffff:127.0.0.1 - - [17/Sep/2019:01:12:41 +0000] "GET /api/userinfo/1112482398 HTTP/1.1" 200 568 "http://localhost:3000/MapUpload" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 10:12:41 info: ::ffff:127.0.0.1 - - [17/Sep/2019:01:12:41 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/MapUpload" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 10:12:43 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 10:12:43 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-17 10:12:43 info: ::ffff:127.0.0.1 - - [17/Sep/2019:01:12:43 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+
+2019-09-17 10:12:50 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-17 10:12:51 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-17 10:12:52 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-17 10:12:55 info: PARAM {"0":"image/1112482398/main"} | BODY {}

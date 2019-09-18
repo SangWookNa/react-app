@@ -8,6 +8,9 @@ import CardHeader from '@material-ui/core/CardHeader';
 import blue from '@material-ui/core/colors/blue';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import {
+    getStatusRequest,
+  } from '../actions/kakao';
 import { connect } from 'react-redux';
 import {
     userinfoPostRequest,
@@ -102,6 +105,26 @@ class MapUpload extends React.Component {
 
         //decode base64 & parse json
         loginData = JSON.parse(atob(loginData));
+        
+        //세션가져오기
+        //page refreshed & has a session in cookie,
+        //check whether this cookie is valid or not
+        this.props.getStatusRequest().then(
+            () => {
+                if (!this.props.status.valid) {
+                    //logout the session
+                    let loginData = {
+                        isLoggedIn: false,
+                        userid: '',
+                    };
+                    document.cookie = 'key=' + btoa(JSON.stringify(loginData));
+                    alert("세션정보가 없습니다. 로그인페이지로 이동합니다.");
+                    window.location.href = window.location.origin;
+                    return;
+
+                }
+            }
+        );
         ///////////////////////////////////
 
         this.setState({
@@ -118,10 +141,10 @@ class MapUpload extends React.Component {
             level: 3 // 지도의 확대 레벨
         };
         window.map = new window.kakao.maps.Map(window.mapContainer, window.mapOption); //지도 생성 및 객체 리턴
-        
+
         // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
         window.infowindow = new window.kakao.maps.InfoWindow({ zIndex: 1 });
-        
+
     }
 
     //데이터 불러오기
@@ -149,7 +172,7 @@ class MapUpload extends React.Component {
                     })
                     // 이동할 위도 경도 위치를 생성합니다 
                     var moveLatLon = new window.kakao.maps.LatLng(this.props.userData.data.y, this.props.userData.data.x);
-                    
+
                     // 지도 중심을 이동 시킵니다
                     window.map.setCenter(moveLatLon);
 
@@ -167,7 +190,7 @@ class MapUpload extends React.Component {
 
                 }
 
-               
+
 
             } else {
                 alert("사용자정보불러오기 실패");
@@ -294,7 +317,6 @@ class MapUpload extends React.Component {
         }
     }
 
-
     handlePost = (e) => {
         console.log(this.state);
         let groom = this.state.groom.trim();
@@ -354,7 +376,6 @@ class MapUpload extends React.Component {
     handleCancel = (e) => {
         this.props.history.push('/Main');
     }
-
 
     render() {
         const { classes } = this.props;
@@ -494,6 +515,7 @@ const mapStateToProps = (state) => {
     return {
         postStatus: state.userinfo.post,
         userData: state.userinfo.get,
+        status: state.kakao.status,
     };
 };
 
@@ -505,8 +527,10 @@ const mapDispatchToProps = (dispatch) => {
         userinfoGetRequest: (userid) => {
             return dispatch(userinfoGetRequest(userid));
         },
+        getStatusRequest: () => {
+            return dispatch(getStatusRequest());
+        },
     };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(MapUpload));
-

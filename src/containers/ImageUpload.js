@@ -3,6 +3,9 @@ import ImageUploader from 'react-images-upload';
 import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import axios from 'axios';
+import {
+    getStatusRequest,
+} from '../actions/kakao';
 import { connect } from 'react-redux';
 
 class ImageUpload extends React.Component {
@@ -17,6 +20,27 @@ class ImageUpload extends React.Component {
         };
         this.onDrop = this.onDrop.bind(this);
         //this.handleUpload = this.handleUpload.bind(this);
+    }
+    componentDidMount() {
+        //세션가져오기
+        //page refreshed & has a session in cookie,
+        //check whether this cookie is valid or not
+        this.props.getStatusRequest().then(
+            () => {
+                if (!this.props.status.valid) {
+                    //logout the session
+                    let loginData = {
+                        isLoggedIn: false,
+                        userid: '',
+                    };
+                    document.cookie = 'key=' + btoa(JSON.stringify(loginData));
+                    alert("세션정보가 없습니다. 로그인페이지로 이동합니다.");
+                    window.location.href = window.location.origin;
+                    return;
+
+                }
+            }
+        );
     }
 
     onDrop(picture) {
@@ -38,7 +62,7 @@ class ImageUpload extends React.Component {
         formData.append('uploadFlag', e.target.id);
         console.log(formData);
 
-        if(e.target.id ==='main' && file.length > 1){
+        if (e.target.id === 'main' && file.length > 1) {
             alert('메인사진은 1장만 업로드가 가능합니다.');
             return;
         }
@@ -58,7 +82,7 @@ class ImageUpload extends React.Component {
         }
 
         return axios.delete(`/api/image/${id}/${e.target.id}`, formData, config).then((result) => {
-            
+
             return axios.post('/api/image/', formData, config).then((result) => {
 
                 if (result.data.success === true) {
@@ -70,7 +94,7 @@ class ImageUpload extends React.Component {
             }).catch((error) => {
                 // handle error
                 alert(error);
-    
+
             })
 
         }).catch((error) => {
@@ -78,7 +102,7 @@ class ImageUpload extends React.Component {
             alert(error);
 
         })
-        
+
     }
 
     render() {
@@ -95,9 +119,9 @@ class ImageUpload extends React.Component {
                     maxFileSize={5242880}
                     withPreview={true}
                 />
-                <Button  onClick={this.handleUpload} ><p id='gallery'>Upload(Gallery)</p></Button>
-                <Button  onClick={this.handleUpload} ><p id='grid'>Upload(Grid)</p></Button>
-                <Button  onClick={this.handleUpload} ><p id='main'>Upload(Main)</p></Button>
+                <Button onClick={this.handleUpload} ><p id='gallery'>Upload(Gallery)</p></Button>
+                <Button onClick={this.handleUpload} ><p id='grid'>Upload(Grid)</p></Button>
+                <Button onClick={this.handleUpload} ><p id='main'>Upload(Main)</p></Button>
                 {this.state.loadingFlag === true ? loading : undefined}
             </div>
 
@@ -107,8 +131,16 @@ class ImageUpload extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-      status: state.kakao.status,
+        status: state.kakao.status,
     };
-  };
-    
-  export default connect(mapStateToProps)(ImageUpload);
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getStatusRequest: () => {
+            return dispatch(getStatusRequest());
+        },
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ImageUpload);

@@ -28,10 +28,10 @@ class Login extends React.Component {
     let code = qs.parse(this.props.location.search, { ignoreQueryPrefix: true }).code;
     let redirectUrl = value.KAKAO_REDIRECT_URL;
     let kakaoClientId = value.KAKAO_CLIENT_ID;
-    
+
     if (code !== '' && code !== undefined && code !== 'undefined') {
-      
-      return this.props.kakaoLoginRequest(code,redirectUrl,kakaoClientId).then(
+
+      return this.props.kakaoLoginRequest(code, redirectUrl, kakaoClientId).then(
         () => {
           const url = '/api/kakao/me';
           //카카오 사용자정보 가져오기
@@ -70,19 +70,21 @@ class Login extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Grid container className={classes.root}>
-        <Grid item xs={12}>
-          <Grid
-            container
-            className={classes.demo}
-            alignItems='center'
-            direction='row'
-            justify='center'
-          >
-            <img src={logo} alt="Logo" onClick={this.handleUpload} />
+      <div className={classes.root}>
+        <Grid container >
+          <Grid item xs={12}>
+            <Grid
+              container
+              className={classes.demo}
+              alignItems='center'
+              direction='row'
+              justify='center'
+            >
+              <img src={logo} alt="Logo" onClick={this.handleUpload} />
+            </Grid>
           </Grid>
         </Grid>
-      </Grid>
+      </div>
     );
   }
 }
@@ -100,8 +102,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    kakaoLoginRequest: (code,redirectUrl,kakaoClientId) => {
-      return dispatch(kakaoLoginRequest(code,redirectUrl,kakaoClientId))
+    kakaoLoginRequest: (code, redirectUrl, kakaoClientId) => {
+      return dispatch(kakaoLoginRequest(code, redirectUrl, kakaoClientId))
     },
     getStatusRequest: () => {
       return dispatch(getStatusRequest());
