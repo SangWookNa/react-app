@@ -74,8 +74,10 @@ router.get('/:id', (req, res) => {
     UserInfo.findOne({ enterid: req.params.id })
         .exec((err, userinfos) => {
             if (err) throw err;
-            let marryDateTime = new Date(userinfos.marry_date_time);
-            userinfos.marry_date_time_view = dateFormat(userinfos.marry_date_time, "yyyy년 mmmm d일 dddd TT h시 MM분");
+            
+            if (userinfos !== null) {
+                userinfos.marry_date_time_view = dateFormat(userinfos.marry_date_time, "yyyy년 mmmm d일 dddd TT h시 MM분");
+            }
             res.json(userinfos);
         });
 });
@@ -185,7 +187,7 @@ router.get('/', (req, res) => {
  * READ MEMO : GET /api/memo
  */
 router.post('/weather', (req, res) => {
-   
+
     console.log('test');
 });
 

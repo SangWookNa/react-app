@@ -4,12 +4,15 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import Avatar from '@material-ui/core/Avatar';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import { BrowserRouter as Link, NavLink } from "react-router-dom";
 import { VideoUpload } from './';
 import { connect } from 'react-redux';
 import {
   imageMainRequest,
+  imageGalleryListRequest,
 } from '../actions/image';
+import {
+  userinfoGetRequest,
+} from '../actions/userinfo';
 
 const styles = theme => ({
   button: {
@@ -48,6 +51,9 @@ const styles = theme => ({
 class Main extends Component {
   state = {
     imageMainData: [{ src: "http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg" }],
+    userInfoYn: 'N',      //예식정보등록여부
+    mainYn: 'N',          //메인사진등록여부
+    galleryYn: 'N',       //사진첩 등록 여부
   };
 
   componentDidMount() {
@@ -77,21 +83,42 @@ class Main extends Component {
   dataSetting = (userid) => {
     let id = userid;
     //사진불러오기(메인)
-    this.props.imageMainRequest(id, 'main').then(
-      () => {
-        const images = this.props.imageMainData.map((data) => {
-          let obj = {};
-          obj.src = `${origin}/${data.path}`;
-          return obj;
-        });
+    this.props.imageMainRequest(id, 'main').then(() => {
+      const images = this.props.imageMainData.map((data) => {
+        let obj = {};
+        obj.src = `${origin}/${data.path}`;
+        return obj;
+      });
 
-        if (images.length > 0) {
-          this.setState({
-            imageMainData: images,
-          });
-        }
+      if (images.length > 0) {
+        this.setState({
+          imageMainData: images,
+          mainYn: 'Y',
+        });
       }
-    );
+    });
+    //유저정보 불러오기
+    this.props.userinfoGetRequest(id).then(() => {
+      if (this.props.userData.data !== null) {
+        this.setState({
+          userInfoYn: 'Y',
+        });
+      }
+    });
+    //사진불러오기(갤러리)
+    this.props.imageGalleryListRequest(id, 'gallery').then(() => {
+      const images = this.props.imageGalleryData.map((data) => {
+        let obj = {};
+        obj.original = `${origin}/${data.path}`;
+        obj.thumbnail = `${origin}/${data.thumbnailpath}`;
+        return obj;
+      });
+      if (images.length > 0) {
+        this.setState({
+          galleryYn: 'Y',
+        });
+      }
+    });
   }
 
   //방명록 불러오기
@@ -101,50 +128,55 @@ class Main extends Component {
     return this.props.memoListRequest(true, undefined, undefined, id).then();
   }
 
+  handlePage = (page) => {
+    if (page === 'ImageUpload') {
+      if (this.state.userInfoYn === 'N') {
+        alert('예식정보를 먼저 등록해주세요');
+        return;
+      }
+    }
+    this.props.history.push(`/${page}`);
+  }
+
   render() {
     const { classes } = this.props;
-
-    const videoUpload = (<VideoUpload id={this.props.status.info.userid} images={this.state.imageMainData} />);
+    console.log(`${this.state.mainYn} | ${this.state.galleryYn} | ${this.state.userInfoYn}`);
+    const videoUpload = (<VideoUpload
+      id={this.props.status.info.userid}
+      images={this.state.imageMainData}
+      mainYn={this.state.mainYn}
+      galleryYn={this.state.galleryYn} />);
     const mapUplaod = (<Card className={classes.card}>
-                        <NavLink to="/MapUpload" className={classes.item} >
-                          <CardActionArea>
-                            <CardHeader
-                              avatar={
-                                <Avatar aria-label="Recipe" className={classes.avatar}>
-                                  1
-                          </Avatar>
-                              }
-                              
-                              title="예식 정보 등록"
-                              subheader="September 14, 2016"
-                            />
-                          </CardActionArea>
-                        </NavLink>
-                      </Card>);
-    const imageUplaod = (<Card className={classes.card}>
-                          <NavLink to="/ImageUpload" className={classes.item} >
-                            <CardActionArea>
-                              <CardHeader
-                                avatar={
-                                  <Avatar aria-label="Recipe" className={classes.avatar}>
-                                    2
-                            </Avatar>
-                                }
-                                title="웨딩 사진 등록"
-                                subheader="September 14, 2016"
-                              />
-                            </CardActionArea>
-                          </NavLink>
-                        </Card>);
+      <CardActionArea onClick={() => this.handlePage('MapUpload')}>
 
+        <CardHeader
+          avatar={
+            <Avatar aria-label="Recipe" className={classes.avatar}>1</Avatar>
+          }
+          title="예식 정보 등록"
+          subheader="September 14, 2016"
+        />
+      </CardActionArea>
+    </Card>);
+    const imageUplaod = (<Card className={classes.card}>
+
+      <CardActionArea onClick={() => this.handlePage('ImageUpload')}>
+        <CardHeader
+          avatar={
+            <Avatar aria-label="Recipe" className={classes.avatar}>2</Avatar>
+          }
+          title="웨딩 사진 등록"
+          subheader="September 14, 2016"
+        />
+      </CardActionArea>
+
+    </Card>);
 
     return (
       <div style={{ flexGrow: 1 }}>
-                      
-
         {mapUplaod}
-        {imageUplaod}
-        {videoUpload}
+        {this.state.userInfoYn === 'Y' ? imageUplaod : undefined}
+        {this.state.mainYn === 'Y' && this.state.galleryYn === 'Y' ? videoUpload : undefined}
       </div>
     );
   }
@@ -154,6 +186,8 @@ const mapStateToProps = (state) => {
   return {
     status: state.kakao.status,
     imageMainData: state.image.mainList.data,
+    imageGalleryData: state.image.galleryList.data,
+    userData: state.userinfo.get,
   };
 };
 
@@ -161,6 +195,12 @@ const mapDispatchToProps = (dispatch) => {
   return {
     imageMainRequest: (enterid, uploadFlag) => {
       return dispatch(imageMainRequest(enterid, uploadFlag))
+    },
+    userinfoGetRequest: (userid) => {
+      return dispatch(userinfoGetRequest(userid));
+    },
+    imageGalleryListRequest: (enterid, uploadFlag) => {
+      return dispatch(imageGalleryListRequest(enterid, uploadFlag))
     },
   };
 };

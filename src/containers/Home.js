@@ -80,7 +80,7 @@ class Home extends Component {
     );
 
     //사진불러오기(그리드)
-    this.props.imageGridListRequest(id, 'grid').then(
+    this.props.imageGridListRequest(id, 'gallery').then(
       () => {
 
         const images = this.props.imageGridData.map((data) => {

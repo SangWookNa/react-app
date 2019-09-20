@@ -59,8 +59,10 @@ router.post('/', (req, res, next) => {
             let width = 0;
             let height = 0;
             if (req.body.uploadFlag === 'gallery') {
-                width = 300;
-                height = 300;
+                // width = 300;
+                // height = 300;
+                width = 400;
+                height = 400;
             } else if (req.body.uploadFlag === 'grid') {
                 width = 400;
                 height = 400;

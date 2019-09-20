@@ -2,20 +2,38 @@ import React from 'react';
 import ImageUploader from 'react-images-upload';
 import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Grid from '@material-ui/core/Grid';
+import { Gallery, ImageGridList } from '../components/image/';
+import Typography from '@material-ui/core/Typography';
+import LibraryBooks from '@material-ui/icons/LibraryBooks';
+import Divider from '@material-ui/core/Divider';
+import { BrowserRouter as Link, NavLink } from "react-router-dom";
 import axios from 'axios';
 import {
     getStatusRequest,
 } from '../actions/kakao';
+import {
+    imageGalleryListRequest,
+    imageGridListRequest,
+    imageMainRequest,
+} from '../actions/image';
+import {
+    Invitation,
+} from './';
 import { connect } from 'react-redux';
 
 class ImageUpload extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
             pictures: [],
             loadingFlag: false,
-            loadingValue: 0
+            loadingValue: 0,
+            currentImage: 0,
+            imageMainData: [{ src: "http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg" }],
+            imagesGalleryData: [],
+            imagesGridData: [{ src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599", width: 1, height: 1 }],
+            thumbnailImages: [{ src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599", width: 1, height: 1 }],
 
         };
         this.onDrop = this.onDrop.bind(this);
@@ -23,8 +41,6 @@ class ImageUpload extends React.Component {
     }
     componentDidMount() {
         //세션가져오기
-        //page refreshed & has a session in cookie,
-        //check whether this cookie is valid or not
         this.props.getStatusRequest().then(
             () => {
                 if (!this.props.status.valid) {
@@ -38,6 +54,81 @@ class ImageUpload extends React.Component {
                     window.location.href = window.location.origin;
                     return;
 
+                } else {
+                    //데이터 셋팅
+                    this.dataSetting(this.props.status.info.userid);
+                }
+            }
+        );
+
+
+    }
+
+    //데이터 불러오기
+    dataSetting = (id) => {
+
+        const origin = window.location.origin;
+
+        //사진불러오기(메인)
+        this.props.imageMainRequest(id, 'main').then(
+            () => {
+                const images = this.props.imageMainData.map((data) => {
+                    let obj = {};
+                    obj.src = `${origin}/${data.path}`;
+                    return obj;
+                });
+
+                if (images.length > 0) {
+                    this.setState({
+                        imageMainData: images,
+                    });
+                }
+            }
+        );
+
+        //사진불러오기(갤러리)
+        this.props.imageGalleryListRequest(id, 'gallery').then(
+            () => {
+                const images = this.props.imageGalleryData.map((data) => {
+                    let obj = {};
+                    obj.original = `${origin}/${data.path}`;
+                    obj.thumbnail = `${origin}/${data.thumbnailpath}`;
+
+                    return obj;
+                });
+
+                this.setState({
+                    imagesGalleryData: images,
+                });
+            }
+        );
+
+        //사진불러오기(그리드)
+        this.props.imageGridListRequest(id, 'gallery').then(
+            () => {
+
+                const images = this.props.imageGridData.map((data) => {
+                    let obj = {};
+                    obj.src = `${origin}/${data.path}`;
+                    obj.width = 1;
+                    obj.height = 1;
+                    return obj;
+                });
+
+                const thumbnailImages = this.props.imageGridData.map((data) => {
+                    let obj = {};
+                    obj.src = `${origin}/${data.thumbnailpath}`;
+                    obj.width = 4;
+                    obj.height = 4;
+                    obj.style = { borderRadius: '20px', margin: 10, cursor: 'pointer' };
+                    return obj;
+                });
+
+                if (images.length > 0) {
+                    this.setState({
+                        imagesGridData: images,
+                        thumbnailImages: thumbnailImages,
+                    });
                 }
             }
         );
@@ -50,19 +141,23 @@ class ImageUpload extends React.Component {
         });
     }
 
-    handleUpload = (e) => {
+    handleUpload = (uploadFlag) => {
         const formData = new FormData();
-
+        alert(uploadFlag);
         let file = this.state.pictures;
         let id = this.props.status.info.userid;
         let username = this.props.status.info.nickname;
 
         formData.append('enterid', id);
         formData.append('username', username);
-        formData.append('uploadFlag', e.target.id);
-        console.log(formData);
+        formData.append('uploadFlag', uploadFlag);
 
-        if (e.target.id === 'main' && file.length > 1) {
+        if ( file.length === 0) {
+            alert('사진을 업로드 해주세요.');
+            return;
+        }
+
+        if (uploadFlag === 'main' && file.length > 1) {
             alert('메인사진은 1장만 업로드가 가능합니다.');
             return;
         }
@@ -81,13 +176,13 @@ class ImageUpload extends React.Component {
             }
         }
 
-        return axios.delete(`/api/image/${id}/${e.target.id}`, formData, config).then((result) => {
+        return axios.delete(`/api/image/${id}/${uploadFlag}`, formData, config).then(() => {
 
             return axios.post('/api/image/', formData, config).then((result) => {
 
                 if (result.data.success === true) {
                     alert('사진 등록이 완료되었습니다.');
-                    this.props.history.push('/Main');
+                    window.location.reload();
                 } else {
                     alert('사진 등록을 실패하였습니다.');
                 }
@@ -119,10 +214,58 @@ class ImageUpload extends React.Component {
                     maxFileSize={5242880}
                     withPreview={true}
                 />
-                <Button onClick={this.handleUpload} ><p id='gallery'>Upload(Gallery)</p></Button>
-                <Button onClick={this.handleUpload} ><p id='grid'>Upload(Grid)</p></Button>
-                <Button onClick={this.handleUpload} ><p id='main'>Upload(Main)</p></Button>
+                <Grid container spacing={8} >
+                    <Grid item xs={6}>
+                        <Button variant="contained"
+                            color="primary"
+                            fullWidth
+                            onClick={() => this.handleUpload('main')}
+                            size="small" >
+                            메인사진등록(1장)
+                        </Button>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Button variant="contained"
+                            color="primary"
+                            fullWidth
+                            onClick={() => this.handleUpload('gallery')}
+                            size="small" >
+                            사진첩등록(여러장)
+                        </Button>
+                    </Grid>
+                    <Grid item xs={12}>
+                    <NavLink to="/Main" style={{color: 'inherit', textDecoration: 'none'}}>
+                        <Button variant="contained"
+                            color="primary"
+                            fullWidth
+                            size="small" >
+                            확인 (뒤로가기)
+                        </Button>
+                    </NavLink>
+                    </Grid>
+                    {/*<Grid item xs={4}>
+                        <Button variant="contained"
+                            onClick={this.handleUpload}
+                            color="primary"
+                            fullWidth
+                            size="small" >
+                            <p id='grid'>Upload(Grid)</p>
+                        </Button>
+                    </Grid> */}
+
+                </Grid>
                 {this.state.loadingFlag === true ? loading : undefined}
+                <div style ={{marginTop:70,marginBottom:70}}>
+                <Divider />
+                <Typography component="h2" variant="display1" style={{ paddingLeft: '2%',paddingBottom: '5%' }}>
+                    <LibraryBooks /> main
+                </Typography>
+                <Invitation images={this.state.imageMainData} />
+                <Gallery images={this.state.imagesGalleryData} />
+                <ImageGridList
+                    images={this.state.imagesGridData}
+                    thumbnailImages={this.state.thumbnailImages} />
+                </div>
             </div>
 
         );
@@ -132,6 +275,9 @@ class ImageUpload extends React.Component {
 const mapStateToProps = (state) => {
     return {
         status: state.kakao.status,
+        imageGridData: state.image.gridList.data,
+        imageMainData: state.image.mainList.data,
+        imageGalleryData: state.image.galleryList.data,
     };
 };
 
@@ -139,6 +285,15 @@ const mapDispatchToProps = (dispatch) => {
     return {
         getStatusRequest: () => {
             return dispatch(getStatusRequest());
+        },
+        imageGalleryListRequest: (enterid, uploadFlag) => {
+            return dispatch(imageGalleryListRequest(enterid, uploadFlag))
+        },
+        imageGridListRequest: (enterid, uploadFlag) => {
+            return dispatch(imageGridListRequest(enterid, uploadFlag))
+        },
+        imageMainRequest: (enterid, uploadFlag) => {
+            return dispatch(imageMainRequest(enterid, uploadFlag))
         },
     };
 };

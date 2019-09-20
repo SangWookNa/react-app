@@ -42,7 +42,7 @@ class Invitation extends React.Component {
     }
 
     updateWindowDimensions() {
-        this.setState({ width: window.innerWidth, height: window.innerHeight-200, contHeight: window.innerHeight });
+        this.setState({ width: window.innerWidth, height: window.innerHeight - 200, contHeight: window.innerHeight });
     }
     shouldComponentUpdate(nextProps, nextState) {
         let update = JSON.stringify(this.props) !== JSON.stringify(nextProps);
@@ -51,30 +51,33 @@ class Invitation extends React.Component {
 
     render() {
         const { classes } = this.props;
-        console.log(this.props.images[0].src);
+        const userDataForm = (
+            <div>
+                <Typography variant="h6" component="h3" align="center">
+                    {this.props.userData.data.groom} · {this.props.userData.data.bride}
+                </Typography>
+                <Grid
+                    container
+                    alignItems='center'
+                    justify='center'>
+                    <Chip label={this.props.userData.data.marry_date_time_view} className={classes.chip} />
+                </Grid>
+                <Typography align="center" className={classes.subCont}>
+                    {this.props.userData.data.place_name} {this.props.userData.data.address_name2}
+                </Typography>
+            </div>);
+
         return (
-            <div style={{ minHeight: this.state.contHeight+'px' }}>
+            <div style={{ minHeight: this.state.contHeight + 'px' }}>
                 <Paper className={classes.root} elevation={0} >
                     <Grid className={classes.cont}
                         container
                         alignItems='center'
                         justify='center'
-                        style={{ minHeight: this.state.height+'px' }}>
-                        <img style={{ width: '100%',borderRadius:'20px' }} alt="img" align="center" src={this.props.images[0].src} />
+                        style={{ minHeight: this.state.height + 'px' }}>
+                        <img style={{ width: '100%', borderRadius: '20px' }} alt="img" align="center" src={this.props.images[0].src} />
                     </Grid>
-                    <Typography variant="h6" component="h3" align="center">
-                        {this.props.userData.data.groom} · {this.props.userData.data.bride}
-                    </Typography>
-                    <Grid
-                        container
-                        alignItems='center'
-                        justify='center'>
-                        <Chip label={this.props.userData.data.marry_date_time_view} className={classes.chip} />
-                    </Grid>
-                    <Typography align="center" className={classes.subCont}>
-                        {this.props.userData.data.place_name} {this.props.userData.data.address_name2}
-                    </Typography>
-
+                    {this.props.userData.data.groom === '' ? undefined : userDataForm}
                 </Paper>
             </div>
         );
@@ -83,6 +86,18 @@ class Invitation extends React.Component {
 
 Invitation.propTypes = {
     classes: PropTypes.object.isRequired,
+};
+
+Invitation.defaultProps = {
+    userData: {
+        data : {
+            groom : '',
+            bride : '',
+            marry_date_time_view : '',
+            place_name : '',
+            address_name2 : '',
+        }
+    }
 };
 
 export default withStyles(styles)(Invitation);
