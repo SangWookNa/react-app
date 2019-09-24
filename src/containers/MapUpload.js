@@ -462,7 +462,7 @@ class MapUpload extends React.Component {
                                 id="searchValue"
                                 name="searchValue"
                                 inputRef={this.searchValueInput}
-                                label="예식장 이름(주소)를 입력하세요"
+                                label="예식장 이름(주소) 입력"
                                 style={{ width: '73%' }}
                                 value={this.state.searchValue}
                                 variant="outlined"

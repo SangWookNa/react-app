@@ -41,7 +41,8 @@ class VideoUpload extends React.Component {
             videoFiles: [{ name: "영상을 업로드 해주세요" }],
             invitee: '',
             files: [],
-            filePath: ''
+            filePath: '',
+            disabled : false,
         };
     }
 
@@ -92,6 +93,7 @@ class VideoUpload extends React.Component {
     }
 
     handleUpload = (e) => {
+        
         let invitee = this.state.invitee;
         let username = this.props.status.info.nickname;
         let enterid = this.props.status.info.userid;
@@ -100,11 +102,14 @@ class VideoUpload extends React.Component {
         console.log(this.props.images[0].src);
         //return;
 
-        if (files.length === 0) {
-            alert("영상을 등록해주세요~");
-            return;
-        }
+        // if (files.length === 0) {
+        //     alert("영상을 등록해주세요~");
+        //     return;
+        // }
 
+        this.setState({
+            disabled : true,
+        })
         return axios.post('/api/video/save', { username, enterid, invitee, files }).then((result) => {
 
             let invitee = result.data.result.invitee;
@@ -163,13 +168,22 @@ class VideoUpload extends React.Component {
                     alert('청첩장 제작이 완료되었습니다. 카카오톡 > 나만의 채팅방에서 제작된 청첩장을 확인하세요!');
                     window.location.href = window.location.origin;
                 }
+                this.setState({
+                    disabled : false,
+                })
             }).catch((error) => {
                 // handle error
                 alert(error);
+                this.setState({
+                    disabled : false,
+                })
             })
         }).catch((error) => {
             // handle error
             alert(error);
+            this.setState({
+                disabled : false,
+            })
         })
     }
 
@@ -205,7 +219,7 @@ class VideoUpload extends React.Component {
                                     </Avatar>
                                 }
                                 title="초대 영상 등록"
-                                subheader="September 14, 2016"
+                                subheader="초대영상을 등록해주세요."
                             />
                             {this.state.files.length > 0 ? videoPlayer : undefined}
                         </CardActionArea>
@@ -229,6 +243,7 @@ class VideoUpload extends React.Component {
                                 onClick={this.handleUpload}
                                 color="primary"
                                 fullWidth
+                                disabled={this.state.disabled}
                                 size="large" >
                                 만들기
                     </Button>

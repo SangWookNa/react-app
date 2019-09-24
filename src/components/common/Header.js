@@ -103,7 +103,7 @@ class Header extends Component {
     const unlink = (<List>
       <ListItem button key='unlink' onClick={this.handleUnlink}>
         <ListItemIcon><PowerSettingsNew /></ListItemIcon>
-        <ListItemText primary='unlink' />
+        <ListItemText primary='앱탈퇴' />
       </ListItem>
     </List>);
 

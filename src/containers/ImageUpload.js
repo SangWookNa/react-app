@@ -34,6 +34,7 @@ class ImageUpload extends React.Component {
             imagesGalleryData: [],
             imagesGridData: [{ src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599", width: 1, height: 1 }],
             thumbnailImages: [{ src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599", width: 1, height: 1 }],
+            disabled : false,
 
         };
         this.onDrop = this.onDrop.bind(this);
@@ -70,8 +71,7 @@ class ImageUpload extends React.Component {
         const origin = window.location.origin;
 
         //사진불러오기(메인)
-        this.props.imageMainRequest(id, 'main').then(
-            () => {
+        this.props.imageMainRequest(id, 'main').then(() => {
                 const images = this.props.imageMainData.map((data) => {
                     let obj = {};
                     obj.src = `${origin}/${data.path}`;
@@ -87,8 +87,7 @@ class ImageUpload extends React.Component {
         );
 
         //사진불러오기(갤러리)
-        this.props.imageGalleryListRequest(id, 'gallery').then(
-            () => {
+        this.props.imageGalleryListRequest(id, 'gallery').then(() => {
                 const images = this.props.imageGalleryData.map((data) => {
                     let obj = {};
                     obj.original = `${origin}/${data.path}`;
@@ -142,8 +141,9 @@ class ImageUpload extends React.Component {
     }
 
     handleUpload = (uploadFlag) => {
+
         const formData = new FormData();
-        alert(uploadFlag);
+        
         let file = this.state.pictures;
         let id = this.props.status.info.userid;
         let username = this.props.status.info.nickname;
@@ -161,6 +161,11 @@ class ImageUpload extends React.Component {
             alert('메인사진은 1장만 업로드가 가능합니다.');
             return;
         }
+
+        this.setState({
+            disabled : true,
+        })
+
         for (let i = 0; i < file.length; i++) {
             formData.append('file', file[i]);
         }
@@ -186,15 +191,24 @@ class ImageUpload extends React.Component {
                 } else {
                     alert('사진 등록을 실패하였습니다.');
                 }
+
+                this.setState({
+                    disabled : false,
+                })
             }).catch((error) => {
                 // handle error
                 alert(error);
-
+                this.setState({
+                    disabled : false,
+                })
             })
 
         }).catch((error) => {
             // handle error
             alert(error);
+            this.setState({
+                disabled : false,
+            })
 
         })
 
@@ -219,6 +233,7 @@ class ImageUpload extends React.Component {
                         <Button variant="contained"
                             color="primary"
                             fullWidth
+                            disabled={this.state.disabled}
                             onClick={() => this.handleUpload('main')}
                             size="small" >
                             메인사진등록(1장)
@@ -228,20 +243,11 @@ class ImageUpload extends React.Component {
                         <Button variant="contained"
                             color="primary"
                             fullWidth
+                            disabled={this.state.disabled}
                             onClick={() => this.handleUpload('gallery')}
                             size="small" >
                             사진첩등록(여러장)
                         </Button>
-                    </Grid>
-                    <Grid item xs={12}>
-                    <NavLink to="/Main" style={{color: 'inherit', textDecoration: 'none'}}>
-                        <Button variant="contained"
-                            color="primary"
-                            fullWidth
-                            size="small" >
-                            확인 (뒤로가기)
-                        </Button>
-                    </NavLink>
                     </Grid>
                     {/*<Grid item xs={4}>
                         <Button variant="contained"
@@ -266,6 +272,16 @@ class ImageUpload extends React.Component {
                     images={this.state.imagesGridData}
                     thumbnailImages={this.state.thumbnailImages} />
                 </div>
+                <Grid item xs={12}>
+                    <NavLink to="/Main" style={{color: 'inherit', textDecoration: 'none'}}>
+                        <Button variant="contained"
+                            color="primary"
+                            fullWidth
+                            size="small" >
+                            확인 (뒤로가기)
+                        </Button>
+                    </NavLink>
+                    </Grid>
             </div>
 
         );

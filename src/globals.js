@@ -5,7 +5,7 @@ export const KAKAO_CLIENT_ID = "9e7171f1d9599641378cd3e36174adbc";
 //카카오 로그인 완료 후 Redirect URL
 export const KAKAO_REDIRECT_URL = "http://localhost:3000/oauth";
 //export const KAKAO_REDIRECT_URL = "http://192.168.0.4:3000/oauth";
-//export const KAKAO_REDIRECT_URL = "http://211.244.102.109/oauth";
+//export const KAKAO_REDIRECT_URL = "http://10.78.77.59/oauth";
 //T Map APP KEY
 export const TMAP_APP_KEY = "83fc977d-4228-4433-a6b1-817cf549a4c0";
 //T Map 길찾기 연동 URL
