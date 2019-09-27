@@ -1,0 +1,415 @@
+2019-09-27 15:57:30 info: Check out the app at http://localhost:4000
+2019-09-27 15:57:31 info: Connected to mongodb server
+2019-09-27 15:58:17 info: Check out the app at http://localhost:4000
+2019-09-27 15:58:18 info: Connected to mongodb server
+2019-09-27 15:59:20 info: PARAM {"0":"kakao/"} | BODY {"code":"9BzibMrp7frje5ym3M3sBMhduL9-q2BHZP7tWR7Nk9dsHP-X5p5cbZ_R_bc5D0NbqVI9GQo9dZoAAAFtcYROsw","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2019-09-27 15:59:20 info: ::ffff:127.0.0.1 - - [27/Sep/2019:06:59:20 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=9BzibMrp7frje5ym3M3sBMhduL9-q2BHZP7tWR7Nk9dsHP-X5p5cbZ_R_bc5D0NbqVI9GQo9dZoAAAFtcYROsw" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+
+2019-09-27 15:59:20 info: PARAM {"0":"kakao/me"} | BODY {"token":"9BStYi752S8ZPBZB7plgDf3LD22c3FiwHtDD-go9dZsAAAFtcYRQiw"}
+2019-09-27 15:59:20 info: ::ffff:127.0.0.1 - - [27/Sep/2019:06:59:20 +0000] "POST /api/kakao/me HTTP/1.1" 200 146 "http://localhost:3000/oauth?code=9BzibMrp7frje5ym3M3sBMhduL9-q2BHZP7tWR7Nk9dsHP-X5p5cbZ_R_bc5D0NbqVI9GQo9dZoAAAFtcYROsw" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+
+2019-09-27 15:59:20 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 15:59:20 info: ::ffff:127.0.0.1 - - [27/Sep/2019:06:59:20 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/oauth?code=9BzibMrp7frje5ym3M3sBMhduL9-q2BHZP7tWR7Nk9dsHP-X5p5cbZ_R_bc5D0NbqVI9GQo9dZoAAAFtcYROsw" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+
+2019-09-27 15:59:20 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 15:59:20 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 15:59:20 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:00:17 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:00:17 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:00:18 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:00:18 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:00:18 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:00:18 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:02:16 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:02:16 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:02:16 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:02:16 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:02:17 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:02:17 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:02:19 info: PARAM {"0":"video/save"} | BODY {"username":"나상","enterid":1112482398,"invitee":"","files":[]}
+2019-09-27 16:02:19 error: TypeError: Cannot read property 'path' of undefined
+    at D:/workplace/react-app/server/routes/video.js:66:24
+    at Layer.handle [as handle_request] (D:\workplace\react-app\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\workplace\react-app\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\workplace\react-app\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\workplace\react-app\node_modules\express\lib\router\layer.js:95:5)
+    at D:\workplace\react-app\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\workplace\react-app\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\workplace\react-app\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (D:\workplace\react-app\node_modules\express\lib\router\index.js:174:3)
+    at router (D:\workplace\react-app\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\workplace\react-app\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\workplace\react-app\node_modules\express\lib\router\index.js:317:13)
+    at D:\workplace\react-app\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\workplace\react-app\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\workplace\react-app\node_modules\express\lib\router\index.js:275:10)
+    at D:/workplace/react-app/server/routes/index.js:17:5
+2019-09-27 16:02:19 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:02:19 +0000] "POST /api/video/save HTTP/1.1" 500 16 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:02:21 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:02:21 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:02:21 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:02:21 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:02:21 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:02:21 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:02:25 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:02:25 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:02:25 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:02:25 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:02:25 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:02:25 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:03:17 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:03:17 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:03:17 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:03:17 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:03:17 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:03:17 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:03:26 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:03:26 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:03:26 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:03:26 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:03:26 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:03:26 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:03:31 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:03:31 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:03:31 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:03:31 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:03:31 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:03:31 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:03:32 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:03:32 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:03:32 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:03:32 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:03:32 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:03:32 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:03:44 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:03:44 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:03:44 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:03:44 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:03:44 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:03:44 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:03:48 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:03:48 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:03:48 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:03:48 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:03:48 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:03:48 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:03:58 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:03:58 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:03:58 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:03:58 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:03:58 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:03:58 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:04:27 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:04:27 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:04:27 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:04:27 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:04:27 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:04:27 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:04:47 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:04:47 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:04:47 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:04:47 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:04:47 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:04:47 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:04:58 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:04:58 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:04:58 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:04:58 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:04:59 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:04:59 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:05:21 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:05:21 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:05:21 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:05:21 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:05:21 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:05:21 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:05:24 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:05:24 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:05:24 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:05:24 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:05:24 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:05:24 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:05:25 info: PARAM {"0":"kakao/logout"} | BODY {"token":"9BStYi752S8ZPBZB7plgDf3LD22c3FiwHtDD-go9dZsAAAFtcYRQiw"}
+2019-09-27 16:05:25 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:05:25 +0000] "POST /api/kakao/logout HTTP/1.1" 200 17 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:05:27 info: PARAM {"0":"image/undefined/main"} | BODY {}
+2019-09-27 16:05:27 info: PARAM {"0":"userinfo/undefined"} | BODY {}
+2019-09-27 16:05:27 info: PARAM {"0":"image/undefined/gallery"} | BODY {}
+2019-09-27 16:05:27 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:05:27 +0000] "GET /api/userinfo/undefined HTTP/1.1" 200 4 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:05:27 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:05:27 +0000] "GET /api/image/undefined/gallery HTTP/1.1" 200 2 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:05:31 info: PARAM {"0":"kakao/logout"} | BODY {}
+2019-09-27 16:05:31 error: {"msg":"this access token does not exist","code":-401}
+2019-09-27 16:05:32 info: PARAM {"0":"kakao/logout"} | BODY {}
+2019-09-27 16:05:32 error: {"msg":"this access token does not exist","code":-401}
+2019-09-27 16:05:35 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:05:35 +0000] "POST /api/kakao/logout HTTP/1.1" - - "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:05:35 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:05:35 +0000] "POST /api/kakao/logout HTTP/1.1" - - "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:05:35 info: PARAM {"0":"image/undefined/main"} | BODY {}
+2019-09-27 16:05:35 info: PARAM {"0":"userinfo/undefined"} | BODY {}
+2019-09-27 16:05:35 info: PARAM {"0":"image/undefined/gallery"} | BODY {}
+2019-09-27 16:05:37 info: PARAM {"0":"image/undefined/main"} | BODY {}
+2019-09-27 16:05:37 info: PARAM {"0":"userinfo/undefined"} | BODY {}
+2019-09-27 16:05:37 info: PARAM {"0":"image/undefined/gallery"} | BODY {}
+2019-09-27 16:06:28 info: PARAM {"0":"kakao/"} | BODY {"code":"2RfFXdjBch1MmktLYZtLOjGjk3QF73YsYUFapTCvyJI3fG4WZJguHxJhxSKT3spgCRxetwo9dZoAAAFtcYrWoQ","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2019-09-27 16:06:28 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:06:28 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=2RfFXdjBch1MmktLYZtLOjGjk3QF73YsYUFapTCvyJI3fG4WZJguHxJhxSKT3spgCRxetwo9dZoAAAFtcYrWoQ" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:06:28 info: PARAM {"0":"kakao/me"} | BODY {"token":"QegyA6yuJi-jPHRnAHhGtqLi5e_qQu_pEn_QFAo9dRoAAAFtcYrYAg"}
+2019-09-27 16:06:28 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:06:28 +0000] "POST /api/kakao/me HTTP/1.1" 200 146 "http://localhost:3000/oauth?code=2RfFXdjBch1MmktLYZtLOjGjk3QF73YsYUFapTCvyJI3fG4WZJguHxJhxSKT3spgCRxetwo9dZoAAAFtcYrWoQ" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:06:28 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:06:28 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:06:28 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/oauth?code=2RfFXdjBch1MmktLYZtLOjGjk3QF73YsYUFapTCvyJI3fG4WZJguHxJhxSKT3spgCRxetwo9dZoAAAFtcYrWoQ" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:06:28 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:06:28 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:06:28 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:06:30 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:06:30 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:06:30 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:06:30 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:06:30 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:06:30 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:06:32 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:06:32 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:06:32 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:06:32 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:06:32 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:06:32 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:06:34 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:06:34 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:06:34 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:06:34 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:06:34 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:06:34 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:06:35 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:06:35 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:06:35 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:06:35 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:06:35 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:06:35 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:06:44 info: PARAM {"0":"kakao/logout"} | BODY {"token":"QegyA6yuJi-jPHRnAHhGtqLi5e_qQu_pEn_QFAo9dRoAAAFtcYrYAg"}
+2019-09-27 16:06:44 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:06:44 +0000] "POST /api/kakao/logout HTTP/1.1" 200 17 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:06:46 info: PARAM {"0":"image/undefined/main"} | BODY {}
+2019-09-27 16:06:46 info: PARAM {"0":"userinfo/undefined"} | BODY {}
+2019-09-27 16:06:46 info: PARAM {"0":"image/undefined/gallery"} | BODY {}
+2019-09-27 16:08:02 info: PARAM {"0":"kakao/"} | BODY {"code":"MOL1LNqTphCBPGbTfmE5OqPt9uKRiia7nCeOnoLw9Lop0XAIha-qeaMMv3ZVEqTEnq-2pgo9dVsAAAFtcYxGNQ","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2019-09-27 16:08:02 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:02 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=MOL1LNqTphCBPGbTfmE5OqPt9uKRiia7nCeOnoLw9Lop0XAIha-qeaMMv3ZVEqTEnq-2pgo9dVsAAAFtcYxGNQ" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:02 info: PARAM {"0":"kakao/me"} | BODY {"token":"wNgIZIkXB2WY_U2WPknGUYHeVWwFgixBKiv--Qo9dJgAAAFtcYxHlA"}
+2019-09-27 16:08:02 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:02 +0000] "POST /api/kakao/me HTTP/1.1" 200 146 "http://localhost:3000/oauth?code=MOL1LNqTphCBPGbTfmE5OqPt9uKRiia7nCeOnoLw9Lop0XAIha-qeaMMv3ZVEqTEnq-2pgo9dVsAAAFtcYxGNQ" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:02 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:08:02 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:02 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/oauth?code=MOL1LNqTphCBPGbTfmE5OqPt9uKRiia7nCeOnoLw9Lop0XAIha-qeaMMv3ZVEqTEnq-2pgo9dVsAAAFtcYxGNQ" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:02 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:08:02 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:08:02 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:08:04 info: PARAM {"0":"kakao/logout"} | BODY {"token":"wNgIZIkXB2WY_U2WPknGUYHeVWwFgixBKiv--Qo9dJgAAAFtcYxHlA"}
+2019-09-27 16:08:04 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:04 +0000] "POST /api/kakao/logout HTTP/1.1" 200 17 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:09 info: PARAM {"0":"kakao/"} | BODY {"code":"sWrssTDEyX6dxXUDS41X37F8XS5W1So0wAvNLfKXS1H0A3DjtUotz37A7QJkLxZVCvRbnQo9dVsAAAFtcYxjNQ","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2019-09-27 16:08:09 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:09 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=sWrssTDEyX6dxXUDS41X37F8XS5W1So0wAvNLfKXS1H0A3DjtUotz37A7QJkLxZVCvRbnQo9dVsAAAFtcYxjNQ" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:09 info: PARAM {"0":"kakao/me"} | BODY {"token":"fF_95ZpcyMcpT7Y2e-FjSABNHgprHC5DNLD8uQo9dJcAAAFtcYxkhA"}
+2019-09-27 16:08:09 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:09 +0000] "POST /api/kakao/me HTTP/1.1" 200 146 "http://localhost:3000/oauth?code=sWrssTDEyX6dxXUDS41X37F8XS5W1So0wAvNLfKXS1H0A3DjtUotz37A7QJkLxZVCvRbnQo9dVsAAAFtcYxjNQ" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:09 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:08:09 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:09 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/oauth?code=sWrssTDEyX6dxXUDS41X37F8XS5W1So0wAvNLfKXS1H0A3DjtUotz37A7QJkLxZVCvRbnQo9dVsAAAFtcYxjNQ" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:10 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:08:10 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:08:10 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:08:12 info: PARAM {"0":"kakao/logout"} | BODY {"token":"fF_95ZpcyMcpT7Y2e-FjSABNHgprHC5DNLD8uQo9dJcAAAFtcYxkhA"}
+2019-09-27 16:08:12 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:12 +0000] "POST /api/kakao/logout HTTP/1.1" 200 17 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:13 info: PARAM {"0":"kakao/"} | BODY {"code":"O2dnBTvgQcFbg_EVoa_JxEWR2BD7FytfhK8eEhe5FRA-hHf6F-rFykeidfMQtUZzMKYaTAo9dVsAAAFtcYxyZg","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2019-09-27 16:08:13 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:13 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=O2dnBTvgQcFbg_EVoa_JxEWR2BD7FytfhK8eEhe5FRA-hHf6F-rFykeidfMQtUZzMKYaTAo9dVsAAAFtcYxyZg" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:13 info: PARAM {"0":"kakao/me"} | BODY {"token":"WHhsQWHuWkw_oWQqdQD88R87F0mhnKD0B5tD4wo9dVsAAAFtcYxztA"}
+2019-09-27 16:08:13 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:13 +0000] "POST /api/kakao/me HTTP/1.1" 200 146 "http://localhost:3000/oauth?code=O2dnBTvgQcFbg_EVoa_JxEWR2BD7FytfhK8eEhe5FRA-hHf6F-rFykeidfMQtUZzMKYaTAo9dVsAAAFtcYxyZg" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:13 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:08:13 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:13 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/oauth?code=O2dnBTvgQcFbg_EVoa_JxEWR2BD7FytfhK8eEhe5FRA-hHf6F-rFykeidfMQtUZzMKYaTAo9dVsAAAFtcYxyZg" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:13 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:08:13 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:08:13 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:08:14 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:08:14 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:08:14 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:08:14 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:08:14 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:14 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:15 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:08:15 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:08:15 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:08:15 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:08:15 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:15 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:17 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:08:17 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:08:17 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:17 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:17 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:08:17 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:08:20 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:08:20 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:08:20 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:08:20 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:08:20 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:20 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:21 info: PARAM {"0":"kakao/logout"} | BODY {"token":"WHhsQWHuWkw_oWQqdQD88R87F0mhnKD0B5tD4wo9dVsAAAFtcYxztA"}
+2019-09-27 16:08:21 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:21 +0000] "POST /api/kakao/logout HTTP/1.1" 200 17 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:23 info: PARAM {"0":"kakao/"} | BODY {"code":"9rd4cTgkRQY5B6TCWAmStfkpsY4cOwjP54HDVbE9hMnSxJci4uXi2b03SZtIholxzMRkgAo9dVsAAAFtcYyXRA","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2019-09-27 16:08:23 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:23 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=9rd4cTgkRQY5B6TCWAmStfkpsY4cOwjP54HDVbE9hMnSxJci4uXi2b03SZtIholxzMRkgAo9dVsAAAFtcYyXRA" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:23 info: PARAM {"0":"kakao/me"} | BODY {"token":"t2Mt-j76VX7z_GU57s4nWetLWBRGKEl0XMP81Ao9dVwAAAFtcYyYtw"}
+2019-09-27 16:08:23 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:23 +0000] "POST /api/kakao/me HTTP/1.1" 200 146 "http://localhost:3000/oauth?code=9rd4cTgkRQY5B6TCWAmStfkpsY4cOwjP54HDVbE9hMnSxJci4uXi2b03SZtIholxzMRkgAo9dVsAAAFtcYyXRA" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:23 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:08:23 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:23 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/oauth?code=9rd4cTgkRQY5B6TCWAmStfkpsY4cOwjP54HDVbE9hMnSxJci4uXi2b03SZtIholxzMRkgAo9dVsAAAFtcYyXRA" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:23 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:08:23 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:08:23 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:08:29 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:08:29 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:29 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:29 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:08:29 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:08:29 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:08:30 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:08:30 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:08:30 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:08:30 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:30 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:31 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:08:32 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:08:32 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:08:32 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:08:32 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:32 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:32 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:08:33 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:08:33 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:33 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/MapUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:34 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:08:35 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:08:35 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:08:35 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:08:35 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:35 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:35 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:08:37 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:08:37 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:08:37 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:08:37 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:37 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:37 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:08:44 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:08:44 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:08:44 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:08:44 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:08:44 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:44 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:45 info: PARAM {"0":"kakao/logout"} | BODY {"token":"t2Mt-j76VX7z_GU57s4nWetLWBRGKEl0XMP81Ao9dVwAAAFtcYyYtw"}
+2019-09-27 16:08:45 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:45 +0000] "POST /api/kakao/logout HTTP/1.1" 200 17 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:49 info: PARAM {"0":"kakao/"} | BODY {"code":"41ZTFrEt1weXesEuEcM13gBaHITFMs5G83xPETmT0lnucE_Y2IEQtoN8t6FfhO9EJU0dKgo9dVsAAAFtcYz_hQ","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2019-09-27 16:08:49 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:49 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=41ZTFrEt1weXesEuEcM13gBaHITFMs5G83xPETmT0lnucE_Y2IEQtoN8t6FfhO9EJU0dKgo9dVsAAAFtcYz_hQ" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:49 info: PARAM {"0":"kakao/me"} | BODY {"token":"u1Ohje_7CjJ6m6bT8nDsjLtHi7ci8uyJnE-M4wo9dVoAAAFtcY0A2A"}
+2019-09-27 16:08:49 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:49 +0000] "POST /api/kakao/me HTTP/1.1" 200 146 "http://localhost:3000/oauth?code=41ZTFrEt1weXesEuEcM13gBaHITFMs5G83xPETmT0lnucE_Y2IEQtoN8t6FfhO9EJU0dKgo9dVsAAAFtcYz_hQ" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:49 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:08:50 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:08:50 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/oauth?code=41ZTFrEt1weXesEuEcM13gBaHITFMs5G83xPETmT0lnucE_Y2IEQtoN8t6FfhO9EJU0dKgo9dVsAAAFtcYz_hQ" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:08:50 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:08:50 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:08:50 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:23:07 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:23:07 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:23:07 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:23:07 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:23:07 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:23:07 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:23:08 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:23:08 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:23:08 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:23:08 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/MapUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:23:10 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:23:10 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:23:10 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:23:10 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:23:10 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:23:10 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:23:13 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:23:13 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:23:13 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/MapUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:23:13 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:23:26 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:23:26 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:23:26 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/MapUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:23:26 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:23:26 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:23:26 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:23:26 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/MapUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:23:29 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:23:29 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:23:29 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:23:29 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:23:29 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:23:29 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:23:32 info: PARAM {"0":"kakao/logout"} | BODY {"token":"u1Ohje_7CjJ6m6bT8nDsjLtHi7ci8uyJnE-M4wo9dVoAAAFtcY0A2A"}
+2019-09-27 16:23:32 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:23:32 +0000] "POST /api/kakao/logout HTTP/1.1" 200 17 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:23:34 info: PARAM {"0":"kakao/"} | BODY {"code":"sN67k9FV6mPrvyhEUGiVQLtBF5bt-3kPZcDm7XngzGexfIy2TcrVDhlDMF_D97vTp1BDOwo9dVwAAAFtcZp9jA","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2019-09-27 16:23:34 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:23:34 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=sN67k9FV6mPrvyhEUGiVQLtBF5bt-3kPZcDm7XngzGexfIy2TcrVDhlDMF_D97vTp1BDOwo9dVwAAAFtcZp9jA" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:23:34 info: PARAM {"0":"kakao/me"} | BODY {"token":"B9w0UZ94e2Zf3qyuG49qAluQNvtqiyEy77B5cAo9dJcAAAFtcZp-2A"}
+2019-09-27 16:23:34 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:23:34 +0000] "POST /api/kakao/me HTTP/1.1" 200 146 "http://localhost:3000/oauth?code=sN67k9FV6mPrvyhEUGiVQLtBF5bt-3kPZcDm7XngzGexfIy2TcrVDhlDMF_D97vTp1BDOwo9dVwAAAFtcZp9jA" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:23:34 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:23:34 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:23:34 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/oauth?code=sN67k9FV6mPrvyhEUGiVQLtBF5bt-3kPZcDm7XngzGexfIy2TcrVDhlDMF_D97vTp1BDOwo9dVwAAAFtcZp9jA" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:23:34 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:23:34 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:23:34 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:23:37 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:23:37 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:23:37 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:23:37 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:23:38 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:23:38 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:23:39 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:23:39 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:23:39 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:23:39 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:23:39 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:23:39 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:23:44 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:23:44 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:23:44 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:23:44 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2019-09-27 16:23:44 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:23:44 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:23:53 info: PARAM {"0":"kakao/logout"} | BODY {"token":"B9w0UZ94e2Zf3qyuG49qAluQNvtqiyEy77B5cAo9dJcAAAFtcZp-2A"}
+2019-09-27 16:23:53 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:23:53 +0000] "POST /api/kakao/logout HTTP/1.1" 200 17 "http://localhost:3000/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:27:18 info: PARAM {"0":"kakao/"} | BODY {"code":"UFbdlgueiFp6YeEY3OYXR_nHZ1BrO_pORevYbwbpAgwhx0dItXqbkNOz20UQzTjV_iXfSworDKgAAAFtcZ3pgg","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2019-09-27 16:27:18 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:27:18 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=UFbdlgueiFp6YeEY3OYXR_nHZ1BrO_pORevYbwbpAgwhx0dItXqbkNOz20UQzTjV_iXfSworDKgAAAFtcZ3pgg" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:27:18 info: PARAM {"0":"kakao/me"} | BODY {"token":"nJejH3UWpzbu_5HEMVU5hmiKNRhd3fQXka-1EAorDSAAAAFtcZ3sJQ"}
+2019-09-27 16:27:18 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:27:18 +0000] "POST /api/kakao/me HTTP/1.1" 200 146 "http://localhost:3000/oauth?code=UFbdlgueiFp6YeEY3OYXR_nHZ1BrO_pORevYbwbpAgwhx0dItXqbkNOz20UQzTjV_iXfSworDKgAAAFtcZ3pgg" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:27:18 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2019-09-27 16:27:18 info: ::ffff:127.0.0.1 - - [27/Sep/2019:07:27:18 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 155 "http://localhost:3000/oauth?code=UFbdlgueiFp6YeEY3OYXR_nHZ1BrO_pORevYbwbpAgwhx0dItXqbkNOz20UQzTjV_iXfSworDKgAAAFtcZ3pgg" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+2019-09-27 16:27:18 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2019-09-27 16:27:18 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2019-09-27 16:27:18 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}

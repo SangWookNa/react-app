@@ -69,7 +69,7 @@ class App extends Component {
   }
 
   render() {
-    const header = (<Header status={this.props.status} />);
+    const header = (<Header path={this.props.location.pathname.substring(1, 5)} status={this.props.status} />);
 
     //children 컴포넌트에 props를 전달하기위함
     const childrenWithProps = React.Children.map(this.props.children, child => {
@@ -79,7 +79,8 @@ class App extends Component {
 
     return (
       <div style={{maxWidth : 700 }}>
-        {this.props.location.pathname.substring(1, 5) !== 'Home' ? header : undefined}
+        {this.props.location.pathname.substring(1, 5) !== 'Home' 
+        && this.props.location.pathname.substring(1, 5) !== '' ? header : undefined}
         {childrenWithProps}
       </div>
     );

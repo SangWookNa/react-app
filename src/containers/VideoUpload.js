@@ -99,14 +99,6 @@ class VideoUpload extends React.Component {
         let enterid = this.props.status.info.userid;
         let files = this.state.files;
 
-        console.log(this.props.images[0].src);
-        //return;
-
-        // if (files.length === 0) {
-        //     alert("영상을 등록해주세요~");
-        //     return;
-        // }
-
         this.setState({
             disabled : true,
         })

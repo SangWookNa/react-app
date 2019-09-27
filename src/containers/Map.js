@@ -69,7 +69,7 @@ class Map extends React.Component {
 
     componentDidMount() {
 
-        window.Kakao.init('69d4dafd7d9aab9775ab02ed17c19dcb');
+        window.Kakao.init(value.KAKAO_MAP_KEY);
     }
     handleClick_navigation = (e) => {
 
