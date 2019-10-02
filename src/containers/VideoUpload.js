@@ -9,8 +9,10 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import Avatar from '@material-ui/core/Avatar';
 import CardContent from '@material-ui/core/CardContent';
-import Grid from '@material-ui/core/Grid';
 import CardActionArea from '@material-ui/core/CardActionArea';
+import Switch from '@material-ui/core/Switch';
+import Grid from '@material-ui/core/Grid';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import * as value from './../globals';
@@ -18,16 +20,17 @@ import * as value from './../globals';
 const styles = theme => ({
     root: {
         flexGrow: 1,
+        margin: '10px',
     },
     button: {
-        margin: '10px',
+        marginTop: '10px',
     },
     input: {
         display: 'none',
     },
     card: {
         maxWidth: 700,
-        margin: '10px',
+        marginBottom: '10px',
     },
 });
 
@@ -42,7 +45,8 @@ class VideoUpload extends React.Component {
             invitee: '',
             files: [],
             filePath: '',
-            disabled : false,
+            disabled: false,
+            checkedB: false,
         };
     }
 
@@ -92,16 +96,34 @@ class VideoUpload extends React.Component {
         })
     }
 
+    handleChange = name => event => {
+        this.setState({ [name]: event.target.checked });
+
+    };
+
     handleUpload = (e) => {
-        
+
+        if(this.state.checkedB){
+            this.upload_withVideo();
+        }else{
+            this.upload();
+        }
+    }
+
+    upload_withVideo = (e) => {
         let invitee = this.state.invitee;
         let username = this.props.status.info.nickname;
         let enterid = this.props.status.info.userid;
         let files = this.state.files;
 
+        if (files.length === 0) {
+            alert("영상을 등록해주세요~");
+            return;
+        }
         this.setState({
-            disabled : true,
+            disabled: true,
         })
+
         return axios.post('/api/video/save', { username, enterid, invitee, files }).then((result) => {
 
             let invitee = result.data.result.invitee;
@@ -157,24 +179,89 @@ class VideoUpload extends React.Component {
                     const url = `${value.KAKAO_LOGIN_URL}?client_id=${value.KAKAO_CLIENT_ID}&redirect_uri=${value.KAKAO_REDIRECT_URL}&response_type=code&scope=${required_scopes.join(',')}`;
                     window.location.href = url;
                 } else {
-                    alert('청첩장 제작이 완료되었습니다. 카카오톡 > 나만의 채팅방에서 제작된 청첩장을 확인하세요!');
+                    alert('청첩장 제작이 완료되었습니다. 카카오톡 > 나와의 채팅방에서 제작된 청첩장을 확인하세요!');
                     window.location.href = window.location.origin;
                 }
                 this.setState({
-                    disabled : false,
+                    disabled: false,
                 })
             }).catch((error) => {
                 // handle error
                 alert(error);
                 this.setState({
-                    disabled : false,
+                    disabled: false,
                 })
             })
         }).catch((error) => {
             // handle error
             alert(error);
             this.setState({
-                disabled : false,
+                disabled: false,
+            })
+        })
+    }
+
+    upload = (e) => {
+        let enterid = this.props.status.info.userid;
+
+        this.setState({
+            disabled: true,
+        })
+
+        let celebrateUrl = '';
+        let title = '';
+        let description = '';
+
+        celebrateUrl = `${window.location.origin}/Home/${enterid}`;
+        title = '결혼식에 초대합니다.';
+
+        const token = this.props.status.info.access_token;
+        const data = {
+            "object_type": "feed",
+            "content": {
+                "title": title,
+                "description": description,
+                "image_url": this.props.images[0].src,
+                "image_width": 640,
+                "image_height": 640,
+                "link": {
+                    "web_url": celebrateUrl,
+                    "mobile_web_url": celebrateUrl,
+                    "android_execution_params": "contentId=100",
+                    "ios_execution_params": "contentId=100"
+                }
+            },
+            "buttons": [
+                {
+                    "title": "청첩장 열어보기",
+                    "link": {
+                        "web_url": celebrateUrl,
+                        "mobile_web_url": celebrateUrl
+                    }
+                },
+            ]
+        };
+
+        return axios.post('/api/kakao/send', { token, data }).then((result) => {
+            console.log(result.data);
+            //window.location.href = url;
+            if (result.data.code === -402) {
+                alert('카카오톡 메시지 전송여부에 동의하셔야합니다. 동의 후 청첩장을 다시 제작해주세요.');
+                const required_scopes = result.data.required_scopes;
+                const url = `${value.KAKAO_LOGIN_URL}?client_id=${value.KAKAO_CLIENT_ID}&redirect_uri=${value.KAKAO_REDIRECT_URL}&response_type=code&scope=${required_scopes.join(',')}`;
+                window.location.href = url;
+            } else {
+                alert('청첩장 제작이 완료되었습니다. 카카오톡 > 나만의 채팅방에서 제작된 청첩장을 확인하세요!');
+                window.location.href = window.location.origin;
+            }
+            this.setState({
+                disabled: false,
+            })
+        }).catch((error) => {
+            // handle error
+            alert(error);
+            this.setState({
+                disabled: false,
             })
         })
     }
@@ -191,9 +278,8 @@ class VideoUpload extends React.Component {
                 </Typography>
             </CardContent>
         );
-
-        return (
-            <div className={classes.root}>
+        const videoForm = (
+            <div>
                 <input
                     accept="video/*"
                     id="contained-button-file"
@@ -217,32 +303,48 @@ class VideoUpload extends React.Component {
                         </CardActionArea>
                     </label>
                 </Card>
-                <div style ={{margin:'10px'}}>
-                    <Grid container spacing={8} >
-                        <Grid item xs={12}>
-                            <TextField
-                                id="invitee"
-                                name="invitee"
-                                label="초대받는분 이름"
-                                fullWidth
-                                value={this.state.invitee}
-                                variant="outlined"
-                                onChange={this.handleInputChange}
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <Button variant="contained"
-                                onClick={this.handleUpload}
-                                color="primary"
-                                fullWidth
-                                disabled={this.state.disabled}
-                                size="large" >
-                                만들기
+                <Grid item xs={12}>
+                    <TextField
+                        id="invitee"
+                        name="invitee"
+                        label="초대받는분 이름"
+                        fullWidth
+                        value={this.state.invitee}
+                        variant="outlined"
+                        onChange={this.handleInputChange}
+                    />
+                </Grid>
+            </div>
+        )
+
+        return (
+            <div className={classes.root}>
+                <Grid container justify="flex-end">
+                    <FormControlLabel
+                        value="start"
+                        control={<Switch
+                            checked={this.state.checkedB}
+                            onChange={this.handleChange('checkedB')}
+                            value="checkedB"
+                            color="primary"
+                        />}
+                        label="초대영상등록하기"
+                        labelPlacement="start"
+                    />
+                </Grid>
+                {this.state.checkedB === true ? videoForm : undefined}
+                <Grid item xs={12}>
+                    <Button variant="contained"
+                        onClick={this.handleUpload}
+                        color="primary"
+                        fullWidth
+                        className={classes.button}
+                        disabled={this.state.disabled}
+                        size="large" >
+                        만들기
                     </Button>
-                        </Grid>
-                    </Grid>
-                    {this.state.loadingFlag === true ? loading : undefined}
-                </div>
+                </Grid>
+                {this.state.loadingFlag === true ? loading : undefined}
             </div>
 
 

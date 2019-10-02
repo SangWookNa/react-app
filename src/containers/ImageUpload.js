@@ -267,7 +267,7 @@ class ImageUpload extends React.Component {
                     <LibraryBooks /> main
                 </Typography>
                 <Invitation images={this.state.imageMainData} />
-                <Gallery images={this.state.imagesGalleryData} />
+                {/* <Gallery images={this.state.imagesGalleryData} /> */}
                 <ImageGridList
                     images={this.state.imagesGridData}
                     thumbnailImages={this.state.thumbnailImages} />

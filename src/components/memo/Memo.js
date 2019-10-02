@@ -144,7 +144,7 @@ class Memo extends React.Component {
 
         const memoView = (
             <div className={classes.root}>
-                <Card className={classes.card}>
+                <Card className={classes.card} elevation={3}>
                     <CardHeader className={classes.header} classes={{ title :classes.title , subheader: classes.subheader}}
                         action={
                             <IconButton aria-owns={anchorEl ? 'simple-menu' : undefined}

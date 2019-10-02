@@ -1,6 +1,8 @@
 import React from 'react';
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
+import Typography from '@material-ui/core/Typography';
+import LibraryBooks from '@material-ui/icons/LibraryBooks';
 
 function columns(containerWidth) {
   let columns = 1;
@@ -48,7 +50,15 @@ class ImageGridList extends React.Component {
   render() {
 
     return (
-      <div>
+      <div style={{
+        display: "block",
+        minHeight: "1px",
+        width: "100%",
+        marginTop: 100, marginBottom: 100
+      }}>
+        <Typography component="h2" variant="display1" style={{ paddingLeft: '2%',paddingBottom: '5%' }}>
+          <LibraryBooks /> gallery
+        </Typography>
         <Gallery photos={this.props.thumbnailImages} onClick={this.openLightbox} margin={10} direction={"column"} columns={columns} />
         <Lightbox images={this.props.images}
           onClose={this.closeLightbox}

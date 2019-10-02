@@ -4,7 +4,8 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import Avatar from '@material-ui/core/Avatar';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import { VideoUpload } from './';
+
+import { VideoUpload, Switches } from './';
 import { connect } from 'react-redux';
 import {
   imageMainRequest,
@@ -133,6 +134,7 @@ class Main extends Component {
     }
     this.props.history.push(`/${page}`);
   }
+
   getStyles = () => {
     return Object.assign(
       {},
@@ -141,7 +143,7 @@ class Main extends Component {
   }
   render() {
     const { classes } = this.props;
-    console.log(`${this.state.mainYn} | ${this.state.galleryYn} | ${this.state.userInfoYn}`);
+    
     const userInfoContent = this.state.userInfoYn === 'Y' ? '등록완료' : '예식정보를 등록해주세요.';
     var photoContent = '웨딩사진을 등록해주세요.';
     if (this.state.mainYn === 'Y' && this.state.galleryYn === 'N') {

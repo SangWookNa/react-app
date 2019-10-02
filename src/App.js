@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 // Router
 import { Header } from './components/common/';
 import { connect } from 'react-redux';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import grey from '@material-ui/core/colors/grey';
+import green from '@material-ui/core/colors/green';
 import {
   getStatusRequest,
 } from '../src/actions/kakao';
@@ -55,7 +58,7 @@ class App extends Component {
             userid: '',
           };
           document.cookie = 'key=' + btoa(JSON.stringify(loginData));
-          
+
           //if loginData is undefined, do nothing
           if (this.props.location.pathname.substring(1, 5) !== 'Home'
             && this.props.location.pathname.substring(1, 5) !== '') {
@@ -69,6 +72,17 @@ class App extends Component {
   }
 
   render() {
+    const theme = createMuiTheme({
+      palette: {
+        primary: {
+          main: '#cfd8dc',
+        },
+        secondary: {
+          main: '#cfd8dc',
+        },
+      },
+    });
+
     const header = (<Header path={this.props.location.pathname.substring(1, 5)} status={this.props.status} />);
 
     //children 컴포넌트에 props를 전달하기위함
@@ -78,11 +92,13 @@ class App extends Component {
     );
 
     return (
-      <div style={{maxWidth : 700 }}>
-        {this.props.location.pathname.substring(1, 5) !== 'Home' 
-        && this.props.location.pathname.substring(1, 5) !== '' ? header : undefined}
-        {childrenWithProps}
-      </div>
+      <MuiThemeProvider theme={theme}>
+        <div style={{ maxWidth: 700 }}>
+          {this.props.location.pathname.substring(1, 5) !== 'Home'
+            && this.props.location.pathname.substring(1, 5) !== '' ? header : undefined}
+          {childrenWithProps}
+        </div>
+      </MuiThemeProvider>
     );
   }
 }
