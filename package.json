@@ -25,7 +25,7 @@
     "gm": "^1.23.1",
     "immutable": "^4.0.0-rc.12",
     "moment": "^2.24.0",
-    "mongoose": "^5.5.8",
+    "mongoose": "^5.7.5",
     "mongoose-auto-increment": "^5.0.1",
     "morgan": "^1.9.1",
     "multer": "^1.4.1",
