@@ -6,16 +6,6 @@
     "auditLog": "D:\\swna\\react-app\\logs\\.37a86a7cbdf4f480eeb4195b2cf8e71954349f1f-audit.json",
     "files": [
         {
-            "date": 1567514414617,
-            "name": "D:\\swna\\react-app\\logs\\app-2019-09-03.log",
-            "hash": "d44138c8e9223cc923a36cdb30a4c497"
-        },
-        {
-            "date": 1568198198294,
-            "name": "D:\\swna\\react-app\\logs\\app-2019-09-11.log",
-            "hash": "8eb85b00b80349d7d9e18e36964a39c0"
-        },
-        {
             "date": 1568357653088,
             "name": "D:\\swna\\react-app\\logs\\app-2019-09-13.log",
             "hash": "526500bda74e78775f19a99f57f0bb82"
@@ -29,6 +19,16 @@
             "date": 1568531299485,
             "name": "D:\\swna\\react-app\\logs\\app-2019-09-15.log",
             "hash": "1e2746f4443eb24f2358f529b1861e1a"
+        },
+        {
+            "date": 1569038942614,
+            "name": "D:\\swna\\react-app\\logs\\app-2019-09-21.log",
+            "hash": "280c8daa6a43dcd26eb8be2ef2a4fcba"
+        },
+        {
+            "date": 1573975846837,
+            "name": "D:\\swna\\react-app\\logs\\app-2019-11-17.log",
+            "hash": "af756f060be8c411a669597fbbecd3a0"
         }
     ]
 }
