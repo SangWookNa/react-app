@@ -30,6 +30,7 @@ ReactDOM.render(
             <Route exact path="/VideoUpload" component={VideoUpload} /> {/* 동영상 업로드 */}
             <Route exact path="/ImageUpload" component={ImageUpload} /> {/* 이미지 업로드 */}
             <Route exact path="/MapUpload" component={MapUpload} /> {/* 예식정보 업로드 */}
+            <Route exact path="/Home/:enterid" component={Home} /> {/*  청첩장 메인 (공통) */}
             <Route exact path="/Home/:enterid/:seq" component={Home} /> {/*  청첩장 메인 (공통) */}
             <Route exact path="/Home/:enterid/:invitee/:seq" component={Home} /> {/*  청첩장 메인 (초대자 명시) */}
           </App>

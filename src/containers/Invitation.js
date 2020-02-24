@@ -42,7 +42,7 @@ class Invitation extends React.Component {
     }
 
     updateWindowDimensions() {
-        this.setState({ width: window.innerWidth, height: window.innerHeight - 200, contHeight: window.innerHeight });
+        this.setState({ width: window.innerWidth, height: window.innerHeight - 250, contHeight: window.innerHeight });
     }
     shouldComponentUpdate(nextProps, nextState) {
         let update = JSON.stringify(this.props) !== JSON.stringify(nextProps);
@@ -68,8 +68,11 @@ class Invitation extends React.Component {
             </div>);
 
         return (
-            <div style={{ minHeight: this.state.contHeight + 'px' }}>
-                <Paper className={classes.root} elevation={0} >
+            <div style={{ marginTop : 50, minHeight: this.state.contHeight + 'px' }}>
+                <Paper className={classes.root} elevation={3} >
+                    <Typography variant="h6" component="h3" align="center">
+                        결혼식에 초대합니다.
+                    </Typography>
                     <Grid className={classes.cont}
                         container
                         alignItems='center'
@@ -90,12 +93,12 @@ Invitation.propTypes = {
 
 Invitation.defaultProps = {
     userData: {
-        data : {
-            groom : '',
-            bride : '',
-            marry_date_time_view : '',
-            place_name : '',
-            address_name2 : '',
+        data: {
+            groom: '',
+            bride: '',
+            marry_date_time_view: '',
+            place_name: '',
+            address_name2: '',
         }
     }
 };

@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import List from '@material-ui/core/List';
-//import Divider from '@material-ui/core/Divider';
+import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-//import VideoLibrary from '@material-ui/icons/VideoLibrary';
+import PowerOff from '@material-ui/icons/PowerOff';
 import PowerSettingsNew from '@material-ui/icons/PowerSettingsNew';
-//import Image from '@material-ui/icons/Image';
+import Home from '@material-ui/icons/Home';
+import Face from '@material-ui/icons/Face';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import { BrowserRouter as Link, NavLink } from "react-router-dom";
+import Button from '@material-ui/core/Button';
 import axios from 'axios';
 
 const styles = {
@@ -45,7 +45,7 @@ class Header extends Component {
   state = {
     left: false,
   };
-  
+
   toggleDrawer = (side, open) => () => {
     this.setState({
       [side]: open,
@@ -82,7 +82,7 @@ class Header extends Component {
         username: '',
       };
       document.cookie = 'key=' + btoa(JSON.stringify(loginData));
-      
+
       alert('앱 연결이 해제되었습니다.');
       window.location.href = window.location.origin;
 
@@ -90,6 +90,13 @@ class Header extends Component {
       // handle error
       alert(error);
     })
+  }
+
+  handleHome = () => {
+    window.location.href = window.location.origin + '/Main';
+  }
+  handleBack = () => {
+    window.location.href = window.location.origin + '/Main';
   }
 
   render() {
@@ -102,26 +109,20 @@ class Header extends Component {
     </List>);
     const unlink = (<List>
       <ListItem button key='unlink' onClick={this.handleUnlink}>
-        <ListItemIcon><PowerSettingsNew /></ListItemIcon>
-        <ListItemText primary='unlink' />
+        <ListItemIcon><PowerOff /></ListItemIcon>
+        <ListItemText primary='앱 탈퇴' />
       </ListItem>
     </List>);
 
     const sideList = (
       <div className={classes.list}>
-        {/* <List>
-          <NavLink to="/VideoUpload" className={classes.item}>
-            <ListItem button key='ImageUpload' >
-              <ListItemIcon><Image /></ListItemIcon>
-              <ListItemText primary='Image Upload' />
-            </ListItem>
-          </NavLink>
+        <List>
           <ListItem button key='VideoUpload'>
-            <ListItemIcon><VideoLibrary /></ListItemIcon>
-            <ListItemText primary='Video Upload' />
+            <ListItemIcon><Face fontSize="large" /></ListItemIcon>
+            <ListItemText primary={`환영합니다 ${this.props.status.info.nickname}님`} />
           </ListItem>
         </List>
-        <Divider /> */}
+        <Divider />
         {this.props.status.isLoggedIn === true ? logout : undefined}
         {this.props.status.isLoggedIn === true ? unlink : undefined}
       </div>
@@ -148,14 +149,15 @@ class Header extends Component {
                 {sideList}
               </div>
             </SwipeableDrawer>
-            <Typography variant="h6" color="inherit" className={classes.grow}>
-              <NavLink to="/Main" className={classes.item}>{this.props.status.info.nickname}</NavLink>
-            </Typography>
+            <Home className={classes.grow} fontSize="large" onClick={this.handleHome} />
+
+            {this.props.path !== 'Main' ? <Button onClick={this.handleBack} color="inherit">back</Button> : <Button color="inherit" onClick={this.handleLogout}>logout</Button>}
           </Toolbar>
+
         </AppBar>
         {this.props.children}
       </div>
-      
+
     );
   }
 }

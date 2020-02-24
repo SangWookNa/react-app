@@ -48,6 +48,7 @@
     "reducers": "^3.0.0-alpha",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
+    "saslprep": "^1.0.3",
     "shuffle-array": "^1.0.1",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^3.9.0",

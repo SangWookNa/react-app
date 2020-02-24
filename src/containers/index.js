@@ -9,5 +9,6 @@ import MapUpload from './MapUpload';
 import Map from './Map';
 import Weather from './Weather';
 import Invitation from './Invitation';
+import Switches from './Switches';
 
-export { Home, Memo, Video, ImageUpload, VideoUpload, Login, Main, MapUpload, Map, Weather, Invitation };
+export { Home, Memo, Video, ImageUpload, VideoUpload, Login, Main, MapUpload, Map, Weather, Invitation, Switches };

@@ -69,7 +69,7 @@ class Map extends React.Component {
 
     componentDidMount() {
 
-        window.Kakao.init('69d4dafd7d9aab9775ab02ed17c19dcb');
+        window.Kakao.init(value.KAKAO_MAP_KEY);
     }
     handleClick_navigation = (e) => {
 
@@ -109,7 +109,7 @@ class Map extends React.Component {
                 </Typography>
                 <Grid container spacing={8}>
                     <div className={classes.root}>
-                        <Card className={classes.card}>
+                        <Card className={classes.card} elevation={3}>
                             {/* {this.props.dayDiff === 0 ? weather : undefined}   */}
                             <div id="map" style={{ width: '88%', height: '230px', margin: 'auto', marginTop: 20, backgroundColor: 'gray' }}></div>
                             <CardHeader className={classes.header} classes={{ title: classes.title, subheader: classes.subheader }}
@@ -141,7 +141,7 @@ class Map extends React.Component {
                                     defaultValue="Default Value"
                                     value={this.props.userData.data.address_name2}
                                 />
-                                <Paper className={classes.paper_root} elevation={1}>
+                                <Paper className={classes.paper_root} elevation={3}>
                                     <Typography color="textSecondary" >
                                         길찾기 앱 연결
                                 </Typography>

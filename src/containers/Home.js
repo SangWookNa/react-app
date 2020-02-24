@@ -176,12 +176,11 @@ class Home extends Component {
 
   render() {
     const video = (<Video data={this.props.match.params} />);
-
     return (
       <div style={{ flexGrow: 1 }}>
         <Invitation userData={this.props.userData} images={this.state.imageMainData} />
-        {this.props.match.url !== '/' ? video : undefined}
-        <Gallery images={this.state.imagesGalleryData} />
+        {this.props.match.path !== '/Home/:enterid' ? video : undefined}
+        {/* <Gallery images={this.state.imagesGalleryData} /> */}
         <ImageGridList
           images={this.state.imagesGridData}
           thumbnailImages={this.state.thumbnailImages} />

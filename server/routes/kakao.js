@@ -40,8 +40,9 @@ router.post('/', (req, res) => {
 router.post('/me', (req, res) => {
 
   axios.defaults.headers.common['Authorization'] = `Bearer ${req.body.token}`
-  axios.get('https://kapi.kakao.com/v1/user/me').then((result) => {
-
+  console.log('##################### : '+req.body.token);
+  axios.get('https://kapi.kakao.com/v2/user/me').then((result) => {
+    console.log("########## : "+result);
     // ALTER SESSION
     let session = req.session;
 

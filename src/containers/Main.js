@@ -4,7 +4,8 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import Avatar from '@material-ui/core/Avatar';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import { VideoUpload } from './';
+
+import { VideoUpload, Switches } from './';
 import { connect } from 'react-redux';
 import {
   imageMainRequest,
@@ -46,6 +47,7 @@ const styles = theme => ({
   avatar: {
     //backgroundColor: red[500],
   },
+
 });
 
 class Main extends Component {
@@ -54,6 +56,7 @@ class Main extends Component {
     userInfoYn: 'N',      //예식정보등록여부
     mainYn: 'N',          //메인사진등록여부
     galleryYn: 'N',       //사진첩 등록 여부
+    bgcolor: 'red',
   };
 
   componentDidMount() {
@@ -90,7 +93,7 @@ class Main extends Component {
         return obj;
       });
 
-      if (images.length > 0) {
+      if (this.props.imageMainData.length > 0) {
         this.setState({
           imageMainData: images,
           mainYn: 'Y',
@@ -107,13 +110,7 @@ class Main extends Component {
     });
     //사진불러오기(갤러리)
     this.props.imageGalleryListRequest(id, 'gallery').then(() => {
-      const images = this.props.imageGalleryData.map((data) => {
-        let obj = {};
-        obj.original = `${origin}/${data.path}`;
-        obj.thumbnail = `${origin}/${data.thumbnailpath}`;
-        return obj;
-      });
-      if (images.length > 0) {
+      if (this.props.imageGalleryData.length > 0) {
         this.setState({
           galleryYn: 'Y',
         });
@@ -138,15 +135,32 @@ class Main extends Component {
     this.props.history.push(`/${page}`);
   }
 
+  getStyles = () => {
+    return Object.assign(
+      {},
+      this.state.mainYn === 'Y' && styles.red,
+    );
+  }
   render() {
     const { classes } = this.props;
-    console.log(`${this.state.mainYn} | ${this.state.galleryYn} | ${this.state.userInfoYn}`);
+    
+    const userInfoContent = this.state.userInfoYn === 'Y' ? '등록완료' : '예식정보를 등록해주세요.';
+    var photoContent = '웨딩사진을 등록해주세요.';
+    if (this.state.mainYn === 'Y' && this.state.galleryYn === 'N') {
+      photoContent = '사진첩을 등록해주세요'
+    } else if (this.state.mainYn === 'N' && this.state.galleryYn === 'Y') {
+      photoContent = '메인사진을 등록해주세요'
+    } else if (this.state.mainYn === 'Y' && this.state.galleryYn === 'Y') {
+      photoContent = '등록완료'
+    }
+
+
     const videoUpload = (<VideoUpload
       id={this.props.status.info.userid}
       images={this.state.imageMainData}
       mainYn={this.state.mainYn}
       galleryYn={this.state.galleryYn} />);
-    const mapUplaod = (<Card className={classes.card}>
+    const mapUplaod = (<Card className={classes.card} style={this.state.userInfoYn === 'Y' ? { backgroundColor: '#CEF6D8' } : {}}>
       <CardActionArea onClick={() => this.handlePage('MapUpload')}>
 
         <CardHeader
@@ -154,11 +168,11 @@ class Main extends Component {
             <Avatar aria-label="Recipe" className={classes.avatar}>1</Avatar>
           }
           title="예식 정보 등록"
-          subheader="September 14, 2016"
+          subheader={userInfoContent}
         />
       </CardActionArea>
     </Card>);
-    const imageUplaod = (<Card className={classes.card}>
+    const imageUplaod = (<Card className={classes.card} style={this.state.mainYn === 'Y' && this.state.galleryYn === 'Y' ? { backgroundColor: '#CEF6D8' } : {}} >
 
       <CardActionArea onClick={() => this.handlePage('ImageUpload')}>
         <CardHeader
@@ -166,11 +180,11 @@ class Main extends Component {
             <Avatar aria-label="Recipe" className={classes.avatar}>2</Avatar>
           }
           title="웨딩 사진 등록"
-          subheader="September 14, 2016"
+          subheader={photoContent}
         />
       </CardActionArea>
 
-    </Card>);
+    </Card >);
 
     return (
       <div style={{ flexGrow: 1 }}>

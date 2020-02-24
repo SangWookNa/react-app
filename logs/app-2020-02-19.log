@@ -1,0 +1,722 @@
+2020-02-19 13:37:19 info: Check out the app at http://localhost:4000
+2020-02-19 13:37:21 info: Connected to mongodb server
+2020-02-19 13:37:49 info: PARAM {"0":"kakao/"} | BODY {"code":"TkSqD9Af7kIEw8pAtvlB330_fkQE8gleTE9j7AgKlbrLugVNyBt0R_8yR4_Um-kI5ccw3Ao9cpgAAAFwW7zZQg","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2020-02-19 13:37:49 info: ::ffff:127.0.0.1 - - [19/Feb/2020:04:37:49 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=TkSqD9Af7kIEw8pAtvlB330_fkQE8gleTE9j7AgKlbrLugVNyBt0R_8yR4_Um-kI5ccw3Ao9cpgAAAFwW7zZQg" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 13:37:49 info: PARAM {"0":"kakao/me"} | BODY {"token":"uA1f2bKiFsHOREogMCbbIxQoO7qQZ87Tb2FZHQo9dNsAAAFwW7zfzw"}
+2020-02-19 13:37:49 error: {"msg":"application(id=321638, name='swna') using deprecated api(/v1/user/me)","code":-9}
+2020-02-19 13:38:17 info: ::ffff:127.0.0.1 - - [19/Feb/2020:04:38:17 +0000] "POST /api/kakao/me HTTP/1.1" - - "http://localhost:3000/oauth?code=TkSqD9Af7kIEw8pAtvlB330_fkQE8gleTE9j7AgKlbrLugVNyBt0R_8yR4_Um-kI5ccw3Ao9cpgAAAFwW7zZQg" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 13:38:37 info: PARAM {"0":"kakao/"} | BODY {"code":"TkSqD9Af7kIEw8pAtvlB330_fkQE8gleTE9j7AgKlbrLugVNyBt0R_8yR4_Um-kI5ccw3Ao9cpgAAAFwW7zZQg","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2020-02-19 13:38:38 error: {"error":"invalid_grant","error_description":"authorization code not found for code=TkSqD9Af7kIEw8pAtvlB330_fkQE8gleTE9j7AgKlbrLugVNyBt0R_8yR4_Um-kI5ccw3Ao9cpgAAAFwW7zZQg"}
+2020-02-19 13:38:43 info: ::ffff:127.0.0.1 - - [19/Feb/2020:04:38:43 +0000] "POST /api/kakao/ HTTP/1.1" - - "http://localhost:3000/oauth?code=TkSqD9Af7kIEw8pAtvlB330_fkQE8gleTE9j7AgKlbrLugVNyBt0R_8yR4_Um-kI5ccw3Ao9cpgAAAFwW7zZQg" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 13:38:47 info: PARAM {"0":"kakao/"} | BODY {"code":"sI7VLbh7nEQXNj8VbuAM0t9uyOQoiphRK0E18Rjll0K0NlFNPgx-MmepTsYK4DuuwLNi2QopcSEAAAFwW73Bug","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2020-02-19 13:38:48 info: ::ffff:127.0.0.1 - - [19/Feb/2020:04:38:48 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=sI7VLbh7nEQXNj8VbuAM0t9uyOQoiphRK0E18Rjll0K0NlFNPgx-MmepTsYK4DuuwLNi2QopcSEAAAFwW73Bug" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 13:38:48 info: PARAM {"0":"kakao/me"} | BODY {"token":"SWShHPIPV13vZH8fr60r70D3mULXsohxblaLhQo9c04AAAFwW73D3A"}
+2020-02-19 13:38:48 error: {"msg":"application(id=321638, name='swna') using deprecated api(/v1/user/me)","code":-9}
+2020-02-19 13:39:31 info: Check out the app at http://localhost:4000
+2020-02-19 13:39:33 error: uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (internal/stream_base_commons.js:78:25)
+    at writeGeneric (internal/stream_base_commons.js:73:3)
+    at WriteStream.Socket._writeGeneric (net.js:707:5)
+    at WriteStream.Socket._write (net.js:719:8)
+    at doWrite (_stream_writable.js:410:12)
+    at writeOrBuffer (_stream_writable.js:394:5)
+    at WriteStream.Writable.write (_stream_writable.js:294:11)
+    at Console.log (d:\swna\react-app\node_modules\winston\lib\winston\transports\console.js:79:23)
+    at Console._write (d:\swna\react-app\node_modules\winston-transport\index.js:102:17)
+    at doWrite (d:\swna\react-app\node_modules\readable-stream\lib\_stream_writable.js:428:64)
+    at writeOrBuffer (d:\swna\react-app\node_modules\readable-stream\lib\_stream_writable.js:417:5)
+    at Console.Writable.write (d:\swna\react-app\node_modules\readable-stream\lib\_stream_writable.js:334:11)
+    at DerivedLogger.ondata (d:\swna\react-app\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:662:20)
+    at DerivedLogger.emit (events.js:194:15)
+    at DerivedLogger.EventEmitter.emit (domain.js:441:20)
+    at addChunk (d:\swna\react-app\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:297:12)
+2020-02-19 13:42:13 error: uncaughtException: listen EADDRINUSE: address already in use :::4000
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (net.js:1277:14)
+    at listenInCluster (net.js:1325:12)
+    at Server.listen (net.js:1412:7)
+    at Function.listen (d:\swna\react-app\node_modules\express\lib\application.js:618:24)
+    at Object.<anonymous> (d:/swna/react-app/server/main.js:67:5)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at loader (d:\swna\react-app\node_modules\babel-register\lib\node.js:144:5)
+    at Object.require.extensions.(anonymous function) [as .js] (d:\swna\react-app\node_modules\babel-register\lib\node.js:154:7)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:742:12)
+    at Object.<anonymous> (d:\swna\react-app\node_modules\babel-cli\lib\_babel-node.js:154:22)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+2020-02-19 13:42:15 info: Connected to mongodb server
+2020-02-19 13:42:24 info: PARAM {"0":"kakao/"} | BODY {"code":"x7YNCJJBFZCzg1snfJXpIQ4D-AtYgjRFfmkwHmO0piHUyDt53v7XreA_huA7si4mKtYqrwo9dJkAAAFwW8ENEg","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2020-02-19 13:42:24 error: uncaughtException: Cannot call write after a stream was destroyed
+Error [ERR_STREAM_DESTROYED]: Cannot call write after a stream was destroyed
+    at doWrite (_stream_writable.js:406:19)
+    at writeOrBuffer (_stream_writable.js:394:5)
+    at WriteStream.Writable.write (_stream_writable.js:294:11)
+    at Array.logRequest (d:\swna\react-app\node_modules\morgan\index.js:130:14)
+    at listener (d:\swna\react-app\node_modules\on-finished\index.js:169:15)
+    at onFinish (d:\swna\react-app\node_modules\on-finished\index.js:100:5)
+    at callback (d:\swna\react-app\node_modules\ee-first\index.js:55:10)
+    at ServerResponse.onevent (d:\swna\react-app\node_modules\ee-first\index.js:93:5)
+    at ServerResponse.emit (events.js:194:15)
+    at ServerResponse.EventEmitter.emit (domain.js:441:20)
+    at onFinish (_http_outgoing.js:671:10)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2020-02-19 13:42:24 info: PARAM {"0":"kakao/me"} | BODY {"token":"wJ_66v9mu-GY8rQrOrA35TIRguXyi83k6FnMZAopcBMAAAFwW8ERNA"}
+2020-02-19 13:42:24 error: {"msg":"application(id=321638, name='swna') using deprecated api(/v1/user/me)","code":-9}
+2020-02-19 13:42:51 error: uncaughtException: Cannot call write after a stream was destroyed
+Error [ERR_STREAM_DESTROYED]: Cannot call write after a stream was destroyed
+    at doWrite (_stream_writable.js:406:19)
+    at writeOrBuffer (_stream_writable.js:394:5)
+    at WriteStream.Writable.write (_stream_writable.js:294:11)
+    at Array.logRequest (d:\swna\react-app\node_modules\morgan\index.js:130:14)
+    at listener (d:\swna\react-app\node_modules\on-finished\index.js:169:15)
+    at onFinish (d:\swna\react-app\node_modules\on-finished\index.js:100:5)
+    at callback (d:\swna\react-app\node_modules\ee-first\index.js:55:10)
+    at Socket.onevent (d:\swna\react-app\node_modules\ee-first\index.js:93:5)
+    at Socket.emit (events.js:194:15)
+    at Socket.EventEmitter.emit (domain.js:441:20)
+    at emitErrorNT (internal/streams/destroy.js:82:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2020-02-19 13:43:01 info: Check out the app at http://localhost:4000
+2020-02-19 13:43:03 info: Connected to mongodb server
+2020-02-19 13:43:44 info: PARAM {"0":"kakao/"} | BODY {"code":"8pLrXrJJ-63Iu0tFf904Q8pi-0yu2toaBKLPNxEFRxkUC3SWlPc1_A054msdEHlvWtpWnwo9cuoAAAFwW8JGoQ","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2020-02-19 13:43:44 info: ::ffff:127.0.0.1 - - [19/Feb/2020:04:43:44 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=8pLrXrJJ-63Iu0tFf904Q8pi-0yu2toaBKLPNxEFRxkUC3SWlPc1_A054msdEHlvWtpWnwo9cuoAAAFwW8JGoQ" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 13:43:44 info: PARAM {"0":"kakao/me"} | BODY {"token":"eNKaukOwxtiCi0g87zDZ7FpOMgW7c6P3n_COpgo9c00AAAFwW8JJoQ"}
+2020-02-19 13:43:44 error: {"msg":"application(id=321638, name='swna') using deprecated api(/v1/user/me)","code":-9}
+2020-02-19 13:45:38 info: Check out the app at http://localhost:4000
+2020-02-19 13:45:40 info: Connected to mongodb server
+2020-02-19 13:45:56 info: PARAM {"0":"kakao/"} | BODY {"code":"DA4K9rwAvynowTfIary0UelybswXjvY3tOgTM1vf2kVxnztwp_6xl6jaKPaNjEH7zTDsNgo9dZwAAAFwW8RMMA","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2020-02-19 13:45:56 info: ::ffff:127.0.0.1 - - [19/Feb/2020:04:45:56 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=DA4K9rwAvynowTfIary0UelybswXjvY3tOgTM1vf2kVxnztwp_6xl6jaKPaNjEH7zTDsNgo9dZwAAAFwW8RMMA" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 13:45:56 info: PARAM {"0":"kakao/me"} | BODY {"token":"z_iAvV7A1drWSxXn0fvrLmvfGUklcn3_F0L9SAo9c04AAAFwW8RO_Q"}
+2020-02-19 13:45:56 error: {"msg":"application(id=321638, name='swna') using deprecated api(/v1/user/me)","code":-9}
+2020-02-19 13:46:09 info: Check out the app at http://localhost:4000
+2020-02-19 13:46:11 info: Connected to mongodb server
+2020-02-19 13:46:17 info: PARAM {"0":"kakao/"} | BODY {"code":"78RYlyJgucd03pl5f-k93g-L9M5zLYhNoLu4DAqapg4obYQDJbux-SkRJLKhhojqx7Fj7go9dZwAAAFwW8ScKA","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2020-02-19 13:46:17 info: ::ffff:127.0.0.1 - - [19/Feb/2020:04:46:17 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=78RYlyJgucd03pl5f-k93g-L9M5zLYhNoLu4DAqapg4obYQDJbux-SkRJLKhhojqx7Fj7go9dZwAAAFwW8ScKA" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 13:46:17 info: PARAM {"0":"kakao/me"} | BODY {"token":"fyEYnEK6E-o3ZHSc3lo1tnU9hPOR_B_rgdyE3gopcNIAAAFwW8SesA"}
+2020-02-19 13:46:17 error: {"msg":"application(id=321638, name='swna') using deprecated api(/v1/user/me)","code":-9}
+2020-02-19 13:46:46 info: Check out the app at http://localhost:4000
+2020-02-19 13:46:48 info: Connected to mongodb server
+2020-02-19 13:46:54 info: PARAM {"0":"kakao/"} | BODY {"code":"dszGUG7wDu25TQQqz3GILV9QMOw5fNPLw-x8vRMSqzyUG2wkQE7bcIbxnI9TuFDBknquAwo9dNsAAAFwW8UteA","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2020-02-19 13:46:54 info: ::ffff:127.0.0.1 - - [19/Feb/2020:04:46:54 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=dszGUG7wDu25TQQqz3GILV9QMOw5fNPLw-x8vRMSqzyUG2wkQE7bcIbxnI9TuFDBknquAwo9dNsAAAFwW8UteA" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 13:46:54 info: PARAM {"0":"kakao/me"} | BODY {"token":"L0Wa2iWn0qt1uV2jAYiT1CKUdosHDn4PSH1JgQopcFAAAAFwW8UwRA"}
+2020-02-19 13:46:54 error: {"msg":"application(id=321638, name='swna') using deprecated api(/v1/user/me)","code":-9}
+2020-02-19 13:48:54 info: ::ffff:127.0.0.1 - - [19/Feb/2020:04:48:54 +0000] "POST /api/kakao/me HTTP/1.1" - - "http://localhost:3000/oauth?code=dszGUG7wDu25TQQqz3GILV9QMOw5fNPLw-x8vRMSqzyUG2wkQE7bcIbxnI9TuFDBknquAwo9dNsAAAFwW8UteA" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 13:48:54 info: PARAM {"0":"kakao/me"} | BODY {"token":"L0Wa2iWn0qt1uV2jAYiT1CKUdosHDn4PSH1JgQopcFAAAAFwW8UwRA"}
+2020-02-19 13:48:54 error: {"msg":"application(id=321638, name='swna') using deprecated api(/v1/user/me)","code":-9}
+2020-02-19 13:50:54 info: ::ffff:127.0.0.1 - - [19/Feb/2020:04:50:54 +0000] "POST /api/kakao/me HTTP/1.1" - - "http://localhost:3000/oauth?code=dszGUG7wDu25TQQqz3GILV9QMOw5fNPLw-x8vRMSqzyUG2wkQE7bcIbxnI9TuFDBknquAwo9dNsAAAFwW8UteA" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 13:54:54 info: PARAM {"0":"kakao/"} | BODY {"code":"9yjl_xLECKBFXDgrnynusw41wVATpJgtXNQvQQhHh5LgNkrODjHaSXS71IgduKA4zJAsNwo9dJgAAAFwW8yBrw","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2020-02-19 13:54:54 info: ::ffff:127.0.0.1 - - [19/Feb/2020:04:54:54 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=9yjl_xLECKBFXDgrnynusw41wVATpJgtXNQvQQhHh5LgNkrODjHaSXS71IgduKA4zJAsNwo9dJgAAAFwW8yBrw" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 13:54:54 info: PARAM {"0":"kakao/me"} | BODY {"token":"F3yafgnxQHx8qSXbxGBdP2RR-1-SbWODue9GCQopyNoAAAFwW8yEXw"}
+2020-02-19 13:54:54 error: {"msg":"application(id=321638, name='swna') using deprecated api(/v1/user/me)","code":-9}
+2020-02-19 13:56:54 info: ::ffff:127.0.0.1 - - [19/Feb/2020:04:56:54 +0000] "POST /api/kakao/me HTTP/1.1" - - "http://localhost:3000/oauth?code=9yjl_xLECKBFXDgrnynusw41wVATpJgtXNQvQQhHh5LgNkrODjHaSXS71IgduKA4zJAsNwo9dJgAAAFwW8yBrw" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 13:56:55 info: PARAM {"0":"kakao/me"} | BODY {"token":"F3yafgnxQHx8qSXbxGBdP2RR-1-SbWODue9GCQopyNoAAAFwW8yEXw"}
+2020-02-19 13:56:55 error: {"msg":"application(id=321638, name='swna') using deprecated api(/v1/user/me)","code":-9}
+2020-02-19 13:57:17 info: Check out the app at http://localhost:4000
+2020-02-19 13:57:19 info: Connected to mongodb server
+2020-02-19 13:57:27 info: PARAM {"0":"kakao/"} | BODY {"code":"KmlrHJPYa5b-16ofaFIwaN_S67b-RUGgF8rNrMsI5JD76SJSHep4OgfGL307pYrfS3c5jwo9dZoAAAFwW87VXQ","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2020-02-19 13:57:27 info: ::ffff:127.0.0.1 - - [19/Feb/2020:04:57:27 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=KmlrHJPYa5b-16ofaFIwaN_S67b-RUGgF8rNrMsI5JD76SJSHep4OgfGL307pYrfS3c5jwo9dZoAAAFwW87VXQ" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 13:57:27 info: PARAM {"0":"kakao/me"} | BODY {"token":"L-67qHmta1wAgfKrRJXULZk4R5AmAwqx9pAbcgopcSEAAAFwW87YyA"}
+2020-02-19 13:57:27 info: ::ffff:127.0.0.1 - - [19/Feb/2020:04:57:27 +0000] "POST /api/kakao/me HTTP/1.1" 200 113 "http://localhost:3000/oauth?code=KmlrHJPYa5b-16ofaFIwaN_S67b-RUGgF8rNrMsI5JD76SJSHep4OgfGL307pYrfS3c5jwo9dZoAAAFwW87VXQ" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 13:57:27 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2020-02-19 13:57:27 info: ::ffff:127.0.0.1 - - [19/Feb/2020:04:57:27 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/oauth?code=KmlrHJPYa5b-16ofaFIwaN_S67b-RUGgF8rNrMsI5JD76SJSHep4OgfGL307pYrfS3c5jwo9dZoAAAFwW87VXQ" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 13:57:28 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 13:57:28 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2020-02-19 13:57:28 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 13:57:28 info: ::ffff:127.0.0.1 - - [19/Feb/2020:04:57:28 +0000] "GET /api/image/1112482398/main HTTP/1.1" 200 504 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 13:57:30 info: ::ffff:127.0.0.1 - - [19/Feb/2020:04:57:30 +0000] "GET /api/userinfo/1112482398 HTTP/1.1" 200 578 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 13:57:32 info: ::ffff:127.0.0.1 - - [19/Feb/2020:04:57:32 +0000] "GET /api/image/1112482398/gallery HTTP/1.1" 200 4057 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 13:57:57 info: Check out the app at http://localhost:4000
+2020-02-19 13:57:59 info: Connected to mongodb server
+2020-02-19 15:11:43 info: Check out the app at http://localhost:4000
+2020-02-19 15:11:45 info: Connected to mongodb server
+2020-02-19 15:12:23 info: PARAM {"0":"kakao/"} | BODY {"code":"-PIjJPO41_2R-1laAAGY-Yw8m-zecm3WnK6eZVAlDmSCKU0kSFnhDnK_hun93jPIZO9Z0AorDNQAAAFwXBNs9A","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2020-02-19 15:12:23 info: ::ffff:127.0.0.1 - - [19/Feb/2020:06:12:23 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=-PIjJPO41_2R-1laAAGY-Yw8m-zecm3WnK6eZVAlDmSCKU0kSFnhDnK_hun93jPIZO9Z0AorDNQAAAFwXBNs9A" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:12:23 info: PARAM {"0":"kakao/me"} | BODY {"token":"3FnEPNMl1o22EBEL6kXlRr_lGsjrOde13en8Pgo9dZoAAAFwXBNz-w"}
+2020-02-19 15:12:23 info: ::ffff:127.0.0.1 - - [19/Feb/2020:06:12:23 +0000] "POST /api/kakao/me HTTP/1.1" 200 113 "http://localhost:3000/oauth?code=-PIjJPO41_2R-1laAAGY-Yw8m-zecm3WnK6eZVAlDmSCKU0kSFnhDnK_hun93jPIZO9Z0AorDNQAAAFwXBNs9A" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:12:24 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2020-02-19 15:12:24 info: ::ffff:127.0.0.1 - - [19/Feb/2020:06:12:24 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/oauth?code=-PIjJPO41_2R-1laAAGY-Yw8m-zecm3WnK6eZVAlDmSCKU0kSFnhDnK_hun93jPIZO9Z0AorDNQAAAFwXBNs9A" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:12:24 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:12:24 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2020-02-19 15:12:24 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:13:18 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:13:18 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2020-02-19 15:13:18 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2020-02-19 15:13:18 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:13:18 info: ::ffff:127.0.0.1 - - [19/Feb/2020:06:13:18 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:14:36 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:14:36 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2020-02-19 15:14:36 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:14:37 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2020-02-19 15:14:37 info: ::ffff:127.0.0.1 - - [19/Feb/2020:06:14:37 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:20:38 info: Check out the app at http://localhost:80
+2020-02-19 15:20:40 info: Connected to mongodb server
+2020-02-19 15:20:55 info: ::1 - - [19/Feb/2020:06:20:55 +0000] "GET / HTTP/1.1" 200 2371 "-" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:20:55 info: ::1 - - [19/Feb/2020:06:20:55 +0000] "GET /static/css/2.9779a509.chunk.css HTTP/1.1" 200 11210 "http://localhost/" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:20:55 info: ::1 - - [19/Feb/2020:06:20:55 +0000] "GET /static/js/main.b127add3.chunk.js HTTP/1.1" 200 81909 "http://localhost/" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:20:55 info: ::1 - - [19/Feb/2020:06:20:55 +0000] "GET /static/js/2.304a1082.chunk.js HTTP/1.1" 200 674004 "http://localhost/" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:20:56 info: ::1 - - [19/Feb/2020:06:20:56 +0000] "GET /Main HTTP/1.1" 200 2371 "http://localhost/" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:20:56 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:20:56 info: ::1 - - [19/Feb/2020:06:20:56 +0000] "GET /api/image/1112482398/main HTTP/1.1" 200 504 "http://localhost/Main" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:20:56 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2020-02-19 15:20:57 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:20:57 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2020-02-19 15:20:57 info: ::1 - - [19/Feb/2020:06:20:57 +0000] "POST /api/kakao/getinfo HTTP/1.1" 401 11 "http://localhost/Main" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:20:57 info: ::1 - - [19/Feb/2020:06:20:57 +0000] "GET /api/userinfo/1112482398 HTTP/1.1" 200 578 "http://localhost/Main" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:20:59 info: ::1 - - [19/Feb/2020:06:20:59 +0000] "GET /api/image/1112482398/gallery HTTP/1.1" 200 4057 "http://localhost/Main" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:20:59 info: ::1 - - [19/Feb/2020:06:20:59 +0000] "GET /favicon.ico HTTP/1.1" 200 3870 "http://localhost/" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:21:00 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:21:00 +0000] "GET /oauth?code=wYC6cParuwtQiWVI82Wpbieik05QAhvItPpOyJJ2SkXtdqkwdWaHqBXdmUbbEx_nAdBgjQopyNgAAAFwXBtXLg HTTP/1.1" 200 2371 "http://localhost/" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:21:00 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:21:00 +0000] "GET /static/css/2.9779a509.chunk.css HTTP/1.1" 200 11210 "http://172.30.1.44/oauth?code=wYC6cParuwtQiWVI82Wpbieik05QAhvItPpOyJJ2SkXtdqkwdWaHqBXdmUbbEx_nAdBgjQopyNgAAAFwXBtXLg" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:21:00 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:21:00 +0000] "GET /static/js/main.b127add3.chunk.js HTTP/1.1" 200 81909 "http://172.30.1.44/oauth?code=wYC6cParuwtQiWVI82Wpbieik05QAhvItPpOyJJ2SkXtdqkwdWaHqBXdmUbbEx_nAdBgjQopyNgAAAFwXBtXLg" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:21:01 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:21:00 +0000] "GET /static/js/2.304a1082.chunk.js HTTP/1.1" 200 674004 "http://172.30.1.44/oauth?code=wYC6cParuwtQiWVI82Wpbieik05QAhvItPpOyJJ2SkXtdqkwdWaHqBXdmUbbEx_nAdBgjQopyNgAAAFwXBtXLg" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:21:01 info: PARAM {"0":"kakao/"} | BODY {"code":"wYC6cParuwtQiWVI82Wpbieik05QAhvItPpOyJJ2SkXtdqkwdWaHqBXdmUbbEx_nAdBgjQopyNgAAAFwXBtXLg","redirectUrl":"http://172.30.1.44/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2020-02-19 15:21:01 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:21:01 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://172.30.1.44/oauth?code=wYC6cParuwtQiWVI82Wpbieik05QAhvItPpOyJJ2SkXtdqkwdWaHqBXdmUbbEx_nAdBgjQopyNgAAAFwXBtXLg" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:21:01 info: PARAM {"0":"kakao/me"} | BODY {"token":"0lEvfRP2cz3n9z6YwVLWh1pKvxgXk_xfB6YIKgopcFAAAAFwXBtbrw"}
+2020-02-19 15:21:01 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:21:01 +0000] "GET /favicon.ico HTTP/1.1" 200 3870 "http://172.30.1.44/oauth?code=wYC6cParuwtQiWVI82Wpbieik05QAhvItPpOyJJ2SkXtdqkwdWaHqBXdmUbbEx_nAdBgjQopyNgAAAFwXBtXLg" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:21:01 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:21:01 +0000] "POST /api/kakao/me HTTP/1.1" 200 113 "http://172.30.1.44/oauth?code=wYC6cParuwtQiWVI82Wpbieik05QAhvItPpOyJJ2SkXtdqkwdWaHqBXdmUbbEx_nAdBgjQopyNgAAAFwXBtXLg" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:21:02 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2020-02-19 15:21:02 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:21:02 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://172.30.1.44/oauth?code=wYC6cParuwtQiWVI82Wpbieik05QAhvItPpOyJJ2SkXtdqkwdWaHqBXdmUbbEx_nAdBgjQopyNgAAAFwXBtXLg" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:21:02 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:21:02 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2020-02-19 15:21:02 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:21:02 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:21:02 +0000] "GET /api/image/1112482398/main HTTP/1.1" 200 504 "http://172.30.1.44/Main" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:21:02 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:21:02 +0000] "GET /api/userinfo/1112482398 HTTP/1.1" 200 578 "http://172.30.1.44/Main" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:21:02 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:21:02 +0000] "GET /api/image/1112482398/gallery HTTP/1.1" 200 4057 "http://172.30.1.44/Main" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:23:08 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:23:08 +0000] "GET / HTTP/1.1" 200 2371 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:23:08 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:23:08 +0000] "GET /static/css/2.9779a509.chunk.css HTTP/1.1" 200 11210 "http://172.30.1.44/" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:23:08 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:23:08 +0000] "GET /static/js/main.b127add3.chunk.js HTTP/1.1" 200 81909 "http://172.30.1.44/" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:23:08 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:23:08 +0000] "GET /static/js/2.304a1082.chunk.js HTTP/1.1" 200 674004 "http://172.30.1.44/" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:23:09 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:23:09 +0000] "GET /favicon.ico HTTP/1.1" 200 3870 "http://172.30.1.44/" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:23:14 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:23:14 +0000] "GET /oauth?code=JPz_RRcdBdXDspVQfrn2IykDIYvbKYpWDShwW9V-Y0SLSHVEuNiCaEM1zwZCvJdlYbq-YQo9cpgAAAFwXB1gjw HTTP/1.1" 200 2371 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:23:14 info: PARAM {"0":"kakao/"} | BODY {"code":"JPz_RRcdBdXDspVQfrn2IykDIYvbKYpWDShwW9V-Y0SLSHVEuNiCaEM1zwZCvJdlYbq-YQo9cpgAAAFwXB1gjw","redirectUrl":"http://172.30.1.44/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2020-02-19 15:23:14 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:23:14 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://172.30.1.44/oauth?code=JPz_RRcdBdXDspVQfrn2IykDIYvbKYpWDShwW9V-Y0SLSHVEuNiCaEM1zwZCvJdlYbq-YQo9cpgAAAFwXB1gjw" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:23:14 info: PARAM {"0":"kakao/me"} | BODY {"token":"Gwm8tmNCJo0HUtDArRH3kC4B03uKkRg0E3mdVwo9dZsAAAFwXB1iVg"}
+2020-02-19 15:23:14 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:23:14 +0000] "POST /api/kakao/me HTTP/1.1" 200 113 "http://172.30.1.44/oauth?code=JPz_RRcdBdXDspVQfrn2IykDIYvbKYpWDShwW9V-Y0SLSHVEuNiCaEM1zwZCvJdlYbq-YQo9cpgAAAFwXB1gjw" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:23:14 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2020-02-19 15:23:14 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:23:14 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://172.30.1.44/oauth?code=JPz_RRcdBdXDspVQfrn2IykDIYvbKYpWDShwW9V-Y0SLSHVEuNiCaEM1zwZCvJdlYbq-YQo9cpgAAAFwXB1gjw" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:23:14 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:23:14 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2020-02-19 15:23:14 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:23:14 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:23:14 +0000] "GET /api/userinfo/1112482398 HTTP/1.1" 200 578 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:23:15 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:23:15 +0000] "GET /api/image/1112482398/main HTTP/1.1" 200 504 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:23:16 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:23:16 +0000] "GET /api/image/1112482398/gallery HTTP/1.1" 200 4057 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:23:17 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2020-02-19 15:23:17 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2020-02-19 15:23:17 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:23:17 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://172.30.1.44/MapUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:06 info: PARAM {"0":"userinfo/"} | BODY {"data":{"searchValue":"꼬띠움웨딩컨벤션","addressName":"인천 남동구 간석3동 113-11","roadAddressName":"인천 남동구 백범로 364","placeName":"꼬띠움웨딩컨벤션","phone":"032-421-5888","x":"126.710748190126","y":"37.4661201441239","addressName2":"401호","marryDateTime":"2020-05-05T13:00:26","bride":"이다은","groom":"나상욱","userid":1112482398}}
+2020-02-19 15:24:06 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:06 +0000] "POST /api/userinfo/ HTTP/1.1" 200 16 "http://172.30.1.44/MapUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:07 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:07 +0000] "GET /Main HTTP/1.1" 200 2371 "http://172.30.1.44/MapUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:08 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:24:08 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2020-02-19 15:24:08 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:08 +0000] "GET /api/userinfo/1112482398 HTTP/1.1" 200 561 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:08 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2020-02-19 15:24:08 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:24:08 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:08 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:09 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2020-02-19 15:24:09 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:09 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:09 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:24:09 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:24:09 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:24:09 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:09 +0000] "GET /uploads/image/1112482398/fc3e079a34bcfd4fbcb0cbfb5baf1ca38885.jpeg HTTP/1.1" 200 71567 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:09 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:09 +0000] "GET /uploads/image/1112482398/7d7d4e1539404470ab08c25bd924fe51541a_thumb.jpeg HTTP/1.1" 200 13764 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:09 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:09 +0000] "GET /uploads/image/1112482398/9fe7f24a4425f17aa7079e2e017c7dacc4b1_thumb.jpeg HTTP/1.1" 200 14334 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:09 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:09 +0000] "GET /uploads/image/1112482398/24bc36c9f2e9c46d906339ab9cf5f6e8feed_thumb.jpeg HTTP/1.1" 200 13532 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:09 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:09 +0000] "GET /uploads/image/1112482398/40cc3ed7c53fc36496e8692e7c6473681f8d_thumb.jpeg HTTP/1.1" 200 13466 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:09 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:09 +0000] "GET /uploads/image/1112482398/63b746b576007ac0401e725ab9b305770503_thumb.jpeg HTTP/1.1" 200 15150 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:09 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:09 +0000] "GET /uploads/image/1112482398/928066d0f4a2d69162108fb012cd89d3c7a9_thumb.jpeg HTTP/1.1" 200 15123 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:09 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:09 +0000] "GET /uploads/image/1112482398/f59b77542937342e5c4cc2028a709ddcf116_thumb.jpeg HTTP/1.1" 200 16065 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:09 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:09 +0000] "GET /uploads/image/1112482398/a47a71bc411b37590b56cff65854f4aec996_thumb.jpeg HTTP/1.1" 200 14334 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:30 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:30 +0000] "GET /uploads/image/1112482398/7d7d4e1539404470ab08c25bd924fe51541a.jpeg HTTP/1.1" 200 221898 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:31 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:24:31 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:31 +0000] "DELETE /api/image/1112482398/main HTTP/1.1" 200 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:31 error: uncaughtException: ENOENT: no such file or directory, unlink 'D:\swna\react-app\uploads\image\1112482398\fc3e079a34bcfd4fbcb0cbfb5baf1ca38885_thumb.jpeg'
+Error: ENOENT: no such file or directory, unlink 'D:\swna\react-app\uploads\image\1112482398\fc3e079a34bcfd4fbcb0cbfb5baf1ca38885_thumb.jpeg'
+2020-02-19 15:24:31 info: uploads\image\1112482398\fc3e079a34bcfd4fbcb0cbfb5baf1ca38885.jpeg was deleted
+2020-02-19 15:24:31 info: PARAM {"0":"image/"} | BODY {}
+2020-02-19 15:24:31 info: [{"fieldname":"file","originalname":"E025A69E-1715-4274-B10B-AC4C5CB8A766.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"53feade0a81f62c9556efa72bf9cc2869d32.jpeg","path":"uploads\\image\\1112482398\\53feade0a81f62c9556efa72bf9cc2869d32.jpeg","size":99036}]
+2020-02-19 15:24:31 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:31 +0000] "POST /api/image/ HTTP/1.1" 200 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:32 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:32 +0000] "GET /ImageUpload HTTP/1.1" 200 2371 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:32 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2020-02-19 15:24:32 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2020-02-19 15:24:33 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:33 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:33 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:33 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:33 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:24:33 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:24:33 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:33 +0000] "GET /api/image/1112482398/main HTTP/1.1" 200 504 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:33 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:33 +0000] "GET /api/image/1112482398/gallery HTTP/1.1" 200 4057 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:33 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:33 +0000] "GET /uploads/image/1112482398/53feade0a81f62c9556efa72bf9cc2869d32.jpeg HTTP/1.1" 200 99036 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:57 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:24:57 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:57 +0000] "DELETE /api/image/1112482398/gallery HTTP/1.1" 200 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:57 info: uploads/image/1112482398/928066d0f4a2d69162108fb012cd89d3c7a9_thumb.jpeg was deleted
+2020-02-19 15:24:57 info: uploads/image/1112482398/40cc3ed7c53fc36496e8692e7c6473681f8d_thumb.jpeg was deleted
+2020-02-19 15:24:57 info: uploads\image\1112482398\40cc3ed7c53fc36496e8692e7c6473681f8d.jpeg was deleted
+2020-02-19 15:24:57 info: uploads\image\1112482398\928066d0f4a2d69162108fb012cd89d3c7a9.jpeg was deleted
+2020-02-19 15:24:57 info: uploads/image/1112482398/f59b77542937342e5c4cc2028a709ddcf116_thumb.jpeg was deleted
+2020-02-19 15:24:57 info: uploads\image\1112482398\7d7d4e1539404470ab08c25bd924fe51541a.jpeg was deleted
+2020-02-19 15:24:57 info: uploads\image\1112482398\f59b77542937342e5c4cc2028a709ddcf116.jpeg was deleted
+2020-02-19 15:24:57 info: uploads/image/1112482398/7d7d4e1539404470ab08c25bd924fe51541a_thumb.jpeg was deleted
+2020-02-19 15:24:57 info: uploads/image/1112482398/24bc36c9f2e9c46d906339ab9cf5f6e8feed_thumb.jpeg was deleted
+2020-02-19 15:24:57 info: uploads\image\1112482398\24bc36c9f2e9c46d906339ab9cf5f6e8feed.jpeg was deleted
+2020-02-19 15:24:57 info: uploads/image/1112482398/a47a71bc411b37590b56cff65854f4aec996_thumb.jpeg was deleted
+2020-02-19 15:24:57 info: uploads\image\1112482398\a47a71bc411b37590b56cff65854f4aec996.jpeg was deleted
+2020-02-19 15:24:57 info: uploads/image/1112482398/9fe7f24a4425f17aa7079e2e017c7dacc4b1_thumb.jpeg was deleted
+2020-02-19 15:24:57 info: uploads\image\1112482398\9fe7f24a4425f17aa7079e2e017c7dacc4b1.jpeg was deleted
+2020-02-19 15:24:57 info: uploads\image\1112482398\63b746b576007ac0401e725ab9b305770503.jpeg was deleted
+2020-02-19 15:24:57 info: uploads/image/1112482398/63b746b576007ac0401e725ab9b305770503_thumb.jpeg was deleted
+2020-02-19 15:24:57 info: PARAM {"0":"image/"} | BODY {}
+2020-02-19 15:24:57 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\7d7d4e1539404470ab08c25bd924fe51541a.jpeg'
+2020-02-19 15:24:57 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:57 +0000] "GET /uploads/image/1112482398/7d7d4e1539404470ab08c25bd924fe51541a.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:57 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\7d7d4e1539404470ab08c25bd924fe51541a.jpeg'
+2020-02-19 15:24:57 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:57 +0000] "GET /uploads/image/1112482398/7d7d4e1539404470ab08c25bd924fe51541a.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:57 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\7d7d4e1539404470ab08c25bd924fe51541a.jpeg'
+2020-02-19 15:24:58 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:57 +0000] "GET /uploads/image/1112482398/7d7d4e1539404470ab08c25bd924fe51541a.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:58 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\7d7d4e1539404470ab08c25bd924fe51541a.jpeg'
+2020-02-19 15:24:58 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:58 +0000] "GET /uploads/image/1112482398/7d7d4e1539404470ab08c25bd924fe51541a.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:58 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\7d7d4e1539404470ab08c25bd924fe51541a.jpeg'
+2020-02-19 15:24:58 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:58 +0000] "GET /uploads/image/1112482398/7d7d4e1539404470ab08c25bd924fe51541a.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:58 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\7d7d4e1539404470ab08c25bd924fe51541a.jpeg'
+2020-02-19 15:24:58 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:58 +0000] "GET /uploads/image/1112482398/7d7d4e1539404470ab08c25bd924fe51541a.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:58 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\7d7d4e1539404470ab08c25bd924fe51541a.jpeg'
+2020-02-19 15:24:58 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:58 +0000] "GET /uploads/image/1112482398/7d7d4e1539404470ab08c25bd924fe51541a.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:59 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\7d7d4e1539404470ab08c25bd924fe51541a.jpeg'
+2020-02-19 15:24:59 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:59 +0000] "GET /uploads/image/1112482398/7d7d4e1539404470ab08c25bd924fe51541a.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:59 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\7d7d4e1539404470ab08c25bd924fe51541a.jpeg'
+2020-02-19 15:24:59 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:59 +0000] "GET /uploads/image/1112482398/7d7d4e1539404470ab08c25bd924fe51541a.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:59 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\7d7d4e1539404470ab08c25bd924fe51541a.jpeg'
+2020-02-19 15:24:59 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:59 +0000] "GET /uploads/image/1112482398/7d7d4e1539404470ab08c25bd924fe51541a.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:59 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\7d7d4e1539404470ab08c25bd924fe51541a.jpeg'
+2020-02-19 15:24:59 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:59 +0000] "GET /uploads/image/1112482398/7d7d4e1539404470ab08c25bd924fe51541a.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:24:59 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\7d7d4e1539404470ab08c25bd924fe51541a.jpeg'
+2020-02-19 15:24:59 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:24:59 +0000] "GET /uploads/image/1112482398/7d7d4e1539404470ab08c25bd924fe51541a.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:00 info: [{"fieldname":"file","originalname":"94F8BCE0-598C-4328-AF39-4A8790734D0B.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"f2c171c7fd87e62bd1f6bca68b22ed4801e1.jpeg","path":"uploads\\image\\1112482398\\f2c171c7fd87e62bd1f6bca68b22ed4801e1.jpeg","size":184812},{"fieldname":"file","originalname":"CDA02709-E0CE-4569-8EC7-CF7CCFF6F737.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"746a4be27eeea47d661a927d15de7a41d28c.jpeg","path":"uploads\\image\\1112482398\\746a4be27eeea47d661a927d15de7a41d28c.jpeg","size":173815},{"fieldname":"file","originalname":"063FF002-92BF-4284-877F-1EFBD7186E67.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"2a2abc0180eafe7a200a598419053fc086d5.jpeg","path":"uploads\\image\\1112482398\\2a2abc0180eafe7a200a598419053fc086d5.jpeg","size":178993},{"fieldname":"file","originalname":"673DC9FF-A2F9-49EF-AAFD-2474DD2CF076.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"b7ba77ca2a4caccebd2b7db69e5bd4496d92.jpeg","path":"uploads\\image\\1112482398\\b7ba77ca2a4caccebd2b7db69e5bd4496d92.jpeg","size":202557},{"fieldname":"file","originalname":"C291322E-6FB3-4A0E-923A-2F7B0F590A30.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"735e34202a488162b835a164969ae28a3368.jpeg","path":"uploads\\image\\1112482398\\735e34202a488162b835a164969ae28a3368.jpeg","size":216065},{"fieldname":"file","originalname":"D7D5FCE9-7448-41DB-B080-04E684F814ED.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"c07475f39b0dbd42a46a3a476097d6533a4c.jpeg","path":"uploads\\image\\1112482398\\c07475f39b0dbd42a46a3a476097d6533a4c.jpeg","size":192624},{"fieldname":"file","originalname":"0CFA1128-8BE2-41BB-A361-EA57EFD52BE5.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"6720e85b1d73af4ad996bec9f082c841e668.jpeg","path":"uploads\\image\\1112482398\\6720e85b1d73af4ad996bec9f082c841e668.jpeg","size":175698},{"fieldname":"file","originalname":"0BFFFF84-A24F-40FB-83CA-F4C9251C7C8E.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"14017fbfa8e4b33a96858dedaa07769e9553.jpeg","path":"uploads\\image\\1112482398\\14017fbfa8e4b33a96858dedaa07769e9553.jpeg","size":182684},{"fieldname":"file","originalname":"4772B90F-1E80-435E-AB79-D0B18F579721.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"eed6574d5e6ffa932a3e790ec46f8969ed69.jpeg","path":"uploads\\image\\1112482398\\eed6574d5e6ffa932a3e790ec46f8969ed69.jpeg","size":171482},{"fieldname":"file","originalname":"0F247A44-D41C-45A1-9B66-E072AE53C5CA.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"3057b7374488b12d4606b2c19c78967b2be2.jpeg","path":"uploads\\image\\1112482398\\3057b7374488b12d4606b2c19c78967b2be2.jpeg","size":185493},{"fieldname":"file","originalname":"1BC38724-6D43-4166-A56B-F844DC95E545.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"1d80c8a406a82138a0082000a2d1565e289c.jpeg","path":"uploads\\image\\1112482398\\1d80c8a406a82138a0082000a2d1565e289c.jpeg","size":197942},{"fieldname":"file","originalname":"2CD9F371-2B91-4BE5-9DBE-8C48F5BA6998.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"aa5e9b300c362b17217373702a44cf8df157.jpeg","path":"uploads\\image\\1112482398\\aa5e9b300c362b17217373702a44cf8df157.jpeg","size":174473}]
+2020-02-19 15:25:00 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:00 +0000] "POST /api/image/ HTTP/1.1" 200 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:01 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\7d7d4e1539404470ab08c25bd924fe51541a.jpeg'
+2020-02-19 15:25:01 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:01 +0000] "GET /uploads/image/1112482398/7d7d4e1539404470ab08c25bd924fe51541a.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:01 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:01 +0000] "GET /ImageUpload HTTP/1.1" 200 2371 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:02 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2020-02-19 15:25:02 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2020-02-19 15:25:02 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:02 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:02 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:02 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:02 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:25:02 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:25:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:04 +0000] "GET /api/image/1112482398/main HTTP/1.1" 200 504 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:04 +0000] "GET /api/image/1112482398/gallery HTTP/1.1" 200 6085 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:04 +0000] "GET /uploads/image/1112482398/14017fbfa8e4b33a96858dedaa07769e9553_thumb.jpeg HTTP/1.1" 200 11849 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:04 +0000] "GET /uploads/image/1112482398/2a2abc0180eafe7a200a598419053fc086d5_thumb.jpeg HTTP/1.1" 200 15183 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:04 +0000] "GET /uploads/image/1112482398/6720e85b1d73af4ad996bec9f082c841e668_thumb.jpeg HTTP/1.1" 200 11462 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:04 +0000] "GET /uploads/image/1112482398/3057b7374488b12d4606b2c19c78967b2be2_thumb.jpeg HTTP/1.1" 200 15919 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:04 +0000] "GET /uploads/image/1112482398/1d80c8a406a82138a0082000a2d1565e289c_thumb.jpeg HTTP/1.1" 200 14024 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:04 +0000] "GET /uploads/image/1112482398/aa5e9b300c362b17217373702a44cf8df157_thumb.jpeg HTTP/1.1" 200 13350 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:04 +0000] "GET /uploads/image/1112482398/eed6574d5e6ffa932a3e790ec46f8969ed69_thumb.jpeg HTTP/1.1" 200 15172 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:04 +0000] "GET /uploads/image/1112482398/f2c171c7fd87e62bd1f6bca68b22ed4801e1_thumb.jpeg HTTP/1.1" 200 14422 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:04 +0000] "GET /uploads/image/1112482398/b7ba77ca2a4caccebd2b7db69e5bd4496d92_thumb.jpeg HTTP/1.1" 200 17244 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:04 +0000] "GET /uploads/image/1112482398/735e34202a488162b835a164969ae28a3368_thumb.jpeg HTTP/1.1" 200 19006 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:04 +0000] "GET /uploads/image/1112482398/746a4be27eeea47d661a927d15de7a41d28c_thumb.jpeg HTTP/1.1" 200 13467 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:04 +0000] "GET /uploads/image/1112482398/c07475f39b0dbd42a46a3a476097d6533a4c_thumb.jpeg HTTP/1.1" 200 15810 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:04 +0000] "GET /uploads/image/1112482398/14017fbfa8e4b33a96858dedaa07769e9553.jpeg HTTP/1.1" 200 182684 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:28 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:25:28 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2020-02-19 15:25:28 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:25:43 info: PARAM {"0":"video/"} | BODY {}
+2020-02-19 15:25:45 info: [{"fieldname":"file","originalname":"trim.91CEBD7B-4884-4B41-8DF0-7F4C0B730DA3.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"uploads/video/temp/","filename":"dba311ffa7ebcccf18e768d775ddc80383eb.MOV","path":"uploads\\video\\temp\\dba311ffa7ebcccf18e768d775ddc80383eb.MOV","size":3880787}]
+2020-02-19 15:25:45 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:45 +0000] "POST /api/video/ HTTP/1.1" 200 319 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:45 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:45 +0000] "GET /uploads/video/temp/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 2 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:45 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:45 +0000] "GET /uploads/video/temp/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 3880787 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:45 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:45 +0000] "GET /uploads/video/temp/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 30547 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:25:48 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:25:48 +0000] "GET /uploads/video/temp/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 3806666 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:26:02 info: PARAM {"0":"video/save"} | BODY {"username":"나상","enterid":1112482398,"invitee":"나상욱","files":[{"fieldname":"file","originalname":"trim.91CEBD7B-4884-4B41-8DF0-7F4C0B730DA3.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"uploads/video/temp/","filename":"dba311ffa7ebcccf18e768d775ddc80383eb.MOV","path":"uploads\\video\\temp\\dba311ffa7ebcccf18e768d775ddc80383eb.MOV","size":3880787}]}
+2020-02-19 15:26:02 info: FILE MOVE : uploads\video\temp\dba311ffa7ebcccf18e768d775ddc80383eb.MOV --> uploads/video/1112482398/dba311ffa7ebcccf18e768d775ddc80383eb.MOV
+2020-02-19 15:26:02 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:02 +0000] "POST /api/video/save HTTP/1.1" 200 401 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:26:02 info: PARAM {"0":"kakao/send"} | BODY {"token":"Gwm8tmNCJo0HUtDArRH3kC4B03uKkRg0E3mdVwo9dZsAAAFwXB1iVg","data":{"object_type":"feed","content":{"title":"To. 나상욱","description":"결혼식에 초대합니다.","image_url":"http://172.30.1.44/uploads\\image\\1112482398\\53feade0a81f62c9556efa72bf9cc2869d32.jpeg","image_width":640,"image_height":640,"link":{"web_url":"http://172.30.1.44/Home/1112482398/나상욱/21","mobile_web_url":"http://172.30.1.44/Home/1112482398/나상욱/21","android_execution_params":"contentId=100","ios_execution_params":"contentId=100"}},"buttons":[{"title":"청첩장 열어보기","link":{"web_url":"http://172.30.1.44/Home/1112482398/나상욱/21","mobile_web_url":"http://172.30.1.44/Home/1112482398/나상욱/21"}}]}}
+2020-02-19 15:26:02 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:02 +0000] "POST /api/kakao/send HTTP/1.1" 200 17 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:26:04 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\7d7d4e1539404470ab08c25bd924fe51541a_thumb.jpeg'
+2020-02-19 15:26:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:04 +0000] "GET /uploads/image/1112482398/7d7d4e1539404470ab08c25bd924fe51541a_thumb.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:26:04 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\fc3e079a34bcfd4fbcb0cbfb5baf1ca38885.jpeg'
+2020-02-19 15:26:04 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\24bc36c9f2e9c46d906339ab9cf5f6e8feed_thumb.jpeg'
+2020-02-19 15:26:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:04 +0000] "GET /uploads/image/1112482398/fc3e079a34bcfd4fbcb0cbfb5baf1ca38885.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:26:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:04 +0000] "GET /uploads/image/1112482398/24bc36c9f2e9c46d906339ab9cf5f6e8feed_thumb.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:26:04 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\40cc3ed7c53fc36496e8692e7c6473681f8d_thumb.jpeg'
+2020-02-19 15:26:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:04 +0000] "GET /uploads/image/1112482398/40cc3ed7c53fc36496e8692e7c6473681f8d_thumb.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:26:04 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\9fe7f24a4425f17aa7079e2e017c7dacc4b1_thumb.jpeg'
+2020-02-19 15:26:05 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:04 +0000] "GET /uploads/image/1112482398/9fe7f24a4425f17aa7079e2e017c7dacc4b1_thumb.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:26:05 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2020-02-19 15:26:05 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\63b746b576007ac0401e725ab9b305770503_thumb.jpeg'
+2020-02-19 15:26:05 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\f59b77542937342e5c4cc2028a709ddcf116_thumb.jpeg'
+2020-02-19 15:26:05 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\928066d0f4a2d69162108fb012cd89d3c7a9_thumb.jpeg'
+2020-02-19 15:26:05 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:05 +0000] "GET /uploads/image/1112482398/63b746b576007ac0401e725ab9b305770503_thumb.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:26:05 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:05 +0000] "GET /uploads/image/1112482398/f59b77542937342e5c4cc2028a709ddcf116_thumb.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:26:05 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:05 +0000] "GET /uploads/image/1112482398/928066d0f4a2d69162108fb012cd89d3c7a9_thumb.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:26:05 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:05 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:26:05 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2020-02-19 15:26:05 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:26:05 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:26:05 error: Error: ENOENT: no such file or directory, stat 'D:\swna\react-app\uploads\image\1112482398\a47a71bc411b37590b56cff65854f4aec996_thumb.jpeg'
+2020-02-19 15:26:05 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:05 +0000] "GET /uploads/image/1112482398/a47a71bc411b37590b56cff65854f4aec996_thumb.jpeg HTTP/1.1" 500 16 "http://172.30.1.44/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:26:14 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:14 +0000] "GET /Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21 HTTP/1.1" 200 2371 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:15 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:15 +0000] "GET /static/css/2.9779a509.chunk.css HTTP/1.1" 200 11210 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:15 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:15 +0000] "GET /static/js/main.b127add3.chunk.js HTTP/1.1" 200 81909 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:15 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:15 +0000] "GET /static/js/2.304a1082.chunk.js HTTP/1.1" 200 674004 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:15 info: PARAM {"0":"video/1112482398/나상욱/21"} | BODY {}
+2020-02-19 15:26:15 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:26:15 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:26:15 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:15 +0000] "GET /api/video/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21 HTTP/1.1" 200 392 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:15 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:15 +0000] "GET /api/image/1112482398/main HTTP/1.1" 200 504 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:15 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:15 +0000] "GET /api/image/1112482398/gallery HTTP/1.1" 200 6085 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:15 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2020-02-19 15:26:15 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:15 +0000] "GET /api/userinfo/1112482398 HTTP/1.1" 200 561 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:15 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2020-02-19 15:26:15 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:15 +0000] "GET /api/memo/1112482398 HTTP/1.1" 200 1453 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:15 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:15 +0000] "GET /uploads/image/1112482398/53feade0a81f62c9556efa72bf9cc2869d32.jpeg HTTP/1.1" 200 99036 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:15 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:15 +0000] "GET /uploads/image/1112482398/14017fbfa8e4b33a96858dedaa07769e9553.jpeg HTTP/1.1" 200 182684 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:15 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:15 +0000] "GET /uploads/video/1112482398/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 2 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:16 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:16 +0000] "GET /uploads/video/1112482398/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 3880787 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:16 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:16 +0000] "GET /uploads/video/1112482398/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 30547 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:16 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:16 +0000] "GET /uploads/image/1112482398/2a2abc0180eafe7a200a598419053fc086d5_thumb.jpeg HTTP/1.1" 200 15183 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:16 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:16 +0000] "GET /uploads/image/1112482398/14017fbfa8e4b33a96858dedaa07769e9553_thumb.jpeg HTTP/1.1" 200 11849 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:16 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:16 +0000] "GET /uploads/image/1112482398/1d80c8a406a82138a0082000a2d1565e289c_thumb.jpeg HTTP/1.1" 200 14024 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:16 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:16 +0000] "GET /uploads/image/1112482398/6720e85b1d73af4ad996bec9f082c841e668_thumb.jpeg HTTP/1.1" 200 11462 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:16 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:16 +0000] "GET /uploads/image/1112482398/aa5e9b300c362b17217373702a44cf8df157_thumb.jpeg HTTP/1.1" 200 13350 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:16 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:16 +0000] "GET /uploads/image/1112482398/b7ba77ca2a4caccebd2b7db69e5bd4496d92_thumb.jpeg HTTP/1.1" 200 17244 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:16 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:16 +0000] "GET /uploads/image/1112482398/eed6574d5e6ffa932a3e790ec46f8969ed69_thumb.jpeg HTTP/1.1" 200 15172 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:16 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:16 +0000] "GET /uploads/image/1112482398/3057b7374488b12d4606b2c19c78967b2be2_thumb.jpeg HTTP/1.1" 200 15919 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:16 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:16 +0000] "GET /uploads/image/1112482398/f2c171c7fd87e62bd1f6bca68b22ed4801e1_thumb.jpeg HTTP/1.1" 200 14422 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:16 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:16 +0000] "GET /uploads/image/1112482398/735e34202a488162b835a164969ae28a3368_thumb.jpeg HTTP/1.1" 200 19006 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:16 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:16 +0000] "GET /uploads/image/1112482398/746a4be27eeea47d661a927d15de7a41d28c_thumb.jpeg HTTP/1.1" 200 13467 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:16 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:16 +0000] "GET /uploads/image/1112482398/c07475f39b0dbd42a46a3a476097d6533a4c_thumb.jpeg HTTP/1.1" 200 15810 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:18 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:18 +0000] "GET /uploads/video/1112482398/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 3657357 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:45 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:26:45 info: PARAM {"0":"video/1112482398/나상욱/21"} | BODY {}
+2020-02-19 15:26:45 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:26:45 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2020-02-19 15:26:45 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2020-02-19 15:26:45 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:45 +0000] "GET /uploads/video/1112482398/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 2 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:45 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:45 +0000] "GET /uploads/video/1112482398/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 30547 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:45 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:45 +0000] "GET /uploads/video/1112482398/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 3880787 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:46 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:46 +0000] "GET /uploads/video/1112482398/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 3795870 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:56 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:56 +0000] "GET /uploads/image/1112482398/2a2abc0180eafe7a200a598419053fc086d5.jpeg HTTP/1.1" 200 178993 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:56 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:56 +0000] "GET /uploads/image/1112482398/6720e85b1d73af4ad996bec9f082c841e668.jpeg HTTP/1.1" 200 175698 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:57 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:57 +0000] "GET /uploads/image/1112482398/3057b7374488b12d4606b2c19c78967b2be2.jpeg HTTP/1.1" 200 185493 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:58 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:58 +0000] "GET /uploads/image/1112482398/1d80c8a406a82138a0082000a2d1565e289c.jpeg HTTP/1.1" 200 197942 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:58 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:58 +0000] "GET /uploads/image/1112482398/aa5e9b300c362b17217373702a44cf8df157.jpeg HTTP/1.1" 200 174473 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:59 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:59 +0000] "GET /uploads/image/1112482398/eed6574d5e6ffa932a3e790ec46f8969ed69.jpeg HTTP/1.1" 200 171482 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:26:59 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:26:59 +0000] "GET /uploads/image/1112482398/b7ba77ca2a4caccebd2b7db69e5bd4496d92.jpeg HTTP/1.1" 200 202557 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:27:00 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:27:00 +0000] "GET /uploads/image/1112482398/f2c171c7fd87e62bd1f6bca68b22ed4801e1.jpeg HTTP/1.1" 200 184812 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:27:01 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:27:01 +0000] "GET /uploads/image/1112482398/735e34202a488162b835a164969ae28a3368.jpeg HTTP/1.1" 200 216065 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:27:01 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:27:01 +0000] "GET /uploads/image/1112482398/746a4be27eeea47d661a927d15de7a41d28c.jpeg HTTP/1.1" 200 173815 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:27:02 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:27:02 +0000] "GET /uploads/image/1112482398/c07475f39b0dbd42a46a3a476097d6533a4c.jpeg HTTP/1.1" 200 192624 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:27:31 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:27:31 info: PARAM {"0":"video/1112482398/나상욱/21"} | BODY {}
+2020-02-19 15:27:31 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:27:31 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2020-02-19 15:27:31 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2020-02-19 15:27:32 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:27:32 +0000] "GET /uploads/video/1112482398/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 2 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:27:32 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:27:32 +0000] "GET /uploads/video/1112482398/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 30547 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:27:32 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:27:32 +0000] "GET /uploads/video/1112482398/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 3880787 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:27:33 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:27:33 +0000] "GET /uploads/video/1112482398/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 3805324 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:27:58 info: PARAM {"0":"memo/"} | BODY {"username":"ㅃ","password":"qq","contents":"qqws","enterid":"1112482398"}
+2020-02-19 15:27:58 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:27:58 +0000] "POST /api/memo/ HTTP/1.1" 200 16 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:27:59 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2020-02-19 15:27:59 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:27:59 +0000] "GET /api/memo/1112482398 HTTP/1.1" 200 1726 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:28:03 info: PARAM {"0":"video/1112482398/나상욱/21"} | BODY {}
+2020-02-19 15:28:03 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:28:03 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:28:03 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2020-02-19 15:28:03 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2020-02-19 15:28:03 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:28:03 +0000] "GET /uploads/video/1112482398/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 2 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:28:03 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:28:03 +0000] "GET /uploads/video/1112482398/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 30547 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:28:03 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:28:03 +0000] "GET /uploads/video/1112482398/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 3880787 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:28:05 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:28:04 +0000] "GET /uploads/video/1112482398/dba311ffa7ebcccf18e768d775ddc80383eb.MOV HTTP/1.1" 206 3798024 "http://172.30.1.44/Home/1112482398/%EB%82%98%EC%83%81%EC%9A%B1/21" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:28:35 info: PARAM {"0":"video/"} | BODY {}
+2020-02-19 15:28:44 info: [{"fieldname":"file","originalname":"trim.107BBB07-DE96-4C0B-A5E2-8D2239AA7301.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"uploads/video/temp/","filename":"f7296522dd9800da82377e2b918a3fb253ea.MOV","path":"uploads\\video\\temp\\f7296522dd9800da82377e2b918a3fb253ea.MOV","size":8565641}]
+2020-02-19 15:28:44 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:28:44 +0000] "POST /api/video/ HTTP/1.1" 200 319 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:28:44 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:28:44 +0000] "GET /uploads/video/temp/f7296522dd9800da82377e2b918a3fb253ea.MOV HTTP/1.1" 206 2 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:28:45 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:28:45 +0000] "GET /uploads/video/temp/f7296522dd9800da82377e2b918a3fb253ea.MOV HTTP/1.1" 206 45961 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:28:45 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:28:45 +0000] "GET /uploads/video/temp/f7296522dd9800da82377e2b918a3fb253ea.MOV HTTP/1.1" 206 8565641 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:28:49 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:28:49 +0000] "GET /uploads/video/temp/f7296522dd9800da82377e2b918a3fb253ea.MOV HTTP/1.1" 206 8449944 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:28:57 info: PARAM {"0":"video/save"} | BODY {"username":"나상","enterid":1112482398,"invitee":"투썸","files":[{"fieldname":"file","originalname":"trim.107BBB07-DE96-4C0B-A5E2-8D2239AA7301.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"uploads/video/temp/","filename":"f7296522dd9800da82377e2b918a3fb253ea.MOV","path":"uploads\\video\\temp\\f7296522dd9800da82377e2b918a3fb253ea.MOV","size":8565641}]}
+2020-02-19 15:28:57 info: FILE MOVE : uploads\video\temp\f7296522dd9800da82377e2b918a3fb253ea.MOV --> uploads/video/1112482398/f7296522dd9800da82377e2b918a3fb253ea.MOV
+2020-02-19 15:28:57 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:28:57 +0000] "POST /api/video/save HTTP/1.1" 200 398 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:28:57 info: PARAM {"0":"kakao/send"} | BODY {"token":"Gwm8tmNCJo0HUtDArRH3kC4B03uKkRg0E3mdVwo9dZsAAAFwXB1iVg","data":{"object_type":"feed","content":{"title":"To. 투썸","description":"결혼식에 초대합니다.","image_url":"http://172.30.1.44/uploads\\image\\1112482398\\53feade0a81f62c9556efa72bf9cc2869d32.jpeg","image_width":640,"image_height":640,"link":{"web_url":"http://172.30.1.44/Home/1112482398/투썸/22","mobile_web_url":"http://172.30.1.44/Home/1112482398/투썸/22","android_execution_params":"contentId=100","ios_execution_params":"contentId=100"}},"buttons":[{"title":"청첩장 열어보기","link":{"web_url":"http://172.30.1.44/Home/1112482398/투썸/22","mobile_web_url":"http://172.30.1.44/Home/1112482398/투썸/22"}}]}}
+2020-02-19 15:28:57 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:28:57 +0000] "POST /api/kakao/send HTTP/1.1" 200 17 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:28:59 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:28:59 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2020-02-19 15:28:59 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2020-02-19 15:28:59 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:28:59 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:28:59 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 15:29:03 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:29:03 +0000] "GET /Home/1112482398/%ED%88%AC%EC%8D%B8/22 HTTP/1.1" 200 2371 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:29:04 info: PARAM {"0":"video/1112482398/투썸/22"} | BODY {}
+2020-02-19 15:29:04 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:29:04 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2020-02-19 15:29:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:29:04 +0000] "GET /api/video/1112482398/%ED%88%AC%EC%8D%B8/22 HTTP/1.1" 200 389 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:29:04 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:29:04 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2020-02-19 15:29:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:29:04 +0000] "GET /uploads/video/1112482398/f7296522dd9800da82377e2b918a3fb253ea.MOV HTTP/1.1" 206 2 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:29:04 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:29:04 +0000] "GET /uploads/video/1112482398/f7296522dd9800da82377e2b918a3fb253ea.MOV HTTP/1.1" 206 45961 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:29:07 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:29:07 +0000] "GET /uploads/video/1112482398/f7296522dd9800da82377e2b918a3fb253ea.MOV HTTP/1.1" 206 8565641 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:29:07 info: ::ffff:172.30.1.6 - - [19/Feb/2020:06:29:07 +0000] "GET /uploads/video/1112482398/f7296522dd9800da82377e2b918a3fb253ea.MOV HTTP/1.1" 206 8463084 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 8.7.4"
+
+2020-02-19 15:31:46 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:46 +0000] "GET /Home/1112482398/%ED%88%AC%EC%8D%B8/22 HTTP/1.1" 200 2371 "-" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:47 info: PARAM {"0":"video/1112482398/투썸/22"} | BODY {}
+2020-02-19 15:31:47 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2020-02-19 15:31:47 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:47 +0000] "GET /api/video/1112482398/%ED%88%AC%EC%8D%B8/22 HTTP/1.1" 200 389 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:47 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:47 +0000] "GET /api/image/1112482398/main HTTP/1.1" 200 504 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:47 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:31:47 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2020-02-19 15:31:47 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2020-02-19 15:31:47 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2020-02-19 15:31:47 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:47 +0000] "GET /api/image/1112482398/gallery HTTP/1.1" 200 6085 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:47 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:47 +0000] "GET /api/memo/1112482398 HTTP/1.1" 200 1726 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:47 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:47 +0000] "GET /api/userinfo/1112482398 HTTP/1.1" 200 561 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:47 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2020-02-19 15:31:47 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:47 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:47 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:47 +0000] "GET /uploads/image/1112482398/53feade0a81f62c9556efa72bf9cc2869d32.jpeg HTTP/1.1" 200 99036 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:48 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:48 +0000] "GET /uploads/image/1112482398/2a2abc0180eafe7a200a598419053fc086d5_thumb.jpeg HTTP/1.1" 200 15183 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:48 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:48 +0000] "GET /uploads/image/1112482398/14017fbfa8e4b33a96858dedaa07769e9553_thumb.jpeg HTTP/1.1" 200 11849 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:48 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:48 +0000] "GET /uploads/image/1112482398/6720e85b1d73af4ad996bec9f082c841e668_thumb.jpeg HTTP/1.1" 200 11462 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:48 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:48 +0000] "GET /uploads/image/1112482398/1d80c8a406a82138a0082000a2d1565e289c_thumb.jpeg HTTP/1.1" 200 14024 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:48 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:48 +0000] "GET /uploads/image/1112482398/aa5e9b300c362b17217373702a44cf8df157_thumb.jpeg HTTP/1.1" 200 13350 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:48 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:48 +0000] "GET /uploads/image/1112482398/eed6574d5e6ffa932a3e790ec46f8969ed69_thumb.jpeg HTTP/1.1" 200 15172 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:48 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:48 +0000] "GET /uploads/image/1112482398/b7ba77ca2a4caccebd2b7db69e5bd4496d92_thumb.jpeg HTTP/1.1" 200 17244 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:48 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:48 +0000] "GET /uploads/image/1112482398/3057b7374488b12d4606b2c19c78967b2be2_thumb.jpeg HTTP/1.1" 200 15919 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:48 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:48 +0000] "GET /uploads/image/1112482398/f2c171c7fd87e62bd1f6bca68b22ed4801e1_thumb.jpeg HTTP/1.1" 200 14422 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:48 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:48 +0000] "GET /uploads/image/1112482398/735e34202a488162b835a164969ae28a3368_thumb.jpeg HTTP/1.1" 200 19006 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:48 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:48 +0000] "GET /uploads/image/1112482398/746a4be27eeea47d661a927d15de7a41d28c_thumb.jpeg HTTP/1.1" 200 13467 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:48 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:48 +0000] "GET /uploads/image/1112482398/c07475f39b0dbd42a46a3a476097d6533a4c_thumb.jpeg HTTP/1.1" 200 15810 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:48 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:48 +0000] "GET /uploads/image/1112482398/14017fbfa8e4b33a96858dedaa07769e9553.jpeg HTTP/1.1" 200 182684 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:48 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:48 +0000] "GET /uploads/video/1112482398/f7296522dd9800da82377e2b918a3fb253ea.MOV HTTP/1.1" 206 8565641 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:31:48 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:31:48 +0000] "GET /uploads/video/1112482398/f7296522dd9800da82377e2b918a3fb253ea.MOV HTTP/1.1" 206 45961 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:32:03 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:32:03 +0000] "GET /uploads/image/1112482398/2a2abc0180eafe7a200a598419053fc086d5.jpeg HTTP/1.1" 200 178993 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:32:04 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:32:04 +0000] "GET /uploads/image/1112482398/6720e85b1d73af4ad996bec9f082c841e668.jpeg HTTP/1.1" 200 175698 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 15:32:04 info: ::ffff:172.30.1.44 - - [19/Feb/2020:06:32:04 +0000] "GET /uploads/image/1112482398/3057b7374488b12d4606b2c19c78967b2be2.jpeg HTTP/1.1" 200 185493 "http://172.30.1.44/Home/1112482398/%ED%88%AC%EC%8D%B8/22" "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+
+2020-02-19 16:17:09 info: Check out the app at http://localhost:80
+2020-02-19 16:17:11 info: Connected to mongodb server
+2020-02-19 16:57:59 info: ::ffff:172.30.1.6 - - [19/Feb/2020:07:57:59 +0000] "GET /static/js/2.304a1082.chunk.js HTTP/1.1" 200 674004 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
+2020-02-19 16:57:59 info: ::ffff:172.30.1.6 - - [19/Feb/2020:07:57:59 +0000] "GET /static/css/2.9779a509.chunk.css HTTP/1.1" 200 11210 "http://172.30.1.44/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Mobile/15E148 Safari/604.1"
+
