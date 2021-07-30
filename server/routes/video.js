@@ -53,8 +53,19 @@ router.post('/save', (req, res) => {
     let username = req.body.username;
     let enterid = req.body.enterid;
     let invitee = req.body.invitee;
+    let message = req.body.message;
     let files = req.body.files;
 
+    if(files.length == 0){
+        files =[{destination : "",
+                encoding: "",
+                fieldname: "",
+                filename: "",
+                mimetype: "",
+                originalname: "",
+                path: "",
+                size: 0}];
+    }
     const dir = `uploads/video/${enterid}/`;
     if (!fs.existsSync(dir)) {
           fs.mkdir(dir, (err) => {
@@ -78,6 +89,7 @@ router.post('/save', (req, res) => {
         username: username,
         enterid: enterid,
         invitee: invitee,
+        message: message
         
     });
 

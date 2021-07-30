@@ -1,0 +1,34 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 5
+    },
+    "auditLog": "D:\\workspace\\react-app\\logs\\.e483efef53a381ccb5a8971759a4033d1984c9cf-audit.json",
+    "files": [
+        {
+            "date": 1625978168642,
+            "name": "D:\\workspace\\react-app\\logs\\app-2021-07-11.log",
+            "hash": "a0333a04e3801889ffb250c1374f027c"
+        },
+        {
+            "date": 1626510317950,
+            "name": "D:\\workspace\\react-app\\logs\\app-2021-07-17.log",
+            "hash": "e9518a07b3e8dcf2e78d0cd61c60bbac"
+        },
+        {
+            "date": 1627344306474,
+            "name": "D:\\workspace\\react-app\\logs\\app-2021-07-27.log",
+            "hash": "f01c29335193f81fd4ceccd1849be40a"
+        },
+        {
+            "date": 1627448267502,
+            "name": "D:\\workspace\\react-app\\logs\\app-2021-07-28.log",
+            "hash": "5e6b71c3b3aed798b37891962ad10534"
+        },
+        {
+            "date": 1627606516390,
+            "name": "D:\\workspace\\react-app\\logs\\app-2021-07-30.log",
+            "hash": "ed151b6b3fc9b368650097a70c5a3c68"
+        }
+    ]
+}

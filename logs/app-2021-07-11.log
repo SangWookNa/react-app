@@ -1,0 +1,442 @@
+2021-07-11 13:36:08 info: Check out the app at http://localhost:4000
+2021-07-11 13:36:08 info: Connected to mongodb server
+2021-07-11 13:36:56 info: PARAM {"0":"kakao/"} | BODY {"code":"dlOAjF-9zCAh_BbGqMVz_8gwDllCLnp49Jh3R3HGZv0pGDCgiHUSvyT93lr8z__PAEFcZAo9dVoAAAF6k9qb4Q","redirectUrl":"http://swna.iptime.org:9999/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2021-07-11 13:36:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:36:56 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://swna.iptime.org:9999/oauth?code=dlOAjF-9zCAh_BbGqMVz_8gwDllCLnp49Jh3R3HGZv0pGDCgiHUSvyT93lr8z__PAEFcZAo9dVoAAAF6k9qb4Q" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.123 Safari/537.36"
+
+2021-07-11 13:36:56 info: PARAM {"0":"kakao/me"} | BODY {"token":"H-QD0K6I7HLa6sCGkE7u_HJwZXDOQG3WiHJeHgo9dZwAAAF6k9qgMw"}
+2021-07-11 13:36:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:36:56 +0000] "POST /api/kakao/me HTTP/1.1" 200 113 "http://swna.iptime.org:9999/oauth?code=dlOAjF-9zCAh_BbGqMVz_8gwDllCLnp49Jh3R3HGZv0pGDCgiHUSvyT93lr8z__PAEFcZAo9dVoAAAF6k9qb4Q" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.123 Safari/537.36"
+
+2021-07-11 13:36:56 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-11 13:36:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:36:56 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://swna.iptime.org:9999/oauth?code=dlOAjF-9zCAh_BbGqMVz_8gwDllCLnp49Jh3R3HGZv0pGDCgiHUSvyT93lr8z__PAEFcZAo9dVoAAAF6k9qb4Q" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.123 Safari/537.36"
+
+2021-07-11 13:36:56 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 13:36:56 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 13:36:56 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-11 13:36:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:36:56 +0000] "GET /api/image/1112482398/gallery HTTP/1.1" 200 2029 "http://swna.iptime.org:9999/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.123 Safari/537.36"
+
+2021-07-11 13:37:05 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-11 13:37:05 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-11 13:37:05 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:37:05 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://swna.iptime.org:9999/MapUpload" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.123 Safari/537.36"
+
+2021-07-11 13:37:10 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 13:37:10 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-11 13:37:10 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 13:37:13 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-11 13:37:13 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:37:13 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.123 Safari/537.36"
+
+2021-07-11 13:37:13 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 13:37:13 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 13:37:13 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 13:37:13 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:37:13 +0000] "GET /uploads/image/1112482398/4d4a46d0e0ff3ac47c28de53eddf3daead18_thumb.jpeg HTTP/1.1" 200 22324 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.123 Safari/537.36"
+
+2021-07-11 13:37:13 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:37:13 +0000] "GET /uploads/image/1112482398/7ca7a39bec26882938674744146c4650c655_thumb.jpeg HTTP/1.1" 200 21705 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.123 Safari/537.36"
+
+2021-07-11 13:37:13 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:37:13 +0000] "GET /uploads/image/1112482398/6775cfd865c343fc8fbb37914a03c057c12e_thumb.jpeg HTTP/1.1" 200 21021 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.123 Safari/537.36"
+
+2021-07-11 13:37:13 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:37:13 +0000] "GET /uploads/image/1112482398/45ba9341141e63abd2f0e59c649df73f368c_thumb.jpeg HTTP/1.1" 200 20967 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.123 Safari/537.36"
+
+2021-07-11 13:38:09 info: PARAM {"0":"kakao/"} | BODY {"code":"8dVG9LKtgYkGajwiMMw6tnZozECgHid0DYggP_p5ef6F1cywa_kPPIqzOkNHS_KEFDb8IgopcNEAAAF6k9u7Dg","redirectUrl":"http://swna.iptime.org:9999/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2021-07-11 13:38:09 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:09 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://swna.iptime.org:9999/oauth?code=8dVG9LKtgYkGajwiMMw6tnZozECgHid0DYggP_p5ef6F1cywa_kPPIqzOkNHS_KEFDb8IgopcNEAAAF6k9u7Dg" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:09 info: PARAM {"0":"kakao/me"} | BODY {"token":"wEGo6Kvc3sScOs2sUcO6DgP7YedwcTC6pEUlRgopb7gAAAF6k9u9ow"}
+2021-07-11 13:38:09 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:09 +0000] "POST /api/kakao/me HTTP/1.1" 200 113 "http://swna.iptime.org:9999/oauth?code=8dVG9LKtgYkGajwiMMw6tnZozECgHid0DYggP_p5ef6F1cywa_kPPIqzOkNHS_KEFDb8IgopcNEAAAF6k9u7Dg" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:09 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-11 13:38:09 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:09 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://swna.iptime.org:9999/oauth?code=8dVG9LKtgYkGajwiMMw6tnZozECgHid0DYggP_p5ef6F1cywa_kPPIqzOkNHS_KEFDb8IgopcNEAAAF6k9u7Dg" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:10 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 13:38:10 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 13:38:10 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-11 13:38:10 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:10 +0000] "GET /api/image/1112482398/gallery HTTP/1.1" 200 2029 "http://swna.iptime.org:9999/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:12 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-11 13:38:12 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:12 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:12 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 13:38:12 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 13:38:12 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 13:38:12 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:12 +0000] "GET /uploads/image/1112482398/7ca7a39bec26882938674744146c4650c655_thumb.jpeg HTTP/1.1" 200 21705 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:12 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:12 +0000] "GET /uploads/image/1112482398/3f4d3bd4b01aa00de89fa051fc79ede7e3e4.jpeg HTTP/1.1" 200 489652 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:35 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 13:38:35 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:35 +0000] "DELETE /api/image/1112482398/gallery HTTP/1.1" 200 16 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:35 info: uploads/image/1112482398/4d4a46d0e0ff3ac47c28de53eddf3daead18_thumb.jpeg was deleted
+2021-07-11 13:38:35 info: uploads/image/1112482398/6775cfd865c343fc8fbb37914a03c057c12e_thumb.jpeg was deleted
+2021-07-11 13:38:35 info: uploads/image/1112482398/45ba9341141e63abd2f0e59c649df73f368c_thumb.jpeg was deleted
+2021-07-11 13:38:35 info: uploads\image\1112482398\6775cfd865c343fc8fbb37914a03c057c12e.jpeg was deleted
+2021-07-11 13:38:35 info: uploads\image\1112482398\45ba9341141e63abd2f0e59c649df73f368c.jpeg was deleted
+2021-07-11 13:38:35 info: uploads\image\1112482398\4d4a46d0e0ff3ac47c28de53eddf3daead18.jpeg was deleted
+2021-07-11 13:38:35 info: uploads\image\1112482398\7ca7a39bec26882938674744146c4650c655.jpeg was deleted
+2021-07-11 13:38:35 info: uploads/image/1112482398/7ca7a39bec26882938674744146c4650c655_thumb.jpeg was deleted
+2021-07-11 13:38:35 info: PARAM {"0":"image/"} | BODY {}
+2021-07-11 13:38:39 info: [{"fieldname":"file","originalname":"D0753E1D-B857-4D12-A9EA-3A6D887C2E1F.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"f0ebb5362f84e441c79dd86945e9b2f3c4f0.jpeg","path":"uploads\\image\\1112482398\\f0ebb5362f84e441c79dd86945e9b2f3c4f0.jpeg","size":102145},{"fieldname":"file","originalname":"CA86E728-9D5D-43F5-8C32-3989D85E4342.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"3e1d26f0638739dc93d16f59df9576484626.jpeg","path":"uploads\\image\\1112482398\\3e1d26f0638739dc93d16f59df9576484626.jpeg","size":120211},{"fieldname":"file","originalname":"C57F61AD-6686-4113-9FCF-F02E86E8A167.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"dd927b2de0d35af93d0b7ee51b3321ff05d2.jpeg","path":"uploads\\image\\1112482398\\dd927b2de0d35af93d0b7ee51b3321ff05d2.jpeg","size":192192},{"fieldname":"file","originalname":"8B3CA2C4-40F3-4252-A2D5-872E6D1150C2.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"b8ca24837a9066a1e0d0545c90d48a191b79.jpeg","path":"uploads\\image\\1112482398\\b8ca24837a9066a1e0d0545c90d48a191b79.jpeg","size":113761},{"fieldname":"file","originalname":"2A85D385-075A-4744-A002-1CCB7C67FB99.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"638483914f88108ff0e536a2c8f9abd08208.jpeg","path":"uploads\\image\\1112482398\\638483914f88108ff0e536a2c8f9abd08208.jpeg","size":136789},{"fieldname":"file","originalname":"EC4A705B-32AA-49C0-B7ED-2852708D517F.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"51bd3f3f1d21114703038a20c18c7d7356f2.jpeg","path":"uploads\\image\\1112482398\\51bd3f3f1d21114703038a20c18c7d7356f2.jpeg","size":224946},{"fieldname":"file","originalname":"B3C62639-BC43-4931-816B-E4588E47DE94.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"6df879b274af9502df492c80e12c4a8fb189.jpeg","path":"uploads\\image\\1112482398\\6df879b274af9502df492c80e12c4a8fb189.jpeg","size":141735},{"fieldname":"file","originalname":"056A16C4-161C-4799-A449-AF336B363FF4.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"7e9fc7550949d4d4f3d0dc975cc08ad4bb0f.jpeg","path":"uploads\\image\\1112482398\\7e9fc7550949d4d4f3d0dc975cc08ad4bb0f.jpeg","size":3356288},{"fieldname":"file","originalname":"E6D07F39-0B4C-45DD-B929-D9BA33DF4B41.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"c1edcfe4e64e660c5f302df41910ee79b493.jpeg","path":"uploads\\image\\1112482398\\c1edcfe4e64e660c5f302df41910ee79b493.jpeg","size":3129379},{"fieldname":"file","originalname":"20698013-8D90-48FF-9E9A-4ED0EE298F66.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"5f92faec8e32a58d82ebd6b2633731d0113b.jpeg","path":"uploads\\image\\1112482398\\5f92faec8e32a58d82ebd6b2633731d0113b.jpeg","size":3279071},{"fieldname":"file","originalname":"FB4AE15B-CC69-4DDF-8DF4-95541E282050.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"2ad223f052e5c83ec2e5a657aca598703f55.jpeg","path":"uploads\\image\\1112482398\\2ad223f052e5c83ec2e5a657aca598703f55.jpeg","size":3371098},{"fieldname":"file","originalname":"688D2602-082B-493F-85C7-53F79E48EAA6.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"uploads/image/1112482398/","filename":"4d84fef6fde3d453109c08732774db4acbb0.jpeg","path":"uploads\\image\\1112482398\\4d84fef6fde3d453109c08732774db4acbb0.jpeg","size":374802}]
+2021-07-11 13:38:39 error: #################@@@2uploads\image\1112482398\f0ebb5362f84e441c79dd86945e9b2f3c4f0.jpeg
+2021-07-11 13:38:39 error: #################@@@2uploads\image\1112482398\3e1d26f0638739dc93d16f59df9576484626.jpeg
+2021-07-11 13:38:39 error: #################@@@2uploads\image\1112482398\dd927b2de0d35af93d0b7ee51b3321ff05d2.jpeg
+2021-07-11 13:38:39 error: #################@@@2uploads\image\1112482398\b8ca24837a9066a1e0d0545c90d48a191b79.jpeg
+2021-07-11 13:38:39 error: #################@@@2uploads\image\1112482398\638483914f88108ff0e536a2c8f9abd08208.jpeg
+2021-07-11 13:38:39 error: #################@@@2uploads\image\1112482398\51bd3f3f1d21114703038a20c18c7d7356f2.jpeg
+2021-07-11 13:38:39 error: #################@@@2uploads\image\1112482398\6df879b274af9502df492c80e12c4a8fb189.jpeg
+2021-07-11 13:38:39 error: #################@@@2uploads\image\1112482398\7e9fc7550949d4d4f3d0dc975cc08ad4bb0f.jpeg
+2021-07-11 13:38:39 error: #################@@@2uploads\image\1112482398\c1edcfe4e64e660c5f302df41910ee79b493.jpeg
+2021-07-11 13:38:39 error: #################@@@2uploads\image\1112482398\5f92faec8e32a58d82ebd6b2633731d0113b.jpeg
+2021-07-11 13:38:39 error: #################@@@2uploads\image\1112482398\2ad223f052e5c83ec2e5a657aca598703f55.jpeg
+2021-07-11 13:38:39 error: #################@@@2uploads\image\1112482398\4d84fef6fde3d453109c08732774db4acbb0.jpeg
+2021-07-11 13:38:39 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:39 +0000] "POST /api/image/ HTTP/1.1" 200 16 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:43 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-11 13:38:43 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-11 13:38:43 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:43 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:43 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:43 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:43 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 13:38:43 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:43 +0000] "GET /api/image/1112482398/gallery HTTP/1.1" 200 6089 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:43 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 13:38:43 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:43 +0000] "GET /uploads/image/1112482398/638483914f88108ff0e536a2c8f9abd08208_thumb.jpeg HTTP/1.1" 200 17096 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:43 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:43 +0000] "GET /uploads/image/1112482398/5f92faec8e32a58d82ebd6b2633731d0113b_thumb.jpeg HTTP/1.1" 200 27142 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:43 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:43 +0000] "GET /uploads/image/1112482398/4d84fef6fde3d453109c08732774db4acbb0_thumb.jpeg HTTP/1.1" 200 10369 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:43 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:43 +0000] "GET /uploads/image/1112482398/7e9fc7550949d4d4f3d0dc975cc08ad4bb0f_thumb.jpeg HTTP/1.1" 200 27069 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:43 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:43 +0000] "GET /uploads/image/1112482398/b8ca24837a9066a1e0d0545c90d48a191b79_thumb.jpeg HTTP/1.1" 200 16083 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:43 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:43 +0000] "GET /uploads/image/1112482398/6df879b274af9502df492c80e12c4a8fb189_thumb.jpeg HTTP/1.1" 200 18390 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:43 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:43 +0000] "GET /uploads/image/1112482398/3e1d26f0638739dc93d16f59df9576484626_thumb.jpeg HTTP/1.1" 200 16730 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:43 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:43 +0000] "GET /uploads/image/1112482398/dd927b2de0d35af93d0b7ee51b3321ff05d2_thumb.jpeg HTTP/1.1" 200 14197 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:43 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:43 +0000] "GET /uploads/image/1112482398/f0ebb5362f84e441c79dd86945e9b2f3c4f0_thumb.jpeg HTTP/1.1" 200 14803 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:43 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:43 +0000] "GET /uploads/image/1112482398/51bd3f3f1d21114703038a20c18c7d7356f2_thumb.jpeg HTTP/1.1" 200 15188 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:43 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:43 +0000] "GET /uploads/image/1112482398/2ad223f052e5c83ec2e5a657aca598703f55_thumb.jpeg HTTP/1.1" 200 26685 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:43 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:43 +0000] "GET /uploads/image/1112482398/c1edcfe4e64e660c5f302df41910ee79b493_thumb.jpeg HTTP/1.1" 200 25605 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:43 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:43 +0000] "GET /uploads/image/1112482398/5f92faec8e32a58d82ebd6b2633731d0113b.jpeg HTTP/1.1" 200 3279071 "http://swna.iptime.org:9999/ImageUpload" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:51 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 13:38:51 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-11 13:38:51 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 13:38:54 info: PARAM {"0":"kakao/send"} | BODY {"token":"wEGo6Kvc3sScOs2sUcO6DgP7YedwcTC6pEUlRgopb7gAAAF6k9u9ow","data":{"object_type":"feed","content":{"title":"결혼식에 초대합니다.","description":"","image_url":"http://swna.iptime.org:9999/uploads\\image\\1112482398\\3f4d3bd4b01aa00de89fa051fc79ede7e3e4.jpeg","image_width":640,"image_height":640,"link":{"web_url":"http://swna.iptime.org:9999/Home/1112482398","mobile_web_url":"http://swna.iptime.org:9999/Home/1112482398","android_execution_params":"contentId=100","ios_execution_params":"contentId=100"}},"buttons":[{"title":"청첩장 열어보기","link":{"web_url":"http://swna.iptime.org:9999/Home/1112482398","mobile_web_url":"http://swna.iptime.org:9999/Home/1112482398"}}]}}
+2021-07-11 13:38:54 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:54 +0000] "GET /uploads/image/1112482398/3f4d3bd4b01aa00de89fa051fc79ede7e3e4.jpeg HTTP/1.1" 200 489652 "-" "facebookexternalhit/1.1;kakaotalk-scrap/1.0; +https://devtalk.kakao.com/t/scrap/33984"
+
+2021-07-11 13:38:55 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:55 +0000] "POST /api/kakao/send HTTP/1.1" 200 17 "http://swna.iptime.org:9999/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:38:57 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 13:38:57 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-11 13:38:57 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 13:38:57 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-11 13:38:57 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:38:57 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://swna.iptime.org:9999/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:39:17 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-11 13:39:17 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:17 +0000] "GET /api/userinfo/1112482398 HTTP/1.1" 200 580 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:17 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 13:39:17 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:17 +0000] "GET /api/image/1112482398/gallery HTTP/1.1" 200 6089 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:17 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 13:39:17 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:17 +0000] "GET /api/image/1112482398/main HTTP/1.1" 200 505 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:18 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-11 13:39:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:18 +0000] "GET /api/memo/1112482398 HTTP/1.1" 200 2 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:18 +0000] "GET /uploads/image/1112482398/7e9fc7550949d4d4f3d0dc975cc08ad4bb0f_thumb.jpeg HTTP/1.1" 200 27069 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:18 +0000] "GET /uploads/image/1112482398/4d84fef6fde3d453109c08732774db4acbb0_thumb.jpeg HTTP/1.1" 200 10369 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:18 +0000] "GET /uploads/image/1112482398/5f92faec8e32a58d82ebd6b2633731d0113b_thumb.jpeg HTTP/1.1" 200 27142 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:18 +0000] "GET /uploads/image/1112482398/638483914f88108ff0e536a2c8f9abd08208_thumb.jpeg HTTP/1.1" 200 17096 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:18 +0000] "GET /uploads/image/1112482398/b8ca24837a9066a1e0d0545c90d48a191b79_thumb.jpeg HTTP/1.1" 200 16083 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:18 +0000] "GET /uploads/image/1112482398/6df879b274af9502df492c80e12c4a8fb189_thumb.jpeg HTTP/1.1" 200 18390 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:18 +0000] "GET /uploads/image/1112482398/3e1d26f0638739dc93d16f59df9576484626_thumb.jpeg HTTP/1.1" 200 16730 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:18 +0000] "GET /uploads/image/1112482398/dd927b2de0d35af93d0b7ee51b3321ff05d2_thumb.jpeg HTTP/1.1" 200 14197 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:18 +0000] "GET /uploads/image/1112482398/f0ebb5362f84e441c79dd86945e9b2f3c4f0_thumb.jpeg HTTP/1.1" 200 14803 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:18 +0000] "GET /uploads/image/1112482398/c1edcfe4e64e660c5f302df41910ee79b493_thumb.jpeg HTTP/1.1" 200 25605 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:18 +0000] "GET /uploads/image/1112482398/51bd3f3f1d21114703038a20c18c7d7356f2_thumb.jpeg HTTP/1.1" 200 15188 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:18 +0000] "GET /uploads/image/1112482398/2ad223f052e5c83ec2e5a657aca598703f55_thumb.jpeg HTTP/1.1" 200 26685 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:18 +0000] "GET /uploads/image/1112482398/3f4d3bd4b01aa00de89fa051fc79ede7e3e4.jpeg HTTP/1.1" 200 489652 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:18 +0000] "GET /uploads/image/1112482398/5f92faec8e32a58d82ebd6b2633731d0113b.jpeg HTTP/1.1" 200 3279071 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:51 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:51 +0000] "GET /uploads/image/1112482398/7e9fc7550949d4d4f3d0dc975cc08ad4bb0f.jpeg HTTP/1.1" 200 3356288 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:52 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:52 +0000] "GET /uploads/image/1112482398/638483914f88108ff0e536a2c8f9abd08208.jpeg HTTP/1.1" 200 136789 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:53 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:53 +0000] "GET /uploads/image/1112482398/4d84fef6fde3d453109c08732774db4acbb0.jpeg HTTP/1.1" 200 374802 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:54 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:54 +0000] "GET /uploads/image/1112482398/b8ca24837a9066a1e0d0545c90d48a191b79.jpeg HTTP/1.1" 200 113761 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:54 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:54 +0000] "GET /uploads/image/1112482398/6df879b274af9502df492c80e12c4a8fb189.jpeg HTTP/1.1" 200 141735 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:54 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:54 +0000] "GET /uploads/image/1112482398/dd927b2de0d35af93d0b7ee51b3321ff05d2.jpeg HTTP/1.1" 200 192192 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:55 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:55 +0000] "GET /uploads/image/1112482398/3e1d26f0638739dc93d16f59df9576484626.jpeg HTTP/1.1" 200 120211 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:55 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:55 +0000] "GET /uploads/image/1112482398/f0ebb5362f84e441c79dd86945e9b2f3c4f0.jpeg HTTP/1.1" 200 102145 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:56 +0000] "GET /uploads/image/1112482398/c1edcfe4e64e660c5f302df41910ee79b493.jpeg HTTP/1.1" 200 3129379 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:39:57 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:39:57 +0000] "GET /uploads/image/1112482398/51bd3f3f1d21114703038a20c18c7d7356f2.jpeg HTTP/1.1" 200 224946 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:40:23 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-11 13:40:23 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 13:40:23 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 13:40:23 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-11 13:41:23 info: PARAM {"0":"memo/"} | BODY {"username":"나상","password":"1234","contents":"축하합니다 ㅎ\n\nㅎㅎ","enterid":"1112482398"}
+2021-07-11 13:41:23 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:41:23 +0000] "POST /api/memo/ HTTP/1.1" 200 16 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:41:23 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-11 13:41:23 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:41:23 +0000] "GET /api/memo/1112482398 HTTP/1.1" 200 302 "http://swna.iptime.org:9999/Home/1112482398" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:42:32 info: PARAM {"0":"video/"} | BODY {}
+2021-07-11 13:42:32 info: [{"fieldname":"file","originalname":"trim.ECE4C0C8-D88A-44BA-A797-65A06BFACB04.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"uploads/video/temp/","filename":"a259eafafa49434b0c481918792572514c65.MOV","path":"uploads\\video\\temp\\a259eafafa49434b0c481918792572514c65.MOV","size":1139423}]
+2021-07-11 13:42:32 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:42:32 +0000] "POST /api/video/ HTTP/1.1" 200 319 "http://swna.iptime.org:9999/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:42:33 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:42:33 +0000] "GET /uploads/video/temp/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 2 "http://swna.iptime.org:9999/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:42:33 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:42:33 +0000] "GET /uploads/video/temp/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 1139423 "http://swna.iptime.org:9999/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:42:33 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:42:33 +0000] "GET /uploads/video/temp/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 8927 "http://swna.iptime.org:9999/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:42:33 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:42:33 +0000] "GET /uploads/video/temp/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 1093035 "http://swna.iptime.org:9999/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:42:40 info: PARAM {"0":"video/save"} | BODY {"username":"나상","enterid":1112482398,"invitee":"변돌","files":[{"fieldname":"file","originalname":"trim.ECE4C0C8-D88A-44BA-A797-65A06BFACB04.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"uploads/video/temp/","filename":"a259eafafa49434b0c481918792572514c65.MOV","path":"uploads\\video\\temp\\a259eafafa49434b0c481918792572514c65.MOV","size":1139423}]}
+2021-07-11 13:42:40 info: FILE MOVE : uploads\video\temp\a259eafafa49434b0c481918792572514c65.MOV --> uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV
+2021-07-11 13:42:40 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:42:40 +0000] "POST /api/video/save HTTP/1.1" 200 397 "http://swna.iptime.org:9999/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:42:40 info: PARAM {"0":"kakao/send"} | BODY {"token":"wEGo6Kvc3sScOs2sUcO6DgP7YedwcTC6pEUlRgopb7gAAAF6k9u9ow","data":{"object_type":"feed","content":{"title":"To. 변돌","description":"결혼식에 초대합니다.","image_url":"http://swna.iptime.org:9999/uploads\\image\\1112482398\\3f4d3bd4b01aa00de89fa051fc79ede7e3e4.jpeg","image_width":640,"image_height":640,"link":{"web_url":"http://swna.iptime.org:9999/Home/1112482398/변돌/0","mobile_web_url":"http://swna.iptime.org:9999/Home/1112482398/변돌/0","android_execution_params":"contentId=100","ios_execution_params":"contentId=100"}},"buttons":[{"title":"청첩장 열어보기","link":{"web_url":"http://swna.iptime.org:9999/Home/1112482398/변돌/0","mobile_web_url":"http://swna.iptime.org:9999/Home/1112482398/변돌/0"}}]}}
+2021-07-11 13:42:40 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:42:40 +0000] "POST /api/kakao/send HTTP/1.1" 200 17 "http://swna.iptime.org:9999/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:42:43 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 13:42:43 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-11 13:42:43 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-11 13:42:43 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:42:43 +0000] "GET /api/userinfo/1112482398 HTTP/1.1" 200 580 "http://swna.iptime.org:9999/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:42:43 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 13:42:43 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:42:43 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://swna.iptime.org:9999/Main" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 13:42:52 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-11 13:42:52 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 13:42:52 info: PARAM {"0":"video/1112482398/변돌/0"} | BODY {}
+2021-07-11 13:42:52 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:42:52 +0000] "GET /api/video/1112482398/%EB%B3%80%EB%8F%8C/0 HTTP/1.1" 200 388 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:42:52 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 13:42:52 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-11 13:42:53 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:42:53 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 2 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:42:53 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:42:53 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 1139423 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:42:53 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:42:53 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 8927 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:42:53 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:42:53 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 1088835 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:43:18 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-11 13:43:18 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-11 13:43:18 info: PARAM {"0":"video/1112482398/변돌/0"} | BODY {}
+2021-07-11 13:43:18 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 13:43:18 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 13:43:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:43:18 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 2 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:43:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:43:18 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 1139423 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:43:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:43:18 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 8927 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 13:43:18 info: ::ffff:192.168.0.7 - - [11/Jul/2021:04:43:18 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 1103928 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 15:59:06 info: Check out the app at http://localhost:4000
+2021-07-11 15:59:06 info: Connected to mongodb server
+2021-07-11 15:59:52 info: PARAM {"0":"video/1112482398/변돌/0"} | BODY {}
+2021-07-11 15:59:52 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 15:59:52 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 15:59:52 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-11 15:59:52 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-11 15:59:53 info: ::ffff:192.168.0.7 - - [11/Jul/2021:06:59:53 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 2 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 15:59:53 info: ::ffff:192.168.0.7 - - [11/Jul/2021:06:59:53 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 1139423 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 15:59:53 info: ::ffff:192.168.0.7 - - [11/Jul/2021:06:59:53 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 8927 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 15:59:53 info: ::ffff:192.168.0.7 - - [11/Jul/2021:06:59:53 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 922235 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:00:21 info: PARAM {"0":"memo/"} | BODY {"username":"차덕","password":"1234","contents":"추카추카연~!~!","enterid":"1112482398"}
+2021-07-11 16:00:21 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:00:21 +0000] "POST /api/memo/ HTTP/1.1" 200 16 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:00:21 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-11 16:00:21 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:00:21 +0000] "GET /api/memo/1112482398 HTTP/1.1" 200 593 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:00:32 info: PARAM {"0":"memo/"} | BODY {"username":"용둉","password":"11","contents":"추카뽀","enterid":"1112482398"}
+2021-07-11 16:00:32 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:00:32 +0000] "POST /api/memo/ HTTP/1.1" 200 16 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:00:32 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-11 16:00:32 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:00:32 +0000] "GET /api/memo/1112482398 HTTP/1.1" 200 874 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:01:54 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:01:54 +0000] "GET /uploads/image/1112482398/2ad223f052e5c83ec2e5a657aca598703f55.jpeg HTTP/1.1" 200 3371098 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:02:25 info: PARAM {"0":"memo/"} | BODY {"username":"ㅇㅇ","password":"","contents":"ㅊㅋㅊㅋ","enterid":"1112482398"}
+2021-07-11 16:02:25 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:02:25 +0000] "POST /api/memo/ HTTP/1.1" 400 33 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:02:29 info: PARAM {"0":"memo/"} | BODY {"username":"ㅇㅇ","password":"tt","contents":"ㅊㅋㅊㅋ","enterid":"1112482398"}
+2021-07-11 16:02:29 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:02:29 +0000] "POST /api/memo/ HTTP/1.1" 200 16 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:02:29 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-11 16:02:29 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:02:29 +0000] "GET /api/memo/1112482398 HTTP/1.1" 200 1158 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:02:51 info: PARAM {"0":"memo/check/"} | BODY {"id":"60ea97057a2e5936a0d92e7c","password":"123"}
+2021-07-11 16:02:51 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:02:51 +0000] "POST /api/memo/check/ HTTP/1.1" 401 42 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:02:59 info: PARAM {"0":"memo/check/"} | BODY {"id":"60ea7673d5934018109de5e1","password":"123"}
+2021-07-11 16:02:59 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:02:59 +0000] "POST /api/memo/check/ HTTP/1.1" 401 42 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:03:03 info: PARAM {"0":"memo/check/"} | BODY {"id":"60ea7673d5934018109de5e1","password":"1234"}
+2021-07-11 16:03:03 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:03:03 +0000] "POST /api/memo/check/ HTTP/1.1" 200 16 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:03:08 info: PARAM {"0":"memo/60ea7673d5934018109de5e1"} | BODY {"contents":"축하합니다 ㅎ\n\nㅎㅎㅎㅎㅎ"}
+2021-07-11 16:03:08 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:03:08 +0000] "PUT /api/memo/60ea7673d5934018109de5e1 HTTP/1.1" 200 332 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:06:06 info: PARAM {"0":"kakao/"} | BODY {"code":"nNCDwlWP-k40TJShEB3KodhnVMDjcaAsGt-1IpvisdwaoODB2sESuWCAdU26pnXz_GKJbAo9dBEAAAF6lGMt-w","redirectUrl":"http://swna.iptime.org:9999/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2021-07-11 16:06:06 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:06:06 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://swna.iptime.org:9999/oauth?code=nNCDwlWP-k40TJShEB3KodhnVMDjcaAsGt-1IpvisdwaoODB2sESuWCAdU26pnXz_GKJbAo9dBEAAAF6lGMt-w" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 16:06:06 info: PARAM {"0":"kakao/me"} | BODY {"token":"oG5rMiLbqiMk09xcd_Bbwt9rbX6gQT9GsdjpXAo9dZsAAAF6lGMw4g"}
+2021-07-11 16:06:06 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:06:06 +0000] "POST /api/kakao/me HTTP/1.1" 200 113 "http://swna.iptime.org:9999/oauth?code=nNCDwlWP-k40TJShEB3KodhnVMDjcaAsGt-1IpvisdwaoODB2sESuWCAdU26pnXz_GKJbAo9dBEAAAF6lGMt-w" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 16:06:06 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-11 16:06:06 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:06:06 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://swna.iptime.org:9999/oauth?code=nNCDwlWP-k40TJShEB3KodhnVMDjcaAsGt-1IpvisdwaoODB2sESuWCAdU26pnXz_GKJbAo9dBEAAAF6lGMt-w" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1"
+
+2021-07-11 16:06:06 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 16:06:06 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 16:06:06 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-11 16:06:26 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 16:06:26 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 16:06:26 info: PARAM {"0":"video/1112482398/변돌/0"} | BODY {}
+2021-07-11 16:06:26 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-11 16:06:26 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-11 16:06:26 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:06:26 +0000] "GET /api/memo/1112482398 HTTP/1.1" 200 1166 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:06:26 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:06:26 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 2 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:06:26 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:06:26 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 1139423 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:06:26 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:06:26 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 8927 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:06:27 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:06:27 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 1090235 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:33:56 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 16:33:56 info: PARAM {"0":"video/1112482398/변돌/0"} | BODY {}
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /api/image/1112482398/gallery HTTP/1.1" 200 6089 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /api/video/1112482398/%EB%B3%80%EB%8F%8C/0 HTTP/1.1" 200 388 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:56 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /api/image/1112482398/main HTTP/1.1" 200 505 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:56 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /api/userinfo/1112482398 HTTP/1.1" 200 580 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:56 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /api/memo/1112482398 HTTP/1.1" 200 1166 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /uploads/image/1112482398/3f4d3bd4b01aa00de89fa051fc79ede7e3e4.jpeg HTTP/1.1" 200 489652 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /uploads/image/1112482398/5f92faec8e32a58d82ebd6b2633731d0113b_thumb.jpeg HTTP/1.1" 200 27142 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /uploads/image/1112482398/7e9fc7550949d4d4f3d0dc975cc08ad4bb0f_thumb.jpeg HTTP/1.1" 200 27069 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /uploads/image/1112482398/638483914f88108ff0e536a2c8f9abd08208_thumb.jpeg HTTP/1.1" 200 17096 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /uploads/image/1112482398/5f92faec8e32a58d82ebd6b2633731d0113b.jpeg HTTP/1.1" 200 3279071 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /uploads/image/1112482398/4d84fef6fde3d453109c08732774db4acbb0_thumb.jpeg HTTP/1.1" 200 10369 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /uploads/image/1112482398/b8ca24837a9066a1e0d0545c90d48a191b79_thumb.jpeg HTTP/1.1" 200 16083 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /uploads/image/1112482398/6df879b274af9502df492c80e12c4a8fb189_thumb.jpeg HTTP/1.1" 200 18390 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /uploads/image/1112482398/dd927b2de0d35af93d0b7ee51b3321ff05d2_thumb.jpeg HTTP/1.1" 200 14197 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /uploads/image/1112482398/3e1d26f0638739dc93d16f59df9576484626_thumb.jpeg HTTP/1.1" 200 16730 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /uploads/image/1112482398/f0ebb5362f84e441c79dd86945e9b2f3c4f0_thumb.jpeg HTTP/1.1" 200 14803 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /uploads/image/1112482398/51bd3f3f1d21114703038a20c18c7d7356f2_thumb.jpeg HTTP/1.1" 200 15188 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /uploads/image/1112482398/c1edcfe4e64e660c5f302df41910ee79b493_thumb.jpeg HTTP/1.1" 200 25605 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:56 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:56 +0000] "GET /uploads/image/1112482398/2ad223f052e5c83ec2e5a657aca598703f55_thumb.jpeg HTTP/1.1" 200 26685 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:57 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:57 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 2 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:57 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:57 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 1139423 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:57 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:57 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 8927 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:33:57 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:33:57 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 1111235 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:34:40 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:34:40 +0000] "GET /uploads/image/1112482398/3e1d26f0638739dc93d16f59df9576484626.jpeg HTTP/1.1" 200 120211 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:34:40 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:34:40 +0000] "GET /uploads/image/1112482398/f0ebb5362f84e441c79dd86945e9b2f3c4f0.jpeg HTTP/1.1" 200 102145 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:34:40 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:34:40 +0000] "GET /uploads/image/1112482398/c1edcfe4e64e660c5f302df41910ee79b493.jpeg HTTP/1.1" 200 3129379 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:34:42 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:34:42 +0000] "GET /uploads/image/1112482398/51bd3f3f1d21114703038a20c18c7d7356f2.jpeg HTTP/1.1" 200 224946 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.0"
+
+2021-07-11 16:40:18 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 16:40:18 info: PARAM {"0":"video/1112482398/변돌/0"} | BODY {}
+2021-07-11 16:40:18 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 16:40:18 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-11 16:40:18 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-11 16:40:19 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:40:19 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 2 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:40:19 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:40:19 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 1139423 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:40:19 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:40:19 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 8927 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 16:40:19 info: ::ffff:192.168.0.7 - - [11/Jul/2021:07:40:19 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 1091635 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 17:29:11 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-11 17:29:11 info: PARAM {"0":"video/1112482398/변돌/0"} | BODY {}
+2021-07-11 17:29:11 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 17:29:11 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 17:29:11 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-11 17:29:12 info: ::ffff:192.168.0.7 - - [11/Jul/2021:08:29:12 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 2 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 17:29:12 info: ::ffff:192.168.0.7 - - [11/Jul/2021:08:29:12 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 1139423 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 17:29:12 info: ::ffff:192.168.0.7 - - [11/Jul/2021:08:29:12 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 8927 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 17:29:12 info: ::ffff:192.168.0.7 - - [11/Jul/2021:08:29:12 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 1090235 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 17:40:49 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 17:40:49 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 17:40:49 info: PARAM {"0":"video/1112482398/변돌/0"} | BODY {}
+2021-07-11 17:40:49 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-11 17:40:49 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-11 17:40:49 info: ::ffff:192.168.0.7 - - [11/Jul/2021:08:40:49 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 2 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 17:40:49 info: ::ffff:192.168.0.7 - - [11/Jul/2021:08:40:49 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 1139423 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 17:40:49 info: ::ffff:192.168.0.7 - - [11/Jul/2021:08:40:49 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 8927 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 17:40:50 info: ::ffff:192.168.0.7 - - [11/Jul/2021:08:40:50 +0000] "GET /uploads/video/1112482398/a259eafafa49434b0c481918792572514c65.MOV HTTP/1.1" 206 1091635 "http://swna.iptime.org:9999/Home/1112482398/%EB%B3%80%EB%8F%8C/0" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 KAKAOTALK 9.4.1"
+
+2021-07-11 20:20:23 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-11 20:20:23 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-11 20:20:23 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-11 20:20:23 info: PARAM {"0":"userinfo/1112482398"} | BODY {}

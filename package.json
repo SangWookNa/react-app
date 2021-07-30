@@ -36,7 +36,6 @@
     "react-dom": "^16.8.6",
     "react-grid-gallery": "^0.5.4",
     "react-image-gallery": "^0.8.16",
-    "react-image-upload": "^0.0.1",
     "react-images-upload": "^1.2.6",
     "react-photo-gallery": "^7.0.2",
     "react-player": "^1.11.0",
@@ -52,7 +51,8 @@
     "shuffle-array": "^1.0.1",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^3.9.0",
-    "winston-mongodb": "^5.0.0"
+    "winston-mongodb": "^5.0.0",
+    "yarn": "^1.22.10"
   },
   "scripts": {
     "start": "react-scripts start",

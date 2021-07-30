@@ -13,6 +13,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import Switch from '@material-ui/core/Switch';
 import Grid from '@material-ui/core/Grid';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import classNames from 'classnames';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import * as value from './../globals';
@@ -28,10 +29,19 @@ const styles = theme => ({
     input: {
         display: 'none',
     },
+    invitee: {
+        margin: '10px',
+      },
     card: {
         maxWidth: 700,
         marginBottom: '10px',
     },
+    dense: {
+        marginTop: 1,
+    },
+    font: {
+        fontFamily: '"Noto Sans KR", verdana, san-serif',
+    }
 });
 
 class VideoUpload extends React.Component {
@@ -43,6 +53,7 @@ class VideoUpload extends React.Component {
             loadingValue: 0,
             videoFiles: [{ name: "영상을 업로드 해주세요" }],
             invitee: '',
+            message :'',
             files: [],
             filePath: '',
             disabled: false,
@@ -51,9 +62,12 @@ class VideoUpload extends React.Component {
     }
 
     handleInputChange = (e) => {
-        this.setState({
-            invitee: e.target.value,
-        });
+        let nextState = {};
+        nextState[e.target.name] = e.target.value;
+
+        this.setState(
+            nextState
+        );
     }
 
     onDrop = (selectorFiles) => {
@@ -66,6 +80,7 @@ class VideoUpload extends React.Component {
         formData.append('enterid', id);
         formData.append('username', username);
         formData.append('invitee', this.state.invitee);
+        formData.append('message', this.state.message);
         for (let i = 0; i < file.length; i++) {
             formData.append('file', file[i]);
         }
@@ -83,7 +98,7 @@ class VideoUpload extends React.Component {
         }
 
         return axios.post('/api/video/', formData, config).then((result) => {
-
+            console.log(result.data.files);
             this.setState({
                 files: result.data.files,
                 filePath: result.data.files[0].path,
@@ -112,19 +127,20 @@ class VideoUpload extends React.Component {
 
     upload_withVideo = (e) => {
         let invitee = this.state.invitee;
+        let message = this.state.message;
         let username = this.props.status.info.nickname;
         let enterid = this.props.status.info.userid;
         let files = this.state.files;
 
-        if (files.length === 0) {
-            alert("영상을 등록해주세요~");
-            return;
-        }
+        // if (files.length === 0) {
+        //     alert("영상을 등록해주세요~");
+        //     return;
+        // }
         this.setState({
             disabled: true,
         })
 
-        return axios.post('/api/video/save', { username, enterid, invitee, files }).then((result) => {
+        return axios.post('/api/video/save', { username, enterid, invitee, message, files }).then((result) => {
 
             let invitee = result.data.result.invitee;
             let seq = result.data.result._id;
@@ -280,6 +296,17 @@ class VideoUpload extends React.Component {
         );
         const videoForm = (
             <div>
+                <Grid item xs={12} className={classes.invitee} >
+                    <TextField
+                        id="invitee"
+                        name="invitee"
+                        label="초대받는분 이름"
+                        fullWidth
+                        value={this.state.invitee}
+                        variant="outlined"
+                        onChange={this.handleInputChange}
+                    />
+                </Grid>
                 <input
                     accept="video/*"
                     id="contained-button-file"
@@ -303,17 +330,22 @@ class VideoUpload extends React.Component {
                         </CardActionArea>
                     </label>
                 </Card>
+
                 <Grid item xs={12}>
-                    <TextField
-                        id="invitee"
-                        name="invitee"
-                        label="초대받는분 이름"
-                        fullWidth
-                        value={this.state.invitee}
-                        variant="outlined"
-                        onChange={this.handleInputChange}
+                        <TextField
+                            id="message"
+                            name="message"
+                            label={<Typography color="inherit" className={classes.font}>{this.state.invitee}님을 위한 초대메시지</Typography>}
+                            rowsMax="4"
+                            multiline
+                            fullWidth
+                            margin="dense"
+                            value={this.state.message}
+                            className={classNames(classes.dense, classes.font)}
+                            onChange={this.handleInputChange}
                     />
                 </Grid>
+
             </div>
         )
 
@@ -328,7 +360,7 @@ class VideoUpload extends React.Component {
                             value="checkedB"
                             color="primary"
                         />}
-                        label="초대영상등록하기"
+                        label="개인 청첩장 만들기"
                         labelPlacement="start"
                     />
                 </Grid>

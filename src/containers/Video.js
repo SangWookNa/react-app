@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import VideoPlayer from '../components/video/VideoPlayer';
+import Typography from '@material-ui/core/Typography';
 import { connect } from 'react-redux';
 import {
   videoListRequest,
@@ -8,6 +9,8 @@ import {
 class Video extends Component {
   state = {
     path: '',
+    size: 0,
+    message : ''
   }
 
   componentDidMount() {
@@ -20,7 +23,9 @@ class Video extends Component {
     this.props.videoListRequest(enterid, invitee, seq).then(
       () => {
         this.setState({
-          path: `${origin}/${this.props.videoData[0].path}`
+          path: `${origin}/${this.props.videoData[0].path}`,
+          size: this.props.videoData[0].size,
+          message : this.props.videoData[0].message
         })
       }
     );
@@ -29,10 +34,14 @@ class Video extends Component {
   }
 
   render() {
-
+    const videoPlayer = (<VideoPlayer url={this.state.path} />);
     return (
       <div style={{marginBottom: 50 }}>
-        <VideoPlayer url={this.state.path} />
+        <Typography variant="h6" component="h3" align="center">
+            {this.state.message}
+        </Typography>
+        {this.state.size > 0 ? videoPlayer : undefined}
+        
       </div>
     );
   }

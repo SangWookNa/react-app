@@ -1,0 +1,599 @@
+2021-07-28 13:57:47 info: Check out the app at http://localhost:4000
+2021-07-28 13:57:47 info: Connected to mongodb server
+2021-07-28 13:58:16 info: PARAM {"0":"kakao/"} | BODY {"code":"sUnRSpI2T4xcwgq8SFQ4uVphucITGS-my2V6khMEYyBa1KBLyZi41z4DwIVtWYVeJjoBCQorDSAAAAF663pA6w","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2021-07-28 13:58:17 info: ::ffff:127.0.0.1 - - [28/Jul/2021:04:58:17 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=sUnRSpI2T4xcwgq8SFQ4uVphucITGS-my2V6khMEYyBa1KBLyZi41z4DwIVtWYVeJjoBCQorDSAAAAF663pA6w" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 13:58:17 info: PARAM {"0":"kakao/me"} | BODY {"token":"G0VhaY-Odfds4fltWZgCF5Rk3V6E5de4uYQhFwopcFEAAAF663pF8w"}
+2021-07-28 13:58:17 info: ::ffff:127.0.0.1 - - [28/Jul/2021:04:58:17 +0000] "POST /api/kakao/me HTTP/1.1" 200 113 "http://localhost:3000/oauth?code=sUnRSpI2T4xcwgq8SFQ4uVphucITGS-my2V6khMEYyBa1KBLyZi41z4DwIVtWYVeJjoBCQorDSAAAAF663pA6w" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 13:58:17 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 13:58:17 info: ::ffff:127.0.0.1 - - [28/Jul/2021:04:58:17 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/oauth?code=sUnRSpI2T4xcwgq8SFQ4uVphucITGS-my2V6khMEYyBa1KBLyZi41z4DwIVtWYVeJjoBCQorDSAAAAF663pA6w" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 13:58:17 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 13:58:18 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 13:58:18 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 14:30:39 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 14:30:39 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 14:30:39 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 14:30:39 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 14:30:39 info: ::ffff:127.0.0.1 - - [28/Jul/2021:05:30:39 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 14:30:48 info: PARAM {"0":"video/save"} | BODY {"username":"나상","enterid":1112482398,"invitee":"테스트1","files":[]}
+2021-07-28 14:30:48 error: TypeError: Cannot read property 'path' of undefined
+    at D:/workspace/react-app/server/routes/video.js:66:24
+    at Layer.handle [as handle_request] (D:\workspace\react-app\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\workspace\react-app\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\workspace\react-app\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\workspace\react-app\node_modules\express\lib\router\layer.js:95:5)
+    at D:\workspace\react-app\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\workspace\react-app\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\workspace\react-app\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (D:\workspace\react-app\node_modules\express\lib\router\index.js:174:3)
+    at router (D:\workspace\react-app\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (D:\workspace\react-app\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\workspace\react-app\node_modules\express\lib\router\index.js:317:13)
+    at D:\workspace\react-app\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\workspace\react-app\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\workspace\react-app\node_modules\express\lib\router\index.js:275:10)
+    at D:/workspace/react-app/server/routes/index.js:17:5
+2021-07-28 14:30:48 info: ::ffff:127.0.0.1 - - [28/Jul/2021:05:30:48 +0000] "POST /api/video/save HTTP/1.1" 500 16 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 15:22:39 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 15:22:39 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 15:22:39 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 15:22:39 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:22:39 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:22:39 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 15:26:07 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 15:26:07 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 15:26:07 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 15:26:07 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:26:07 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 15:26:07 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:38:31 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 15:38:31 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:38:31 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 15:38:31 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 15:38:31 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:38:31 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 15:41:57 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 15:41:57 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:41:57 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 15:41:57 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 15:41:57 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 15:41:57 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 15:41:57 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:41:57 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:41:57 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 15:41:58 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:41:58 +0000] "GET /uploads/video/1112482398/f015ffe998705f6458c76f3ccef009a8ae6e.MOV HTTP/1.1" 206 1139423 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 15:41:59 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:41:59 +0000] "GET /uploads/video/1112482398/f015ffe998705f6458c76f3ccef009a8ae6e.MOV HTTP/1.1" 206 25311 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 15:42:00 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:42:00 +0000] "GET /uploads/video/1112482398/f015ffe998705f6458c76f3ccef009a8ae6e.MOV HTTP/1.1" 206 192851 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 15:43:47 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 15:43:47 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:43:47 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 15:43:47 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 15:43:47 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:43:47 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 15:43:48 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 15:43:48 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 15:43:48 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:43:49 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:43:49 +0000] "GET /uploads/video/1112482398/f015ffe998705f6458c76f3ccef009a8ae6e.MOV HTTP/1.1" 206 735 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 15:44:48 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 15:44:48 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 15:44:48 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:44:48 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 15:44:48 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:44:48 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 15:44:48 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 15:44:48 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 15:44:48 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 15:44:48 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:44:48 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 15:44:48 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:44:48 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 15:44:48 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 15:44:49 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:46:29 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 15:46:29 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:46:29 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 15:46:29 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 15:46:29 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:46:29 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 15:46:29 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 15:46:29 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 15:46:30 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 15:46:30 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:46:30 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 15:46:30 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:46:30 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 15:46:30 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 15:46:30 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:48:37 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:48:37 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 15:48:37 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 15:48:37 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 15:48:37 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 15:48:37 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:48:37 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 15:48:37 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 15:48:37 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 15:48:37 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:48:37 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:48:37 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 15:48:37 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 15:48:37 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 15:48:37 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:49:23 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 15:49:23 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 15:49:23 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 15:49:23 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:49:23 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:49:23 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 15:49:24 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 15:49:24 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 15:49:24 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 15:49:24 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:49:24 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 15:49:24 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 15:49:24 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:49:24 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 15:49:24 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:50:04 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 15:50:04 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:50:04 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 15:50:04 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 15:50:05 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:50:05 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 15:50:05 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 15:50:05 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 15:50:05 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 15:50:05 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 15:50:05 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 15:50:05 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 15:50:05 info: ::ffff:127.0.0.1 - - [28/Jul/2021:06:50:05 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 15:50:05 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:06:37 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:06:37 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:06:37 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:06:37 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:06:38 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:06:38 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:06:38 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:06:38 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 16:06:38 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:06:38 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:06:38 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:06:38 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 16:06:38 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:06:38 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 16:06:38 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:06:52 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:06:52 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:06:52 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:06:52 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:06:52 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:06:52 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:06:53 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:06:53 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 16:06:53 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:06:53 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:06:53 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:06:53 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 16:06:53 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:06:53 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 16:06:53 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:07:14 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:07:14 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:07:14 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:07:14 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:07:14 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 16:07:14 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:07:14 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 16:07:14 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 16:07:14 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:07:14 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:07:14 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:07:14 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:07:14 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:07:14 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:07:14 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:07:44 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:07:44 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:07:44 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:07:44 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:07:44 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:07:44 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:07:44 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 16:07:44 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 16:07:44 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:07:44 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:07:44 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:07:45 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:07:45 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 16:07:45 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:07:45 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:08:15 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:08:15 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:08:15 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:08:15 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:08:15 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:08:15 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:08:16 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 16:08:16 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:08:16 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:08:16 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:08:16 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:08:16 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 16:08:16 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:08:16 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 16:08:16 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:08:26 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:08:26 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 16:08:26 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:08:26 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:08:26 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 16:08:26 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:08:26 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:08:26 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 16:08:26 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:08:26 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:08:26 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:08:26 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:08:26 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:08:26 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:08:26 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:08:38 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:08:38 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 16:08:38 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:08:38 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:08:38 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:08:38 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 16:08:38 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:08:38 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 16:08:39 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:08:39 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:08:39 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:08:39 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:08:39 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:08:39 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:08:39 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:09:08 info: Check out the app at http://localhost:4000
+2021-07-28 16:09:08 info: Connected to mongodb server
+2021-07-28 16:09:22 info: Check out the app at http://localhost:4000
+2021-07-28 16:09:22 info: Connected to mongodb server
+2021-07-28 16:09:57 info: Check out the app at http://localhost:4000
+2021-07-28 16:09:57 info: Connected to mongodb server
+2021-07-28 16:10:46 info: Check out the app at http://localhost:4000
+2021-07-28 16:10:46 info: Connected to mongodb server
+2021-07-28 16:17:53 info: PARAM {"0":"video/"} | BODY {}
+2021-07-28 16:17:53 info: [{"fieldname":"file","originalname":"f015ffe998705f6458c76f3ccef009a8ae6e.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"uploads/video/temp/","filename":"ad0647afe77576119518acf02ce7bb8a7846.MOV","path":"uploads\\video\\temp\\ad0647afe77576119518acf02ce7bb8a7846.MOV","size":1139423}]
+2021-07-28 16:17:53 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:17:53 +0000] "POST /api/video/ HTTP/1.1" 200 314 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:17:53 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:17:53 +0000] "GET /uploads/video/temp/ad0647afe77576119518acf02ce7bb8a7846.MOV HTTP/1.1" 206 1139423 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:18:16 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:18:16 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:18:16 +0000] "POST /api/kakao/getinfo HTTP/1.1" 401 11 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:18:16 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:18:16 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:18:17 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:18:21 info: PARAM {"0":"kakao/"} | BODY {"code":"dSfPDwWjuIwFzg22oJlpXiOccSYodBKvVybwUAGORhZzcMRYX1hKtuch6Twp1z_PZb4ebgopyV4AAAF66_qACw","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2021-07-28 16:18:21 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:18:21 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=dSfPDwWjuIwFzg22oJlpXiOccSYodBKvVybwUAGORhZzcMRYX1hKtuch6Twp1z_PZb4ebgopyV4AAAF66_qACw" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:18:21 info: PARAM {"0":"kakao/me"} | BODY {"token":"i005kPw4gOTNGTDuSPkxhtvX1at2W8XDPo76AQorDNMAAAF66_qC9g"}
+2021-07-28 16:18:21 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:18:21 +0000] "POST /api/kakao/me HTTP/1.1" 200 113 "http://localhost:3000/oauth?code=dSfPDwWjuIwFzg22oJlpXiOccSYodBKvVybwUAGORhZzcMRYX1hKtuch6Twp1z_PZb4ebgopyV4AAAF66_qACw" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:18:21 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:18:21 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:18:21 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/oauth?code=dSfPDwWjuIwFzg22oJlpXiOccSYodBKvVybwUAGORhZzcMRYX1hKtuch6Twp1z_PZb4ebgopyV4AAAF66_qACw" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:18:21 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:18:22 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:18:22 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:18:37 info: PARAM {"0":"video/"} | BODY {}
+2021-07-28 16:18:37 info: [{"fieldname":"file","originalname":"f015ffe998705f6458c76f3ccef009a8ae6e.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"uploads/video/temp/","filename":"4c8446690d5ac1911ddc1d5ac2a9d9b210e6.MOV","path":"uploads\\video\\temp\\4c8446690d5ac1911ddc1d5ac2a9d9b210e6.MOV","size":1139423}]
+2021-07-28 16:18:37 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:18:37 +0000] "POST /api/video/ HTTP/1.1" 200 314 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:18:38 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:18:38 +0000] "GET /uploads/video/temp/4c8446690d5ac1911ddc1d5ac2a9d9b210e6.MOV HTTP/1.1" 206 1139423 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:18:38 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:18:38 +0000] "GET /uploads/video/temp/4c8446690d5ac1911ddc1d5ac2a9d9b210e6.MOV HTTP/1.1" 206 25311 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:18:38 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:18:38 +0000] "GET /uploads/video/temp/4c8446690d5ac1911ddc1d5ac2a9d9b210e6.MOV HTTP/1.1" 206 942815 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:18:50 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:18:50 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:18:50 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:18:50 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:18:50 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:18:50 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:19:15 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:19:15 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 16:19:15 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:19:15 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 16:19:15 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:19:15 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:19:15 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:19:15 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 16:19:15 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:19:15 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:19:15 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:19:15 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:19:15 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:19:15 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:19:15 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:22:25 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:22:25 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:22:25 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 16:22:25 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:22:25 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:22:26 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:22:26 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:22:26 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:22:26 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 16:22:26 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:22:26 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 16:22:26 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:22:26 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:22:26 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:22:26 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:23:18 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:23:18 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:23:18 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:23:18 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:23:19 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:23:19 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:23:19 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:23:19 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 16:23:19 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:23:19 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:23:19 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:23:19 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 16:23:19 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:23:19 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 16:23:19 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:23:41 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:23:41 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:23:41 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:23:41 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:23:41 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:23:41 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:23:41 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:23:41 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 16:23:41 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:23:41 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:23:41 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 16:23:41 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:23:41 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:23:41 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 16:23:41 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:23:49 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:23:49 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:23:49 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:23:49 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:23:49 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:23:49 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:24:04 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:24:04 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:24:04 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:24:04 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:24:04 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:24:04 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:24:04 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:24:04 info: PARAM {"0":"video/1112482398/undefined/2"} | BODY {}
+2021-07-28 16:24:05 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:24:05 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/2" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 16:24:05 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:24:05 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:24:05 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:24:05 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 16:24:05 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:25:11 info: PARAM {"0":"video/"} | BODY {}
+2021-07-28 16:25:11 info: [{"fieldname":"file","originalname":"399195273d515145a4366829cdb09ba46acb.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"uploads/video/temp/","filename":"020f1df2e699acc2f05dafd50b906622d698.MOV","path":"uploads\\video\\temp\\020f1df2e699acc2f05dafd50b906622d698.MOV","size":1139423}]
+2021-07-28 16:25:11 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:25:11 +0000] "POST /api/video/ HTTP/1.1" 200 314 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:25:12 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:25:12 +0000] "GET /uploads/video/temp/020f1df2e699acc2f05dafd50b906622d698.MOV HTTP/1.1" 206 1139423 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:25:12 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:25:12 +0000] "GET /uploads/video/temp/020f1df2e699acc2f05dafd50b906622d698.MOV HTTP/1.1" 206 25311 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:25:12 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:25:12 +0000] "GET /uploads/video/temp/020f1df2e699acc2f05dafd50b906622d698.MOV HTTP/1.1" 206 942815 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:25:16 info: PARAM {"0":"video/save"} | BODY {"username":"나상","enterid":1112482398,"invitee":"ㅂㅂㅂ","message":"ㄴㅇㅊㄴㅇㅊㄴㅇㅍㅇㅍ","files":[{"fieldname":"file","originalname":"399195273d515145a4366829cdb09ba46acb.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"uploads/video/temp/","filename":"020f1df2e699acc2f05dafd50b906622d698.MOV","path":"uploads\\video\\temp\\020f1df2e699acc2f05dafd50b906622d698.MOV","size":1139423}]}
+2021-07-28 16:25:16 info: FILE MOVE : uploads\video\temp\020f1df2e699acc2f05dafd50b906622d698.MOV --> uploads/video/1112482398/020f1df2e699acc2f05dafd50b906622d698.MOV
+2021-07-28 16:25:16 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:25:16 +0000] "POST /api/video/save HTTP/1.1" 200 441 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:25:16 info: PARAM {"0":"kakao/send"} | BODY {"token":"i005kPw4gOTNGTDuSPkxhtvX1at2W8XDPo76AQorDNMAAAF66_qC9g","data":{"object_type":"feed","content":{"title":"To. ㅂㅂㅂ","description":"결혼식에 초대합니다.","image_url":"http://localhost:3000/uploads\\image\\1112482398\\3f4d3bd4b01aa00de89fa051fc79ede7e3e4.jpeg","image_width":640,"image_height":640,"link":{"web_url":"http://localhost:3000/Home/1112482398/ㅂㅂㅂ/3","mobile_web_url":"http://localhost:3000/Home/1112482398/ㅂㅂㅂ/3","android_execution_params":"contentId=100","ios_execution_params":"contentId=100"}},"buttons":[{"title":"청첩장 열어보기","link":{"web_url":"http://localhost:3000/Home/1112482398/ㅂㅂㅂ/3","mobile_web_url":"http://localhost:3000/Home/1112482398/ㅂㅂㅂ/3"}}]}}
+2021-07-28 16:25:16 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:25:16 +0000] "POST /api/kakao/send HTTP/1.1" 200 17 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:25:20 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:25:21 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:25:21 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:25:21 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:25:21 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:25:21 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:33:19 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:33:19 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:33:19 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:33:19 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:33:19 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:33:19 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:33:24 info: PARAM {"0":"video/"} | BODY {}
+2021-07-28 16:33:24 info: [{"fieldname":"file","originalname":"a259eafafa49434b0c481918792572514c65.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"uploads/video/temp/","filename":"34b04618ac9d8ac49a9bed51123aca55654a.MOV","path":"uploads\\video\\temp\\34b04618ac9d8ac49a9bed51123aca55654a.MOV","size":1139423}]
+2021-07-28 16:33:24 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:33:24 +0000] "POST /api/video/ HTTP/1.1" 200 314 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:33:24 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:33:24 +0000] "GET /uploads/video/temp/34b04618ac9d8ac49a9bed51123aca55654a.MOV HTTP/1.1" 206 1139423 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:33:24 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:33:24 +0000] "GET /uploads/video/temp/34b04618ac9d8ac49a9bed51123aca55654a.MOV HTTP/1.1" 206 25311 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:33:25 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:33:25 +0000] "GET /uploads/video/temp/34b04618ac9d8ac49a9bed51123aca55654a.MOV HTTP/1.1" 206 942815 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:35:25 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:35:25 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:35:25 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:35:25 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:35:25 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:35:25 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:35:34 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:35:35 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:35:35 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:35:35 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:35:35 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:35:35 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:35:54 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:35:54 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:35:54 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:35:54 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:35:54 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:35:54 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:35:57 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:35:57 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:35:57 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:35:57 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:35:57 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:35:57 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:36:09 info: PARAM {"0":"video/"} | BODY {}
+2021-07-28 16:36:09 info: [{"fieldname":"file","originalname":"399195273d515145a4366829cdb09ba46acb.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"uploads/video/temp/","filename":"30808ae9067b8b70addaf5115ef3c037cb81.MOV","path":"uploads\\video\\temp\\30808ae9067b8b70addaf5115ef3c037cb81.MOV","size":1139423}]
+2021-07-28 16:36:09 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:36:09 +0000] "POST /api/video/ HTTP/1.1" 200 314 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:36:09 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:36:09 +0000] "GET /uploads/video/temp/30808ae9067b8b70addaf5115ef3c037cb81.MOV HTTP/1.1" 206 1139423 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:36:10 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:36:09 +0000] "GET /uploads/video/temp/30808ae9067b8b70addaf5115ef3c037cb81.MOV HTTP/1.1" 206 25311 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:36:10 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:36:10 +0000] "GET /uploads/video/temp/30808ae9067b8b70addaf5115ef3c037cb81.MOV HTTP/1.1" 206 942815 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:36:26 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:36:26 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:36:26 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:36:26 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:36:26 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:36:26 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:36:28 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:36:28 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:36:28 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:36:28 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:36:28 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:36:28 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:36:37 info: PARAM {"0":"video/"} | BODY {}
+2021-07-28 16:36:37 info: [{"fieldname":"file","originalname":"a259eafafa49434b0c481918792572514c65.MOV","encoding":"7bit","mimetype":"video/quicktime","destination":"uploads/video/temp/","filename":"029b4eb16db5ba750ffa6b25959e70dddb8a.MOV","path":"uploads\\video\\temp\\029b4eb16db5ba750ffa6b25959e70dddb8a.MOV","size":1139423}]
+2021-07-28 16:36:37 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:36:37 +0000] "POST /api/video/ HTTP/1.1" 200 314 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:36:38 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:36:38 +0000] "GET /uploads/video/temp/029b4eb16db5ba750ffa6b25959e70dddb8a.MOV HTTP/1.1" 206 1139423 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:36:38 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:36:38 +0000] "GET /uploads/video/temp/029b4eb16db5ba750ffa6b25959e70dddb8a.MOV HTTP/1.1" 206 25311 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:36:39 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:36:39 +0000] "GET /uploads/video/temp/029b4eb16db5ba750ffa6b25959e70dddb8a.MOV HTTP/1.1" 206 942815 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:36:41 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:36:41 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:36:41 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:36:41 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:36:41 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:36:41 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:37:04 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:37:04 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:37:04 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:37:04 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:37:04 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:37:04 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:38:38 info: Check out the app at http://localhost:4000
+2021-07-28 16:38:38 info: Connected to mongodb server
+2021-07-28 16:41:29 info: Check out the app at http://localhost:4000
+2021-07-28 16:41:29 info: Connected to mongodb server
+2021-07-28 16:41:33 info: PARAM {"0":"video/save"} | BODY {"username":"나상","enterid":1112482398,"invitee":"ㅈㄷㄱ","message":"ㅈㄷㄱ","files":[]}
+2021-07-28 16:41:33 info: FILE MOVE : uploads\video\temp\34b04618ac9d8ac49a9bed51123aca55654a.MOV --> uploads/video/1112482398/34b04618ac9d8ac49a9bed51123aca55654a.MOV
+2021-07-28 16:41:33 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:41:33 +0000] "POST /api/video/save HTTP/1.1" 200 417 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:41:33 info: PARAM {"0":"kakao/send"} | BODY {"token":"i005kPw4gOTNGTDuSPkxhtvX1at2W8XDPo76AQorDNMAAAF66_qC9g","data":{"object_type":"feed","content":{"title":"To. ㅈㄷㄱ","description":"결혼식에 초대합니다.","image_url":"http://localhost:3000/uploads\\image\\1112482398\\3f4d3bd4b01aa00de89fa051fc79ede7e3e4.jpeg","image_width":640,"image_height":640,"link":{"web_url":"http://localhost:3000/Home/1112482398/ㅈㄷㄱ/4","mobile_web_url":"http://localhost:3000/Home/1112482398/ㅈㄷㄱ/4","android_execution_params":"contentId=100","ios_execution_params":"contentId=100"}},"buttons":[{"title":"청첩장 열어보기","link":{"web_url":"http://localhost:3000/Home/1112482398/ㅈㄷㄱ/4","mobile_web_url":"http://localhost:3000/Home/1112482398/ㅈㄷㄱ/4"}}]}}
+2021-07-28 16:41:34 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:41:34 +0000] "POST /api/kakao/send HTTP/1.1" 200 17 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:41:38 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:41:38 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:41:38 +0000] "POST /api/kakao/getinfo HTTP/1.1" 401 11 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:41:38 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:41:38 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:41:38 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:41:41 info: PARAM {"0":"kakao/"} | BODY {"code":"OJL1l6s2JtZtENn0ZLAiAwuZDHF9MHrT9nc5Xw4mUNzXOFMUcf2aouWt0Z8YDPBmCpIFWQo9c00AAAF67A_g2A","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2021-07-28 16:41:42 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:41:42 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=OJL1l6s2JtZtENn0ZLAiAwuZDHF9MHrT9nc5Xw4mUNzXOFMUcf2aouWt0Z8YDPBmCpIFWQo9c00AAAF67A_g2A" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:41:42 info: PARAM {"0":"kakao/me"} | BODY {"token":"vtG8-ypTj16jSswM_W0PCun5XGeBPKSlJbJDMAo9cpcAAAF67A_jOQ"}
+2021-07-28 16:41:42 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:41:42 +0000] "POST /api/kakao/me HTTP/1.1" 200 113 "http://localhost:3000/oauth?code=OJL1l6s2JtZtENn0ZLAiAwuZDHF9MHrT9nc5Xw4mUNzXOFMUcf2aouWt0Z8YDPBmCpIFWQo9c00AAAF67A_g2A" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:41:42 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:41:42 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:41:42 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/oauth?code=OJL1l6s2JtZtENn0ZLAiAwuZDHF9MHrT9nc5Xw4mUNzXOFMUcf2aouWt0Z8YDPBmCpIFWQo9c00AAAF67A_g2A" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:41:42 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:41:43 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:41:43 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:41:49 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:41:49 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:41:49 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:41:49 info: PARAM {"0":"video/1112482398/ㅈㄷㄱ/4"} | BODY {}
+2021-07-28 16:41:49 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:41:49 +0000] "GET /api/video/1112482398/%E3%85%88%E3%84%B7%E3%84%B1/4 HTTP/1.1" 200 408 "http://localhost:3000/Home/1112482398/%E3%85%88%E3%84%B7%E3%84%B1/4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 16:41:49 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:41:49 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/%E3%85%88%E3%84%B7%E3%84%B1/4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 16:41:49 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:41:49 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 16:41:49 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:41:49 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:41:49 +0000] "GET /uploads/video/1112482398/34b04618ac9d8ac49a9bed51123aca55654a.MOV HTTP/1.1" 206 1139423 "http://localhost:3000/Home/1112482398/%E3%85%88%E3%84%B7%E3%84%B1/4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 16:42:14 info: Check out the app at http://localhost:4000
+2021-07-28 16:42:14 info: Connected to mongodb server
+2021-07-28 16:42:24 info: PARAM {"0":"video/save"} | BODY {"username":"나상","enterid":1112482398,"invitee":"ㄹㄹㄹ","message":"ㄴㅇㄹㄴㄹㅈㄷㄹ","files":[]}
+2021-07-28 16:42:24 error: uncaughtException: ENOENT: no such file or directory, rename '' -> 'D:\workspace\react-app\uploads\video\1112482398'
+Error: ENOENT: no such file or directory, rename '' -> 'D:\workspace\react-app\uploads\video\1112482398'
+2021-07-28 16:42:24 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:42:24 +0000] "POST /api/video/save HTTP/1.1" 200 306 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:42:24 info: PARAM {"0":"kakao/send"} | BODY {"token":"vtG8-ypTj16jSswM_W0PCun5XGeBPKSlJbJDMAo9cpcAAAF67A_jOQ","data":{"object_type":"feed","content":{"title":"To. ㄹㄹㄹ","description":"결혼식에 초대합니다.","image_url":"http://localhost:3000/uploads\\image\\1112482398\\3f4d3bd4b01aa00de89fa051fc79ede7e3e4.jpeg","image_width":640,"image_height":640,"link":{"web_url":"http://localhost:3000/Home/1112482398/ㄹㄹㄹ/5","mobile_web_url":"http://localhost:3000/Home/1112482398/ㄹㄹㄹ/5","android_execution_params":"contentId=100","ios_execution_params":"contentId=100"}},"buttons":[{"title":"청첩장 열어보기","link":{"web_url":"http://localhost:3000/Home/1112482398/ㄹㄹㄹ/5","mobile_web_url":"http://localhost:3000/Home/1112482398/ㄹㄹㄹ/5"}}]}}
+2021-07-28 16:42:24 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:42:24 +0000] "POST /api/kakao/send HTTP/1.1" 200 17 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:42:27 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:42:27 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:42:27 +0000] "POST /api/kakao/getinfo HTTP/1.1" 401 11 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:42:28 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:42:28 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:42:28 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:42:54 info: PARAM {"0":"kakao/"} | BODY {"code":"KWOwrYOjZwOpQ_kI73L4J4ZNdqUyxH51NXEJIAqJqJMkhVmsONXW7OTuIZodCP-cXEVqGwo9c04AAAF67BD5ZQ","redirectUrl":"http://localhost:3000/oauth","kakaoClientId":"9e7171f1d9599641378cd3e36174adbc"}
+2021-07-28 16:42:54 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:42:54 +0000] "POST /api/kakao/ HTTP/1.1" 200 267 "http://localhost:3000/oauth?code=KWOwrYOjZwOpQ_kI73L4J4ZNdqUyxH51NXEJIAqJqJMkhVmsONXW7OTuIZodCP-cXEVqGwo9c04AAAF67BD5ZQ" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:42:54 info: PARAM {"0":"kakao/me"} | BODY {"token":"FLO8YzmSjYva3ICl4RHfrHj4G0PUsRxaYs-KKAo9c-sAAAF67BD8yQ"}
+2021-07-28 16:42:54 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:42:54 +0000] "POST /api/kakao/me HTTP/1.1" 200 113 "http://localhost:3000/oauth?code=KWOwrYOjZwOpQ_kI73L4J4ZNdqUyxH51NXEJIAqJqJMkhVmsONXW7OTuIZodCP-cXEVqGwo9c04AAAF67BD5ZQ" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:42:54 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:42:54 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:42:54 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/oauth?code=KWOwrYOjZwOpQ_kI73L4J4ZNdqUyxH51NXEJIAqJqJMkhVmsONXW7OTuIZodCP-cXEVqGwo9c04AAAF67BD5ZQ" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:42:54 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:42:54 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:42:54 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:43:01 info: PARAM {"0":"video/save"} | BODY {"username":"나상","enterid":1112482398,"invitee":"ㅈㄷㄹㅂㅂㅂㅂㅂㅂ","message":"ㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂ","files":[]}
+2021-07-28 16:43:01 error: uncaughtException: ENOENT: no such file or directory, rename '' -> 'D:\workspace\react-app\uploads\video\1112482398'
+Error: ENOENT: no such file or directory, rename '' -> 'D:\workspace\react-app\uploads\video\1112482398'
+2021-07-28 16:43:01 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:43:01 +0000] "POST /api/video/save HTTP/1.1" 200 333 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:43:02 info: PARAM {"0":"kakao/send"} | BODY {"token":"FLO8YzmSjYva3ICl4RHfrHj4G0PUsRxaYs-KKAo9c-sAAAF67BD8yQ","data":{"object_type":"feed","content":{"title":"To. ㅈㄷㄹㅂㅂㅂㅂㅂㅂ","description":"결혼식에 초대합니다.","image_url":"http://localhost:3000/uploads\\image\\1112482398\\3f4d3bd4b01aa00de89fa051fc79ede7e3e4.jpeg","image_width":640,"image_height":640,"link":{"web_url":"http://localhost:3000/Home/1112482398/ㅈㄷㄹㅂㅂㅂㅂㅂㅂ/6","mobile_web_url":"http://localhost:3000/Home/1112482398/ㅈㄷㄹㅂㅂㅂㅂㅂㅂ/6","android_execution_params":"contentId=100","ios_execution_params":"contentId=100"}},"buttons":[{"title":"청첩장 열어보기","link":{"web_url":"http://localhost:3000/Home/1112482398/ㅈㄷㄹㅂㅂㅂㅂㅂㅂ/6","mobile_web_url":"http://localhost:3000/Home/1112482398/ㅈㄷㄹㅂㅂㅂㅂㅂㅂ/6"}}]}}
+2021-07-28 16:43:02 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:43:02 +0000] "POST /api/kakao/send HTTP/1.1" 200 17 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:43:04 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:43:04 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:43:04 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:43:04 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:43:04 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:43:04 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Main" "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Mobile Safari/537.36"
+
+2021-07-28 16:43:09 info: PARAM {"0":"kakao/getinfo"} | BODY {}
+2021-07-28 16:43:09 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-07-28 16:43:09 info: PARAM {"0":"video/1112482398/ㅈㄷㄹㅂㅂㅂㅂㅂㅂ/6"} | BODY {}
+2021-07-28 16:43:09 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:43:09 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:43:09 +0000] "GET /api/video/1112482398/%E3%85%88%E3%84%B7%E3%84%B9%E3%85%82%E3%85%82%E3%85%82%E3%85%82%E3%85%82%E3%85%82/6 HTTP/1.1" 200 324 "http://localhost:3000/Home/1112482398/%E3%85%88%E3%84%B7%E3%84%B9%E3%85%82%E3%85%82%E3%85%82%E3%85%82%E3%85%82%E3%85%82/6" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 16:43:09 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:43:09 +0000] "POST /api/kakao/getinfo HTTP/1.1" 200 122 "http://localhost:3000/Home/1112482398/%E3%85%88%E3%84%B7%E3%84%B9%E3%85%82%E3%85%82%E3%85%82%E3%85%82%E3%85%82%E3%85%82/6" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 16:43:09 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-07-28 16:43:09 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-07-28 16:43:09 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-07-28 16:43:09 info: ::ffff:127.0.0.1 - - [28/Jul/2021:07:43:09 +0000] "GET /uploads/video/1112482398/ HTTP/1.1" 404 164 "http://localhost:3000/Home/1112482398/%E3%85%88%E3%84%B7%E3%84%B9%E3%85%82%E3%85%82%E3%85%82%E3%85%82%E3%85%82%E3%85%82/6" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"
+
+2021-07-28 18:41:20 info: Check out the app at http://localhost:4000
+2021-07-28 18:41:20 info: Connected to mongodb server

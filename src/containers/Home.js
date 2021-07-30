@@ -44,7 +44,9 @@ class Home extends Component {
 
     const id = this.props.match.params.enterid;
     const origin = window.location.origin;
-
+    console.log('### : '+id);
+    console.log(this.props.match.params);
+    console.log('### : '+origin);
     //사진불러오기(메인)
     this.props.imageMainRequest(id, 'main').then(
       () => {

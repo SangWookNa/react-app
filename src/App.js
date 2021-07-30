@@ -5,9 +5,7 @@ import { connect } from 'react-redux';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import grey from '@material-ui/core/colors/grey';
 import green from '@material-ui/core/colors/green';
-import {
-  getStatusRequest,
-} from '../src/actions/kakao';
+import { getStatusRequest,} from '../src/actions/kakao';
 
 
 class App extends Component {

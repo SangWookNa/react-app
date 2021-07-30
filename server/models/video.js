@@ -19,6 +19,7 @@ const Video = new Schema({
     is_edited: { type: Boolean, default: false },
     username : String,
     invitee : String,
+    message : String,
     enterid : String,
 }, {
         usePushEach: true
