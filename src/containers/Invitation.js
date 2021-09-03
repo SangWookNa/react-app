@@ -5,22 +5,24 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Chip from '@material-ui/core/Chip';
+import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 
 const styles = theme => ({
     root: {
-        ...theme.mixins.gutters(),
-        paddingTop: theme.spacing.unit * 2,
-        paddingBottom: theme.spacing.unit * 2,
+        paddingTop: theme.spacing(1) * 2,
+        paddingBottom: theme.spacing(1) * 2,
     },
     cont: {
-        paddingTop: theme.spacing.unit * 2,
-        paddingBottom: theme.spacing.unit * 2,
+        paddingTop: theme.spacing(1) * 2,
+        paddingBottom: theme.spacing(1) * 2,
+        paddingLeft: theme.spacing(1) * 1,
+        paddingRight: theme.spacing(1) * 1,
     },
     subCont: {
-        paddingBottom: theme.spacing.unit * 2,
+        paddingBottom: theme.spacing(1) * 2,
     },
     chip: {
-        margin: theme.spacing.unit,
+        margin: theme.spacing(1),
         fontSize: 13,
     },
 });
@@ -51,15 +53,28 @@ class Invitation extends React.Component {
 
     render() {
         const { classes } = this.props;
+        const theme = createTheme({
+            // palette: {
+            //   primary: {
+            //     main: '#cfd8dc',
+            //   },
+            //   secondary: {
+            //     main: '#cfd8dc',
+            //   },
+            // },
+            typography: {
+             fontFamily: 'twayair',
+            },
+          });
         const userDataForm = (
             <div>
-                <Typography variant="h6" component="h3" align="center">
-                    {this.props.userData.data.groom} · {this.props.userData.data.bride}
+                <Typography  component="h3" align="center">
+                    {this.props.userData.data.groom} ♥ {this.props.userData.data.bride}
                 </Typography>
                 <Grid
                     container
                     alignItems='center'
-                    justify='center'>
+                    justifyContent='center'>
                     <Chip label={this.props.userData.data.marry_date_time_view} className={classes.chip} />
                 </Grid>
                 <Typography align="center" className={classes.subCont}>
@@ -68,19 +83,21 @@ class Invitation extends React.Component {
             </div>);
 
         return (
-            <div style={{ marginTop : 50, minHeight: this.state.contHeight + 'px' }}>
+            <div style={{ minHeight: this.state.contHeight + 'px' }}>
                 <Paper className={classes.root} elevation={3} >
-                    <Typography variant="h6" component="h3" align="center">
-                        결혼식에 초대합니다.
+                <ThemeProvider theme={theme}>
+                    <Typography  align="center" variant='h5' fontFamily = 'IM_Hyemin Bold' gutterBottom>
+                        결혼식에 초대합니다 ^-^
                     </Typography>
-                    <Grid className={classes.cont}
-                        container
-                        alignItems='center'
-                        justify='center'
-                        style={{ minHeight: this.state.height + 'px' }}>
-                        <img style={{ width: '100%', borderRadius: '20px' }} alt="img" align="center" src={this.props.images[0].src} />
-                    </Grid>
-                    {this.props.userData.data.groom === '' ? undefined : userDataForm}
+                </ThemeProvider>
+                <Grid className={classes.cont}
+                    container
+                    alignItems='center'
+                    justifyContent='center'
+                    style={{ minHeight: this.state.height + 'px' }}>
+                    <img style={{ width: '100%', borderRadius: '20px' }} alt="img" align="center" src={this.props.images[0].src} />
+                </Grid>
+                {this.props.userData.data.groom === '' ? undefined : userDataForm}
                 </Paper>
             </div>
         );

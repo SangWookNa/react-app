@@ -23,7 +23,7 @@ const styles = theme => ({
         marginTop: 20
     },
     button: {
-        margin: theme.spacing.unit,
+        margin: theme.spacing(1),
         float: 'right'
     },
     input: {
@@ -400,7 +400,7 @@ class MapUpload extends React.Component {
                     value={this.state.addressName2}
                     onChange={this.handleChange}
                     margin="normal"
-                    variant="outlined"
+                    
                 />
             </CardContent>
         );
@@ -409,7 +409,7 @@ class MapUpload extends React.Component {
             <div style={{ marginTop: '10px' }}>
                 <Grid container spacing={8}>
                     <Grid item xs={12}>
-                        <Typography variant="h6" gutterBottom>
+                        <Typography gutterBottom>
                             1. 예식정보관리
                 </Typography>
                     </Grid>
@@ -423,7 +423,7 @@ class MapUpload extends React.Component {
                             margin="normal"
                             inputRef={this.groomInput}
                             value={this.state.groom}
-                            variant="outlined"
+                           
                             onChange={this.handleChange}
                         />
                     </Grid>
@@ -437,7 +437,7 @@ class MapUpload extends React.Component {
                             margin="normal"
                             inputRef={this.brideInput}
                             value={this.state.bride}
-                            variant="outlined"
+                            
                             onChange={this.handleChange}
                         />
                     </Grid>
@@ -465,11 +465,11 @@ class MapUpload extends React.Component {
                                 label="예식장 이름(주소) 입력"
                                 style={{ width: '73%' }}
                                 value={this.state.searchValue}
-                                variant="outlined"
+                                
                                 onChange={this.handleChange}
                                 onKeyPress={this.handleKeyPress}
                             />
-                            <Button variant="contained" onClick={this.handleSearch} color="primary" className={classes.button} size="small" component="span" >
+                            <Button  onClick={this.handleSearch} color="primary" className={classes.button} size="small" component="span" >
                                 search
                     </Button>
                         </div>
@@ -486,7 +486,7 @@ class MapUpload extends React.Component {
                         </div>
                     </Grid>
                     <Grid item xs={6}>
-                        <Button variant="contained"
+                        <Button 
                             onClick={this.handlePost}
                             color="primary"
                             fullWidth
@@ -495,7 +495,7 @@ class MapUpload extends React.Component {
                         </Button>
                     </Grid>
                     <Grid item xs={6}>
-                        <Button variant="contained"
+                        <Button 
                             onClick={this.handleCancel}
                             color="primary"
                             fullWidth

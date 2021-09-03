@@ -7,6 +7,12 @@ import {
 } from './';
 import { connect } from 'react-redux';
 import { Gallery, ImageGridList } from '../components/image/';
+import Card from '@material-ui/core/Card';
+import TextField from '@material-ui/core/TextField';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import CallIcon from '@material-ui/icons/Call';
+import { withStyles } from '@material-ui/core/styles';
 import {
   imageGalleryListRequest,
   imageGridListRequest,
@@ -19,7 +25,27 @@ import {
   userinfoGetRequest,
 } from '../actions/userinfo';
 //import moment from 'moment';
-
+const styles = theme => ({
+  root: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+  pos2: {
+    marginBottom: 5,
+    fontSize: 14,
+    paddingBottom: '2%',
+},
+});
 class Home extends Component {
   state = {
     currentImage: 0,
@@ -178,6 +204,7 @@ class Home extends Component {
 
   render() {
     const video = (<Video data={this.props.match.params} />);
+    const { classes } = this.props;
     return (
       <div style={{ flexGrow: 1 }}>
         <Invitation userData={this.props.userData} images={this.state.imageMainData} />
@@ -187,6 +214,94 @@ class Home extends Component {
           images={this.state.imagesGridData}
           thumbnailImages={this.state.thumbnailImages} />
         <Map userData={this.props.userData} weather={this.state.weather} dayDiff={this.state.dayDiff} />
+        
+        <Typography variant="h4"  style={{ paddingLeft: '1%',paddingBottom: '5%' }}>
+            <CallIcon /> contact
+        </Typography>
+        <Card className={classes.root}>
+          <CardContent>
+            <Typography className={classes.title} color="textSecondary" gutterBottom>
+              연락처
+            </Typography>
+            <Typography  component="h4">
+              신랑
+            </Typography>
+            <TextField
+                className={classes.pos2}
+                multiline
+                InputProps={{
+                    classes: {
+                      input: classes.pos2,
+                    },
+                  }}
+                fullWidth
+                defaultValue="Disabled" disabled
+                value=' 010-4092-1808'
+            />           
+            <Typography  component="h4">
+              신부
+            </Typography>
+            <TextField
+                className={classes.pos2}
+                multiline
+                InputProps={{
+                    classes: {
+                      input: classes.pos2,
+                    },
+                  }}
+                fullWidth
+                defaultValue="Disabled" disabled
+                value=' 010-3101-2120'
+            />
+            {/* <Typography variant="body2" component="p">
+              well meaning and kindly.
+              <br />
+              {'"a benevolent smile"'}
+            </Typography> */}
+          </CardContent>
+          <CardContent>
+            <Typography className={classes.title} color="textSecondary" gutterBottom>
+              마음 전하실 곳
+            </Typography>
+            <Typography  component="h4">
+              신랑
+            </Typography>
+            <TextField
+                className={classes.pos2}
+                multiline
+                InputProps={{
+                    classes: {
+                      input: classes.pos2,
+                    },
+                  }}
+                fullWidth
+                defaultValue="Disabled" disabled
+                value=' 카카오뱅크 3333-03-0448209 (나상욱)
+                새마을금고 3333-03-0448209 (나복수)'
+            />           
+            <Typography  component="h4">
+              신부
+            </Typography>
+            <TextField
+                className={classes.pos2}
+                multiline
+                InputProps={{
+                    classes: {
+                      input: classes.pos2,
+                    },
+                  }}
+                fullWidth
+                defaultValue="Disabled" disabled
+                value=' 카카오뱅크 3333-03-0448209 (이다은)
+                새마을금고 3333-03-0448209 (박경임)'
+            />
+            {/* <Typography variant="body2" component="p">
+              well meaning and kindly.
+              <br />
+              {'"a benevolent smile"'}
+            </Typography> */}
+          </CardContent>         
+        </Card>
         <Memo
           enterid={this.props.match.params.enterid}
           memoData={this.props.memoData}
@@ -235,4 +350,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)((withStyles(styles)(Home)));

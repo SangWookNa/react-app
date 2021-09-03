@@ -33,7 +33,7 @@ class MemoList extends React.Component {
         };
 
         return (
-            <Grid className={classes.root} container spacing={8}>
+            <Grid className={classes.root} container spacing={2}>
                 {mapToComponents(this.props.data)}
             </Grid>
 

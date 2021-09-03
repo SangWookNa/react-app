@@ -14,3 +14,15 @@ code {
 .image-gallery-slides {
   border-radius : '20px';
 }
+
+@font-face { font-family: 'IM_Hyemin Bold'; src: url(./fonts/IM_Hyemin-Bold.ttf) format('truetype'); }
+@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+@font-face {
+  font-family: 'twayair';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.jejumyeongjo * { 
+ font-family: 'Jeju Myeongjo', serif;
+}

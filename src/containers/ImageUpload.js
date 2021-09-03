@@ -216,7 +216,7 @@ class ImageUpload extends React.Component {
 
     render() {
 
-        const loading = (<CircularProgress variant="static" value={this.state.loadingValue} />);
+        const loading = (<CircularProgress value={this.state.loadingValue} />);
         return (
             <div>
                 <ImageUploader
@@ -230,7 +230,7 @@ class ImageUpload extends React.Component {
                 />
                 <Grid container spacing={8} >
                     <Grid item xs={6}>
-                        <Button variant="contained"
+                        <Button 
                             color="primary"
                             fullWidth
                             disabled={this.state.disabled}
@@ -240,7 +240,7 @@ class ImageUpload extends React.Component {
                         </Button>
                     </Grid>
                     <Grid item xs={6}>
-                        <Button variant="contained"
+                        <Button 
                             color="primary"
                             fullWidth
                             disabled={this.state.disabled}
@@ -250,7 +250,7 @@ class ImageUpload extends React.Component {
                         </Button>
                     </Grid>
                     {/*<Grid item xs={4}>
-                        <Button variant="contained"
+                        <Button 
                             onClick={this.handleUpload}
                             color="primary"
                             fullWidth
@@ -263,7 +263,7 @@ class ImageUpload extends React.Component {
                 {this.state.loadingFlag === true ? loading : undefined}
                 <div style ={{marginTop:70,marginBottom:70}}>
                 <Divider />
-                <Typography component="h2" variant="display1" style={{ paddingLeft: '2%',paddingBottom: '5%' }}>
+                <Typography component="h2"  style={{ paddingLeft: '2%',paddingBottom: '5%' }}>
                     <LibraryBooks /> main
                 </Typography>
                 <Invitation images={this.state.imageMainData} />
@@ -274,7 +274,7 @@ class ImageUpload extends React.Component {
                 </div>
                 <Grid item xs={12}>
                     <NavLink to="/Main" style={{color: 'inherit', textDecoration: 'none'}}>
-                        <Button variant="contained"
+                        <Button 
                             color="primary"
                             fullWidth
                             size="small" >

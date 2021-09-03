@@ -50,6 +50,11 @@ const styles = theme => ({
         fontSize: 13,
         paddingBottom: '2%',
     },
+    pos2: {
+        marginBottom: 5,
+        fontSize: 10,
+        paddingBottom: '2%',
+    },
     header: {
         height: 0,
         paddingTop: '13.25%', // 16:9
@@ -60,7 +65,7 @@ const styles = theme => ({
         paddingRight: '10',
     },
     logo: {
-        marginTop: 10,
+        marginTop: 1,
 
     },
 });
@@ -104,10 +109,10 @@ class Map extends React.Component {
         return (
 
             <div className={classes.cont}>
-                <Typography component="h2" variant="display1" style={{ paddingLeft: '2%' }}>
+                <Typography variant="h4"  style={{ paddingLeft: '1%',paddingBottom: '3%' }}>
                     <DirectionsCar /> map
                 </Typography>
-                <Grid container spacing={8}>
+                <Grid >
                     <div className={classes.root}>
                         <Card className={classes.card} elevation={3}>
                             {/* {this.props.dayDiff === 0 ? weather : undefined}   */}
@@ -141,6 +146,35 @@ class Map extends React.Component {
                                     defaultValue="Default Value"
                                     value={this.props.userData.data.address_name2}
                                 />
+                                <TextField
+                                    label="지하철 이용시"
+                                    className={classes.pos2}
+                                    multiline
+                                    InputProps={{
+                                        classes: {
+                                          input: classes.pos2,
+                                        },
+                                      }}
+                                    fullWidth
+                                    defaultValue="Disabled" disabled
+                                    value=' 동인천역 2번 출구 -> 지하상가 5번출구 국민은행 앞 셔틀버스 수시 운행
+                                    수인분당선 숭의(인하대병원)역 2번출구 -> 셔틀버스 수시 운행'
+                                />
+                                <TextField
+                                    label="버스 이용시"
+                                    className={classes.pos2}
+                                    multiline
+                                    InputProps={{
+                                        classes: {
+                                          input: classes.pos2,
+                                        },
+                                      }}
+                                    fullWidth
+                                    defaultValue="Disabled" disabled
+                                    value=' 조달청 비축기지 정류장(도보1분) - 12, 13, 24, 36, 330
+                                     신선 초등학교 정류장(도보3분) - 14, 46
+                                     인하대병원 정류장(도보8분) - 9, 33, 517, 519, 9100'
+                                />
                                 <Paper className={classes.paper_root} elevation={3}>
                                     <Typography color="textSecondary" >
                                         길찾기 앱 연결
@@ -149,16 +183,15 @@ class Map extends React.Component {
                                         <Grid item xs={6}
                                             container
                                             alignItems='center'
-                                            justify='center'>
+                                            justifyContent='center'>
                                             <img id='tmap' src={tmapLogo} alt="Logo" onClick={this.handleClick_navigation} />
                                         </Grid>
                                         <Grid item xs={6}
                                             container
                                             alignItems='center'
-                                            justify='center'>
+                                            justifyContent='center'>
                                             <img id='kakao' src={kakaoNaviLogo} alt="Logo" onClick={this.handleClick_navigation} />
                                         </Grid>
-
                                     </Grid>
                                 </Paper>
                             </CardContent>

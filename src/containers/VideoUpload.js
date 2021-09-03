@@ -13,7 +13,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import Switch from '@material-ui/core/Switch';
 import Grid from '@material-ui/core/Grid';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import classNames from 'classnames';
+//import classNames from 'classnames';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import * as value from './../globals';
@@ -284,7 +284,7 @@ class VideoUpload extends React.Component {
 
     render() {
 
-        const loading = (<CircularProgress variant="static" value={this.state.loadingValue} />);
+        const loading = (<CircularProgress value={this.state.loadingValue} />);
         const { classes } = this.props;
 
         const videoPlayer = (
@@ -303,7 +303,6 @@ class VideoUpload extends React.Component {
                         label="초대받는분 이름"
                         fullWidth
                         value={this.state.invitee}
-                        variant="outlined"
                         onChange={this.handleInputChange}
                     />
                 </Grid>
@@ -316,7 +315,7 @@ class VideoUpload extends React.Component {
                 />
                 <Card className={classes.card}>
                     <label htmlFor="contained-button-file">
-                        <CardActionArea variant="contained" component="span" >
+                        <CardActionArea component="span" >
                             <CardHeader
                                 avatar={
                                     <Avatar aria-label="Recipe" className={classes.avatar}>
@@ -336,12 +335,12 @@ class VideoUpload extends React.Component {
                             id="message"
                             name="message"
                             label={<Typography color="inherit" className={classes.font}>{this.state.invitee}님을 위한 초대메시지</Typography>}
-                            rowsMax="4"
+                            maxRows="4"
                             multiline
                             fullWidth
                             margin="dense"
                             value={this.state.message}
-                            className={classNames(classes.dense, classes.font)}
+                            //className={classNames(classes.dense, classes.font)}
                             onChange={this.handleInputChange}
                     />
                 </Grid>
@@ -351,7 +350,7 @@ class VideoUpload extends React.Component {
 
         return (
             <div className={classes.root}>
-                <Grid container justify="flex-end">
+                <Grid container justifyContent="flex-end">
                     <FormControlLabel
                         value="start"
                         control={<Switch
@@ -366,7 +365,7 @@ class VideoUpload extends React.Component {
                 </Grid>
                 {this.state.checkedB === true ? videoForm : undefined}
                 <Grid item xs={12}>
-                    <Button variant="contained"
+                    <Button 
                         onClick={this.handleUpload}
                         color="primary"
                         fullWidth

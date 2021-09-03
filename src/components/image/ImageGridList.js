@@ -56,7 +56,7 @@ class ImageGridList extends React.Component {
         width: "100%",
         marginTop: 100, marginBottom: 100
       }}>
-        <Typography component="h2" variant="display1" style={{ paddingLeft: '2%',paddingBottom: '5%' }}>
+        <Typography variant="h4"  style={{ paddingLeft: '1%',paddingBottom: '5%' }}>
           <LibraryBooks /> gallery
         </Typography>
         <Gallery photos={this.props.thumbnailImages} onClick={this.openLightbox} margin={10} direction={"column"} columns={columns} />

@@ -2,7 +2,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
-import classNames from 'classnames';
+//import classNames from 'classnames';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
@@ -18,19 +18,17 @@ const styles = theme => ({
         flexWrap: 'wrap',
     },
     button: {
-        margin: theme.spacing.unit,
+        margin: theme.spacing(1),
     },
     textField: {
-        marginLeft: theme.spacing.unit,
-        marginRight: theme.spacing.unit,
+        marginLeft: theme.spacing(1),
+        marginRight: theme.spacing(1),
 
     },
     dense: {
         marginTop: 1,
     },
-    font: {
-        fontFamily: '"Noto Sans KR", verdana, san-serif',
-    }
+    
 });
 
 class Write extends React.Component {
@@ -76,7 +74,7 @@ class Write extends React.Component {
         const { classes } = this.props;
         return (
             <div className={classes.root}>
-                <Grid container spacing={8}>
+                <Grid container spacing={2}>
                     <Grid item xs={6}>
                         <TextField
                             id="username"
@@ -86,7 +84,7 @@ class Write extends React.Component {
                             InputProps={{ classes: { input: classes.input1 } }}
                             margin="normal"
                             value={this.state.username}
-                            variant="outlined"
+                            
                             onChange={this.handleChange}
                         />
                     </Grid>
@@ -101,7 +99,7 @@ class Write extends React.Component {
                             autoComplete="current-password"
                             margin="normal"
                             value={this.state.password}
-                            variant="outlined"
+                            
                             onChange={this.handleChange}
                         />
                     </Grid>
@@ -109,18 +107,18 @@ class Write extends React.Component {
                         <TextField
                             id="contents"
                             name="contents"
-                            label={<Typography color="inherit" className={classes.font}>축하 메세지를 남겨주세요!</Typography>}
-                            rowsMax="4"
+                            label={<Typography color="inherit" >축하 메세지를 남겨주세요!</Typography>}
+                            maxRows="4"
                             multiline
                             fullWidth
                             margin="dense"
                             value={this.state.contents}
-                            className={classNames(classes.dense, classes.font)}
+                            //className={classNames(classes.dense, classes.font)}
                             onChange={this.handleChange}
                         />
                     </Grid>
                     <Grid container alignItems="flex-end" item xs={3}>
-                        <Button variant="contained" size="small" color="primary" className={classes.button}
+                        <Button size="small" variant="contained" color="primary" className={classes.button}
                             onClick={this.handlePost}>
                             등록
                     </Button>

@@ -1,0 +1,21 @@
+2021-08-11 17:40:15 info: Check out the app at http://localhost:4000
+2021-08-11 17:40:15 info: Connected to mongodb server
+2021-08-11 17:40:20 error: uncaughtException: listen EADDRINUSE: address already in use :::4000
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (net.js:1318:16)
+    at listenInCluster (net.js:1366:12)
+    at Server.listen (net.js:1452:7)
+    at Function.listen (D:\workspace\react-app\node_modules\express\lib\application.js:618:24)
+    at Object.<anonymous> (D:/workspace/react-app/server/main.js:67:5)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at loader (D:\workspace\react-app\node_modules\babel-register\lib\node.js:144:5)
+    at Object.require.extensions.<computed> [as .js] (D:\workspace\react-app\node_modules\babel-register\lib\node.js:154:7)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)
+    at Object.<anonymous> (D:\workspace\react-app\node_modules\babel-cli\lib\_babel-node.js:154:22)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+2021-08-11 17:40:20 info: Connected to mongodb server

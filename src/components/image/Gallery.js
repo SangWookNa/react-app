@@ -16,7 +16,7 @@ class Gallery extends React.Component {
         overflow: "auto",
         marginTop: 100, marginBottom: 100
       }}>
-        <Typography component="h2" variant="display1" style={{ paddingLeft: '2%',paddingBottom: '5%' }}>
+        <Typography component="h2" style={{ paddingLeft: '2%',paddingBottom: '5%' }}>
           <LibraryBooks /> gallery
         </Typography>
         <ImageGallery items={this.props.images} />

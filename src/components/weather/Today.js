@@ -36,7 +36,7 @@ class Today extends React.Component {
                         <WeatherImage sky={this.props.weather.weather.hourly[0].sky} />
                     </Grid>
                     <Grid item xs={8} sm container alignItems="center">
-                        <Typography variant="subtitle1">
+                        <Typography >
                             {this.props.weather.weather.hourly[0].sky.name}
                         </Typography>
                         <Typography color="textSecondary">현재{Math.floor(this.props.weather.weather.hourly[0].temperature.tc)}℃

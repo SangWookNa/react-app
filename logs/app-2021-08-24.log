@@ -1,0 +1,8 @@
+2021-08-24 09:28:37 info: Check out the app at http://localhost:4000
+2021-08-24 09:28:37 info: Connected to mongodb server
+2021-08-24 09:28:55 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}
+2021-08-24 09:28:55 info: PARAM {"0":"image/1112482398/main"} | BODY {}
+2021-08-24 09:28:55 info: PARAM {"0":"video/1112482398/모두들/11"} | BODY {}
+2021-08-24 09:28:55 info: PARAM {"0":"memo/1112482398"} | BODY {}
+2021-08-24 09:28:55 info: PARAM {"0":"userinfo/1112482398"} | BODY {}
+2021-08-24 09:28:55 info: PARAM {"0":"image/1112482398/gallery"} | BODY {}

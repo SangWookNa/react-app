@@ -1,11 +1,30 @@
 import React, { Component } from 'react';
 import VideoPlayer from '../components/video/VideoPlayer';
 import Typography from '@material-ui/core/Typography';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import { withStyles } from '@material-ui/core/styles';
+import LibraryBooks from '@material-ui/icons/LibraryBooks';
 import { connect } from 'react-redux';
 import {
   videoListRequest,
 } from '../actions/video';
-
+const styles = theme => ({
+  root: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+});
 class Video extends Component {
   state = {
     path: '',
@@ -35,13 +54,23 @@ class Video extends Component {
 
   render() {
     const videoPlayer = (<VideoPlayer url={this.state.path} />);
+    const { classes } = this.props;
+    const bull = <span className={classes.bullet}>•</span>;
     return (
-      <div style={{marginBottom: 50 }}>
-        <Typography variant="h6" component="h3" align="center">
-            {this.state.message}
+    <div style={{ marginBottom: 100 }}>
+      <Typography variant="h5"  style={{ paddingLeft: '1%',paddingBottom: '5%' }}>
+        <LibraryBooks /> 모시는 글
+      </Typography>
+
+    <Card className={classes.root} elevation={3}>
+      <CardContent>
+        <Typography component="h6">
+          {this.state.message}
         </Typography>
-        {this.state.size > 0 ? videoPlayer : undefined}
-        
+          {this.state.size > 0 ? videoPlayer : undefined}        
+      </CardContent>      
+    </Card>        
+       
       </div>
     );
   }
@@ -61,4 +90,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Video);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Video));

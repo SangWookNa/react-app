@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 // Router
 import { Header } from './components/common/';
 import { connect } from 'react-redux';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 import grey from '@material-ui/core/colors/grey';
 import green from '@material-ui/core/colors/green';
 import { getStatusRequest,} from '../src/actions/kakao';
-
+import './index.css';
 
 class App extends Component {
 
@@ -70,14 +70,17 @@ class App extends Component {
   }
 
   render() {
-    const theme = createMuiTheme({
-      palette: {
-        primary: {
-          main: '#cfd8dc',
-        },
-        secondary: {
-          main: '#cfd8dc',
-        },
+    const theme = createTheme({
+      // palette: {
+      //   primary: {
+      //     main: '#cfd8dc',
+      //   },
+      //   secondary: {
+      //     main: '#cfd8dc',
+      //   },
+      // },
+      typography: {
+       fontFamily: 'twayair',
       },
     });
 

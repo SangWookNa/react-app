@@ -158,7 +158,7 @@ class Memo extends React.Component {
                         component="h6"
                         subheader={<TimeAgo date={this.props.data.date.created} formatter={formatter} />}
                     />
-                    <CardContent><Typography variant="body1">
+                    <CardContent><Typography >
                         {this.state.contents}
                     </Typography>
                     </CardContent>
@@ -211,7 +211,7 @@ class Memo extends React.Component {
                             value={this.state.contents}
                             onChange={this.handleChange}
                             margin="normal"
-                            variant="outlined"
+                           
                         />
                     </CardContent>
                 </Card>

@@ -78,7 +78,7 @@ class Login extends React.Component {
               className={classes.demo}
               alignItems='center'
               direction='row'
-              justify='center'
+              justifyContent='center'
             >
               <img src={logo} alt="Logo" onClick={this.handleUpload} />
             </Grid>
